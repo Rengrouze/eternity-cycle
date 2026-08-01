@@ -1,0 +1,117 @@
+<form class="l5r4ec character-sheet" autocomplete="off">
+
+   {{! En-tête : nom, clan, famille, école }}
+   <header class="sheet-header">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}" />
+
+      <div class="header-fields">
+         <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'L5R4EC.Details.Name'}}" />
+
+         <div class="header-details">
+            <label>{{localize "L5R4EC.Details.Clan"}}
+               <input type="text" name="system.details.clan" value="{{system.details.clan}}" />
+            </label>
+            <label>{{localize "L5R4EC.Details.Family"}}
+               <input type="text" name="system.details.family" value="{{system.details.family}}" />
+            </label>
+            <label>{{localize "L5R4EC.Details.School"}}
+               <input type="text" name="system.details.school" value="{{system.details.school}}" />
+            </label>
+         </div>
+      </div>
+   </header>
+
+   {{! Anneaux + Traits }}
+   <section class="rings-traits">
+      <h2>{{localize "L5R4EC.Sheet.RingsAndTraits"}}</h2>
+      <div class="rings-grid">
+
+         {{! Air : Awareness / Reflexes }}
+         <div class="ring-block">
+            <h3>{{localize "L5R4EC.Ring.Air"}} <span class="ring-rank">{{system.rings.air.rank}}</span></h3>
+            <label>{{localize "L5R4EC.Trait.Awareness"}}
+               <input type="number" name="system.traits.awa" value="{{system.traits.awa}}" min="1" />
+            </label>
+            <label>{{localize "L5R4EC.Trait.Reflexes"}}
+               <input type="number" name="system.traits.ref" value="{{system.traits.ref}}" min="1" />
+            </label>
+         </div>
+
+         {{! Terre : Stamina / Willpower }}
+         <div class="ring-block">
+            <h3>{{localize "L5R4EC.Ring.Earth"}} <span class="ring-rank">{{system.rings.earth.rank}}</span></h3>
+            <label>{{localize "L5R4EC.Trait.Stamina"}}
+               <input type="number" name="system.traits.sta" value="{{system.traits.sta}}" min="1" />
+            </label>
+            <label>{{localize "L5R4EC.Trait.Willpower"}}
+               <input type="number" name="system.traits.wil" value="{{system.traits.wil}}" min="1" />
+            </label>
+         </div>
+
+         {{! Feu : Agility / Intelligence }}
+         <div class="ring-block">
+            <h3>{{localize "L5R4EC.Ring.Fire"}} <span class="ring-rank">{{system.rings.fire.rank}}</span></h3>
+            <label>{{localize "L5R4EC.Trait.Agility"}}
+               <input type="number" name="system.traits.agi" value="{{system.traits.agi}}" min="1" />
+            </label>
+            <label>{{localize "L5R4EC.Trait.Intelligence"}}
+               <input type="number" name="system.traits.int" value="{{system.traits.int}}" min="1" />
+            </label>
+         </div>
+
+         {{! Eau : Perception / Strength }}
+         <div class="ring-block">
+            <h3>{{localize "L5R4EC.Ring.Water"}} <span class="ring-rank">{{system.rings.water.rank}}</span></h3>
+            <label>{{localize "L5R4EC.Trait.Perception"}}
+               <input type="number" name="system.traits.per" value="{{system.traits.per}}" min="1" />
+            </label>
+            <label>{{localize "L5R4EC.Trait.Strength"}}
+               <input type="number" name="system.traits.str" value="{{system.traits.str}}" min="1" />
+            </label>
+         </div>
+
+         {{! Vide : rang manuel }}
+         <div class="ring-block ring-void">
+            <h3>{{localize "L5R4EC.Ring.Void"}}</h3>
+            <label>{{localize "L5R4EC.Sheet.Rank"}}
+               <input type="number" name="system.rings.void.rank" value="{{system.rings.void.rank}}" min="0" />
+            </label>
+            <label>{{localize "L5R4EC.Sheet.Value"}}
+               <input type="number" name="system.rings.void.value" value="{{system.rings.void.value}}" min="0" />
+            </label>
+         </div>
+
+      </div>
+   </section>
+
+   {{! Blessures + Honneur }}
+   <section class="wounds-honor">
+      <div class="wounds">
+         <h2>{{localize "L5R4EC.Sheet.Wounds"}}</h2>
+         <label>
+            <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0" />
+            /
+            <input type="number" name="system.wounds.max" value="{{system.wounds.max}}" min="0" />
+         </label>
+      </div>
+
+      <div class="honor">
+         <h2>{{localize "L5R4EC.Sheet.Honor"}}</h2>
+         <label>{{localize "L5R4EC.Sheet.Rank"}}
+            <input type="number" name="system.honor.rank" value="{{system.honor.rank}}" min="0" />
+         </label>
+         <label>{{localize "L5R4EC.Sheet.Points"}}
+            <input type="number" name="system.honor.points" value="{{system.honor.points}}" step="0.1" />
+         </label>
+      </div>
+   </section>
+
+   {{! Biographie }}
+   <section class="biography">
+      <h2>{{localize "L5R4EC.Details.Biography"}}</h2>
+      <div class="editor-content" data-field="system.details.biography">
+         {{{enrichedBiography}}}
+      </div>
+   </section>
+
+</form>

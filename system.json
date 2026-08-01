@@ -15,8 +15,19 @@
    ],
    "esmodules": ["boot.mjs"],
    "styles": ["styles/system-styles.css"],
-
    "socket": true,
+   "documentTypes": {
+      "Actor": {
+         "character": {
+            "htmlFields": ["details.biography"]
+         }
+      },
+      "Item": {
+         "item": {
+            "htmlFields": ["description"]
+         }
+      }
+   },
    "languages": [
       {
          "lang": "fr",

@@ -1,0 +1,37 @@
+{
+   "L5R4EC": {
+      "Sheet": {
+         "Character": "Fiche de personnage",
+         "RingsAndTraits": "Anneaux et Traits",
+         "Wounds": "Blessures",
+         "Honor": "Honneur",
+         "Rank": "Rang",
+         "Value": "Valeur",
+         "Points": "Points"
+      },
+      "Ring": {
+         "Air": "Air",
+         "Earth": "Terre",
+         "Fire": "Feu",
+         "Water": "Eau",
+         "Void": "Vide"
+      },
+      "Trait": {
+         "Stamina": "Constitution",
+         "Willpower": "Volonté",
+         "Strength": "Force",
+         "Perception": "Perception",
+         "Reflexes": "Réflexes",
+         "Awareness": "Vigilance",
+         "Agility": "Agilité",
+         "Intelligence": "Intelligence"
+      },
+      "Details": {
+         "Name": "Nom",
+         "Clan": "Clan",
+         "Family": "Famille",
+         "School": "École",
+         "Biography": "Historique"
+      }
+   }
+}
