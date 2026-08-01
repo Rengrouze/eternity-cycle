@@ -1,0 +1,48 @@
+{
+   "id": "l5r4ec",
+   "title": "Legend of the Five Rings 4th, Eternity Cycle",
+   "description": "Un système pour la 4ème édition de L5R, uniquement pour moi et mon groupe.",
+   "version": "0.0.1",
+   "compatibility": {
+      "minimum": 14,
+      "verified": 14
+   },
+   "authors": [
+      {
+         "name": "A.F AKA Kakita Hiriko",
+         "discord": "rengret"
+      }
+   ],
+   "esmodules": ["boot.mjs"],
+   "styles": ["styles/system-styles.css"],
+   "packs": [
+      {
+         "name": "monsters",
+         "label": "Monstres",
+         "type": "Actor"
+      },
+      {
+         "name": "items",
+         "label": "Objets",
+         "type": "Item"
+      }
+   ],
+   "languages": [
+      {
+         "lang": "fr",
+         "name": "Français",
+         "path": "lang/fr.json"
+      }
+   ],
+   "documentTypes": {
+      "Actor": {
+         "hero": { "htmlFields": ["background.biography"] },
+         "villain": { "htmlFields": ["background.biography"] },
+         "pawn": {}
+      },
+      "Item": {
+         "weapon": {},
+         "spell": {}
+      }
+   }
+}
