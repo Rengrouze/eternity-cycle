@@ -1,4 +1,4 @@
-<form class="l5r4ec character-sheet" autocomplete="off">
+<div class="l5r4ec character-sheet">
 
    {{! En-tête : nom, clan, famille, école }}
    <header class="sheet-header">
@@ -31,9 +31,27 @@
             <h3>{{localize "L5R4EC.Ring.Air"}} <span class="ring-rank">{{system.rings.air.rank}}</span></h3>
             <label>{{localize "L5R4EC.Trait.Awareness"}}
                <input type="number" name="system.traits.awa" value="{{system.traits.awa}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="awa"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
             <label>{{localize "L5R4EC.Trait.Reflexes"}}
                <input type="number" name="system.traits.ref" value="{{system.traits.ref}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="ref"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
          </div>
 
@@ -42,9 +60,27 @@
             <h3>{{localize "L5R4EC.Ring.Earth"}} <span class="ring-rank">{{system.rings.earth.rank}}</span></h3>
             <label>{{localize "L5R4EC.Trait.Stamina"}}
                <input type="number" name="system.traits.sta" value="{{system.traits.sta}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="sta"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
             <label>{{localize "L5R4EC.Trait.Willpower"}}
                <input type="number" name="system.traits.wil" value="{{system.traits.wil}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="wil"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
          </div>
 
@@ -53,9 +89,27 @@
             <h3>{{localize "L5R4EC.Ring.Fire"}} <span class="ring-rank">{{system.rings.fire.rank}}</span></h3>
             <label>{{localize "L5R4EC.Trait.Agility"}}
                <input type="number" name="system.traits.agi" value="{{system.traits.agi}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="agi"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
             <label>{{localize "L5R4EC.Trait.Intelligence"}}
                <input type="number" name="system.traits.int" value="{{system.traits.int}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="int"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
          </div>
 
@@ -64,9 +118,27 @@
             <h3>{{localize "L5R4EC.Ring.Water"}} <span class="ring-rank">{{system.rings.water.rank}}</span></h3>
             <label>{{localize "L5R4EC.Trait.Perception"}}
                <input type="number" name="system.traits.per" value="{{system.traits.per}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="per"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
             <label>{{localize "L5R4EC.Trait.Strength"}}
                <input type="number" name="system.traits.str" value="{{system.traits.str}}" min="1" />
+               <button
+                  type="button"
+                  class="roll-button"
+                  data-action="rollTrait"
+                  data-trait="str"
+                  title="{{localize 'L5R4EC.Sheet.TraitRoll'}}"
+               >
+                  <i class="fa-solid fa-dice-d10"></i>
+               </button>
             </label>
          </div>
 
@@ -114,4 +186,4 @@
       </div>
    </section>
 
-</form>
+</div>

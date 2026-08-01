@@ -1,78 +1,86 @@
 .l5r4ec.character-sheet {
-   display: flex;
-   flex-direction: column;
-   gap: 0.75rem;
-   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem;
 }
 
 .l5r4ec .sheet-header {
-   display: flex;
-   gap: 0.75rem;
-   align-items: flex-start;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
 }
 
 .l5r4ec .sheet-header .profile-img {
-   width: 96px;
-   height: 96px;
-   object-fit: cover;
-   border: 1px solid var(--color-border-light-tertiary, #999);
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 1px solid var(--color-border-light-tertiary, #999);
 }
 
 .l5r4ec .header-fields {
-   flex: 1;
-   display: flex;
-   flex-direction: column;
-   gap: 0.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .l5r4ec .header-fields > input[name="name"] {
-   font-size: 1.3rem;
-   font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .l5r4ec .header-details {
-   display: flex;
-   gap: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .l5r4ec .rings-grid {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
 }
 
 .l5r4ec .ring-block {
-   border: 1px solid var(--color-border-light-tertiary, #999);
-   border-radius: 4px;
-   padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border-light-tertiary, #999);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
 }
 
 .l5r4ec .ring-block h3 {
-   margin: 0 0 0.3rem 0;
-   display: flex;
-   justify-content: space-between;
+  margin: 0 0 0.3rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .l5r4ec .ring-rank {
-   font-weight: bold;
+  font-weight: bold;
 }
 
 .l5r4ec .ring-block label {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   gap: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .l5r4ec .ring-block input[type="number"] {
-   width: 3rem;
+  width: 3rem;
+}
+
+.l5r4ec .roll-button {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .l5r4ec .wounds-honor {
-   display: flex;
-   gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .l5r4ec .biography .editor-content {
-   min-height: 120px;
+  min-height: 120px;
 }

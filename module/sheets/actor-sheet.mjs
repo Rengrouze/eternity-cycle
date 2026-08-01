@@ -3,8 +3,6 @@ const { ActorSheetV2 } = foundry.applications.sheets;
 
 /**
  * Feuille de personnage de base pour L5R 4e - Eternity Cycle.
- * Template minimal : Traits, Anneaux, Blessures, Honneur, Détails.
- * A étoffer (compétences, techniques, équipement, jets de dés, ...).
  */
 export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
@@ -19,6 +17,11 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     },
     form: {
       submitOnChange: true
+    },
+    // Les actions déclarées ici sont bindées automatiquement sur tout
+    // élément du template portant le data-action correspondant.
+    actions: {
+      rollTrait: CharacterSheet.#onRollTrait
     }
   };
 
@@ -29,27 +32,34 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     }
   };
 
-  /**
-   * Construit le contexte transmis au template Handlebars.
-   * @override
-   */
+  /** @override */
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
 
     context.actor = this.actor;
     context.system = this.actor.system;
-    context.source = this.actor.toObject().system;
 
-    // Libellés des Traits/Anneaux, pratiques à boucler côté template.
     context.traitKeys = ["sta", "wil", "str", "per", "ref", "awa", "agi", "int"];
     context.ringKeys = ["air", "earth", "fire", "water"];
 
-    // Autorise l'édition du texte enrichi (biographie).
     context.enrichedBiography = await foundry.applications.ux.TextEditor.enrichHTML(
       this.actor.system.details.biography,
       { secrets: this.actor.isOwner, relativeTo: this.actor }
     );
 
     return context;
+  }
+
+  /**
+   * Handler d'action pour le clic sur un bouton de jet de Trait.
+   * Les handlers d'action sont TOUJOURS statiques ; `this` pointe malgré
+   * tout vers l'instance de la sheet grâce au binding fait par Foundry.
+   * @this {CharacterSheet}
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target  L'élément qui porte le data-action.
+   */
+  static async #onRollTrait(event, target) {
+    const traitKey = target.dataset.trait;
+    await this.actor.rollTrait(traitKey);
   }
 }
