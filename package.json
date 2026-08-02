@@ -1,0 +1,18 @@
+{
+  "name": "eternity-cycle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i styles/tailwind-input.css -o styles/system-styles.css --minify",
+    "watch:css": "tailwindcss -i styles/tailwind-input.css -o styles/system-styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "tailwindcss-scoped-preflight": "^4.0.6"
+  }
+}

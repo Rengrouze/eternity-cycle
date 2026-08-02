@@ -1,0 +1,27 @@
+/*
+ * Point d'entrée Tailwind pour le système.
+ * IMPORTANT: on n'importe QUE theme + utilities (pas "tailwindcss" en entier),
+ * pour éviter d'injecter le Preflight (reset CSS) globalement sur toute
+ * l'interface Foundry (sidebar, chat, fenêtres d'autres modules...).
+ * Le plugin tailwindcss-scoped-preflight réinjecte ensuite un Preflight
+ * limité au conteneur .l5r4ec uniquement.
+ */
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+@plugin "tailwindcss-scoped-preflight" {
+   isolation-strategy: inside;
+   selector: .l5r4ec;
+}
+
+/* Où chercher les classes utilisées, en dehors de la détection auto */
+@source "../templates/**/*.hbs";
+@source "../module/**/*.mjs";
+
+/* Tokens custom du système, réutilisables comme classes Tailwind
+ * (ex: bg-l5r-accent, text-l5r-accent, font-l5r-display) */
+@theme {
+   --color-l5r-accent: #7a1f1f;
+   --color-l5r-accent-light: #a83232;
+   --font-l5r-display: "Trajan Pro", Georgia, serif;
+}

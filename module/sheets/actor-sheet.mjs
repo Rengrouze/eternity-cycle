@@ -42,6 +42,28 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     context.traitKeys = ["sta", "wil", "str", "per", "ref", "awa", "agi", "int"];
     context.ringKeys = ["air", "earth", "fire", "water"];
 
+    // Regroupement Anneau -> Traits, pour boucler dans le template au lieu
+    // de dupliquer le même bloc HTML 4 fois (un par Anneau).
+    const s = this.actor.system;
+    context.ringGroups = [
+      { key: "air", labelKey: "L5R4EC.Ring.Air", rank: s.rings.air.rank, traits: [
+        { key: "awa", labelKey: "L5R4EC.Trait.Awareness", value: s.traits.awa },
+        { key: "ref", labelKey: "L5R4EC.Trait.Reflexes", value: s.traits.ref }
+      ] },
+      { key: "earth", labelKey: "L5R4EC.Ring.Earth", rank: s.rings.earth.rank, traits: [
+        { key: "sta", labelKey: "L5R4EC.Trait.Stamina", value: s.traits.sta },
+        { key: "wil", labelKey: "L5R4EC.Trait.Willpower", value: s.traits.wil }
+      ] },
+      { key: "fire", labelKey: "L5R4EC.Ring.Fire", rank: s.rings.fire.rank, traits: [
+        { key: "agi", labelKey: "L5R4EC.Trait.Agility", value: s.traits.agi },
+        { key: "int", labelKey: "L5R4EC.Trait.Intelligence", value: s.traits.int }
+      ] },
+      { key: "water", labelKey: "L5R4EC.Ring.Water", rank: s.rings.water.rank, traits: [
+        { key: "per", labelKey: "L5R4EC.Trait.Perception", value: s.traits.per },
+        { key: "str", labelKey: "L5R4EC.Trait.Strength", value: s.traits.str }
+      ] }
+    ];
+
     context.enrichedBiography = await foundry.applications.ux.TextEditor.enrichHTML(
       this.actor.system.details.biography,
       { secrets: this.actor.isOwner, relativeTo: this.actor }
