@@ -1,0 +1,14 @@
+<section class="tab {{tabs.combat.cssClass}} p-2" data-tab="{{tabs.combat.id}}" data-group="{{tabs.combat.group}}">
+ <div class="flex gap-6">
+  <div>
+    <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Wounds"}}</h2>
+    <label class="flex items-center gap-1 text-sm">
+      <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0" class="w-12 border rounded text-center">
+      /
+      <input type="number" name="system.wounds.max" value="{{system.wounds.max}}" min="0" class="w-12 border rounded text-center">
+    </label>
+  </div>
+
+  {{!-- À venir : armes, armures, jets de dégâts... --}}
+ </div>
+</section>

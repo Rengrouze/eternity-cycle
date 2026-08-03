@@ -1,0 +1,111 @@
+<header class="flex flex-col gap-2 p-2">
+
+  <div class="flex gap-3 items-start">
+    <img class="w-24 h-24 object-cover border border-black/30" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}">
+
+    <div class="flex-1 flex flex-col gap-2">
+      <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'L5R4EC.Details.Name'}}"
+             class="text-xl font-bold font-l5r-display bg-transparent border-b border-black/20 px-1">
+
+      <div class="flex gap-3">
+        <label class="flex flex-col text-xs gap-0.5">{{localize "L5R4EC.Details.Clan"}}
+          <input type="text" name="system.details.clan" value="{{system.details.clan}}" class="border rounded px-1 py-0.5">
+        </label>
+        <label class="flex flex-col text-xs gap-0.5">{{localize "L5R4EC.Details.Family"}}
+          <input type="text" name="system.details.family" value="{{system.details.family}}" class="border rounded px-1 py-0.5">
+        </label>
+        <label class="flex flex-col text-xs gap-0.5">{{localize "L5R4EC.Details.School"}}
+          <input type="text" name="system.details.school" value="{{system.details.school}}" class="border rounded px-1 py-0.5">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Bande de stats "carte de visite" : Rang, XP, Honneur/Infamie, Gloire, Statut, Réputation, Souillures --}}
+  <div class="flex flex-wrap gap-2 border-t border-black/10 pt-2">
+
+    <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.Rank"}}
+      <input type="number" name="system.rank" value="{{system.rank}}" min="1" class="w-12 border rounded text-center font-bold">
+    </label>
+
+    <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.XPTotal"}}
+      <input type="number" name="system.xp.total" value="{{system.xp.total}}" min="0" class="w-14 border rounded text-center">
+    </label>
+
+    <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.XPSpent"}}
+      <input type="number" name="system.xp.spent" value="{{system.xp.spent}}" min="0" class="w-14 border rounded text-center">
+    </label>
+
+    <div class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.XPAvailable"}}
+      <span class="w-14 text-center font-bold text-l5r-accent">{{system.xp.available}}</span>
+    </div>
+
+    {{!-- Honneur / Infamie : rang direct, MJ uniquement en édition --}}
+    <div class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{#if isInfamous}}
+        <span class="text-l5r-accent">{{localize "L5R4EC.Header.Infamy"}}</span>
+      {{else}}
+        <span>{{localize "L5R4EC.Header.Honor"}}</span>
+      {{/if}}
+      {{#if isGM}}
+        <input type="number" name="system.honor.rank" value="{{system.honor.rank}}" class="w-12 border rounded text-center font-bold">
+      {{else}}
+        <span class="w-12 text-center font-bold">{{system.honor.rank}}</span>
+      {{/if}}
+    </div>
+
+    <div class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.Glory"}}
+      {{#if isGM}}
+        <input type="number" name="system.glory.rank" value="{{system.glory.rank}}" min="0" class="w-12 border rounded text-center font-bold">
+      {{else}}
+        <span class="w-12 text-center font-bold">{{system.glory.rank}}</span>
+      {{/if}}
+    </div>
+
+    <div class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.Status"}}
+      {{#if isGM}}
+        <input type="number" name="system.status.rank" value="{{system.status.rank}}" min="0" class="w-12 border rounded text-center font-bold">
+      {{else}}
+        <span class="w-12 text-center font-bold">{{system.status.rank}}</span>
+      {{/if}}
+    </div>
+
+    <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      {{localize "L5R4EC.Header.Reputation"}}
+      <span class="flex items-center gap-1">
+        <input type="number" name="system.reputation.rank" value="{{system.reputation.rank}}" min="0" class="w-10 border rounded text-center" title="{{localize 'L5R4EC.Sheet.Rank'}}">
+        <input type="number" name="system.reputation.points" value="{{system.reputation.points}}" step="0.1" class="w-14 border rounded text-center" title="{{localize 'L5R4EC.Sheet.Points'}}">
+      </span>
+    </label>
+
+    {{!-- Souillure : le MJ la voit et l'édite toujours ; le joueur ne la voit
+         que si le MJ l'a explicitement révélée (system.taint.hidden = false),
+         et seulement en lecture seule dans ce cas. --}}
+    <div class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+      <span class="flex items-center gap-1">
+        {{localize "L5R4EC.Header.Taint"}}
+        {{#if isGM}}
+          <button type="button" data-action="toggleTaintVisibility"
+                  title="{{localize 'L5R4EC.Header.ToggleTaint'}}"
+                  class="w-4 h-4 flex items-center justify-center text-black/50 hover:text-l5r-accent">
+            <i class="fa-solid {{#if system.taint.hidden}}fa-eye-slash{{else}}fa-eye{{/if}}"></i>
+          </button>
+        {{/if}}
+      </span>
+      {{#if isGM}}
+        <input type="number" name="system.taint.rank" value="{{system.taint.rank}}" min="0" class="w-12 border rounded text-center font-bold">
+      {{else if system.taint.hidden}}
+        <span class="w-12 text-center opacity-40">•••</span>
+      {{else}}
+        <span class="w-12 text-center font-bold">{{system.taint.rank}}</span>
+      {{/if}}
+    </div>
+
+  </div>
+</header>

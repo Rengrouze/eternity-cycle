@@ -1,0 +1,40 @@
+<section class="tab {{tabs.rings.cssClass}} p-2" data-tab="{{tabs.rings.id}}" data-group="{{tabs.rings.group}}">
+  <div class="grid grid-cols-3 gap-2">
+
+    {{#each ringGroups}}
+      <div class="border rounded p-2 flex flex-col gap-1">
+        <h3 class="flex justify-between font-semibold">
+          {{localize this.labelKey}}
+          <span class="text-l5r-accent font-bold">{{this.rank}}</span>
+        </h3>
+        {{#each this.traits}}
+          <label class="flex justify-between items-center gap-2 text-sm">
+            {{localize this.labelKey}}
+            <span class="flex items-center gap-1">
+              <input type="number" name="system.traits.{{this.key}}" value="{{this.value}}" min="1"
+                     class="w-12 border rounded text-center">
+              <button type="button"
+                      class="w-7 h-7 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
+                      data-action="rollTrait" data-trait="{{this.key}}"
+                      title="{{localize 'L5R4EC.Sheet.TraitRoll'}}">
+                <i class="fa-solid fa-dice-d10"></i>
+              </button>
+            </span>
+          </label>
+        {{/each}}
+      </div>
+    {{/each}}
+
+    {{!-- Vide : rang manuel, hors boucle car pas de Traits associés --}}
+    <div class="border rounded p-2 flex flex-col gap-1 bg-black/5">
+      <h3 class="font-semibold">{{localize "L5R4EC.Ring.Void"}}</h3>
+      <label class="flex justify-between items-center text-sm">{{localize "L5R4EC.Sheet.Rank"}}
+        <input type="number" name="system.rings.void.rank" value="{{system.rings.void.rank}}" min="0" class="w-12 border rounded text-center">
+      </label>
+      <label class="flex justify-between items-center text-sm">{{localize "L5R4EC.Sheet.Value"}}
+        <input type="number" name="system.rings.void.value" value="{{system.rings.void.value}}" min="0" class="w-12 border rounded text-center">
+      </label>
+    </div>
+
+  </div>
+</section>

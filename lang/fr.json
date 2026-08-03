@@ -1,39 +1,65 @@
 {
-   "L5R4EC": {
-      "Sheet": {
-         "Character": "Fiche de personnage",
-         "RingsAndTraits": "Anneaux et Traits",
-         "Wounds": "Blessures",
-         "Honor": "Honneur",
-         "Rank": "Rang",
-         "Value": "Valeur",
-         "VoidPoints": "Points de Vide",
-         "Points": "Points",
-         "TraitRoll": "Jet de Trait"
-      },
-      "Ring": {
-         "Air": "Air",
-         "Earth": "Terre",
-         "Fire": "Feu",
-         "Water": "Eau",
-         "Void": "Vide"
-      },
-      "Trait": {
-         "Stamina": "Constitution",
-         "Willpower": "Volonté",
-         "Strength": "Force",
-         "Perception": "Perception",
-         "Reflexes": "Réflexes",
-         "Awareness": "Vigilance",
-         "Agility": "Agilité",
-         "Intelligence": "Intelligence"
-      },
-      "Details": {
-         "Name": "Nom",
-         "Clan": "Clan",
-         "Family": "Famille",
-         "School": "École",
-         "Biography": "Historique"
-      }
-   }
+  "L5R4EC": {
+    "Sheet": {
+      "Character": "Fiche de personnage",
+      "RingsAndTraits": "Anneaux et Traits",
+      "Wounds": "Blessures",
+      "Honor": "Honneur",
+      "Rank": "Rang",
+      "Value": "Valeur",
+      "Points": "Points",
+      "TraitRoll": "Jet de Trait"
+    },
+    "Header": {
+      "Rank": "Rang",
+      "XPTotal": "XP total",
+      "XPSpent": "XP dépensé",
+      "XPAvailable": "XP dispo",
+      "Honor": "Honneur",
+      "Infamy": "Infamie",
+      "Glory": "Gloire",
+      "Status": "Statut",
+      "Reputation": "Réputation",
+      "Taint": "Souillure",
+      "ToggleTaint": "Afficher/masquer la Souillure"
+    },
+    "Tabs": {
+      "RingsAndTraits": "Anneaux",
+      "Skills": "Compétences",
+      "Combat": "Combat",
+      "Bio": "Historique",
+      "SkillsPlaceholder": "Les compétences seront ajoutées ici (voir le tuto sur les Items)."
+    },
+    "Dialog": {
+      "RollBonusTitle": "Bonus de jet",
+      "RollBonus": "Dés bonus (Roll)",
+      "KeepBonus": "Garde bonus (Keep)",
+      "Roll": "Lancer",
+      "Cancel": "Annuler"
+    },
+    "Ring": {
+      "Air": "Air",
+      "Earth": "Terre",
+      "Fire": "Feu",
+      "Water": "Eau",
+      "Void": "Vide"
+    },
+    "Trait": {
+      "Stamina": "Constitution",
+      "Willpower": "Volonté",
+      "Strength": "Force",
+      "Perception": "Perception",
+      "Reflexes": "Réflexes",
+      "Awareness": "Vigilance",
+      "Agility": "Agilité",
+      "Intelligence": "Intelligence"
+    },
+    "Details": {
+      "Name": "Nom",
+      "Clan": "Clan",
+      "Family": "Famille",
+      "School": "École",
+      "Biography": "Historique"
+    }
+  }
 }
