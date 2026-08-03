@@ -1,4 +1,4 @@
-import { rollKeep } from "../helpers/dice.mjs";
+import { basicRoll, performRoll } from "../dice/_module.mjs";
 
 /**
  * Actor custom pour le système.
@@ -17,12 +17,9 @@ export class SystemActor extends Actor {
     }
 
     const label = game.i18n.localize(`L5R4EC.Trait.${this._traitLabelKey(traitKey)}`);
-    return rollKeep(
-      this,
-      traitRank + rollBonus,
-      traitRank + keepBonus,
-      `${game.i18n.localize("L5R4EC.Sheet.TraitRoll")} : ${label}`
-    );
+    const config = basicRoll({ rank: traitRank, rollBonus, keepBonus });
+
+    return performRoll(this, config, `${game.i18n.localize("L5R4EC.Sheet.TraitRoll")} : ${label}`);
   }
 
   /** Convertit une clé courte ("awa") en clé de libellé ("Awareness"). */
