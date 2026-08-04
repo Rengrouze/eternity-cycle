@@ -4,9 +4,13 @@ import { CharacterSheet } from "./module/sheets/actor-sheet.mjs";
 import { L5RExplodingDie } from "./module/dice/l5r-die.mjs";
 import { L5RRollKeep } from "./module/dice/l5r-roll.mjs";
 import { registerSkillSeeding } from "./module/hooks/seed-default-skills.mjs";
+import { registerSystemSettings } from "./module/settings.mjs";
 
 Hooks.once("init", () => {
    console.log("L5R4EC | Initialisation du système Eternity Cycle");
+
+   // ---- Réglages système (MJ) ----
+   registerSystemSettings();
 
    // ---- Document classes custom ----
    CONFIG.Actor.documentClass = SystemActor;

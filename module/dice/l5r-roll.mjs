@@ -15,12 +15,13 @@ export class L5RRollKeep extends Roll {
    * @param {number} config.rolled      Nombre de dés à lancer (déjà normalisé, voir roll-keep-math.mjs).
    * @param {number} config.keep        Nombre de dés à garder (déjà normalisé).
    * @param {number} [config.flatBonus=0]     Bonus fixe ajouté au total (débordement au-delà de 10g10).
+   * @param {number} [config.woundPenalty=0]  Malus automatique lié au rang de blessure actuel (négatif ou 0).
    * @param {boolean} [config.explode=true]   Les dés explosent-ils sur `explodeOn` ?
    * @param {number} [config.explodeOn=10]    Valeur d'explosion (9 pour certaines techniques).
    * @param {boolean} [config.rerollOnes=false] Compétence spécialisée : relance simple des 1.
    * @returns {L5RRollKeep}
    */
-  static build({ rolled, keep, flatBonus = 0, explode = true, explodeOn = 10, rerollOnes = false }) {
+  static build({ rolled, keep, flatBonus = 0, woundPenalty = 0, explode = true, explodeOn = 10, rerollOnes = false }) {
     const terms = [];
     for (let i = 0; i < rolled; i++) {
       if (i > 0) terms.push(new foundry.dice.terms.OperatorTerm({ operator: "+" }));
@@ -30,6 +31,7 @@ export class L5RRollKeep extends Roll {
     const roll = this.fromTerms(terms);
     roll.keepCount = keep;
     roll.flatBonus = flatBonus;
+    roll.woundPenalty = woundPenalty;
     return roll;
   }
 
@@ -55,7 +57,7 @@ export class L5RRollKeep extends Roll {
     for (const die of this.keptDice) die.options.kept = true;
     for (const die of this.discardedDice) die.options.kept = false;
 
-    this.keptTotal = this.keptDice.reduce((sum, die) => sum + die.total, 0) + (this.flatBonus ?? 0);
+    this.keptTotal = this.keptDice.reduce((sum, die) => sum + die.total, 0) + (this.flatBonus ?? 0) + (this.woundPenalty ?? 0);
 
     this.keptDiceDisplay = this.keptDice.map((die) => this._dieDisplay(die));
     this.discardedDiceDisplay = this.discardedDice.map((die) => this._dieDisplay(die));

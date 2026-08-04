@@ -1,3 +1,6 @@
+import { computeWoundTrack } from "../rules/wound-track.mjs";
+import { getLethality } from "../settings.mjs";
+
 const { HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
 /**
@@ -68,9 +71,11 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
         rank: new NumberField({ required: true, integer: true, min: 0, initial: 1 })
       }),
 
+      // Réputation : entièrement calculée (voir SystemActor#_computeReputation),
+      // jamais éditée à la main.
       reputation: new SchemaField({
-        rank: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
-        points: new NumberField({ required: true, integer: false, initial: 0 })
+        rank: new NumberField({ required: true, integer: true, min: 0, initial: 1 }),
+        points: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
       }),
 
       // Souillure des Terres de l'Ombre : rang masqué par défaut (le joueur
@@ -99,5 +104,16 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
     r.water.rank = Math.min(t.per, t.str);
 
     this.xp.available = this.xp.total - this.xp.spent;
+
+    // Rang de blessure, malus associé et total max dérivés de l'Anneau de
+    // Terre et de la Létalité choisie par le MJ (réglage système).
+    const lethality = getLethality();
+    const track = computeWoundTrack(this.wounds.value, r.earth.rank, lethality);
+    this.wounds.max = track.max;
+    this.wounds.rankIndex = track.rankIndex;
+    this.wounds.rankKey = track.rankKey;
+    this.wounds.rankLabelKey = track.rankLabelKey;
+    this.wounds.penalty = track.penalty;
+    this.wounds.isOut = track.isOut;
   }
 }

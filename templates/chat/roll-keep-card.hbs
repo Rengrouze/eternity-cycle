@@ -39,6 +39,12 @@
     </div>
   {{/if}}
 
+  {{#if woundPenalty}}
+    <div class="text-xs text-red-500">
+      {{localize "L5R4EC.Chat.WoundPenalty"}} : {{woundPenalty}}
+    </div>
+  {{/if}}
+
   <div class="flex gap-3 text-[0.65rem] text-neutral-400 border-t border-black/10 pt-1">
     <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span>{{localize "L5R4EC.Chat.LegendExplode"}}</span>
     <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-500"></span>{{localize "L5R4EC.Chat.LegendOne"}}</span>

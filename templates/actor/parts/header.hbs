@@ -76,13 +76,13 @@
       {{/if}}
     </div>
 
-    <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
+    <div class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
       {{localize "L5R4EC.Header.Reputation"}}
-      <span class="flex items-center gap-1">
-        <input type="number" name="system.reputation.rank" value="{{system.reputation.rank}}" min="0" class="w-10 border rounded text-center" title="{{localize 'L5R4EC.Sheet.Rank'}}">
-        <input type="number" name="system.reputation.points" value="{{system.reputation.points}}" step="0.1" class="w-14 border rounded text-center" title="{{localize 'L5R4EC.Sheet.Points'}}">
+      <span class="flex items-center gap-1" title="{{localize 'L5R4EC.Header.ReputationHint'}}">
+        <span class="w-10 text-center font-bold">{{system.reputation.rank}}</span>
+        <span class="w-14 text-center text-neutral-400">({{system.reputation.points}})</span>
       </span>
-    </label>
+    </div>
 
     {{!-- Souillure : le MJ la voit et l'édite toujours ; le joueur ne la voit
          que si le MJ l'a explicitement révélée (system.taint.hidden = false),

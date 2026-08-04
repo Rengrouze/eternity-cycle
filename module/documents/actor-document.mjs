@@ -1,4 +1,5 @@
 import { basicRoll, skillRoll, performRoll } from "../dice/_module.mjs";
+import { computeReputationRank } from "../rules/reputation.mjs";
 
 /**
  * Actor custom pour le système.
@@ -105,7 +106,26 @@ export class SystemActor extends Actor {
   prepareDerivedData() {
     super.prepareDerivedData();
     if (this.type !== "character") return;
+    this._computeReputation();
     this._applyMasteryBonuses();
+  }
+
+  /**
+   * Réputation = (somme des rangs des 5 Anneaux) * 10 + somme des rangs de
+   * toutes les Compétences. Le rang de maîtrise en découle (voir
+   * rules/reputation.mjs). Entièrement calculé, jamais édité à la main -
+   * nécessite l'accès aux Items, donc vit ici plutôt que dans le Data Model
+   * (voir TUTORIEL-fiche-personnage.md sur la répartition Data Model / Actor).
+   */
+  _computeReputation() {
+    const s = this.system;
+    const ringSum = s.rings.air.rank + s.rings.earth.rank + s.rings.fire.rank + s.rings.water.rank + s.rings.void.rank;
+    const skillSum = this.items
+      .filter((i) => i.type === "skill")
+      .reduce((sum, i) => sum + i.system.rank, 0);
+
+    s.reputation.points = ringSum * 10 + skillSum;
+    s.reputation.rank = computeReputationRank(s.reputation.points);
   }
 
   /**
