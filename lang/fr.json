@@ -1,4 +1,9 @@
 {
+  "TYPES": {
+    "Actor": {
+      "character": "Personnage"
+    }
+  },
   "L5R4EC": {
     "Sheet": {
       "Character": "Fiche de personnage",
@@ -19,7 +24,8 @@
       "SkillInfo": "Résumé de la compétence",
       "NoDescription": "Pas de description.",
       "Category": "Catégorie",
-      "AddSkill": "Ajouter une compétence"
+      "AddSkill": "Ajouter une compétence",
+      "AddSubtype": "Ajouter un sous-type"
     },
     "Header": {
       "Rank": "Rang",
@@ -58,6 +64,8 @@
       "SkillNameHint": "ex : Connaissance",
       "SubtypeHint": "ex : Dragons (laisser vide si aucun)",
       "Create": "Créer",
+      "AddSubtypeTitle": "Ajouter un sous-type - {name}",
+      "AddSubtypeLabel": "Nom du sous-type pour \"{name}\"",
       "Specialization": "Spécialisation",
       "NoSpecialization": "Aucune"
     },

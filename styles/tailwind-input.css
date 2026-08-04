@@ -4,14 +4,16 @@
  * pour éviter d'injecter le Preflight (reset CSS) globalement sur toute
  * l'interface Foundry (sidebar, chat, fenêtres d'autres modules...).
  * Le plugin tailwindcss-scoped-preflight réinjecte ensuite un Preflight
- * limité au conteneur .l5r4ec uniquement.
+ * limité au CONTENU de la fenêtre (.window-content), pas à la fenêtre
+ * entière - ça exclut le header natif Foundry (icônes épingler/fermer)
+ * du reset, qui les rendait invisibles quand le scope couvrait tout .l5r4ec.
  */
 @import "tailwindcss/theme";
 @import "tailwindcss/utilities";
 
 @plugin "tailwindcss-scoped-preflight" {
    isolation-strategy: inside;
-   selector: .l5r4ec;
+   selector: .l5r4ec .window-content;
 }
 
 /* Où chercher les classes utilisées, en dehors de la détection auto */

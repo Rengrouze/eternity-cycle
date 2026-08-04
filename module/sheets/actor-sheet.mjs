@@ -45,6 +45,7 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollSkill: CharacterSheet.#onRollSkill,
       showSkillInfo: CharacterSheet.#onShowSkillInfo,
       addSkill: CharacterSheet.#onAddSkill,
+      addSubtype: CharacterSheet.#onAddSubtype,
       toggleTaintVisibility: CharacterSheet.#onToggleTaintVisibility
     }
   };
@@ -319,6 +320,74 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
         description: ""
       }
     }]);
+  }
+
+  /**
+   * Handler d'action pour le "+" sur une ligne/un groupe de compétence :
+   * ajoute directement un nouveau sous-type à CETTE compétence (même nom,
+   * même catégorie, même Trait par défaut - juste un sous-type différent),
+   * sans repasser par le formulaire complet "Ajouter une compétence".
+   * @this {CharacterSheet}
+   */
+  static async #onAddSubtype(event, target) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const item = this.actor.items.get(target.dataset.itemId);
+    if (!item) return;
+
+    const subtype = await CharacterSheet.#promptSubtype(item.name);
+    if (!subtype) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: item.name,
+      type: "skill",
+      system: {
+        category: item.system.category,
+        trait: item.system.trait,
+        subtype,
+        rank: 0,
+        isSchoolSkill: false,
+        specializations: "",
+        masteryBonuses: [],
+        description: item.system.description
+      }
+    }]);
+  }
+
+  /**
+   * Mini-modale à un seul champ : juste le nom du sous-type à ajouter.
+   * @param {string} skillName
+   * @returns {Promise<string|null>} le sous-type saisi, ou null si annulé/vide.
+   */
+  static async #promptSubtype(skillName) {
+    const content = `
+      <div class="flex flex-col gap-2 p-1 w-64">
+        <label class="flex flex-col gap-0.5 text-sm">
+          ${game.i18n.format("L5R4EC.Dialog.AddSubtypeLabel", { name: skillName })}
+          <input type="text" name="subtype" required autofocus class="border rounded px-1 py-0.5">
+        </label>
+      </div>`;
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.format("L5R4EC.Dialog.AddSubtypeTitle", { name: skillName }) },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "create",
+          label: game.i18n.localize("L5R4EC.Dialog.Create"),
+          icon: "fa-solid fa-plus",
+          default: true,
+          callback: (event, button) => button.form.elements.subtype.value.trim()
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel") return null;
+    return result || null;
   }
 
   /**

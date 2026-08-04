@@ -1,4 +1,5 @@
-<section class="tab {{tabs.skills.cssClass}} p-2 flex flex-col gap-2 overflow-y-auto" data-tab="{{tabs.skills.id}}" data-group="{{tabs.skills.group}}">
+<section class="tab {{tabs.skills.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.skills.id}}" data-group="{{tabs.skills.group}}">
+ <div class="flex flex-col gap-2">
 
   {{#each skillsByCategory}}
     <details open class="border rounded">
@@ -12,8 +13,13 @@
           {{#if this.isGroup}}
             {{!-- Compétence à sous-types (Connaissance, Spectacle...) : groupe dépliable --}}
             <details class="py-1">
-              <summary class="cursor-pointer select-none text-sm font-semibold py-0.5">
-                {{this.name}} <span class="text-xs text-neutral-400">({{this.entries.length}})</span>
+              <summary class="cursor-pointer select-none text-sm font-semibold py-0.5 flex items-center gap-2">
+                <span>{{this.name}} <span class="text-xs text-neutral-400">({{this.entries.length}})</span></span>
+                <button type="button" class="flex items-center justify-center w-5 h-5 rounded text-neutral-500 hover:text-l5r-accent"
+                        data-action="addSubtype" data-item-id="{{this.entries.[0].id}}"
+                        title="{{localize 'L5R4EC.Sheet.AddSubtype'}}">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
               </summary>
               <div class="flex flex-col gap-1 pl-4 pt-1">
                 {{#each this.entries}}
@@ -55,7 +61,7 @@
           {{else}}
             {{!-- Compétence simple --}}
             <div class="py-1">
-              <div class="grid grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.75rem] gap-2 items-center text-sm">
+              <div class="grid grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.5rem_1.75rem] gap-2 items-center text-sm">
                 <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.isSchoolSkill"
                        {{#if this.isSchoolSkill}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.SchoolSkill'}}">
 
@@ -69,6 +75,11 @@
 
                 <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
                        value="{{this.rank}}" min="0" class="border rounded text-center">
+
+                <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                        data-action="addSubtype" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.AddSubtype'}}">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
 
                 <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
                         data-action="showSkillInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
@@ -105,5 +116,5 @@
           class="self-start mt-1 text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
     <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSkill"}}
   </button>
-
+ </div>
 </section>
