@@ -25,6 +25,9 @@
       "Item": {
          "item": {
             "htmlFields": ["description"]
+         },
+         "skill": {
+            "htmlFields": ["description"]
          }
       }
    },

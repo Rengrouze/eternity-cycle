@@ -32,27 +32,39 @@ export class L5RExplodingDie extends foundry.dice.terms.Die {
 
     if (minimize) {
       roll.result = 1;
+      roll.chain = [1];
+      roll.discardedOne = null;
     } else if (maximize) {
       // Un plafond "théorique" n'a pas de sens avec une explosion infinie ;
       // on renvoie explodeOn comme simple repère d'affichage.
       roll.result = this.explodeOn;
+      roll.chain = [this.explodeOn];
+      roll.discardedOne = null;
     } else {
       let value = this.randomFace();
+      let discardedOne = null;
 
       // Spécialisation : un 1 est relancé une seule fois, la nouvelle
       // valeur remplace le 1 (ce n'est PAS un cumul comme l'explosion).
+      // On garde une trace du 1 remplacé pour l'affichage (grisé/barré).
       if (this.rerollOnes && value === 1) {
+        discardedOne = 1;
         value = this.randomFace();
       }
 
       // Explosion : tant que la face obtenue déclenche l'explosion, on
       // relance et on additionne - y compris les relances elles-mêmes.
+      const chain = [value];
       let total = value;
       while (this.explode && value >= this.explodeOn) {
         value = this.randomFace();
+        chain.push(value);
         total += value;
       }
+
       roll.result = total;
+      roll.chain = chain; // séquence des faces qui composent le total (>1 face = dé explosé)
+      roll.discardedOne = discardedOne; // le 1 initial remplacé par la relance, ou null
     }
 
     this.results.push(roll);

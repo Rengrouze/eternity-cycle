@@ -1,7 +1,109 @@
-<section class="tab {{tabs.skills.cssClass}} p-2" data-tab="{{tabs.skills.id}}" data-group="{{tabs.skills.group}}">
-  <p class="text-sm italic opacity-70">
-    {{localize "L5R4EC.Tabs.SkillsPlaceholder"}}
-  </p>
-  {{!-- À venir : boucle sur les Items de type "skill", voir TUTORIEL-fiche-personnage.md
-        section 1.B pour le pattern (Item sous-type + boucle {{#each}}). --}}
+<section class="tab {{tabs.skills.cssClass}} p-2 flex flex-col gap-2 overflow-y-auto" data-tab="{{tabs.skills.id}}" data-group="{{tabs.skills.group}}">
+
+  {{#each skillsByCategory}}
+    <details open class="border rounded">
+      <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+        {{localize this.labelKey}}
+      </summary>
+
+      <div class="flex flex-col divide-y divide-black/5 p-1">
+        {{#each this.skills}}
+
+          {{#if this.isGroup}}
+            {{!-- Compétence à sous-types (Connaissance, Spectacle...) : groupe dépliable --}}
+            <details class="py-1">
+              <summary class="cursor-pointer select-none text-sm font-semibold py-0.5">
+                {{this.name}} <span class="text-xs text-neutral-400">({{this.entries.length}})</span>
+              </summary>
+              <div class="flex flex-col gap-1 pl-4 pt-1">
+                {{#each this.entries}}
+                  <div class="grid grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.75rem] gap-2 items-center text-sm">
+                    <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.isSchoolSkill"
+                           {{#if this.isSchoolSkill}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.SchoolSkill'}}">
+
+                    <input type="text" data-item-id="{{this.id}}" data-item-field="system.subtype"
+                           value="{{this.subtype}}" placeholder="{{localize 'L5R4EC.Sheet.Subtype'}}"
+                           class="italic border rounded px-1 min-w-0">
+
+                    <select data-item-id="{{this.id}}" data-item-field="system.trait" class="border rounded text-xs px-1 py-0.5">
+                      {{#each this.traitOptions}}
+                        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+                      {{/each}}
+                    </select>
+
+                    <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
+                           value="{{this.rank}}" min="0" class="border rounded text-center">
+
+                    <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                            data-action="showSkillInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+                      <i class="fa-solid fa-circle-info"></i>
+                    </button>
+
+                    <button type="button"
+                            class="w-7 h-7 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
+                            data-action="rollSkill" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillRoll'}}">
+                      <i class="fa-solid fa-dice-d10 text-xs"></i>
+                    </button>
+                  </div>
+
+                  <input type="text" data-item-id="{{this.id}}" data-item-field="system.specializations"
+                         value="{{this.specializations}}" placeholder="{{localize 'L5R4EC.Sheet.Specializations'}}"
+                         class="text-xs border rounded px-1 ml-6 text-neutral-500">
+                {{/each}}
+              </div>
+            </details>
+          {{else}}
+            {{!-- Compétence simple --}}
+            <div class="py-1">
+              <div class="grid grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.75rem] gap-2 items-center text-sm">
+                <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.isSchoolSkill"
+                       {{#if this.isSchoolSkill}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.SchoolSkill'}}">
+
+                <span class="truncate" title="{{this.name}}">{{this.name}}</span>
+
+                <select data-item-id="{{this.id}}" data-item-field="system.trait" class="border rounded text-xs px-1 py-0.5">
+                  {{#each this.traitOptions}}
+                    <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+                  {{/each}}
+                </select>
+
+                <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
+                       value="{{this.rank}}" min="0" class="border rounded text-center">
+
+                <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                        data-action="showSkillInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+                  <i class="fa-solid fa-circle-info"></i>
+                </button>
+
+                <button type="button"
+                        class="w-7 h-7 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
+                        data-action="rollSkill" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillRoll'}}">
+                  <i class="fa-solid fa-dice-d10 text-xs"></i>
+                </button>
+              </div>
+
+              {{!-- Le sous-type ne s'affiche que s'il est déjà renseigné : pas besoin
+                   de champ vide inutile pour une compétence qui n'en a pas. --}}
+              {{#if this.subtype}}
+                <input type="text" data-item-id="{{this.id}}" data-item-field="system.subtype"
+                       value="{{this.subtype}}" placeholder="{{localize 'L5R4EC.Sheet.Subtype'}}"
+                       class="text-xs italic border rounded px-1 mt-0.5 ml-6 text-neutral-500">
+              {{/if}}
+
+              <input type="text" data-item-id="{{this.id}}" data-item-field="system.specializations"
+                     value="{{this.specializations}}" placeholder="{{localize 'L5R4EC.Sheet.Specializations'}}"
+                     class="text-xs border rounded px-1 mt-0.5 ml-6 text-neutral-500">
+            </div>
+          {{/if}}
+
+        {{/each}}
+      </div>
+    </details>
+  {{/each}}
+
+  <button type="button" data-action="addSkill"
+          class="self-start mt-1 text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+    <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSkill"}}
+  </button>
+
 </section>

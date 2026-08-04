@@ -1,8 +1,9 @@
 import { SystemActor, SystemItem } from "./module/documents/_module.mjs";
-import { CharacterDataModel, ItemDataModel } from "./module/data-models/_module.mjs";
+import { CharacterDataModel, ItemDataModel, SkillDataModel } from "./module/data-models/_module.mjs";
 import { CharacterSheet } from "./module/sheets/actor-sheet.mjs";
 import { L5RExplodingDie } from "./module/dice/l5r-die.mjs";
 import { L5RRollKeep } from "./module/dice/l5r-roll.mjs";
+import { registerSkillSeeding } from "./module/hooks/seed-default-skills.mjs";
 
 Hooks.once("init", () => {
    console.log("L5R4EC | Initialisation du système Eternity Cycle");
@@ -17,6 +18,7 @@ Hooks.once("init", () => {
    };
    CONFIG.Item.dataModels = {
       item: ItemDataModel,
+      skill: SkillDataModel,
    };
 
    // ---- Dés custom ----
@@ -31,4 +33,7 @@ Hooks.once("init", () => {
       makeDefault: true,
       label: "L5R4EC.Sheet.Character",
    });
+
+   // ---- Peuplement automatique des Compétences par défaut ----
+   registerSkillSeeding();
 });

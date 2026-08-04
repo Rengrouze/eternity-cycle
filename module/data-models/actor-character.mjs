@@ -25,9 +25,13 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
         earth: new SchemaField({ rank: new NumberField({ required: true, integer: true, min: 1, initial: 2 }) }),
         fire: new SchemaField({ rank: new NumberField({ required: true, integer: true, min: 1, initial: 2 }) }),
         water: new SchemaField({ rank: new NumberField({ required: true, integer: true, min: 1, initial: 2 }) }),
+        // Le Vide a un Rang (comme les autres Anneaux, utilisé pour les jets
+        // XgX) ET des Points de Vide : une réserve dépensable, distincte du
+        // rang, qui se recharge en jeu (mécanique différente, pas un simple
+        // "score").
         void: new SchemaField({
           rank: new NumberField({ required: true, integer: true, min: 0, initial: 2 }),
-          value: new NumberField({ required: true, integer: true, min: 0, initial: 2 })
+          points: new NumberField({ required: true, integer: true, min: 0, initial: 2 })
         })
       }),
 

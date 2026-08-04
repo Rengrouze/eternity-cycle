@@ -1,0 +1,48 @@
+<div class="l5r4ec chat-card flex flex-col gap-2 p-1">
+
+  <header class="flex justify-between items-center">
+    <strong class="font-l5r-display">{{flavor}}</strong>
+    <span class="text-xl font-bold text-l5r-accent">{{keptTotal}}</span>
+  </header>
+
+  <div class="flex flex-wrap gap-1">
+    {{#each keptDice}}
+      <span class="relative inline-flex items-center justify-center min-w-[1.9rem] h-8 px-1 rounded border text-sm font-bold
+        {{#if this.exploded}}
+          border-green-600 bg-green-100 text-green-800
+        {{else if this.isFinalOne}}
+          border-red-600 bg-red-100 text-red-700
+        {{else}}
+          border-black/20 bg-white text-black
+        {{/if}}">
+        {{#if this.discardedOne}}
+          <span class="absolute -top-2 -left-1 text-[0.6rem] leading-none px-1 rounded-full bg-neutral-200 text-neutral-400 line-through">1</span>
+        {{/if}}
+        {{this.total}}
+      </span>
+    {{/each}}
+  </div>
+
+  {{#if discardedDice.length}}
+    <div class="flex flex-wrap gap-1 opacity-40">
+      {{#each discardedDice}}
+        <span class="inline-flex items-center justify-center min-w-[1.9rem] h-7 px-1 rounded border border-black/10 bg-black/5 text-xs">
+          {{this.total}}
+        </span>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if flatBonus}}
+    <div class="text-xs text-neutral-500">
+      {{localize "L5R4EC.Chat.FlatBonus"}} : +{{flatBonus}}
+    </div>
+  {{/if}}
+
+  <div class="flex gap-3 text-[0.65rem] text-neutral-400 border-t border-black/10 pt-1">
+    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span>{{localize "L5R4EC.Chat.LegendExplode"}}</span>
+    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-500"></span>{{localize "L5R4EC.Chat.LegendOne"}}</span>
+    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-neutral-300"></span>{{localize "L5R4EC.Chat.LegendReroll"}}</span>
+  </div>
+
+</div>

@@ -1,8 +1,10 @@
 import { normalizeRollKeep } from "./roll-keep-math.mjs";
 
 /**
- * Jet de Trait ou d'Anneau : XgX (X = rang du Trait/Anneau), explose toujours.
- * Utilisable indifféremment pour un Trait ou un Anneau, la mécanique est identique.
+ * Jet de Trait ou d'Anneau : XgX pur (X = rang du Trait/Anneau), sans plafond
+ * ni conversion de débordement (contrairement aux Compétences) - un Trait à
+ * 20 fait bien un 20g20. Explose toujours. Utilisable indifféremment pour un
+ * Trait ou un Anneau, la mécanique est identique.
  *
  * @param {object} params
  * @param {number} params.rank        Rang du Trait ou de l'Anneau utilisé.
@@ -11,8 +13,14 @@ import { normalizeRollKeep } from "./roll-keep-math.mjs";
  * @returns {{rolled: number, keep: number, flatBonus: number, explode: boolean, explodeOn: number, rerollOnes: boolean}}
  */
 export function basicRoll({ rank, rollBonus = 0, keepBonus = 0 }) {
-  const { rolled, keep, flatBonus } = normalizeRollKeep(rank + rollBonus, rank + keepBonus);
-  return { rolled, keep, flatBonus, explode: true, explodeOn: 10, rerollOnes: false };
+  return {
+    rolled: rank + rollBonus,
+    keep: rank + keepBonus,
+    flatBonus: 0,
+    explode: true,
+    explodeOn: 10,
+    rerollOnes: false
+  };
 }
 
 /**

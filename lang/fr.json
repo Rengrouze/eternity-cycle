@@ -7,8 +7,19 @@
       "Honor": "Honneur",
       "Rank": "Rang",
       "Value": "Valeur",
+      "VoidPoints": "Points de Vide",
       "Points": "Points",
-      "TraitRoll": "Jet de Trait"
+      "TraitRoll": "Jet de Trait",
+      "RingRoll": "Jet d'Anneau",
+      "SkillRoll": "Jet de Compétence",
+      "Trait": "Trait",
+      "SchoolSkill": "Compétence d'école",
+      "Subtype": "Sous-type",
+      "Specializations": "Spécialisations (séparées par des virgules)",
+      "SkillInfo": "Résumé de la compétence",
+      "NoDescription": "Pas de description.",
+      "Category": "Catégorie",
+      "AddSkill": "Ajouter une compétence"
     },
     "Header": {
       "Rank": "Rang",
@@ -27,15 +38,34 @@
       "RingsAndTraits": "Anneaux",
       "Skills": "Compétences",
       "Combat": "Combat",
-      "Bio": "Historique",
-      "SkillsPlaceholder": "Les compétences seront ajoutées ici (voir le tuto sur les Items)."
+      "Bio": "Historique"
+    },
+    "SkillCategory": {
+      "noble": "Compétences Nobles",
+      "bugei": "Compétences de Bugei",
+      "merchant": "Compétences de Marchand",
+      "low": "Compétences Dégradantes"
     },
     "Dialog": {
       "RollBonusTitle": "Bonus de jet",
       "RollBonus": "Dés bonus (Roll)",
       "KeepBonus": "Garde bonus (Keep)",
       "Roll": "Lancer",
-      "Cancel": "Annuler"
+      "Cancel": "Annuler",
+      "Close": "Fermer",
+      "AddSkillTitle": "Ajouter une compétence",
+      "SkillName": "Nom de la compétence",
+      "SkillNameHint": "ex : Connaissance",
+      "SubtypeHint": "ex : Dragons (laisser vide si aucun)",
+      "Create": "Créer",
+      "Specialization": "Spécialisation",
+      "NoSpecialization": "Aucune"
+    },
+    "Chat": {
+      "FlatBonus": "Bonus fixe",
+      "LegendExplode": "Dé explosé",
+      "LegendOne": "1 final",
+      "LegendReroll": "1 relancé"
     },
     "Ring": {
       "Air": "Air",
@@ -50,7 +80,7 @@
       "Strength": "Force",
       "Perception": "Perception",
       "Reflexes": "Réflexes",
-      "Awareness": "Vigilance",
+      "Awareness": "Intuition",
       "Agility": "Agilité",
       "Intelligence": "Intelligence"
     },

@@ -15,9 +15,22 @@ export async function performRoll(actor, config, flavor) {
   const roll = L5RRollKeep.build(config);
   await roll.evaluate();
 
-  await roll.toMessage({
+  const content = await foundry.applications.handlebars.renderTemplate(
+    "systems/l5r4ec/templates/chat/roll-keep-card.hbs",
+    {
+      flavor,
+      keptTotal: roll.keptTotal,
+      flatBonus: roll.flatBonus,
+      keptDice: roll.keptDiceDisplay,
+      discardedDice: roll.discardedDiceDisplay
+    }
+  );
+
+  await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ actor }),
-    flavor
+    rolls: [roll], // garde le Roll attaché : c'est ce que regarde Dice So Nice pour animer
+    content,
+    sound: CONFIG.sounds.dice
   });
 
   return roll;

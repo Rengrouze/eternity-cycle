@@ -4,3 +4,4 @@
 
 export { CharacterDataModel } from "./actor-character.mjs";
 export { ItemDataModel } from "./item-base.mjs";
+export { SkillDataModel } from "./item-skill.mjs";

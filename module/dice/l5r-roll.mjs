@@ -42,7 +42,8 @@ export class L5RRollKeep extends Roll {
 
   /**
    * Trie les dés par résultat décroissant, sépare gardés/écartés, et calcule
-   * le total final (somme des gardés + bonus fixe).
+   * le total final (somme des gardés + bonus fixe). Calcule aussi une liste
+   * d'objets d'affichage (couleurs) prête à consommer par le template de chat.
    */
   _computeKeep() {
     const dice = this.terms.filter((t) => t instanceof L5RExplodingDie);
@@ -51,11 +52,35 @@ export class L5RRollKeep extends Roll {
     this.keptDice = sorted.slice(0, this.keepCount ?? dice.length);
     this.discardedDice = sorted.slice(this.keepCount ?? dice.length);
 
-    // Marque chaque dé pour un futur template de chat custom (surligner
-    // les gardés vs écartés). Purement informatif, n'affecte pas le calcul.
     for (const die of this.keptDice) die.options.kept = true;
     for (const die of this.discardedDice) die.options.kept = false;
 
     this.keptTotal = this.keptDice.reduce((sum, die) => sum + die.total, 0) + (this.flatBonus ?? 0);
+
+    this.keptDiceDisplay = this.keptDice.map((die) => this._dieDisplay(die));
+    this.discardedDiceDisplay = this.discardedDice.map((die) => this._dieDisplay(die));
+  }
+
+  /**
+   * Construit les infos d'affichage d'un dé pour le template de chat :
+   * - exploded: le dé a explosé au moins une fois (chaîne > 1 face) -> vert.
+   * - isFinalOne: la dernière face de la chaîne vaut 1, donc reste "un 1
+   *   final non relancé" -> rouge (que ce soit son unique face, ou la face
+   *   obtenue après une relance de spécialisation qui retombe sur 1).
+   * - discardedOne: le 1 initial remplacé par la relance de spécialisation,
+   *   affiché grisé/barré à côté du résultat final.
+   * @param {L5RExplodingDie} die
+   */
+  _dieDisplay(die) {
+    const r = die.results[0] ?? {};
+    const chain = r.chain ?? [r.result];
+    const finalFace = chain[chain.length - 1];
+
+    return {
+      total: die.total,
+      exploded: chain.length > 1,
+      isFinalOne: finalFace === 1,
+      discardedOne: r.discardedOne ?? null
+    };
   }
 }

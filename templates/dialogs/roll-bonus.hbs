@@ -7,4 +7,15 @@
     {{localize "L5R4EC.Dialog.KeepBonus"}}
     <input type="number" name="keepBonus" value="0" min="0" class="w-16 border rounded text-center">
   </label>
+  {{#if specializations.length}}
+    <label class="flex justify-between items-center gap-2">
+      {{localize "L5R4EC.Dialog.Specialization"}}
+      <select name="specialization" class="border rounded px-1 py-0.5">
+        <option value="">{{localize "L5R4EC.Dialog.NoSpecialization"}}</option>
+        {{#each specializations}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </label>
+  {{/if}}
 </div>
