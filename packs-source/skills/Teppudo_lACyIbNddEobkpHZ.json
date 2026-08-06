@@ -1,0 +1,39 @@
+{
+  "_id": "lACyIbNddEobkpHZ",
+  "_key": "!items!lACyIbNddEobkpHZ",
+  "name": "Teppudo",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "int",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "Charger une arme à feu prend une Action Complexe de moins."
+      }
+    ],
+    "description": "Maniement des armes à feu."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

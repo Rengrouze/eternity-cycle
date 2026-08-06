@@ -1,0 +1,39 @@
+{
+  "_id": "tOTPoGYHCVv3t3cQ",
+  "_key": "!items!tOTPoGYHCVv3t3cQ",
+  "name": "Passe-Passe",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "low",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "L'emphase Dissimulation permet de cacher des armes de petite taille sur soi."
+      }
+    ],
+    "description": "Vol à la tire, crochetage, bref tout ce qui demande des doigts de fée."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

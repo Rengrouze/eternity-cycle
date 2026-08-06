@@ -1,0 +1,39 @@
+{
+  "_id": "F4ySzbOrS0FaIL0q",
+  "_key": "!items!F4ySzbOrS0FaIL0q",
+  "name": "Art de la Magie",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "int",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "+1k0 sur les jets d'invocation (Spell Casting)."
+      }
+    ],
+    "description": "L'art de converser avec les Kami."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

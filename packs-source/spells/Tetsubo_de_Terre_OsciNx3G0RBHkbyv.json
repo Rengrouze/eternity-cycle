@@ -1,0 +1,34 @@
+{
+  "_id": "OsciNx3G0RBHkbyv",
+  "_key": "!items!OsciNx3G0RBHkbyv",
+  "name": "Tetsubo de Terre",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 1,
+    "keywords": "Artisanat, Jade",
+    "range": "Personnelle ou 6 m",
+    "areaOfEffect": "Une arme créée",
+    "duration": "5 minutes",
+    "raises": "Dégâts (+1k0), Durée (+5 minutes), Portée (+1,5 m)",
+    "description": "Vous invoquez un tetsubo de terre pure, hérissé de pierres. L'arme prend par défaut la forme d'un tetsubo, mais une Augmentation permet de choisir n'importe quelle autre arme lourde. Le tetsubo a un DR de 2k2. En le maniant, vous pouvez utiliser votre Rang d'École à la place de votre compétence Armes Lourdes. Si vous possédez déjà cette compétence, le tetsubo confère une Relance Gratuite pour la manœuvre de Renversement (ce bonus ne s'applique pas si vous confiez le tetsubo à quelqu'un d'autre). Le tetsubo disparaît s'il quitte votre main. Vous pouvez aussi le faire apparaître dans les mains d'un allié à moins de 6 m ; celui-ci est alors considéré comme le lanceur pour les besoins du sort, mais ne gagne pas la Relance Gratuite."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "9XvweecEjbggqN9u",
+  "_key": "!items!9XvweecEjbggqN9u",
+  "name": "Parangu",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kenjutsu",
+    "damageRolled": 2,
+    "damageKept": 2,
+    "keywords": "Moyen, Paysan",
+    "specialRules": "Se brise si elle inflige plus de 30 Blessures en une seule attaque.",
+    "price": "10 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Essentiellement une machette : fine lame d'acier non plié utilisée pour dégager la végétation. Populaire à bord des navires de la Mante pour couper cordages et tissus sans risquer une vraie lame.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

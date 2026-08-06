@@ -1,0 +1,31 @@
+<div class="flex flex-col gap-2 p-1 w-72">
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.ItemName"}}
+    <input type="text" name="name" required autofocus class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.ArmorNameHint'}}">
+  </label>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.ArmorType"}}
+    <input type="text" name="armorType" class="border rounded px-1 py-0.5">
+  </label>
+
+  <div class="flex gap-2">
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.TnBonus"}}
+      <input type="number" name="tnBonus" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.Reduction"}}
+      <input type="number" name="reduction" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+  </div>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.Quality"}}
+    <select name="quality" class="border rounded px-1 py-0.5">
+      {{#each qualityOptions}}
+        <option value="{{this.key}}">{{localize this.labelKey}}</option>
+      {{/each}}
+    </select>
+  </label>
+</div>

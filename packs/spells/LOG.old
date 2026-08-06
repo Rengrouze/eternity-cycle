@@ -1,0 +1,5 @@
+2026/08/06-09:30:50.723 4af8 Delete type=3 #1
+2026/08/06-09:30:50.737 402c Level-0 table #5: started
+2026/08/06-09:30:50.740 402c Level-0 table #5: 28366 bytes OK
+2026/08/06-09:30:50.747 402c Delete type=0 #3
+2026/08/06-09:30:50.748 402c Manual compaction at level-0 from '!items!1oUnHPISAUnJExN4' @ 72057594037927935 : 1 .. '!items!y4DtyYMWa8zU5A27' @ 0 : 0; will stop at (end)

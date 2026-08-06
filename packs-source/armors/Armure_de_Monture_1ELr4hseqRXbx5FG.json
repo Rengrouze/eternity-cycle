@@ -1,0 +1,35 @@
+{
+  "_id": "1ELr4hseqRXbx5FG",
+  "_key": "!items!1ELr4hseqRXbx5FG",
+  "name": "Armure de Monture",
+  "type": "armor",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "armorType": "Monture",
+    "tnBonus": 4,
+    "reduction": 4,
+    "specialRules": "Considérée comme une armure lourde pour tout effet mécanique spécifiant un type d'armure. +12 au TN au lieu de +4 tant que le porteur est à cheval. Porter cette armure augmente de 5 le TN des jets d'Agilité et de Réflexes, sauf à cheval.",
+    "price": "55 koku",
+    "equipped": false,
+    "description": "Version modifiée de l'armure légère, conçue pour les cavaliers : les plaques sont réorientées pour dévier les coups des troupes à pied.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

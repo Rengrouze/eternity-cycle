@@ -1,0 +1,39 @@
+{
+  "_id": "gsumyy4cctfLkqMs",
+  "_key": "!items!gsumyy4cctfLkqMs",
+  "name": "Charge de Démolition",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "",
+    "damageRolled": 9,
+    "damageKept": 6,
+    "keywords": "Ninja, Grand",
+    "specialRules": "Dégâts de type poudre à canon : ignorent la Réduction sur les cibles vivantes, et ignorent 20 points de Réduction sur les cibles inanimées (bâtiments, châteaux...). Dégâts en zone : 9k6 dans un rayon de 3 m (10 pieds), 7k5 jusqu'à 9 m (30 pieds), 4k3 jusqu'à 15 m (50 pieds). Fabrication : Artisanat (Explosifs) / Intelligence à TN 30, nécessite du poivre gaijin ; un échec provoque une explosion infligeant les dégâts normaux de la charge. Mise en place : Ingénierie (Siège) / Intelligence à TN 30, ou Artisanat (Explosifs) / Intelligence à TN 20 - quinze minutes par charge ; rater le jet de 15 points ou plus provoque une détonation immédiate.",
+    "price": "Fabriqué (voir Artisanat : Explosifs)",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Utilisée pour détruire ponts ou bâtiments, ouvrir une brèche dans un mur ou un château, ou plus rarement posée en mine sur un champ de bataille. Doit être détonée en y introduisant une flamme (flèche enflammée, mèche, mécanisme).",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

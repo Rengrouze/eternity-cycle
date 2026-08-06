@@ -1,0 +1,47 @@
+{
+  "_id": "9wZlfxEwiijel7xT",
+  "_key": "!items!9wZlfxEwiijel7xT",
+  "name": "Contrefaçon",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "low",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "+1k0 au résultat du jet de Contrefaçon pour fixer le TN du jet d'Enquête servant à la détecter."
+      },
+      {
+        "rankRequired": 5,
+        "description": "+1k0 sur tout jet visant à détecter un faux fabriqué par quelqu'un d'autre."
+      },
+      {
+        "rankRequired": 7,
+        "description": "+0k1 supplémentaire (+1k1 au total) au résultat du jet de Contrefaçon pour fixer le TN de détection."
+      }
+    ],
+    "description": "Falsifier des documents ou objets."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

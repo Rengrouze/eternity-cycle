@@ -1,0 +1,39 @@
+{
+  "_id": "FQYyqXDl1x3E7Tnl",
+  "_key": "!items!FQYyqXDl1x3E7Tnl",
+  "name": "Calligraphie",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "int",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "+10 pour tenter de casser un code ou un chiffre."
+      }
+    ],
+    "description": "Le dessin, rédiger des messages secrets."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

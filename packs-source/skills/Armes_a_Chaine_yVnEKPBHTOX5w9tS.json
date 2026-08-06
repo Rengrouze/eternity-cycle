@@ -1,0 +1,47 @@
+{
+  "_id": "yVnEKPBHTOX5w9tS",
+  "_key": "!items!yVnEKPBHTOX5w9tS",
+  "name": "Armes à Chaîne",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Une arme à chaîne peut être utilisée pour initier un corps-à-corps (Grapple)."
+      },
+      {
+        "rankRequired": 5,
+        "description": "+1k0 sur les jets Contestés contre un adversaire entravé ou saisi (Grapple) par l'arme."
+      },
+      {
+        "rankRequired": 7,
+        "description": "L'usage d'une arme à chaîne confère une Relance Gratuite pour une manœuvre de Désarmement ou de Renversement."
+      }
+    ],
+    "description": "Maniement des armes à chaîne."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "OxHVtdbeDUfu3XCe",
+  "_key": "!items!OxHVtdbeDUfu3XCe",
+  "name": "Lances",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Lors du premier Tour d'une Escarmouche, ignore 3 points de Réduction sur les attaques de mêlée effectuées à la lance."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Les attaques à distance effectuées à la lance voient leur portée maximale augmentée de 1,5 m (5 pieds)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Une lance peut être dégainée en Action Libre."
+      }
+    ],
+    "description": "Maniement des lances."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

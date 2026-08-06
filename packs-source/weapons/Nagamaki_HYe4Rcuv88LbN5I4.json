@@ -1,0 +1,39 @@
+{
+  "_id": "HYe4Rcuv88LbN5I4",
+  "_key": "!items!HYe4Rcuv88LbN5I4",
+  "name": "Nagamaki",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes d'Hast",
+    "damageRolled": 2,
+    "damageKept": 3,
+    "keywords": "Grand",
+    "specialRules": "",
+    "price": "8 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Essentiellement une lame d'épée (de facture moins fine que celle du katana) fixée à une courte perche de bois - une arme plus légère, maniée à une main, combinant les vertus de l'épée et le levier d'une arme d'hast.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

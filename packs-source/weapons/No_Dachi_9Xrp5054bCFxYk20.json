@@ -1,0 +1,39 @@
+{
+  "_id": "9Xrp5054bCFxYk20",
+  "_key": "!items!9Xrp5054bCFxYk20",
+  "name": "No-Dachi",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kenjutsu",
+    "damageRolled": 3,
+    "damageKept": 3,
+    "keywords": "Grand",
+    "specialRules": "",
+    "price": "30 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Sans doute la plus grande arme couramment maniée par les samouraïs, semblable au katana mais longue de 1,50 à 2,10 m. Conçue à l'origine comme arme anti-cavalerie, redoutable dans les mains d'un bushi entraîné.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

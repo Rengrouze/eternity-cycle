@@ -1,0 +1,39 @@
+{
+  "_id": "SqyjCxBO1mcvdBhZ",
+  "_key": "!items!SqyjCxBO1mcvdBhZ",
+  "name": "Machi-Kanshisha",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Bâton",
+    "damageRolled": 0,
+    "damageKept": 2,
+    "keywords": "Moyen",
+    "specialRules": "Double le bonus au TN d'Armure de l'adversaire.",
+    "price": "20 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Arme très inhabituelle : une pipe à fumer métallique, tube creux d'environ un mètre, pouvant aussi assommer d'un coup bien placé. Vue presque exclusivement entre les mains de la famille Kaeru.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

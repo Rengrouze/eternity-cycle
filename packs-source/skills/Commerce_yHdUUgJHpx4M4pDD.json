@@ -1,0 +1,39 @@
+{
+  "_id": "yHdUUgJHpx4M4pDD",
+  "_key": "!items!yHdUUgJHpx4M4pDD",
+  "name": "Commerce",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "merchant",
+    "isSchoolSkill": false,
+    "trait": "int",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "Peut augmenter ou diminuer le prix d'un objet acheté ou vendu de 20% au maximum."
+      }
+    ],
+    "description": "L'art de négocier, mais aussi la connaissance des prix du marché."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

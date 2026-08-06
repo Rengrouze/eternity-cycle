@@ -1,0 +1,39 @@
+{
+  "_id": "Ds1B14zLaFm67WQx",
+  "_key": "!items!Ds1B14zLaFm67WQx",
+  "name": "Bo",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Bâton",
+    "damageRolled": 1,
+    "damageKept": 2,
+    "keywords": "Grand",
+    "specialRules": "Double le bonus au TN d'Armure de l'adversaire.",
+    "price": "2 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "L'arme la plus simple et la plus courante de l'Empire : un bâton de bois de 1,50 à 1,80 m, utilisé comme bâton de marche par les voyageurs et les moines, et faisant office d'arme pour les plus téméraires.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

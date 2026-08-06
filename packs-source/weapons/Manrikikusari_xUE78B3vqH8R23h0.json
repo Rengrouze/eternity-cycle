@@ -1,0 +1,39 @@
+{
+  "_id": "xUE78B3vqH8R23h0",
+  "_key": "!items!xUE78B3vqH8R23h0",
+  "name": "Manrikikusari",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes à Chaîne",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Grand",
+    "specialRules": "",
+    "price": "3 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Cette arme peu coûteuse est une chaîne lestée aux deux extrémités. Traditionnellement des poids cylindriques de petite à moyenne taille, bien qu'il soit devenu récemment plus courant dans les terres du Crabe d'utiliser de grands poids sphériques.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

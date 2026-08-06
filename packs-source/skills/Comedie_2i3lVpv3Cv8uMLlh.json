@@ -1,0 +1,47 @@
+{
+  "_id": "2i3lVpv3Cv8uMLlh",
+  "_key": "!items!2i3lVpv3Cv8uMLlh",
+  "name": "Comédie",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "awa",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Le TN pour créer un déguisement est réduit de 5."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Le TN pour créer un déguisement est réduit de 10 (total)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Le TN pour créer un déguisement est réduit de 15 (total)."
+      }
+    ],
+    "description": "L'art de se déguiser."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

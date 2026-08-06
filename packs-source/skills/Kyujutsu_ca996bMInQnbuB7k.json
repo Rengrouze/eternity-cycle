@@ -1,0 +1,47 @@
+{
+  "_id": "ca996bMInQnbuB7k",
+  "_key": "!items!ca996bMInQnbuB7k",
+  "name": "Kyujutsu",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Encorder un arc devient une Action Simple (au lieu de Complexe)."
+      },
+      {
+        "rankRequired": 5,
+        "description": "La portée maximale de tout arc est augmentée de 50%."
+      },
+      {
+        "rankRequired": 7,
+        "description": "En utilisant n'importe quel arc, la Force de l'arc est augmentée de 1."
+      }
+    ],
+    "description": "Les arcs, ou lancer des choses avec précision."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

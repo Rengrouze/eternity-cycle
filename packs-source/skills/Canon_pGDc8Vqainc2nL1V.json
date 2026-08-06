@@ -1,0 +1,39 @@
+{
+  "_id": "pGDc8Vqainc2nL1V",
+  "_key": "!items!pGDc8Vqainc2nL1V",
+  "name": "Canon",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "per",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "Le canon peut être opéré avec un demi-équipage (2 hommes au lieu de 4)."
+      }
+    ],
+    "description": "Viser et opérer une pièce d'artillerie (canon de siège)."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

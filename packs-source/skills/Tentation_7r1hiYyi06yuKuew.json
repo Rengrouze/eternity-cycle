@@ -1,0 +1,39 @@
+{
+  "_id": "7r1hiYyi06yuKuew",
+  "_key": "!items!7r1hiYyi06yuKuew",
+  "name": "Tentation",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "low",
+    "isSchoolSkill": false,
+    "trait": "awa",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "+5 sur tous les jets Contestés utilisant Tentation."
+      }
+    ],
+    "description": "La drague, convaincre quelqu'un par ses désirs (pas forcément sexuels)."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

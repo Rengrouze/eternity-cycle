@@ -1,5 +1,6 @@
 import { computeWoundTrack } from "../rules/wound-track.mjs";
 import { getLethality } from "../settings.mjs";
+import { AFFINITY_CHOICES } from "../rules/spellcasting.mjs";
 
 const { HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
@@ -41,6 +42,46 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
       wounds: new SchemaField({
         value: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
         max: new NumberField({ required: true, integer: true, min: 0, initial: 10 })
+      }),
+
+      // TN d'Armure = 5 + (Réflexes x 5) + bonus de l'armure équipée + ce
+      // bonus "autre" édité à la main (postures, capacités de maîtrise non
+      // automatisées type Défense rang 5, Éventail de Guerre...). Le détail
+      // (base/reflexesBonus/armorBonus/total) est calculé dans
+      // SystemActor#_computeArmorTN, car il nécessite l'Item Armure équipé -
+      // seul `otherBonus` est un vrai champ de schema, éditable par le joueur.
+      armorTn: new SchemaField({
+        otherBonus: new NumberField({ required: true, integer: true, initial: 0 })
+      }),
+
+      // Magie (Shugenja) : le rang d'école définit le rang de sort max
+      // apprenable (avant bonus d'affinité), et sert de "rang de compétence"
+      // dans le jet de lancer de sort (voir SystemActor#rollSpell). Une
+      // affinité/déficience par Anneau (y compris Vide, au cas où) ajuste ce
+      // jet et le rang max apprenable - voir module/rules/spellcasting.mjs.
+      shugenja: new SchemaField({
+        schoolRank: new NumberField({ required: true, integer: true, min: 0, max: 6, initial: 0 }),
+        affinities: new SchemaField({
+          air: new StringField({ required: true, choices: AFFINITY_CHOICES, initial: "none" }),
+          earth: new StringField({ required: true, choices: AFFINITY_CHOICES, initial: "none" }),
+          fire: new StringField({ required: true, choices: AFFINITY_CHOICES, initial: "none" }),
+          water: new StringField({ required: true, choices: AFFINITY_CHOICES, initial: "none" }),
+          void: new StringField({ required: true, choices: AFFINITY_CHOICES, initial: "none" })
+        })
+      }),
+
+      // Emplacements de sorts : un pool par Anneau, calé sur le rang de
+      // l'Anneau (voir prepareDerivedData pour max/available - dérivés, pas
+      // dans le schema). Seul `spent` est un vrai champ, décrémenté/remis à
+      // zéro manuellement (repos long) pour l'instant - pas d'automatisation
+      // du repos. Le pool de Vide sert pour les sorts de Vide ET en bonus
+      // pour n'importe quel autre Anneau (voir SystemActor#_consumeSpellSlot).
+      spellSlots: new SchemaField({
+        air: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) }),
+        earth: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) }),
+        fire: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) }),
+        water: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) }),
+        void: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) })
       }),
 
       // Rang d'Initié/École (Insight Rank au sens large, affiché dans le header).
@@ -115,5 +156,13 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
     this.wounds.rankLabelKey = track.rankLabelKey;
     this.wounds.penalty = track.penalty;
     this.wounds.isOut = track.isOut;
+
+    // Emplacements de sorts max = rang de l'Anneau correspondant (voir
+    // l'en-tête du champ spellSlots). r.void.rank existe déjà (Anneau de Vide).
+    for (const ring of ["air", "earth", "fire", "water", "void"]) {
+      const pool = this.spellSlots[ring];
+      pool.max = r[ring].rank;
+      pool.available = Math.max(0, pool.max - pool.spent);
+    }
   }
 }

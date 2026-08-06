@@ -1,0 +1,39 @@
+{
+  "_id": "awydbEqcU5Uo8a1s",
+  "_key": "!items!awydbEqcU5Uo8a1s",
+  "name": "Nunchaku",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Bâton",
+    "damageRolled": 1,
+    "damageKept": 2,
+    "keywords": "Paysan, Petit",
+    "specialRules": "Double le bonus au TN d'Armure de l'adversaire.",
+    "price": "3 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Outil de battage adapté : deux manches de bois d'environ 30 cm reliés par une chaîne de 30 cm. Piètre arme dans des mains inexpérimentées, redoutable entre des mains entraînées.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

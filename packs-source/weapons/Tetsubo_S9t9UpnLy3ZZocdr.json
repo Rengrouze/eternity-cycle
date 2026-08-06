@@ -1,0 +1,39 @@
+{
+  "_id": "S9t9UpnLy3ZZocdr",
+  "_key": "!items!S9t9UpnLy3ZZocdr",
+  "name": "Tetsubo",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes Lourdes",
+    "damageRolled": 3,
+    "damageKept": 3,
+    "keywords": "Grand",
+    "specialRules": "",
+    "price": "20 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Arme emblématique de nombreux grands héros du Clan du Crabe. Essentiellement une masse métallique cloutée d'acier (parfois de jade), sans égale pour briser armures et cibles endurcies.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

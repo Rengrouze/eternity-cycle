@@ -1,0 +1,39 @@
+{
+  "_id": "i1WNXkrq53gGvuih",
+  "_key": "!items!i1WNXkrq53gGvuih",
+  "name": "Sodegarami",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes d'Hast",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Grand",
+    "specialRules": "Peut être utilisée pour initier et maintenir un corps-à-corps (grapple).",
+    "price": "6 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Là où le sasumata capture en immobilisant, le sodegarami vise à entraver en accrochant les vêtements de la cible : une perche de bois terminée par une tête métallique en T couverte de crochets et de barbes.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

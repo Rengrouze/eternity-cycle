@@ -1,0 +1,34 @@
+{
+  "_id": "I67FfkSyyzAiaXCp",
+  "_key": "!items!I67FfkSyyzAiaXCp",
+  "name": "La Merci du Loup",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 créature cible",
+    "duration": "10 tours",
+    "raises": "Portée (+3 m), Cibles (+1)",
+    "description": "Ce sort existe à Rokugan depuis des siècles, mais est surtout connu pour l'usage extensif qu'en a fait Toturi Sezaru, \"le Loup\", lors de ses chasses aux Sangs-Sorciers. Il fait appel à la puissance de la Terre pour affliger la cible, alourdissant son corps et entravant ses muscles, la laissant faible, tremblante et vulnérable. L'Anneau de Terre de la cible est réduit d'1 rang, et ses rangs de blessure sont réduits en conséquence pour la durée du sort (ce qui peut potentiellement la tuer immédiatement si elle a déjà subi des Blessures). De plus, son Anneau de Force est également réduit de 1 pour la même durée. Si la cible possède au moins un rang complet de Souillure des Terres de l'Ombre, les esprits de la Terre, emplis de courroux, la punissent plus sévèrement en réduisant son Anneau de Terre de 2 rangs (minimum 1)."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

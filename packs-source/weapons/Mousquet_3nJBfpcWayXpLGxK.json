@@ -1,0 +1,39 @@
+{
+  "_id": "3nJBfpcWayXpLGxK",
+  "_key": "!items!3nJBfpcWayXpLGxK",
+  "name": "Mousquet",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Teppudo",
+    "damageRolled": 4,
+    "damageKept": 3,
+    "keywords": "Grand, Gaijin",
+    "specialRules": "La possession d'un mousquet est un crime impérial et devrait entraîner une perte d'Honneur (montant au choix du MJ). Ignore le bonus au TN d'Armure ainsi que toute Réduction procurée par une armure ou une résistance naturelle. Équipé d'une baïonnette, utilisable en mêlée avec la compétence Armes d'Hast, DR 2k2.",
+    "price": "Non disponible à la vente (crime impérial)",
+    "isRanged": true,
+    "range": 46,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Arme à feu longue d'origine gaijin. Le DR d'un mousquet est modifié par la Perception plutôt que par la Force. Certaines cultures gaijin montent une courte lame à son extrémité pour un usage de mêlée improvisé.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

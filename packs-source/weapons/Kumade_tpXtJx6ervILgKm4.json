@@ -1,0 +1,39 @@
+{
+  "_id": "tpXtJx6ervILgKm4",
+  "_key": "!items!tpXtJx6ervILgKm4",
+  "name": "Kumade",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Lances",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Grand, Paysan",
+    "specialRules": "Se brise si elle inflige plus de 25 Blessures en une seule attaque.",
+    "price": "3 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Un râteau, essentiellement : manche de bois avec une pointe métallique acérée à une extrémité et une série de crochets métalliques à l'autre. Sa construction généralement fragile explique qu'il n'ait jamais vraiment été adopté comme arme.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

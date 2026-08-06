@@ -1,0 +1,39 @@
+{
+  "_id": "UwnDzviTX0NtpsOd",
+  "_key": "!items!UwnDzviTX0NtpsOd",
+  "name": "Nageteppo (Incendiaire)",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Ninjutsu",
+    "damageRolled": 3,
+    "damageKept": 2,
+    "keywords": "Ninja, Petit",
+    "specialRules": "Le jeter est une Action Simple. À l'impact, s'embrase violemment et enflamme tout ce qui se trouve dans un rayon de 1,5 m. Un coup direct inflige 3k2 par Tour pendant 3 Tours (ou jusqu'à extinction) ; un personnage pris dans le rayon de projection subit 1k1 par Tour. Le feu ignore 3 points de Réduction. Fabrication : Artisanat (Explosifs) / Intelligence à TN 25, nécessite du poivre gaijin et du matériel alchimique ; un échec sous TN 10 provoque une petite explosion infligeant 3k2.",
+    "price": "Fabriqué (voir Artisanat : Explosifs)",
+    "isRanged": true,
+    "range": 8,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Plus imposant et plus délicat à lancer que son équivalent fumigène, l'incendiaire sert surtout à déclencher des feux lors de raids ou d'attaques surprises, par exemple contre un dépôt de ravitaillement ennemi.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

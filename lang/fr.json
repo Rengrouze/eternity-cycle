@@ -1,127 +1,221 @@
 {
-   "TYPES": {
-      "Actor": {
-         "character": "Personnage"
-      }
-   },
-   "L5R4EC": {
-      "Sheet": {
-         "Character": "Fiche de personnage",
-         "RingsAndTraits": "Anneaux et Traits",
-         "Wounds": "Blessures",
-         "WoundsMaxHint": "Calculé : Terre x5 pour Indemne, puis Terre x Létalité par rang suivant",
-         "Honor": "Honneur",
-         "Rank": "Rang",
-         "Value": "Valeur",
-         "VoidPoints": "Points de Vide",
-         "Points": "Points",
-         "TraitRoll": "Jet de Trait",
-         "RingRoll": "Jet d'Anneau",
-         "SkillRoll": "Jet de Compétence",
-         "Trait": "Trait",
-         "SchoolSkill": "Compétence d'école",
-         "Subtype": "Sous-type",
-         "Specializations": "Spécialisations (séparées par des virgules)",
-         "SkillInfo": "Résumé de la compétence",
-         "NoDescription": "Pas de description.",
-         "Category": "Catégorie",
-         "AddSkill": "Ajouter une compétence",
-         "AddSubtype": "Ajouter un sous-type"
-      },
-      "Header": {
-         "Rank": "Rang",
-         "XPTotal": "XP total",
-         "XPSpent": "XP dépensé",
-         "XPAvailable": "XP dispo",
-         "Honor": "Honneur",
-         "Infamy": "Infamie",
-         "Glory": "Gloire",
-         "Status": "Statut",
-         "Reputation": "Réputation",
-         "ReputationHint": "Calculée : (somme des Anneaux x10) + somme des rangs de Compétence",
-         "Taint": "Souillure",
-         "ToggleTaint": "Afficher/masquer la Souillure"
-      },
-      "Tabs": {
-         "RingsAndTraits": "Anneaux",
-         "Skills": "Compétences",
-         "Combat": "Combat",
-         "Bio": "Historique"
-      },
-      "WoundRank": {
-         "Healthy": "Indemne",
-         "Nicked": "Égratigné",
-         "Grazed": "Légèrement Blessé",
-         "Hurt": "Blessé",
-         "Injured": "Gravement Blessé",
-         "Crippled": "Impotent",
-         "Down": "Épuisé",
-         "Out": "Hors de Combat"
-      },
-      "Settings": {
-         "LethalityName": "Létalité",
-         "LethalityHint": "Détermine la taille des rangs de blessure (Terre x Létalité par rang, au-delà d'Indemne).",
-         "LethalityEarth2": "Terre 2 (très létal)",
-         "LethalityEarth3": "Terre 3 (standard)",
-         "LethalityEarth4": "Terre 4",
-         "LethalityEarth5": "Terre 5 (peu létal)"
-      },
-      "Notif": {
-         "CharacterOut": "{name} est Hors de Combat - ce jet est probablement injustifié."
-      },
-      "SkillCategory": {
-         "noble": "Compétences Nobles",
-         "bugei": "Compétences de Bugei",
-         "merchant": "Compétences de Marchand",
-         "low": "Compétences Dégradantes"
-      },
-      "Dialog": {
-         "RollBonusTitle": "Bonus de jet",
-         "RollBonus": "Dés bonus (Roll)",
-         "KeepBonus": "Garde bonus (Keep)",
-         "Roll": "Lancer",
-         "Cancel": "Annuler",
-         "Close": "Fermer",
-         "AddSkillTitle": "Ajouter une compétence",
-         "SkillName": "Nom de la compétence",
-         "SkillNameHint": "ex : Connaissance",
-         "SubtypeHint": "ex : Dragons (laisser vide si aucun)",
-         "Create": "Créer",
-         "AddSubtypeTitle": "Ajouter un sous-type - {name}",
-         "AddSubtypeLabel": "Nom du sous-type pour \"{name}\"",
-         "Specialization": "Spécialisation",
-         "NoSpecialization": "Aucune"
-      },
-      "Chat": {
-         "FlatBonus": "Bonus fixe",
-         "LegendExplode": "Dé explosé",
-         "LegendOne": "1 final",
-         "LegendReroll": "1 relancé",
-         "WoundPenalty": "Malus de blessure"
-      },
-      "Ring": {
-         "Air": "Air",
-         "Earth": "Terre",
-         "Fire": "Feu",
-         "Water": "Eau",
-         "Void": "Vide"
-      },
-      "Trait": {
-         "Stamina": "Constitution",
-         "Willpower": "Volonté",
-         "Strength": "Force",
-         "Perception": "Perception",
-         "Reflexes": "Réflexes",
-         "Awareness": "Intuition",
-         "Agility": "Agilité",
-         "Intelligence": "Intelligence"
-      },
-      "Details": {
-         "Name": "Nom",
-         "Clan": "Clan",
-         "Family": "Famille",
-         "School": "École",
-         "Biography": "Historique"
-      }
-   }
+  "TYPES": {
+    "Actor": {
+      "character": "Personnage"
+    },
+    "Item": {
+      "item": "Objet",
+      "skill": "Compétence",
+      "weapon": "Arme",
+      "armor": "Armure",
+      "misc": "Objet Divers",
+      "ammo": "Munition",
+      "spell": "Sort"
+    }
+  },
+  "L5R4EC": {
+    "Sheet": {
+      "Character": "Fiche de personnage",
+      "RingsAndTraits": "Anneaux et Traits",
+      "Wounds": "Blessures",
+      "WoundsMaxHint": "Calculé : Terre x5 pour Indemne, puis Terre x Létalité par rang suivant",
+      "Honor": "Honneur",
+      "Rank": "Rang",
+      "Value": "Valeur",
+      "VoidPoints": "Points de Vide",
+      "Points": "Points",
+      "TraitRoll": "Jet de Trait",
+      "RingRoll": "Jet d'Anneau",
+      "SkillRoll": "Jet de Compétence",
+      "Trait": "Trait",
+      "SchoolSkill": "Compétence d'école",
+      "Subtype": "Sous-type",
+      "Specializations": "Spécialisations (séparées par des virgules)",
+      "SkillInfo": "Résumé de la compétence",
+      "NoDescription": "Pas de description.",
+      "Category": "Catégorie",
+      "AddSkill": "Ajouter une compétence",
+      "AddSubtype": "Ajouter un sous-type",
+      "ItemName": "Nom",
+      "AssociatedSkill": "Compétence liée",
+      "DamageRolled": "Dés lancés",
+      "DamageKept": "Dés gardés",
+      "Keywords": "Mots-clés",
+      "Quality": "Qualité",
+      "ArmorType": "Type",
+      "TnBonus": "Bonus au TN",
+      "Reduction": "Réduction",
+      "SpecialRules": "Règle spéciale",
+      "NemuranaiPower": "Pouvoir du Nemuranai",
+      "CurrentlyEquipped": "Actuellement équipé",
+      "Armor": "Armure",
+      "Weapons": "Armes",
+      "MiscItems": "Objets Divers",
+      "None": "Aucun(e)",
+      "Equipped": "Équipé",
+      "AddWeapon": "Ajouter une arme",
+      "AddMisc": "Ajouter un objet",
+      "CustomArmor": "Armure personnalisée",
+      "Ammo": "Munitions",
+      "AddAmmo": "Ajouter une munition",
+      "Quantity": "Quantité",
+      "Unlimited": "Illimité",
+      "Range": "Portée (m)",
+      "RangedWeapon": "Arme à distance",
+      "BowStrength": "Force de l'arc",
+      "BaseWeapon": "Arme de base",
+      "BaseAmmo": "Munition de base",
+      "Price": "Prix",
+      "Description": "Description",
+      "EditImage": "Changer l'image",
+      "ArmorTn": "TN d'Armure",
+      "ArmorTnOther": "Autre bonus",
+      "ArmorTnFromReflexes": "Réflexes×5",
+      "ArmorTnFromArmor": "armure",
+      "Buffs": "Capacités de Maîtrise actives",
+      "NoBuffs": "Aucune capacité de maîtrise active pour l'instant - augmente le rang d'une Compétence pour en débloquer.",
+      "BuffManual": "non automatisé - à appliquer manuellement",
+      "SpellRoll": "Jet de Sort",
+      "SpellRange": "Portée",
+      "AreaOfEffect": "Zone d'Effet",
+      "Duration": "Durée",
+      "Raises": "Augmentations",
+      "CastingTn": "TN d'incantation",
+      "CastingRounds": "Tours d'incantation",
+      "ShugenjaSchoolRank": "Rang d'École de Shugenja",
+      "Affinities": "Affinités élémentaires",
+      "SpellSlots": "Emplacements de Sorts",
+      "MaxLearnableRank": "Rang max apprenable",
+      "AddSpell": "Ajouter un sort",
+      "Spells": "Sorts",
+      "MasteryRank": "Rang du sort",
+      "SpellsSection": "Grimoire",
+      "SpellRing": "Anneau"
+    },
+    "Header": {
+      "Rank": "Rang",
+      "XPTotal": "XP total",
+      "XPSpent": "XP dépensé",
+      "XPAvailable": "XP dispo",
+      "Honor": "Honneur",
+      "Infamy": "Infamie",
+      "Glory": "Gloire",
+      "Status": "Statut",
+      "Reputation": "Réputation",
+      "ReputationHint": "Calculée : (somme des Anneaux x10) + somme des rangs de Compétence",
+      "Taint": "Souillure",
+      "ToggleTaint": "Afficher/masquer la Souillure"
+    },
+    "Tabs": {
+      "RingsAndTraits": "Anneaux",
+      "Skills": "Compétences",
+      "Combat": "Combat",
+      "Magic": "Magie",
+      "Bio": "Historique",
+      "Inventory": "Inventaire"
+    },
+    "Quality": {
+      "White": "Blanc",
+      "Green": "Vert",
+      "Blue": "Bleu",
+      "Purple": "Violet",
+      "Orange": "Orange (Nemuranai)"
+    },
+    "Affinity": {
+      "None": "Aucune",
+      "Affinity": "Affinité",
+      "DoubleAffinity": "Double Affinité",
+      "Deficiency": "Déficience"
+    },
+    "WoundRank": {
+      "Healthy": "Indemne",
+      "Nicked": "Égratigné",
+      "Grazed": "Légèrement Blessé",
+      "Hurt": "Blessé",
+      "Injured": "Gravement Blessé",
+      "Crippled": "Impotent",
+      "Down": "Épuisé",
+      "Out": "Hors de Combat"
+    },
+    "Settings": {
+      "LethalityName": "Létalité",
+      "LethalityHint": "Détermine la taille des rangs de blessure (Terre x Létalité par rang, au-delà d'Indemne).",
+      "LethalityEarth2": "Terre 2 (peu létal)",
+      "LethalityEarth3": "Terre 3 (standard)",
+      "LethalityEarth4": "Terre 4",
+      "LethalityEarth5": "Terre 5 (très létal)"
+    },
+    "Notif": {
+      "CharacterOut": "{name} est Hors de Combat - ce jet est probablement injustifié.",
+      "NoSpellSlot": "{name} : aucun emplacement de sort disponible dans cet Anneau ou en Vide (le MJ peut autoriser un dépassement)."
+    },
+    "SkillCategory": {
+      "noble": "Compétences Nobles",
+      "bugei": "Compétences de Bugei",
+      "merchant": "Compétences de Marchand",
+      "low": "Compétences Dégradantes"
+    },
+    "Dialog": {
+      "RollBonusTitle": "Bonus de jet",
+      "RollBonus": "Dés bonus (Roll)",
+      "KeepBonus": "Garde bonus (Keep)",
+      "Roll": "Lancer",
+      "Cancel": "Annuler",
+      "Close": "Fermer",
+      "AddSkillTitle": "Ajouter une compétence",
+      "SkillName": "Nom de la compétence",
+      "SkillNameHint": "ex : Connaissance",
+      "SubtypeHint": "ex : Dragons (laisser vide si aucun)",
+      "Create": "Créer",
+      "AddSubtypeTitle": "Ajouter un sous-type - {name}",
+      "AddSubtypeLabel": "Nom du sous-type pour \"{name}\"",
+      "WeaponNameHint": "ex : Katana",
+      "ArmorNameHint": "ex : Armure de cérémonie",
+      "KeywordsHint": "ex : Medium, Samurai",
+      "OptionalHint": "optionnel",
+      "AddWeaponTitle": "Ajouter une arme",
+      "AddArmorTitle": "Ajouter une armure",
+      "AddMiscTitle": "Ajouter un objet",
+      "AddAmmoTitle": "Ajouter une munition",
+      "AmmoNameHint": "ex : Flèche Feuille de Saule",
+      "AddSpellTitle": "Ajouter un sort",
+      "SpellNameHint": "ex : Frappe de Jade",
+      "DeleteItemTitle": "Supprimer l'objet",
+      "DeleteItemConfirm": "Supprimer définitivement \"{name}\" ?",
+      "Delete": "Supprimer",
+      "Specialization": "Spécialisation",
+      "NoSpecialization": "Aucune"
+    },
+    "Chat": {
+      "FlatBonus": "Bonus fixe",
+      "LegendExplode": "Dé explosé",
+      "LegendOne": "1 final",
+      "LegendReroll": "1 relancé",
+      "WoundPenalty": "Malus de blessure"
+    },
+    "Ring": {
+      "Air": "Air",
+      "Earth": "Terre",
+      "Fire": "Feu",
+      "Water": "Eau",
+      "Void": "Vide"
+    },
+    "Trait": {
+      "Stamina": "Constitution",
+      "Willpower": "Volonté",
+      "Strength": "Force",
+      "Perception": "Perception",
+      "Reflexes": "Réflexes",
+      "Awareness": "Intuition",
+      "Agility": "Agilité",
+      "Intelligence": "Intelligence"
+    },
+    "Details": {
+      "Name": "Nom",
+      "Clan": "Clan",
+      "Family": "Famille",
+      "School": "École",
+      "Biography": "Historique"
+    }
+  }
 }

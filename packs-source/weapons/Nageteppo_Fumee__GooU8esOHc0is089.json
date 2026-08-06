@@ -1,0 +1,39 @@
+{
+  "_id": "GooU8esOHc0is089",
+  "_key": "!items!GooU8esOHc0is089",
+  "name": "Nageteppo (Fumée)",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Ninjutsu",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Ninja, Petit",
+    "specialRules": "Le jeter est une Action Simple. À l'impact, dégage un nuage de fumée blanche et opaque d'environ 4,5 m de diamètre (ceux à l'intérieur sont considérés Aveugles) durant 5 Tours, sauf vent fort. Un coup direct inflige 1k1 par Tour pendant 2 Tours (ou jusqu'à extinction). Fabrication : Artisanat (Explosifs) / Intelligence à TN 25, nécessite du poivre gaijin et du matériel alchimique ; un échec sous TN 10 provoque une petite explosion infligeant 2k1.",
+    "price": "Fabriqué (voir Artisanat : Explosifs)",
+    "isRanged": true,
+    "range": 10,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Petit dispositif fragile en forme d'œuf contenant un mélange de poudre à canon et de substances alchimiques. Utilisé pour semer la confusion pendant une embuscade ou couvrir une retraite.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

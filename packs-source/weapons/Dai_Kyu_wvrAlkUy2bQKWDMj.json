@@ -1,0 +1,39 @@
+{
+  "_id": "wvrAlkUy2bQKWDMj",
+  "_key": "!items!wvrAlkUy2bQKWDMj",
+  "name": "Dai-Kyu",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kyujutsu",
+    "damageRolled": 0,
+    "damageKept": 0,
+    "keywords": "Grand",
+    "specialRules": "Force 4 (Force minimum 3 requise pour l'utiliser). Augmente de +10 le TN de tous les jets d'attaque s'il est utilisé à pied. La Force de l'arc s'ajoute au premier chiffre du DR de la flèche tirée. Une flèche tirée au-delà de la portée indiquée (jusqu'à deux fois cette portée) inflige un malus de -1k0 au jet d'attaque par tranche de 15 m supplémentaires ; tirer sur un adversaire au contact inflige un malus de -10 au TN du jet d'attaque.",
+    "price": "25 koku",
+    "isRanged": true,
+    "range": 150,
+    "strengthRating": 4,
+    "equipped": false,
+    "description": "Conçu pour être tiré à cheval, le dai-kyu est composé de plusieurs pièces de bois, de corne ou de tendon liées par de la colle. C'est l'un des arcs les plus puissants utilisés par les forces armées de Rokugan, presque aussi précieux pour un archer que son katana.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

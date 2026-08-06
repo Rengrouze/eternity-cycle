@@ -1,0 +1,39 @@
+{
+  "_id": "b4zl4eAokF7U7c5D",
+  "_key": "!items!b4zl4eAokF7U7c5D",
+  "name": "Médecine",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "int",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "Le nombre de Blessures soignées sur un jet de Médecine réussi est augmenté de +1k0."
+      }
+    ],
+    "description": "Soigner les blessures, trouver des antidotes."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

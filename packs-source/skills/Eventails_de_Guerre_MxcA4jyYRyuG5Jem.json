@@ -1,0 +1,47 @@
+{
+  "_id": "MxcA4jyYRyuG5Jem",
+  "_key": "!items!MxcA4jyYRyuG5Jem",
+  "name": "Éventails de Guerre",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Les malus de main faible ne s'appliquent pas en utilisant un éventail de guerre."
+      },
+      {
+        "rankRequired": 5,
+        "description": "En utilisant un éventail de guerre, le TN d'Armure du porteur est augmenté de 1."
+      },
+      {
+        "rankRequired": 7,
+        "description": "En utilisant un éventail de guerre, le TN d'Armure du porteur est augmenté de 3 (au lieu de 1)."
+      }
+    ],
+    "description": "Maniement des éventails de guerre."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "XQMnLpZ5HtAOzwWj",
+  "_key": "!items!XQMnLpZ5HtAOzwWj",
+  "name": "Han-Kyu",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kyujutsu",
+    "damageRolled": 0,
+    "damageKept": 0,
+    "keywords": "Petit",
+    "specialRules": "Force 1. Augmente de +10 le TN de tous les jets d'attaque s'il est utilisé à cheval. La Force de l'arc s'ajoute au premier chiffre du DR de la flèche tirée. Une flèche tirée au-delà de la portée indiquée (jusqu'à deux fois cette portée) inflige un malus de -1k0 au jet d'attaque par tranche de 15 m supplémentaires ; tirer sur un adversaire au contact inflige un malus de -10 au TN du jet d'attaque.",
+    "price": "6 koku",
+    "isRanged": true,
+    "range": 30,
+    "strengthRating": 1,
+    "equipped": false,
+    "description": "Plus petit que le yumi et généralement plus facile à utiliser et à transporter, le han-kyu est un arc apprécié des magistrats itinérants ou des éclaireurs qui misent sur la rapidité et la discrétion. Il est typiquement taillé dans une seule pièce de bois ou de corne.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

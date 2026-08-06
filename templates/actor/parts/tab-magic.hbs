@@ -1,0 +1,87 @@
+<section class="tab {{tabs.magic.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.magic.id}}" data-group="{{tabs.magic.group}}">
+ <div class="flex flex-col gap-3">
+
+  <div class="border rounded p-2 bg-black/5">
+    <label class="flex items-center gap-2 text-sm">
+      <strong>{{localize "L5R4EC.Sheet.ShugenjaSchoolRank"}}</strong>
+      <input type="number" name="system.shugenja.schoolRank" value="{{magic.schoolRank}}" min="0" max="6" class="w-14 border rounded text-center">
+    </label>
+  </div>
+
+  {{!-- Affinités et Emplacements de Sorts, un bloc par Anneau --}}
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+    {{#each magic.rings}}
+      <div class="border rounded p-2">
+        <h3 class="text-sm font-l5r-display uppercase tracking-wide mb-1">{{localize this.labelKey}}</h3>
+
+        <label class="flex flex-col gap-0.5 text-xs">
+          {{localize "L5R4EC.Affinities"}}
+          <select name="system.shugenja.affinities.{{this.key}}" class="border rounded px-1 py-0.5 text-xs">
+            {{#each this.affinityOptions}}
+              <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+            {{/each}}
+          </select>
+        </label>
+
+        <div class="text-xs text-neutral-500 mt-1" title="{{localize 'L5R4EC.Sheet.MaxLearnableRank'}}">
+          {{localize "L5R4EC.Sheet.MaxLearnableRank"}} : <strong>{{this.maxLearnableRank}}</strong>
+        </div>
+
+        <div class="text-xs mt-2">
+          {{localize "L5R4EC.Sheet.SpellSlots"}}
+          <div class="flex items-center gap-1 mt-0.5">
+            <input type="number" name="system.spellSlots.{{this.key}}.spent" value="{{this.slots.spent}}" min="0" class="w-10 border rounded text-center">
+            <span class="text-neutral-400">/ {{this.slots.max}}</span>
+            <span class="text-l5r-accent font-bold ml-auto">{{this.slots.available}}</span>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  {{!-- Grimoire : sorts connus, groupés par Anneau puis triés par rang --}}
+  <div>
+    <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.SpellsSection"}}</h2>
+
+    {{#each magic.spellsByRing}}
+      {{#if this.spells.length}}
+        <details open class="border rounded mb-2">
+          <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+            {{localize this.labelKey}} <span class="text-xs text-neutral-400">({{this.spells.length}})</span>
+          </summary>
+          <div class="flex flex-col divide-y divide-black/5 p-1">
+            {{#each this.spells}}
+              <div class="grid grid-cols-[1fr_2.5rem_1.5rem_1.5rem_1.75rem] gap-2 items-center text-sm py-1">
+                <span class="truncate cursor-pointer hover:underline" title="{{this.keywords}}"
+                      data-action="openItem" data-item-id="{{this.id}}">
+                  {{this.name}}
+                </span>
+                <span class="text-xs text-center text-neutral-500">{{localize "L5R4EC.Sheet.Rank"}} {{this.masteryRank}}</span>
+                <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                        data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+                  <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
+                        data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button type="button"
+                        class="w-7 h-7 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
+                        data-action="rollSpell" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SpellRoll'}}">
+                  <i class="fa-solid fa-dice-d10 text-xs"></i>
+                </button>
+              </div>
+            {{/each}}
+          </div>
+        </details>
+      {{/if}}
+    {{/each}}
+
+    <button type="button" data-action="addSpell"
+            class="mt-1 self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+      <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSpell"}}
+    </button>
+  </div>
+
+ </div>
+</section>

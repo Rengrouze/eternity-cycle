@@ -1,0 +1,47 @@
+{
+  "_id": "ffSuOewoPYw0OG54",
+  "_key": "!items!ffSuOewoPYw0OG54",
+  "name": "Couteaux",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Les malus de main faible ne s'appliquent pas en utilisant un couteau."
+      },
+      {
+        "rankRequired": 5,
+        "description": "L'usage d'un sai ou d'un jitte confère une Relance Gratuite pour une manœuvre de Désarmement."
+      },
+      {
+        "rankRequired": 7,
+        "description": "L'usage de n'importe quel couteau confère une Relance Gratuite pour une manœuvre d'Attaque Supplémentaire."
+      }
+    ],
+    "description": "Maniement des couteaux."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

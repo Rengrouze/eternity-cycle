@@ -1,0 +1,39 @@
+{
+  "_id": "Nw9xHDncoNk30Fba",
+  "_key": "!items!Nw9xHDncoNk30Fba",
+  "name": "Navigation",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "merchant",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "+5 sur tout jet de Navigation effectué dans le cadre d'un jet Coopératif ou Cumulatif."
+      }
+    ],
+    "description": "Se repérer sur mer ou sur terre, connaissance du ciel."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

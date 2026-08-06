@@ -1,0 +1,35 @@
+{
+  "_id": "kLjkjmXQ0FEj8oK2",
+  "_key": "!items!kLjkjmXQ0FEj8oK2",
+  "name": "Flèche Bulbe Sifflant",
+  "type": "ammo",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "damageRolled": 0,
+    "damageKept": 1,
+    "quantity": 20,
+    "unlimited": false,
+    "specialRules": "Émet un sifflement aigu caractéristique en vol - utile pour signaler ou effrayer plutôt que blesser.",
+    "price": "5 bu",
+    "description": "Utilisable avec n'importe quel arc. La Force de l'arc s'ajoute au premier chiffre du DR indiqué.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

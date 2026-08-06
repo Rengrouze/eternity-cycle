@@ -1,0 +1,39 @@
+{
+  "_id": "qjx7UCHn4TifWhLB",
+  "_key": "!items!qjx7UCHn4TifWhLB",
+  "name": "Ono",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes Lourdes",
+    "damageRolled": 0,
+    "damageKept": 4,
+    "keywords": "Grand",
+    "specialRules": "",
+    "price": "20 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Grande hache à deux mains capable d'abattre un arbre ou de trancher un membre sans difficulté. La force canalisée dans le fin tranchant de la lame en fait sans doute l'arme personnelle la plus dévastatrice qu'un guerrier entraîné puisse manier.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,37 @@
+<div class="flex flex-col gap-2 p-1 w-72">
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.ItemName"}}
+    <input type="text" name="name" required autofocus class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.AmmoNameHint'}}">
+  </label>
+
+  <div class="flex gap-2">
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.DamageRolled"}}
+      <input type="number" name="damageRolled" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.DamageKept"}}
+      <input type="number" name="damageKept" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+  </div>
+
+  <div class="flex gap-2 items-end">
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.Quantity"}}
+      <input type="number" name="quantity" min="0" step="1" value="1" class="border rounded px-1 py-0.5">
+    </label>
+    <label class="flex items-center gap-2 text-sm flex-1 pb-1">
+      <input type="checkbox" name="unlimited">
+      {{localize "L5R4EC.Sheet.Unlimited"}}
+    </label>
+  </div>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.Quality"}}
+    <select name="quality" class="border rounded px-1 py-0.5">
+      {{#each qualityOptions}}
+        <option value="{{this.key}}">{{localize this.labelKey}}</option>
+      {{/each}}
+    </select>
+  </label>
+</div>

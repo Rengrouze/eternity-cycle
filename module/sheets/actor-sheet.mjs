@@ -2,6 +2,29 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 const { DialogV2 } = foundry.applications.api;
 
+import { DEFAULT_ARMORS } from "../data/default-armors.mjs";
+import { DEFAULT_WEAPONS } from "../data/default-weapons.mjs";
+import { DEFAULT_AMMO } from "../data/default-ammo.mjs";
+import { QUALITY_OPTIONS, qualityBadge } from "./mixins/quality.mjs";
+import { AFFINITY_CHOICES, computeMaxLearnableRank } from "../rules/spellcasting.mjs";
+
+/**
+ * Les 5 Anneaux, utilisés à la fois pour le sélecteur d'Anneau d'un sort et
+ * pour construire les blocs Affinité/Emplacements de l'onglet Magie.
+ */
+const RING_OPTIONS = [
+  { key: "air", labelKey: "L5R4EC.Ring.Air" },
+  { key: "earth", labelKey: "L5R4EC.Ring.Earth" },
+  { key: "fire", labelKey: "L5R4EC.Ring.Fire" },
+  { key: "water", labelKey: "L5R4EC.Ring.Water" },
+  { key: "void", labelKey: "L5R4EC.Ring.Void" }
+];
+
+const AFFINITY_OPTIONS = AFFINITY_CHOICES.map((key) => ({
+  key,
+  labelKey: `L5R4EC.Affinity.${key.charAt(0).toUpperCase()}${key.slice(1)}`
+}));
+
 /**
  * Options de Trait associable à une Compétence (Vide inclus). Factorisé au
  * niveau module car utilisé à la fois pour l'affichage des lignes de
@@ -39,13 +62,32 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     form: {
       submitOnChange: true
     },
+    // Permet de glisser une Arme/Armure/Objet/Munition depuis un compendium
+    // (ou la barre latérale) directement sur la fiche pour l'ajouter à
+    // l'inventaire - comportement standard Foundry, hérité d'ActorSheetV2
+    // (_onDropItem crée une copie embarquée sans code supplémentaire ici).
+    // Permet aussi de glisser une ligne d'inventaire pour la réordonner/sortir.
+    dragDrop: [{ dragSelector: "[data-item-id]", dropSelector: null }],
     actions: {
       rollTrait: CharacterSheet.#onRollTrait,
       rollRing: CharacterSheet.#onRollRing,
       rollSkill: CharacterSheet.#onRollSkill,
-      showSkillInfo: CharacterSheet.#onShowSkillInfo,
+      rollSpell: CharacterSheet.#onRollSpell,
+      addSpell: CharacterSheet.#onAddSpell,
+      showSkillInfo: CharacterSheet.#onShowItemInfo,
+      showItemInfo: CharacterSheet.#onShowItemInfo,
+      openItem: CharacterSheet.#onOpenItem,
       addSkill: CharacterSheet.#onAddSkill,
       addSubtype: CharacterSheet.#onAddSubtype,
+      addWeapon: CharacterSheet.#onAddWeapon,
+      addWeaponPreset: CharacterSheet.#onAddWeaponPreset,
+      addArmorCustom: CharacterSheet.#onAddArmorCustom,
+      addArmorPreset: CharacterSheet.#onAddArmorPreset,
+      addMisc: CharacterSheet.#onAddMisc,
+      addAmmo: CharacterSheet.#onAddAmmo,
+      addAmmoPreset: CharacterSheet.#onAddAmmoPreset,
+      toggleArmorEquip: CharacterSheet.#onToggleArmorEquip,
+      deleteItem: CharacterSheet.#onDeleteItem,
       toggleTaintVisibility: CharacterSheet.#onToggleTaintVisibility
     }
   };
@@ -71,6 +113,14 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       template: "systems/l5r4ec/templates/actor/parts/tab-combat.hbs",
       scrollable: [""]
     },
+    magic: {
+      template: "systems/l5r4ec/templates/actor/parts/tab-magic.hbs",
+      scrollable: [""]
+    },
+    inventory: {
+      template: "systems/l5r4ec/templates/actor/parts/tab-inventory.hbs",
+      scrollable: [""]
+    },
     bio: {
       template: "systems/l5r4ec/templates/actor/parts/tab-bio.hbs",
       scrollable: [""]
@@ -84,6 +134,8 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
         { id: "rings", group: "sheet", label: "L5R4EC.Tabs.RingsAndTraits", icon: "fa-solid fa-circle-notch" },
         { id: "skills", group: "sheet", label: "L5R4EC.Tabs.Skills", icon: "fa-solid fa-book" },
         { id: "combat", group: "sheet", label: "L5R4EC.Tabs.Combat", icon: "fa-solid fa-khanda" },
+        { id: "magic", group: "sheet", label: "L5R4EC.Tabs.Magic", icon: "fa-solid fa-hand-sparkles" },
+        { id: "inventory", group: "sheet", label: "L5R4EC.Tabs.Inventory", icon: "fa-solid fa-shield-halved" },
         { id: "bio", group: "sheet", label: "L5R4EC.Tabs.Bio", icon: "fa-solid fa-scroll" }
       ],
       initial: "rings"
@@ -133,8 +185,110 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     );
 
     context.skillsByCategory = this._buildSkillsByCategory();
+    context.inventory = this._buildInventory();
+    context.activeBuffs = this.actor.system.activeBuffs ?? [];
+    context.magic = this._buildMagic();
 
     return context;
+  }
+
+  /**
+   * Construit les listes Armes/Armures/Objets Divers + l'équipement actuel
+   * (armure équipée, armes équipées) pour l'onglet Inventaire.
+   */
+  _buildInventory() {
+    const badge = qualityBadge;
+
+    const weapons = this.actor.items
+      .filter((i) => i.type === "weapon")
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        associatedSkill: item.system.associatedSkill,
+        dr: `${item.system.damageRolled}k${item.system.damageKept}`,
+        equipped: item.system.equipped,
+        quality: badge(item)
+      }));
+
+    const armors = this.actor.items
+      .filter((i) => i.type === "armor")
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        armorType: item.system.armorType,
+        tnBonus: item.system.tnBonus,
+        reduction: item.system.reduction,
+        equipped: item.system.equipped,
+        quality: badge(item)
+      }));
+
+    const miscItems = this.actor.items
+      .filter((i) => i.type === "misc")
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        associatedSkill: item.system.associatedSkill,
+        quality: badge(item)
+      }));
+
+    const ammo = this.actor.items
+      .filter((i) => i.type === "ammo")
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        dr: `${item.system.damageRolled}k${item.system.damageKept}`,
+        quantity: item.system.quantity,
+        unlimited: item.system.unlimited,
+        quality: badge(item)
+      }));
+
+    return {
+      weapons,
+      armors,
+      miscItems,
+      ammo,
+      equippedArmor: armors.find((a) => a.equipped) ?? null,
+      equippedWeapons: weapons.filter((w) => w.equipped),
+      armorPresets: DEFAULT_ARMORS.map((a) => ({ key: a.name, name: a.name })),
+      weaponPresets: DEFAULT_WEAPONS.map((w) => ({ key: w.name, name: w.name })),
+      ammoPresets: DEFAULT_AMMO.map((a) => ({ key: a.name, name: a.name }))
+    };
+  }
+
+  /**
+   * Construit le contexte de l'onglet Magie : config Shugenja (rang
+   * d'école, affinités par Anneau avec rang max apprenable dérivé),
+   * emplacements de sorts (max/dépensés/disponibles par Anneau), et la
+   * liste des sorts connus groupée par Anneau puis triée par rang.
+   */
+  _buildMagic() {
+    const s = this.actor.system;
+
+    const rings = RING_OPTIONS.map((ring) => ({
+      ...ring,
+      affinity: s.shugenja.affinities[ring.key],
+      affinityOptions: AFFINITY_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === s.shugenja.affinities[ring.key] })),
+      maxLearnableRank: computeMaxLearnableRank(s.shugenja.schoolRank, s.shugenja.affinities[ring.key]),
+      slots: s.spellSlots[ring.key]
+    }));
+
+    const spells = this.actor.items
+      .filter((i) => i.type === "spell")
+      .sort((a, b) => a.system.masteryRank - b.system.masteryRank || a.name.localeCompare(b.name));
+
+    const spellsByRing = RING_OPTIONS.map((ring) => ({
+      ...ring,
+      spells: spells
+        .filter((i) => i.system.ring === ring.key)
+        .map((item) => ({
+          id: item.id,
+          name: item.name,
+          masteryRank: item.system.masteryRank,
+          keywords: item.system.keywords
+        }))
+    }));
+
+    return { schoolRank: s.shugenja.schoolRank, rings, spellsByRing };
   }
 
   /**
@@ -242,10 +396,78 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   /**
-   * Handler d'action pour l'icône "i" : résumé de la Compétence.
+   * Clic sur le nom d'un Item d'inventaire (Arme/Armure/Objet/Munition) :
+   * ouvre sa vraie fiche Foundry (ItemSheetV2) pour édition complète, plutôt
+   * que le résumé en lecture seule de showItemInfo.
    * @this {CharacterSheet}
    */
-  static async #onShowSkillInfo(event, target) {
+  static async #onOpenItem(event, target) {
+    const item = this.actor.items.get(target.dataset.itemId);
+    if (!item) return;
+    item.sheet.render(true);
+  }
+
+  /**
+   * Handler d'action pour le clic sur un bouton de jet de Sort.
+   * @this {CharacterSheet}
+   */
+  static async #onRollSpell(event, target) {
+    const item = this.actor.items.get(target.dataset.itemId);
+    if (!item) return;
+
+    const bonus = await CharacterSheet.#promptRollBonus();
+    if (bonus === null) return;
+
+    await this.actor.rollSpell(item.id, bonus);
+  }
+
+  /**
+   * "Ajouter un sort" : modale complète (nom, Anneau, rang, mots-clés).
+   * @this {CharacterSheet}
+   */
+  static async #onAddSpell() {
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/l5r4ec/templates/dialogs/add-spell.hbs",
+      { ringOptions: RING_OPTIONS }
+    );
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.AddSpellTitle") },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "create",
+          label: game.i18n.localize("L5R4EC.Dialog.Create"),
+          icon: "fa-solid fa-plus",
+          default: true,
+          callback: (event, button) => ({
+            name: button.form.elements.name.value.trim(),
+            ring: button.form.elements.ring.value,
+            masteryRank: Number(button.form.elements.masteryRank.value) || 1,
+            keywords: button.form.elements.keywords.value.trim()
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel" || !result.name) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: result.name,
+      type: "spell",
+      system: { ...result }
+    }]);
+  }
+
+  /**
+   * Handler d'action pour l'icône "i" : résumé de l'Item (Compétence, Arme,
+   * Armure ou Objet Divers - tous ont un champ description).
+   * @this {CharacterSheet}
+   */
+  static async #onShowItemInfo(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
 
@@ -255,9 +477,19 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       { secrets: false, relativeTo: item }
     );
 
+    let extra = "";
+    if (item.system.specialRules) {
+      const rules = await foundry.applications.ux.TextEditor.enrichHTML(item.system.specialRules, { secrets: false, relativeTo: item });
+      extra += `<p class="mt-2 text-sm"><strong>${game.i18n.localize("L5R4EC.Sheet.SpecialRules")}</strong> : ${rules}</p>`;
+    }
+    if (item.system.quality === "orange" && item.system.nemuranaiPower) {
+      const power = await foundry.applications.ux.TextEditor.enrichHTML(item.system.nemuranaiPower, { secrets: false, relativeTo: item });
+      extra += `<p class="mt-2 text-sm text-orange-600"><strong>${game.i18n.localize("L5R4EC.Sheet.NemuranaiPower")}</strong> : ${power}</p>`;
+    }
+
     await DialogV2.wait({
       window: { title },
-      content: `<div class="l5r4ec p-2">${description}</div>`,
+      content: `<div class="l5r4ec p-2">${description}${extra}</div>`,
       modal: true,
       rejectClose: false,
       buttons: [{ action: "close", label: game.i18n.localize("L5R4EC.Dialog.Close"), default: true }]
@@ -388,6 +620,258 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
     if (!result || result === "cancel") return null;
     return result || null;
+  }
+
+  /**
+   * "Ajouter une arme" : modale complète (nom, compétence, DR, mots-clés, qualité).
+   * @this {CharacterSheet}
+   */
+  static async #onAddWeapon() {
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/l5r4ec/templates/dialogs/add-weapon.hbs",
+      { qualityOptions: QUALITY_OPTIONS }
+    );
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.AddWeaponTitle") },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "create",
+          label: game.i18n.localize("L5R4EC.Dialog.Create"),
+          icon: "fa-solid fa-plus",
+          default: true,
+          callback: (event, button) => ({
+            name: button.form.elements.name.value.trim(),
+            associatedSkill: button.form.elements.associatedSkill.value.trim(),
+            damageRolled: Number(button.form.elements.damageRolled.value) || 0,
+            damageKept: Number(button.form.elements.damageKept.value) || 0,
+            keywords: button.form.elements.keywords.value.trim(),
+            quality: button.form.elements.quality.value,
+            isRanged: button.form.elements.isRanged.checked,
+            range: Number(button.form.elements.range.value) || 0,
+            strengthRating: Number(button.form.elements.strengthRating.value) || 0
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel" || !result.name) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: result.name,
+      type: "weapon",
+      system: { ...result }
+    }]);
+  }
+
+  /**
+   * "Arme de base" : ajoute une arme depuis DEFAULT_WEAPONS (liste
+   * déroulante à côté du bouton), sans repasser par la modale complète.
+   * @this {CharacterSheet}
+   */
+  static async #onAddWeaponPreset(event, target) {
+    const select = target.parentElement.querySelector('select[name="weaponPreset"]');
+    const preset = DEFAULT_WEAPONS.find((w) => w.name === select?.value);
+    if (!preset) return;
+
+    const { name, ...system } = preset;
+    await this.actor.createEmbeddedDocuments("Item", [{ name, type: "weapon", system }]);
+  }
+
+  /**
+   * "Munition de base" : ajoute une munition depuis DEFAULT_AMMO (liste
+   * déroulante à côté du bouton), sans repasser par la modale complète.
+   * @this {CharacterSheet}
+   */
+  static async #onAddAmmoPreset(event, target) {
+    const select = target.parentElement.querySelector('select[name="ammoPreset"]');
+    const preset = DEFAULT_AMMO.find((a) => a.name === select?.value);
+    if (!preset) return;
+
+    const { name, ...system } = preset;
+    await this.actor.createEmbeddedDocuments("Item", [{ name, type: "ammo", system }]);
+  }
+
+  /**
+   * "+ Ashigaru/Légère/Lourde/Monture" : ajoute une des 4 armures de base
+   * en un clic, sans modale.
+   * @this {CharacterSheet}
+   */
+  static async #onAddArmorPreset(event, target) {
+    const preset = DEFAULT_ARMORS.find((a) => a.name === target.dataset.preset);
+    if (!preset) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: preset.name,
+      type: "armor",
+      system: {
+        armorType: preset.armorType,
+        tnBonus: preset.tnBonus,
+        reduction: preset.reduction,
+        specialRules: preset.specialRules ?? "",
+        price: preset.price ?? "",
+        description: preset.description ?? ""
+      }
+    }]);
+  }
+
+  /**
+   * "Armure personnalisée" : modale complète pour une armure homebrew.
+   * @this {CharacterSheet}
+   */
+  static async #onAddArmorCustom() {
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/l5r4ec/templates/dialogs/add-armor.hbs",
+      { qualityOptions: QUALITY_OPTIONS }
+    );
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.AddArmorTitle") },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "create",
+          label: game.i18n.localize("L5R4EC.Dialog.Create"),
+          icon: "fa-solid fa-plus",
+          default: true,
+          callback: (event, button) => ({
+            name: button.form.elements.name.value.trim(),
+            armorType: button.form.elements.armorType.value.trim(),
+            tnBonus: Number(button.form.elements.tnBonus.value) || 0,
+            reduction: Number(button.form.elements.reduction.value) || 0,
+            quality: button.form.elements.quality.value
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel" || !result.name) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: result.name,
+      type: "armor",
+      system: { ...result }
+    }]);
+  }
+
+  /**
+   * "Ajouter un objet" : modale simple (nom, compétence optionnelle, qualité).
+   * @this {CharacterSheet}
+   */
+  static async #onAddMisc() {
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/l5r4ec/templates/dialogs/add-misc.hbs",
+      { qualityOptions: QUALITY_OPTIONS }
+    );
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.AddMiscTitle") },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "create",
+          label: game.i18n.localize("L5R4EC.Dialog.Create"),
+          icon: "fa-solid fa-plus",
+          default: true,
+          callback: (event, button) => ({
+            name: button.form.elements.name.value.trim(),
+            associatedSkill: button.form.elements.associatedSkill.value.trim(),
+            quality: button.form.elements.quality.value
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel" || !result.name) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: result.name,
+      type: "misc",
+      system: { ...result }
+    }]);
+  }
+
+  /**
+   * "Ajouter une munition" : modale complète (nom, DR, quantité/illimité, qualité).
+   * @this {CharacterSheet}
+   */
+  static async #onAddAmmo() {
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/l5r4ec/templates/dialogs/add-ammo.hbs",
+      { qualityOptions: QUALITY_OPTIONS }
+    );
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.AddAmmoTitle") },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "create",
+          label: game.i18n.localize("L5R4EC.Dialog.Create"),
+          icon: "fa-solid fa-plus",
+          default: true,
+          callback: (event, button) => ({
+            name: button.form.elements.name.value.trim(),
+            damageRolled: Number(button.form.elements.damageRolled.value) || 0,
+            damageKept: Number(button.form.elements.damageKept.value) || 0,
+            quantity: Number(button.form.elements.quantity.value) || 0,
+            unlimited: button.form.elements.unlimited.checked,
+            quality: button.form.elements.quality.value
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel" || !result.name) return;
+
+    await this.actor.createEmbeddedDocuments("Item", [{
+      name: result.name,
+      type: "ammo",
+      system: { ...result }
+    }]);
+  }
+
+  /**
+   * Bascule l'équipement d'une Armure (exclusivité mutuelle gérée côté Actor).
+   * @this {CharacterSheet}
+   */
+  static async #onToggleArmorEquip(event, target) {
+    await this.actor.toggleArmorEquip(target.dataset.itemId);
+  }
+
+  /**
+   * Supprime un Item (Compétence, Arme, Armure, Objet), avec confirmation.
+   * @this {CharacterSheet}
+   */
+  static async #onDeleteItem(event, target) {
+    const item = this.actor.items.get(target.dataset.itemId);
+    if (!item) return;
+
+    const confirmed = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.DeleteItemTitle") },
+      content: `<p>${game.i18n.format("L5R4EC.Dialog.DeleteItemConfirm", { name: item.name })}</p>`,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        { action: "delete", label: game.i18n.localize("L5R4EC.Dialog.Delete"), icon: "fa-solid fa-trash" },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel"), default: true }
+      ]
+    });
+
+    if (confirmed === "delete") await item.delete();
   }
 
   /**

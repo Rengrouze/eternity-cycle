@@ -1,0 +1,47 @@
+{
+  "_id": "LkwdKGdiecLcohkL",
+  "_key": "!items!LkwdKGdiecLcohkL",
+  "name": "Équitation",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "La Posture d'Attaque Totale peut être utilisée à cheval."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Monter à cheval devient une Action Simple (au lieu de Complexe) ; mettre pied à terre devient une Action Libre (au lieu de Simple)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Monter à cheval devient une Action Libre (au lieu de Simple)."
+      }
+    ],
+    "description": "Chevaucher."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

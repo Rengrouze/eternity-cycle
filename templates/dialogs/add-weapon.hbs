@@ -1,0 +1,52 @@
+<div class="flex flex-col gap-2 p-1 w-72">
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.ItemName"}}
+    <input type="text" name="name" required autofocus class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.WeaponNameHint'}}">
+  </label>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.AssociatedSkill"}}
+    <input type="text" name="associatedSkill" class="border rounded px-1 py-0.5" placeholder="Kenjutsu">
+  </label>
+
+  <div class="flex gap-2">
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.DamageRolled"}}
+      <input type="number" name="damageRolled" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.DamageKept"}}
+      <input type="number" name="damageKept" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+  </div>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.Keywords"}}
+    <input type="text" name="keywords" class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.KeywordsHint'}}">
+  </label>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.Quality"}}
+    <select name="quality" class="border rounded px-1 py-0.5">
+      {{#each qualityOptions}}
+        <option value="{{this.key}}">{{localize this.labelKey}}</option>
+      {{/each}}
+    </select>
+  </label>
+
+  <label class="flex items-center gap-2 text-sm">
+    <input type="checkbox" name="isRanged">
+    {{localize "L5R4EC.Sheet.RangedWeapon"}}
+  </label>
+
+  <div class="flex gap-2">
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.Range"}}
+      <input type="number" name="range" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.BowStrength"}}
+      <input type="number" name="strengthRating" min="0" step="1" value="0" class="border rounded px-1 py-0.5">
+    </label>
+  </div>
+</div>

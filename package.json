@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss -i styles/tailwind-input.css -o styles/system-styles.css --minify",
-    "watch:css": "tailwindcss -i styles/tailwind-input.css -o styles/system-styles.css --watch"
+    "watch:css": "tailwindcss -i styles/tailwind-input.css -o styles/system-styles.css --watch",
+    "build:packs": "node scripts/build-packs.mjs",
+    "build": "npm run build:css && npm run build:packs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.4",
     "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3",
     "tailwindcss-scoped-preflight": "^4.0.6"

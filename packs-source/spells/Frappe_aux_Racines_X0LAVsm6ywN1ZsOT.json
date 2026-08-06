@@ -1,0 +1,34 @@
+{
+  "_id": "X0LAVsm6ywN1ZsOT",
+  "_key": "!items!X0LAVsm6ywN1ZsOT",
+  "name": "Frappe aux Racines",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 créature cible",
+    "duration": "3 tours",
+    "raises": "Durée (+1 tour), Portée (+3 m), Cibles (+1 par 2 Augmentations), Spécial (jet Contesté, +1k1 au lanceur par Augmentation)",
+    "description": "Forme plus puissante et dévastatrice de la Merci du Loup, ce sort déchaîne la véritable colère de la Terre sur la cible, drainant toute la faveur de la Terre de son corps et la laissant faible, tremblante et impuissante. Après le lancer, le lanceur doit réussir un jet Contesté de Terre contre la cible (séparément pour chaque cible si plusieurs sont visées). Si la cible perd, son Anneau de Terre est immédiatement réduit à 1 pour la durée du sort - ce qui réduit aussi ses rangs de blessure et peut entraîner sa mort immédiate si elle a déjà subi des blessures."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

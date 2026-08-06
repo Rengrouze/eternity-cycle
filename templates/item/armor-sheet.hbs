@@ -1,0 +1,63 @@
+<div class="l5r4ec flex flex-col h-full">
+  <header class="flex items-center gap-2 p-2 border-b">
+    <img src="{{item.img}}" data-action="editImage" data-edit="img"
+         class="w-12 h-12 rounded border cursor-pointer object-cover" title="{{localize 'L5R4EC.Sheet.EditImage'}}">
+    <input type="text" name="name" value="{{item.name}}"
+           class="flex-1 text-lg font-l5r-display border rounded px-2 py-1"
+           placeholder="{{localize 'L5R4EC.Dialog.ArmorNameHint'}}">
+  </header>
+
+  <div class="flex-1 overflow-y-auto p-2 flex flex-col gap-2 text-sm">
+    <div class="flex gap-2">
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.ArmorType"}}
+        <input type="text" name="system.armorType" value="{{system.armorType}}" class="border rounded px-1 py-0.5">
+      </label>
+      <label class="flex flex-col gap-0.5 w-36">
+        {{localize "L5R4EC.Sheet.Quality"}}
+        <select name="system.quality" class="border rounded px-1 py-0.5">
+          {{#each qualityOptions}}
+            <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+          {{/each}}
+        </select>
+      </label>
+    </div>
+
+    <div class="flex gap-2">
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.TnBonus"}}
+        <input type="number" name="system.tnBonus" value="{{system.tnBonus}}" min="0" step="1" class="border rounded px-1 py-0.5">
+      </label>
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.Reduction"}}
+        <input type="number" name="system.reduction" value="{{system.reduction}}" min="0" step="1" class="border rounded px-1 py-0.5">
+      </label>
+      <label class="flex items-center gap-2 flex-1 pt-4">
+        <input type="checkbox" name="system.equipped" {{#if system.equipped}}checked{{/if}}>
+        {{localize "L5R4EC.Sheet.Equipped"}}
+      </label>
+    </div>
+
+    <label class="flex flex-col gap-0.5">
+      {{localize "L5R4EC.Sheet.Price"}}
+      <input type="text" name="system.price" value="{{system.price}}" class="border rounded px-1 py-0.5">
+    </label>
+
+    <label class="flex flex-col gap-0.5">
+      {{localize "L5R4EC.Sheet.SpecialRules"}}
+      <textarea name="system.specialRules" rows="3" class="border rounded px-1 py-0.5">{{system.specialRules}}</textarea>
+    </label>
+
+    {{#if isNemuranai}}
+      <label class="flex flex-col gap-0.5">
+        {{localize "L5R4EC.Sheet.NemuranaiPower"}}
+        <textarea name="system.nemuranaiPower" rows="2" class="border border-orange-400 rounded px-1 py-0.5">{{system.nemuranaiPower}}</textarea>
+      </label>
+    {{/if}}
+
+    <label class="flex flex-col gap-0.5 flex-1">
+      {{localize "L5R4EC.Sheet.Description"}}
+      <textarea name="system.description" rows="5" class="border rounded px-1 py-0.5 flex-1">{{system.description}}</textarea>
+    </label>
+  </div>
+</div>

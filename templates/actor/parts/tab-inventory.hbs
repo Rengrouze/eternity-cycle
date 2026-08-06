@@ -1,0 +1,197 @@
+<section class="tab {{tabs.inventory.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.inventory.id}}" data-group="{{tabs.inventory.group}}">
+ <div class="flex flex-col gap-3">
+
+  {{!-- Équipement actuel --}}
+  <div class="border rounded p-2 bg-black/5">
+    <h2 class="text-sm font-l5r-display uppercase tracking-wide mb-1">{{localize "L5R4EC.Sheet.CurrentlyEquipped"}}</h2>
+    <div class="text-sm">
+      <strong>{{localize "L5R4EC.Sheet.Armor"}} :</strong>
+      {{#if inventory.equippedArmor}}
+        {{inventory.equippedArmor.name}} ({{localize "L5R4EC.Sheet.TnBonus"}} +{{inventory.equippedArmor.tnBonus}}, {{localize "L5R4EC.Sheet.Reduction"}} {{inventory.equippedArmor.reduction}})
+      {{else}}
+        <span class="text-neutral-400">{{localize "L5R4EC.Sheet.None"}}</span>
+      {{/if}}
+    </div>
+    <div class="text-sm mt-1">
+      <strong>{{localize "L5R4EC.Sheet.Weapons"}} :</strong>
+      {{#if inventory.equippedWeapons.length}}
+        {{#each inventory.equippedWeapons}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}
+      {{else}}
+        <span class="text-neutral-400">{{localize "L5R4EC.Sheet.None"}}</span>
+      {{/if}}
+    </div>
+  </div>
+
+  {{!-- Armes --}}
+  <details open class="border rounded">
+    <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+      {{localize "L5R4EC.Sheet.Weapons"}}
+    </summary>
+    <div class="flex flex-col divide-y divide-black/5 p-1">
+      {{#each inventory.weapons}}
+        <div class="grid grid-cols-[16px_1fr_5rem_3.5rem_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
+          <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.equipped"
+                 {{#if this.equipped}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.Equipped'}}">
+          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
+                data-action="openItem" data-item-id="{{this.id}}">
+            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
+            {{this.name}}
+            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
+          </span>
+          <span class="text-xs text-neutral-500 truncate" title="{{this.associatedSkill}}">{{this.associatedSkill}}</span>
+          <span class="text-xs text-center font-bold">{{this.dr}}</span>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
+                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      {{/each}}
+    </div>
+    <div class="flex flex-wrap items-center gap-1 p-1">
+      <select name="weaponPreset" class="text-xs border rounded px-1 py-0.5 max-w-48">
+        {{#each inventory.weaponPresets}}
+          <option value="{{this.key}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <button type="button" data-action="addWeaponPreset"
+              class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.BaseWeapon"}}
+      </button>
+      <button type="button" data-action="addWeapon"
+              class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddWeapon"}}
+      </button>
+    </div>
+  </details>
+
+  {{!-- Armures --}}
+  <details open class="border rounded">
+    <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+      {{localize "L5R4EC.Sheet.Armor"}}
+    </summary>
+    <div class="flex flex-col divide-y divide-black/5 p-1">
+      {{#each inventory.armors}}
+        <div class="grid grid-cols-[16px_1fr_4rem_3rem_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
+          <button type="button" data-action="toggleArmorEquip" data-item-id="{{this.id}}"
+                  class="w-4 h-4 rounded-full border {{#if this.equipped}}bg-l5r-accent border-l5r-accent{{else}}border-neutral-400{{/if}}"
+                  title="{{localize 'L5R4EC.Sheet.Equipped'}}"></button>
+          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
+                data-action="openItem" data-item-id="{{this.id}}">
+            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
+            {{this.name}}
+            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
+          </span>
+          <span class="text-xs text-center">+{{this.tnBonus}} TN</span>
+          <span class="text-xs text-center">Réd. {{this.reduction}}</span>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
+                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      {{/each}}
+    </div>
+    <div class="flex flex-wrap gap-1 p-1">
+      {{#each inventory.armorPresets}}
+        <button type="button" data-action="addArmorPreset" data-preset="{{this.key}}"
+                class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+          + {{this.name}}
+        </button>
+      {{/each}}
+      <button type="button" data-action="addArmorCustom"
+              class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.CustomArmor"}}
+      </button>
+    </div>
+  </details>
+
+  {{!-- Munitions --}}
+  <details open class="border rounded">
+    <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+      {{localize "L5R4EC.Sheet.Ammo"}}
+    </summary>
+    <div class="flex flex-col divide-y divide-black/5 p-1">
+      {{#each inventory.ammo}}
+        <div class="grid grid-cols-[1fr_3.5rem_4rem_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
+          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
+                data-action="openItem" data-item-id="{{this.id}}">
+            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
+            {{this.name}}
+            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
+          </span>
+          <span class="text-xs text-center font-bold">{{this.dr}}</span>
+          {{#if this.unlimited}}
+            <span class="text-xs text-center text-l5r-accent">{{localize "L5R4EC.Sheet.Unlimited"}}</span>
+          {{else}}
+            <input type="number" min="0" step="1" value="{{this.quantity}}"
+                   data-item-id="{{this.id}}" data-item-field="system.quantity"
+                   class="border rounded px-1 py-0.5 text-xs text-center w-full">
+          {{/if}}
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
+                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      {{/each}}
+    </div>
+    <div class="flex flex-wrap items-center gap-1 p-1">
+      <select name="ammoPreset" class="text-xs border rounded px-1 py-0.5 max-w-48">
+        {{#each inventory.ammoPresets}}
+          <option value="{{this.key}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <button type="button" data-action="addAmmoPreset"
+              class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.BaseAmmo"}}
+      </button>
+      <button type="button" data-action="addAmmo"
+              class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddAmmo"}}
+      </button>
+    </div>
+  </details>
+
+  {{!-- Objets Divers --}}
+  <details open class="border rounded">
+    <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+      {{localize "L5R4EC.Sheet.MiscItems"}}
+    </summary>
+    <div class="flex flex-col divide-y divide-black/5 p-1">
+      {{#each inventory.miscItems}}
+        <div class="grid grid-cols-[1fr_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
+          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
+                data-action="openItem" data-item-id="{{this.id}}">
+            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
+            {{this.name}}
+            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
+          </span>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
+                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      {{/each}}
+    </div>
+    <button type="button" data-action="addMisc"
+            class="m-1 self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+      <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddMisc"}}
+    </button>
+  </details>
+
+ </div>
+</section>

@@ -1,0 +1,47 @@
+{
+  "_id": "NpfL0BXrBkjS3OPd",
+  "_key": "!items!NpfL0BXrBkjS3OPd",
+  "name": "Athlétisme",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Le Terrain Modéré n'entrave plus le mouvement ; le Terrain Difficile ne réduit plus l'Anneau d'Eau que de 1 (au lieu de 2)."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Le personnage ne subit plus aucun malus de mouvement, quel que soit le terrain."
+      },
+      {
+        "rankRequired": 7,
+        "description": "+1,5 m (5 pieds) sur une Action de Mouvement par Tour (n'augmente pas le déplacement maximal possible)."
+      }
+    ],
+    "description": "L'art de bouger, se mouvoir, soulever des choses."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

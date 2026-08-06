@@ -1,0 +1,39 @@
+{
+  "_id": "xuJpxJsLygjNy87P",
+  "_key": "!items!xuJpxJsLygjNy87P",
+  "name": "Cérémonie du Thé",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "void",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "Tous les participants à la cérémonie récupèrent 2 Points de Vide au lieu d'1."
+      }
+    ],
+    "description": "L'art de la cérémonie du thé."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

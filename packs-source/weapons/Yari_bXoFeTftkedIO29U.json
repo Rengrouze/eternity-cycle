@@ -1,0 +1,39 @@
+{
+  "_id": "bXoFeTftkedIO29U",
+  "_key": "!items!bXoFeTftkedIO29U",
+  "name": "Yari",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Lances",
+    "damageRolled": 2,
+    "damageKept": 2,
+    "keywords": "Grand",
+    "specialRules": "Peut être lancé jusqu'à 9 m (30 pieds), avec un DR de 1k2 lorsqu'il est lancé.",
+    "price": "5 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Lance de base, longue de 1,80 à 2,40 m, maniée à deux mains à pied et à une main à cheval. Typiquement distribuée aux légions ashigaru et aux forces anti-cavalerie.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "3jtpyNPWT1H6dHA9",
+  "_key": "!items!3jtpyNPWT1H6dHA9",
+  "name": "Lance",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Lances",
+    "damageRolled": 3,
+    "damageKept": 4,
+    "keywords": "Grand",
+    "specialRules": "Le DR indiqué ne s'applique que si la lance est utilisée à cheval pour une attaque suivant directement une Action de Mouvement. Dans tout autre cas, elle possède un DR de 1k2. L'utiliser en mêlée sans Action de Mouvement augmente le TN de tous les jets d'attaque de +5 à cheval et +10 à pied. La lance se brise si elle inflige plus de 30 Blessures en une seule attaque.",
+    "price": "20 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Arme adaptée de cultures gaijin, quasiment inconnue en dehors des rangs des samouraïs Licorne ou Bœuf. Utilisée uniquement à cheval, calée sous l'épaule du cavalier, pointe en avant, lors d'une charge au galop.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

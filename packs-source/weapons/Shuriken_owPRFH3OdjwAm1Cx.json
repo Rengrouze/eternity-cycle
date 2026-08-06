@@ -1,0 +1,39 @@
+{
+  "_id": "owPRFH3OdjwAm1Cx",
+  "_key": "!items!owPRFH3OdjwAm1Cx",
+  "name": "Shuriken",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Ninjutsu",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Petit",
+    "specialRules": "Peut être lancé jusqu'à 8 m (25 pieds).",
+    "price": "2 bu",
+    "isRanged": true,
+    "range": 8,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Petite lame de jet en étoile, discrète et rapide à dégainer.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

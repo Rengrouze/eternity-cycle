@@ -1,0 +1,47 @@
+{
+  "_id": "RO21iZ86T17OWS5a",
+  "_key": "!items!RO21iZ86T17OWS5a",
+  "name": "Jiujutsu",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Les dégâts de toutes les attaques à mains nues sont augmentés de +1k0."
+      },
+      {
+        "rankRequired": 5,
+        "description": "L'usage de Jiujutsu confère une Relance Gratuite pour initier un corps-à-corps (Grapple)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Les dégâts de toutes les attaques à mains nues sont augmentés de +0k1 supplémentaire (+1k1 au total)."
+      }
+    ],
+    "description": "Le subtil art de plier les vêtements avec les gens à l'intérieur."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

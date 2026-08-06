@@ -35,15 +35,21 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
       // Découpé en tableau à la volée là où c'est nécessaire (jets, affichage).
       specializations: new StringField({ required: true, blank: true, initial: "" }),
 
-      // Bonus de maîtrise automatiques : à `rank` donné, applique `value` au
-      // chemin `path` (relatif à actor.system). Voir SystemActor#_applyMasteryBonuses.
+      // Capacités de maîtrise : à `rank` donné, affiche `description` dans le
+      // panneau "Capacités de Maîtrise actives" (onglet Combat). Si `path` est
+      // renseigné, `value` est aussi ajouté automatiquement à ce chemin
+      // (relatif à actor.system) - réservé aux bonus qui correspondent à un
+      // stat permanent existant (ex: Réputation). Voir
+      // SystemActor#_applyMasteryBonuses et le commentaire d'en-tête de
+      // default-skills.mjs pour le détail de la convention.
       // Pas d'UI d'édition pour l'instant (rempli via les données par défaut
       // ou modifié manuellement) - c'est la base du "système de buff" demandé.
       masteryBonuses: new ArrayField(
         new SchemaField({
           rankRequired: new NumberField({ required: true, integer: true, min: 1 }),
-          path: new StringField({ required: true, blank: false }),
-          value: new NumberField({ required: true, integer: false })
+          description: new StringField({ required: true, blank: true, initial: "" }),
+          path: new StringField({ required: true, blank: true, initial: "" }),
+          value: new NumberField({ required: true, integer: false, initial: 0 })
         }),
         { initial: [] }
       ),

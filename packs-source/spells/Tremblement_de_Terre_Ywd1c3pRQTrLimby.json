@@ -1,0 +1,34 @@
+{
+  "_id": "Ywd1c3pRQTrLimby",
+  "_key": "!items!Ywd1c3pRQTrLimby",
+  "name": "Tremblement de Terre",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "1,6 km de rayon",
+    "duration": "1 minute",
+    "raises": "Zone (+450 m), Durée (+1 minute par 2 Augmentations)",
+    "description": "Ce sort déclenche un terrible séisme dévastateur, centré sur le lanceur, seul à en être épargné. Le séisme détruit entièrement tous les bâtiments en bois dans le rayon d'effet et inflige de sévères dégâts aux structures de pierre. Toutes les personnes présentes dans la zone sont projetées au sol, restent Prostrées et Étourdies pour la durée du sort, et subissent 2k1 Blessures. Les individus à l'intérieur de bâtiments (lanceur inclus) subissent 6k6 dégâts dus aux débris, effondrements de toits, etc. Lancer ce sort à portée d'une zone habitée importante est généralement considéré comme un acte de guerre."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

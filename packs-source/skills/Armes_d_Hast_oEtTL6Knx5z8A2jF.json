@@ -1,0 +1,47 @@
+{
+  "_id": "oEtTL6Knx5z8A2jF",
+  "_key": "!items!oEtTL6Knx5z8A2jF",
+  "name": "Armes d'Hast",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "+5 au score d'Initiative lors du premier Tour d'une Escarmouche en maniant une arme d'hast (ce Tour uniquement)."
+      },
+      {
+        "rankRequired": 5,
+        "description": "+1k0 aux jets de dégâts effectués avec une arme d'hast contre un adversaire monté ou significativement plus grand."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Une arme d'hast peut être dégainée en Action Libre."
+      }
+    ],
+    "description": "Maniement des armes d'hast."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

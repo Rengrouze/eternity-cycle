@@ -1,0 +1,34 @@
+{
+  "_id": "4yUYNhpQxCQGyTd8",
+  "_key": "!items!4yUYNhpQxCQGyTd8",
+  "name": "Force du Corbeau",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 3,
+    "keywords": "Jade",
+    "range": "Contact",
+    "areaOfEffect": "1 cible",
+    "duration": "Heures égales au Rang d'École de Shugenja du lanceur",
+    "raises": "Durée (+1 heure), Cibles (+1)",
+    "description": "Ce sort infuse la cible (qui peut être le lanceur) d'une puissante résistance à la Souillure des Terres de l'Ombre, repoussant les sombres kansen de la Souillure par la pure puissance de la Terre. Pendant la durée du sort, la cible gagne un bonus de +5k5 à tous les jets pour résister à l'acquisition de la Souillure, et tout sort de maho visant à l'affecter subit un malus de +10 au TN. Ce bonus ne s'applique pas aux jets visant à résister à une augmentation d'une Souillure déjà possédée - seulement à une nouvelle Souillure venue d'une source extérieure. Il ne protège pas non plus la cible de la Souillure acquise en lançant du Maho."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

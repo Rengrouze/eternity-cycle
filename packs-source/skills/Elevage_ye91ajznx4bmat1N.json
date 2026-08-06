@@ -1,0 +1,47 @@
+{
+  "_id": "ye91ajznx4bmat1N",
+  "_key": "!items!ye91ajznx4bmat1N",
+  "name": "Élevage",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "merchant",
+    "isSchoolSkill": false,
+    "trait": "awa",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Les animaux couramment domestiqués (chiens, chevaux, faucons) peuvent être dressés pour être utilisés par d'autres."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Un animal dressé encore en possession de son dresseur peut être commandé pour attaquer une cible désignée (il fuit s'il est gravement blessé, quels que soient les ordres)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Les animaux dressés par le personnage peuvent recevoir des ordres de façon non-verbale."
+      }
+    ],
+    "description": "L'art de parler aux animaux."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

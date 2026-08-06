@@ -1,0 +1,39 @@
+{
+  "_id": "JYP13NC18yONQBxe",
+  "_key": "!items!JYP13NC18yONQBxe",
+  "name": "Jitte / Sai",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Couteaux",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Petit",
+    "specialRules": "Peut être lancé jusqu'à 6 m (20 pieds). Arme idéale pour désarmer un adversaire sans lui infliger de dégâts significatifs.",
+    "price": "5 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Adaptés d'outils agricoles, ce sont des cylindres d'acier d'une trentaine de centimètres à pointe émoussée, munis de fourches métalliques (une pour le jitte, deux symétriques pour le sai). Le jitte est un symbole reconnu de charge magistrale.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

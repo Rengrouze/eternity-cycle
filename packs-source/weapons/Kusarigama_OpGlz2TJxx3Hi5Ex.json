@@ -1,0 +1,39 @@
+{
+  "_id": "OpGlz2TJxx3Hi5Ex",
+  "_key": "!items!OpGlz2TJxx3Hi5Ex",
+  "name": "Kusarigama",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes à Chaîne",
+    "damageRolled": 0,
+    "damageKept": 2,
+    "keywords": "Grand",
+    "specialRules": "L'extrémité kama inflige 0k2, l'extrémité lestée 0k1.",
+    "price": "5 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "L'arme à chaîne la plus courante, particulièrement populaire chez les samouraïs du Clan de la Mante. Il s'agit essentiellement d'un kama attaché à la base du manche à une chaîne de un mètre cinquante à deux mètres, dont l'autre extrémité porte un poids (cylindre ou sphère métallique).",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

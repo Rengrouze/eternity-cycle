@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-2 p-1 w-72">
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.ItemName"}}
+    <input type="text" name="name" required autofocus class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.SpellNameHint'}}">
+  </label>
+
+  <div class="flex gap-2">
+    <label class="flex flex-col gap-0.5 text-sm flex-1">
+      {{localize "L5R4EC.Sheet.SpellRing"}}
+      <select name="ring" class="border rounded px-1 py-0.5">
+        {{#each ringOptions}}
+          <option value="{{this.key}}">{{localize this.labelKey}}</option>
+        {{/each}}
+      </select>
+    </label>
+    <label class="flex flex-col gap-0.5 text-sm w-24">
+      {{localize "L5R4EC.Sheet.MasteryRank"}}
+      <input type="number" name="masteryRank" min="1" step="1" value="1" class="border rounded px-1 py-0.5">
+    </label>
+  </div>
+
+  <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.Keywords"}}
+    <input type="text" name="keywords" class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.KeywordsHint'}}">
+  </label>
+</div>

@@ -1,0 +1,39 @@
+{
+  "_id": "w3b4z2EV4XU1IqsC",
+  "_key": "!items!w3b4z2EV4XU1IqsC",
+  "name": "Tonfa",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Bâton",
+    "damageRolled": 0,
+    "damageKept": 3,
+    "keywords": "Moyen, Paysan",
+    "specialRules": "Double le bonus au TN d'Armure de l'adversaire.",
+    "price": "5 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "À l'origine la poignée d'une meule. Manche de bois de la longueur de l'avant-bras avec une poignée latérale permettant de le tenir le long du bras : outil défensif efficace, mais aussi arme offensive une fois tourné.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

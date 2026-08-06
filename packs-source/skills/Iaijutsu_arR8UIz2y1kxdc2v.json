@@ -1,0 +1,47 @@
+{
+  "_id": "arR8UIz2y1kxdc2v",
+  "_key": "!items!arR8UIz2y1kxdc2v",
+  "name": "Iaijutsu",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "void",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Dégainer un katana devient une Action Libre (au lieu de Simple)."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Lors d'un Duel d'Iaijutsu, obtient une Relance Gratuite sur son jet de Concentration (Focus) / Vide pendant la Phase de Concentration."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Pendant la phase d'Évaluation d'un Duel d'Iaijutsu, +2k2 (au lieu du +1k1 habituel) au jet de Concentration si le jet d'Évaluation dépasse celui de l'adversaire de 10 ou plus."
+      }
+    ],
+    "description": "L'art du duel (cas particulier : Trait par défaut Vide)."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

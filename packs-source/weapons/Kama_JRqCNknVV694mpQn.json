@@ -1,0 +1,39 @@
+{
+  "_id": "JRqCNknVV694mpQn",
+  "_key": "!items!JRqCNknVV694mpQn",
+  "name": "Kama",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Couteaux",
+    "damageRolled": 0,
+    "damageKept": 2,
+    "keywords": "Paysan, Petit",
+    "specialRules": "Peut être lancé jusqu'à 6 m (20 pieds).",
+    "price": "5 bu",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Improvisée à partir d'une faucille, la grande majorité des kama en usage dans l'Empire servent encore aux champs. C'est aussi l'arme emblématique de nombreux samouraïs de la Mante, en particulier de la famille Yoritomo.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

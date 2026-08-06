@@ -1,0 +1,47 @@
+{
+  "_id": "1VvRzhCIoEQrUn02",
+  "_key": "!items!1VvRzhCIoEQrUn02",
+  "name": "Discrétion",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "low",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Les Actions de Mouvement Simples effectuées en Discrétion permettent de se déplacer d'une distance égale à Eau x5."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Les Actions de Mouvement Simples effectuées en Discrétion permettent de se déplacer d'une distance égale à Eau x10."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Peut effectuer des Actions de Mouvement Libres normalement tout en restant Discret."
+      }
+    ],
+    "description": "Se déplacer et agir sans être vu ou entendu."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

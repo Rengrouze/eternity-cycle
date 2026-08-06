@@ -1,0 +1,47 @@
+{
+  "_id": "5GRw9uaL2yQ84bbT",
+  "_key": "!items!5GRw9uaL2yQ84bbT",
+  "name": "Défense",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "ref",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Peut conserver le résultat d'un jet de Défense précédent plutôt que d'en refaire un tant que la Posture de Pleine Défense est maintenue."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Le TN d'Armure est considéré supérieur de 3 en Posture de Défense et de Pleine Défense."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Une Action Simple peut être effectuée en Posture de Pleine Défense (aucune attaque)."
+      }
+    ],
+    "description": "Littéralement la capacité de se défendre."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "oBJ6NHR33hEv0p0F",
+  "_key": "!items!oBJ6NHR33hEv0p0F",
+  "name": "Cimeterre",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kenjutsu",
+    "damageRolled": 2,
+    "damageKept": 3,
+    "keywords": "Moyen",
+    "specialRules": "",
+    "price": "20 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Lourde lame courbe originaire de loin au-delà des frontières de l'Empire Émeraude, rapportée par le Clan de la Licorne après huit siècles d'errance. Rarement forgée en acier plié, elle sert surtout aux samouraïs Licorne, en particulier la famille Moto.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

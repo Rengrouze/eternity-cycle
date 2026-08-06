@@ -1,0 +1,39 @@
+{
+  "_id": "1belc6HmUszxUMXq",
+  "_key": "!items!1belc6HmUszxUMXq",
+  "name": "Tsubute",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Ninjutsu",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Petit",
+    "specialRules": "Peut être lancé jusqu'à 9 m (30 pieds).",
+    "price": "1 bu",
+    "isRanged": true,
+    "range": 9,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Petit projectile de jet, souvent une simple pierre travaillée.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

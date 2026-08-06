@@ -1,0 +1,39 @@
+{
+  "_id": "vjMrX60D8DVxAbXR",
+  "_key": "!items!vjMrX60D8DVxAbXR",
+  "name": "Ninja-to",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kenjutsu",
+    "damageRolled": 2,
+    "damageKept": 2,
+    "keywords": "Moyen, Ninja",
+    "specialRules": "Arme moyenne, mais considérée comme petite pour la dissimulation. Se brise si elle inflige plus de 40 Blessures en une seule attaque.",
+    "price": "5 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Aussi honni que le katana est révéré, le ninja-to est l'arme de prédilection des ninjas, qui l'emploient aussi bien au combat que pour escalader. Grossièrement forgé, peu esthétique et facile à remplacer.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

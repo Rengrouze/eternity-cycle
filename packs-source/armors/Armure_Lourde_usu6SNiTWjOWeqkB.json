@@ -1,0 +1,35 @@
+{
+  "_id": "usu6SNiTWjOWeqkB",
+  "_key": "!items!usu6SNiTWjOWeqkB",
+  "name": "Armure Lourde",
+  "type": "armor",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "armorType": "Lourde",
+    "tnBonus": 10,
+    "reduction": 5,
+    "specialRules": "Porter une armure lourde augmente de 5 le TN de tous les jets de Compétence utilisant Agilité ou Réflexes.",
+    "price": "40 koku",
+    "equipped": false,
+    "description": "Préférée par les troupes de première ligne, l'armure lourde protège tout le corps, y compris les bras, jambes, mains, pieds et le visage (kabuto).",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

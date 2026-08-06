@@ -1,0 +1,39 @@
+{
+  "_id": "2D89V6plSftc05qU",
+  "_key": "!items!2D89V6plSftc05qU",
+  "name": "Intimidation",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "low",
+    "isSchoolSkill": false,
+    "trait": "wil",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 5,
+        "description": "+5 sur tous les jets Contestés utilisant Intimidation."
+      }
+    ],
+    "description": "Menacer, faire du chantage."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

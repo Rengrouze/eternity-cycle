@@ -1,0 +1,47 @@
+{
+  "_id": "uepOEO4rtH7rXRGY",
+  "_key": "!items!uepOEO4rtH7rXRGY",
+  "name": "Bâton",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Le bonus au TN d'Armure de l'adversaire n'est plus doublé contre les attaques au bâton."
+      },
+      {
+        "rankRequired": 5,
+        "description": "L'usage d'un bâton confère une Relance Gratuite pour une manœuvre de Renversement."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Un bâton de type Grand peut être dégainé en Action Libre ; un bâton de type Petit gagne +1k0 aux jets de dégâts."
+      }
+    ],
+    "description": "Maniement du bâton."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

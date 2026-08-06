@@ -1,0 +1,47 @@
+{
+  "_id": "5sxo1LwYzl68gxzc",
+  "_key": "!items!5sxo1LwYzl68gxzc",
+  "name": "Armes Lourdes",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "La Réduction de l'adversaire est réduite de 2 lors d'une attaque à l'arme lourde."
+      },
+      {
+        "rankRequired": 5,
+        "description": "L'usage d'une arme lourde confère une Relance Gratuite pour une manœuvre de Renversement."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une arme lourde."
+      }
+    ],
+    "description": "Maniement des armes lourdes."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

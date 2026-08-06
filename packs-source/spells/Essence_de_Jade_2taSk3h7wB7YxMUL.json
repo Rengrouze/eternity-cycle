@@ -1,0 +1,34 @@
+{
+  "_id": "2taSk3h7wB7YxMUL",
+  "_key": "!items!2taSk3h7wB7YxMUL",
+  "name": "Essence de Jade",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 6,
+    "keywords": "Défense, Jade",
+    "range": "9 m",
+    "areaOfEffect": "1 créature cible",
+    "duration": "10 tours",
+    "raises": "Durée (+1 tour), Portée (+1,5 m), Cibles (+1 cible par 2 Augmentations, maximum 3 cibles au total)",
+    "description": "Ce sort fait appel à la pureté du jade pour protéger ses cibles contre la puissance de Jigoku, qu'elle se manifeste sous forme de Souillure ou de la redoutable magie connue sous le nom de maho. La cible rayonne de la lumière verte sacrée du jade, et tant que le sort dure, elle ne peut acquérir la Souillure des Terres de l'Ombre et est totalement immunisée aux effets de tous les sorts de maho. Ce sort ne peut être lancé sur quelqu'un possédant déjà au moins un rang complet de Souillure, les esprits de jade pur reculant devant un individu aussi corrompu - alertant immédiatement le lanceur de sa nature souillée."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

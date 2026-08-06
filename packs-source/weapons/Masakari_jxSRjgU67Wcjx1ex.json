@@ -1,0 +1,39 @@
+{
+  "_id": "jxSRjgU67Wcjx1ex",
+  "_key": "!items!jxSRjgU67Wcjx1ex",
+  "name": "Masakari",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes Lourdes",
+    "damageRolled": 2,
+    "damageKept": 3,
+    "keywords": "Moyen",
+    "specialRules": "",
+    "price": "8 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "En réalité une hache à une main, variante des haches utilisées par les bûcherons. Nettement plus petite que les autres armes lourdes, mais maniée de la même façon.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

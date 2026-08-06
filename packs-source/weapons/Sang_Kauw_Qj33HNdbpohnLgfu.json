@@ -1,0 +1,39 @@
+{
+  "_id": "Qj33HNdbpohnLgfu",
+  "_key": "!items!Qj33HNdbpohnLgfu",
+  "name": "Sang Kauw",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Bâton",
+    "damageRolled": 1,
+    "damageKept": 2,
+    "keywords": "Moyen",
+    "specialRules": "Double le bonus au TN d'Armure de l'adversaire. Variante « bouclier » : DR 2k1 au lieu de 1k2.",
+    "price": "10 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Arme peu commune réservée aux pratiquants de styles exotiques : perche de bois d'un mètre à un mètre vingt avec une pointe métallique à chaque extrémité, existant en variante « lame en croissant » ou « bouclier ».",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

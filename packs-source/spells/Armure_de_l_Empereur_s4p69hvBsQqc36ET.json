@@ -1,0 +1,34 @@
+{
+  "_id": "s4p69hvBsQqc36ET",
+  "_key": "!items!s4p69hvBsQqc36ET",
+  "name": "Armure de l'Empereur",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 4,
+    "keywords": "Défense",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "5 tours",
+    "raises": "Durée (+2 tours)",
+    "description": "Ce sort recouvre le lanceur d'une épaisse couche d'esprits de Terre robustes et résistants, repoussant tous les dégâts, qu'ils soient physiques ou magiques. Chaque fois que le lanceur subit des dégâts d'une attaque ennemie physique ou magique, le total de chaque dé de dégâts individuel est réduit du Rang d'École de Shugenja du lanceur (sans pouvoir descendre sous 0)."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

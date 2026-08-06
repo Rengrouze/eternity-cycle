@@ -1,0 +1,39 @@
+{
+  "_id": "9TMUYas5aTOVbwKl",
+  "_key": "!items!9TMUYas5aTOVbwKl",
+  "name": "Wakizashi",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kenjutsu",
+    "damageRolled": 2,
+    "damageKept": 2,
+    "keywords": "Moyen, Samouraï",
+    "specialRules": "Peut être lancé jusqu'à 6 m (20 pieds) comme arme à distance.",
+    "price": "15 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Là où le katana représente l'âme d'un samouraï, le wakizashi représente son honneur. Chaque membre de la caste samouraï en possède un, même s'il n'est pas toujours porté au côté. C'est avec le wakizashi que se pratique le rituel du seppuku.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

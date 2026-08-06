@@ -1,0 +1,47 @@
+{
+  "_id": "auVTq8SpuEdwZs9S",
+  "_key": "!items!auVTq8SpuEdwZs9S",
+  "name": "Méditation",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "void",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Un jet de Méditation réussi restaure jusqu'à 2 Points de Vide au lieu d'1."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Le TN de tous les jets de Méditation (emphase Jeûne) est réduit de 5."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Un jet de Méditation réussi restaure jusqu'à 3 Points de Vide."
+      }
+    ],
+    "description": "L'art de méditer, de communier avec le grand tout, ou de récupérer des Points de Vide."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "ElyCxEF5o21vLIFa",
+  "_key": "!items!ElyCxEF5o21vLIFa",
+  "name": "Enquête",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "per",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Un second essai avec l'emphase Recherche peut être tenté sans augmentation du TN initial."
+      },
+      {
+        "rankRequired": 5,
+        "description": "+5 sur tous les jets Contestés utilisant Enquête."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Un troisième essai avec l'emphase Recherche peut être tenté même si le second échoue."
+      }
+    ],
+    "description": "L'enquête littéralement : observer, interroger, fouiller."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

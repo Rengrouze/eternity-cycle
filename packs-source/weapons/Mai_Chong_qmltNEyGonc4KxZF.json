@@ -1,0 +1,39 @@
+{
+  "_id": "qmltNEyGonc4KxZF",
+  "_key": "!items!qmltNEyGonc4KxZF",
+  "name": "Mai Chong",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Lances",
+    "damageRolled": 0,
+    "damageKept": 3,
+    "keywords": "Grand",
+    "specialRules": "Peut être lancé avec précision jusqu'à 8 m (25 pieds).",
+    "price": "20 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Arme curieuse et unique, développée et utilisée presque exclusivement par les samouraïs du Clan du Sanglier dans les Montagnes du Crépuscule. Perche de 2,40 m à pointe métallique triple (une pointe avant, deux latérales) avec deux pics permettant taille et estoc.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

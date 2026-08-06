@@ -1,0 +1,34 @@
+{
+  "_id": "ViiWARG8N5mLerYx",
+  "_key": "!items!ViiWARG8N5mLerYx",
+  "name": "La Volonté du Kami",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "ring": "earth",
+    "masteryRank": 5,
+    "keywords": "Défense",
+    "range": "9 m",
+    "areaOfEffect": "1 créature cible",
+    "duration": "10 tours",
+    "raises": "Durée (+1 tour), Portée (+3 m)",
+    "description": "Pendant complémentaire de la Force du Kami, ce sort infuse une personne de l'entêtement et de la détermination de la Terre, renforçant grandement sa volonté et la rendant quasiment immunisée aux effets de la magie élémentaire. La cible voit sa Volonté augmenter d'un montant égal à l'Anneau de Terre du lanceur, et tout sort (ami ou hostile, hors Maho) la ciblant subit un malus de -XkX à son jet de Lancer de Sort, où X est l'Anneau de Terre du lanceur. En contrepartie, la cible devient si entêtée et autoritaire qu'elle ne peut plus fonctionner correctement en société, et subit un malus de -Xk0 à tous les jets de Compétence Sociale, où X est l'Anneau de Terre du lanceur."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

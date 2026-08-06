@@ -1,0 +1,47 @@
+{
+  "_id": "n6bfICnI7oyCUyWs",
+  "_key": "!items!n6bfICnI7oyCUyWs",
+  "name": "Kenjutsu",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Le total de tous les jets de dégâts effectués avec une épée est augmenté de +1k0."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Une épée peut être dégainée en Action Libre (au lieu de Simple)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une épée."
+      }
+    ],
+    "description": "Les épées."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "p1RGHXOrhcJTdb0U",
+  "_key": "!items!p1RGHXOrhcJTdb0U",
+  "name": "Armure Légère",
+  "type": "armor",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "armorType": "Légère",
+    "tnBonus": 5,
+    "reduction": 3,
+    "specialRules": "Porter une armure légère augmente de 5 le TN de tous les jets d'Athlétisme et de Discrétion.",
+    "price": "25 koku",
+    "equipped": false,
+    "description": "De loin l'armure la plus courante portée par les samouraïs des Grands Clans. Les plaques superposées protègent principalement le torse, la tête, le haut des bras et le haut des jambes.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

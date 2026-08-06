@@ -1,0 +1,39 @@
+{
+  "_id": "LTWTu4phQa2rL8ri",
+  "_key": "!items!LTWTu4phQa2rL8ri",
+  "name": "Aiguchi / Tanto",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Couteaux",
+    "damageRolled": 1,
+    "damageKept": 1,
+    "keywords": "Petit",
+    "specialRules": "Peut être lancé jusqu'à 6 m (20 pieds).",
+    "price": "1 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Couteaux simples et basiques, ne différant que par la présence (aiguchi) ou l'absence (tanto) d'une garde. Beaucoup de samouraïs portent un tanto pour des usages de toilette.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,19 +1,52 @@
 <section class="tab {{tabs.combat.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.combat.id}}" data-group="{{tabs.combat.group}}">
- <div class="flex gap-6">
-  <div>
-    <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Wounds"}}</h2>
-    <label class="flex items-center gap-1 text-sm">
-      <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0" class="w-12 border rounded text-center">
-      /
-      <span class="w-12 text-center font-bold" title="{{localize 'L5R4EC.Sheet.WoundsMaxHint'}}">{{system.wounds.max}}</span>
-    </label>
+ <div class="flex flex-col gap-4">
+  <div class="flex gap-6 flex-wrap">
+    <div>
+      <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Wounds"}}</h2>
+      <label class="flex items-center gap-1 text-sm">
+        <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0" class="w-12 border rounded text-center">
+        /
+        <span class="w-12 text-center font-bold" title="{{localize 'L5R4EC.Sheet.WoundsMaxHint'}}">{{system.wounds.max}}</span>
+      </label>
 
-    <div class="mt-2 text-sm {{#if system.wounds.isOut}}text-red-600 font-bold{{/if}}">
-      {{localize system.wounds.rankLabelKey}}
-      {{#if system.wounds.penalty}}
-        <span class="text-red-500">({{system.wounds.penalty}})</span>
-      {{/if}}
+      <div class="mt-2 text-sm {{#if system.wounds.isOut}}text-red-600 font-bold{{/if}}">
+        {{localize system.wounds.rankLabelKey}}
+        {{#if system.wounds.penalty}}
+          <span class="text-red-500">({{system.wounds.penalty}})</span>
+        {{/if}}
+      </div>
     </div>
+
+    <div>
+      <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.ArmorTn"}}</h2>
+      <div class="text-3xl font-bold text-center" title="{{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} + {{system.armorTn.armorBonus}} + {{system.armorTn.otherBonus}}">
+        {{system.armorTn.total}}
+      </div>
+      <div class="text-xs text-neutral-500 text-center mt-1">
+        {{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromReflexes"}})
+        {{#if system.armorTn.armorBonus}} + {{system.armorTn.armorBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromArmor"}}){{/if}}
+      </div>
+      <label class="flex items-center justify-center gap-1 text-sm mt-2">
+        {{localize "L5R4EC.Sheet.ArmorTnOther"}}
+        <input type="number" name="system.armorTn.otherBonus" value="{{system.armorTn.otherBonus}}" class="w-14 border rounded text-center">
+      </label>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Buffs"}}</h2>
+    {{#if activeBuffs.length}}
+      <ul class="flex flex-col gap-1 text-sm">
+        {{#each activeBuffs}}
+          <li class="border rounded px-2 py-1 {{#if this.isAutomatic}}border-green-500 bg-green-50{{else}}border-neutral-300{{/if}}">
+            <strong>{{this.skillName}}</strong> ({{localize "L5R4EC.Sheet.Rank"}} {{this.rankRequired}}) — {{this.description}}
+            {{#unless this.isAutomatic}}<span class="text-xs text-neutral-400 italic"> ({{localize "L5R4EC.Sheet.BuffManual"}})</span>{{/unless}}
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p class="text-sm text-neutral-400">{{localize "L5R4EC.Sheet.NoBuffs"}}</p>
+    {{/if}}
   </div>
 
   {{!-- À venir : armes, armures, jets de dégâts... --}}

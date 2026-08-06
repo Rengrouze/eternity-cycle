@@ -1,0 +1,39 @@
+{
+  "_id": "GxCbVx8v6N8Bxoiy",
+  "_key": "!items!GxCbVx8v6N8Bxoiy",
+  "name": "Éventail de Guerre",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Éventails de Guerre",
+    "damageRolled": 0,
+    "damageKept": 1,
+    "keywords": "Petit",
+    "specialRules": "",
+    "price": "5 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Aussi appelé tessen. Il en existe de nombreux styles selon les Clans, particulièrement populaires en terres Lion et Grue. Certains ne sont que de courtes tiges métalliques ornées de disques ou de plaques.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

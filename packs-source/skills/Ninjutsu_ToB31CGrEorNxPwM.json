@@ -1,0 +1,47 @@
+{
+  "_id": "ToB31CGrEorNxPwM",
+  "_key": "!items!ToB31CGrEorNxPwM",
+  "name": "Ninjutsu",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "bugei",
+    "isSchoolSkill": false,
+    "trait": "agi",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "description": "Les dégâts de toutes les armes de ninjutsu sont augmentés de +1k0."
+      },
+      {
+        "rankRequired": 5,
+        "description": "Les dés de dégâts des armes de ninjutsu explosent normalement (elles n'explosent pas par défaut)."
+      },
+      {
+        "rankRequired": 7,
+        "description": "Les dégâts de toutes les armes de ninjutsu sont augmentés de +0k1 supplémentaire (+1k1 au total)."
+      }
+    ],
+    "description": "Le matériel de ninja."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

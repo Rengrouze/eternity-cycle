@@ -1,0 +1,39 @@
+{
+  "_id": "xQ5N36bxrhkyt483",
+  "_key": "!items!xQ5N36bxrhkyt483",
+  "name": "Bisento",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Armes d'Hast",
+    "damageRolled": 3,
+    "damageKept": 3,
+    "keywords": "Grand",
+    "specialRules": "",
+    "price": "12 koku",
+    "isRanged": false,
+    "range": 0,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Manche de bois surmonté d'une lourde lame d'épée, plus lourde que celle d'un katana ou d'un nagamaki - dangereusement déséquilibrée entre des mains inexpérimentées. Populaire chez certaines sectes de sohei, les moines guerriers.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

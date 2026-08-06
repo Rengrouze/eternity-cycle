@@ -28,6 +28,21 @@
          },
          "skill": {
             "htmlFields": ["description"]
+         },
+         "weapon": {
+            "htmlFields": ["specialRules", "description", "nemuranaiPower"]
+         },
+         "armor": {
+            "htmlFields": ["specialRules", "description", "nemuranaiPower"]
+         },
+         "misc": {
+            "htmlFields": ["specialRules", "description", "nemuranaiPower"]
+         },
+         "ammo": {
+            "htmlFields": ["specialRules", "description", "nemuranaiPower"]
+         },
+         "spell": {
+            "htmlFields": ["raises", "description"]
          }
       }
    },
@@ -36,6 +51,48 @@
          "lang": "fr",
          "name": "Français",
          "path": "lang/fr.json"
+      }
+   ],
+   "packs": [
+      {
+         "name": "weapons",
+         "label": "Armes de base",
+         "path": "packs/weapons",
+         "type": "Item",
+         "system": "l5r4ec",
+         "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+      },
+      {
+         "name": "armors",
+         "label": "Armures de base",
+         "path": "packs/armors",
+         "type": "Item",
+         "system": "l5r4ec",
+         "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+      },
+      {
+         "name": "ammo",
+         "label": "Munitions de base",
+         "path": "packs/ammo",
+         "type": "Item",
+         "system": "l5r4ec",
+         "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+      },
+      {
+         "name": "skills",
+         "label": "Compétences de base",
+         "path": "packs/skills",
+         "type": "Item",
+         "system": "l5r4ec",
+         "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+      },
+      {
+         "name": "spells",
+         "label": "Sorts de base",
+         "path": "packs/spells",
+         "type": "Item",
+         "system": "l5r4ec",
+         "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
       }
    ]
 }

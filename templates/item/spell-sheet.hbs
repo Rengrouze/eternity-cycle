@@ -1,0 +1,60 @@
+<div class="l5r4ec flex flex-col h-full">
+  <header class="flex items-center gap-2 p-2 border-b">
+    <img src="{{item.img}}" data-action="editImage" data-edit="img"
+         class="w-12 h-12 rounded border cursor-pointer object-cover" title="{{localize 'L5R4EC.Sheet.EditImage'}}">
+    <input type="text" name="name" value="{{item.name}}"
+           class="flex-1 text-lg font-l5r-display border rounded px-2 py-1"
+           placeholder="{{localize 'L5R4EC.Dialog.SpellNameHint'}}">
+  </header>
+
+  <div class="flex-1 overflow-y-auto p-2 flex flex-col gap-2 text-sm">
+    <div class="flex gap-2">
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.SpellRing"}}
+        <select name="system.ring" class="border rounded px-1 py-0.5">
+          {{#each ringOptions}}
+            <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <label class="flex flex-col gap-0.5 w-28">
+        {{localize "L5R4EC.Sheet.MasteryRank"}}
+        <input type="number" name="system.masteryRank" value="{{system.masteryRank}}" min="1" step="1" class="border rounded px-1 py-0.5">
+      </label>
+    </div>
+
+    <div class="text-xs text-neutral-500 border rounded px-2 py-1 bg-black/5">
+      {{localize "L5R4EC.Sheet.CastingTn"}} {{castingTn}} — {{localize "L5R4EC.Sheet.CastingRounds"}} {{castingRounds}}
+    </div>
+
+    <label class="flex flex-col gap-0.5">
+      {{localize "L5R4EC.Sheet.Keywords"}}
+      <input type="text" name="system.keywords" value="{{system.keywords}}" class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.KeywordsHint'}}">
+    </label>
+
+    <div class="flex gap-2">
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.SpellRange"}}
+        <input type="text" name="system.range" value="{{system.range}}" class="border rounded px-1 py-0.5">
+      </label>
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.AreaOfEffect"}}
+        <input type="text" name="system.areaOfEffect" value="{{system.areaOfEffect}}" class="border rounded px-1 py-0.5">
+      </label>
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.Duration"}}
+        <input type="text" name="system.duration" value="{{system.duration}}" class="border rounded px-1 py-0.5">
+      </label>
+    </div>
+
+    <label class="flex flex-col gap-0.5">
+      {{localize "L5R4EC.Sheet.Raises"}}
+      <textarea name="system.raises" rows="3" class="border rounded px-1 py-0.5">{{system.raises}}</textarea>
+    </label>
+
+    <label class="flex flex-col gap-0.5 flex-1">
+      {{localize "L5R4EC.Sheet.Description"}}
+      <textarea name="system.description" rows="6" class="border rounded px-1 py-0.5 flex-1">{{system.description}}</textarea>
+    </label>
+  </div>
+</div>

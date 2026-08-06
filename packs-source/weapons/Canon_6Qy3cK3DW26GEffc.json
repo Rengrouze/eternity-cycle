@@ -1,0 +1,39 @@
+{
+  "_id": "6Qy3cK3DW26GEffc",
+  "_key": "!items!6Qy3cK3DW26GEffc",
+  "name": "Canon",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Canon",
+    "damageRolled": 10,
+    "damageKept": 10,
+    "keywords": "Grand, Gaijin",
+    "specialRules": "Nécessite un équipage de 4 (minimum 2, à cadence réduite) - ne peut pas être utilisé par un seul homme. Un boulet inflige les dégâts complets à la cible, puis 5k5 à tout ce qui se trouve dans une ligne de 9 m (30 pieds) au-delà (un mur épais peut arrêter ce passage). Cadence de tir : 1 coup toutes les deux minutes (une fois par minute avec un équipage de 2). Ignore le bonus au TN d'Armure ainsi que toute Réduction (armure, résistance naturelle, ou celle d'un bâtiment).",
+    "price": "Non disponible à la vente",
+    "isRanged": true,
+    "range": 375,
+    "strengthRating": 0,
+    "equipped": false,
+    "description": "Pièce d'artillerie gaijin tirant des boulets pleins. Nécessite un équipage entraîné et un temps de préparation entre chaque tir.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

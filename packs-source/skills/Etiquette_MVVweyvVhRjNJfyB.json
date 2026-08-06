@@ -1,0 +1,51 @@
+{
+  "_id": "MVVweyvVhRjNJfyB",
+  "_key": "!items!MVVweyvVhRjNJfyB",
+  "name": "Étiquette",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": "noble",
+    "isSchoolSkill": false,
+    "trait": "awa",
+    "subtype": "",
+    "rank": 0,
+    "specializations": "",
+    "masteryBonuses": [
+      {
+        "rankRequired": 3,
+        "path": "reputation.rank",
+        "value": 3,
+        "description": "+3 Réputation en plus du total normalement indiqué par les Anneaux et rangs de Compétence."
+      },
+      {
+        "rankRequired": 5,
+        "description": "+1k0 sur tous les jets Contestés utilisant Étiquette."
+      },
+      {
+        "rankRequired": 7,
+        "path": "reputation.rank",
+        "value": 7,
+        "description": "+7 Réputation supplémentaires (en plus du bonus de rang 3, soit +10 au total)."
+      }
+    ],
+    "description": "L'art de bien se comporter en société ; compétence de \"défense\" contre la courtisanerie."
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "8qljtIvjc4AB7dQs",
+  "_key": "!items!8qljtIvjc4AB7dQs",
+  "name": "Armure Ashigaru",
+  "type": "armor",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "armorType": "Ashigaru",
+    "tnBonus": 3,
+    "reduction": 1,
+    "specialRules": "",
+    "price": "5 koku",
+    "equipped": false,
+    "description": "Bien moins coûteuse à produire que l'armure légère ou lourde, l'armure ashigaru est aussi plus légère, moins contraignante et moins protectrice. Elle protège la tête, le torse et le haut des jambes.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

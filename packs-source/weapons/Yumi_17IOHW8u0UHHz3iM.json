@@ -1,0 +1,39 @@
+{
+  "_id": "17IOHW8u0UHHz3iM",
+  "_key": "!items!17IOHW8u0UHHz3iM",
+  "name": "Yumi",
+  "type": "weapon",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "associatedSkill": "Kyujutsu",
+    "damageRolled": 0,
+    "damageKept": 0,
+    "keywords": "Grand",
+    "specialRules": "Force 3. Augmente de +10 le TN de tous les jets d'attaque s'il est utilisé à cheval. La Force de l'arc s'ajoute au premier chiffre du DR de la flèche tirée. Une flèche tirée au-delà de la portée indiquée (jusqu'à deux fois cette portée) inflige un malus de -1k0 au jet d'attaque par tranche de 15 m supplémentaires ; tirer sur un adversaire au contact inflige un malus de -10 au TN du jet d'attaque.",
+    "price": "20 koku",
+    "isRanged": true,
+    "range": 75,
+    "strengthRating": 3,
+    "equipped": false,
+    "description": "L'arc de base porté par les archers d'infanterie et par les samouraïs voyageant indépendamment des armées ou d'autres groupes importants. Puissant, quoique un peu moins que le dai-kyu, sa courbure le rend peu pratique à cheval.",
+    "quality": "white",
+    "nemuranaiPower": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.0.1",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}
