@@ -1,0 +1,42 @@
+{
+  "_id": "wCEJWozLKBoLWr07",
+  "_key": "!items!wCEJWozLKBoLWr07",
+  "name": "Nuées Voraces",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-3-nuees-voraces",
+    "ring": "fire",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "1 personne cible",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour)",
+    "description": "Forme plus puissante et sophistiquée de la prière invoquant les Feux Intérieurs, ce sort non seulement endommage la cible mais perturbe aussi ses propres tentatives d'invoquer les kami de Feu, en faisant une arme très efficace contre un Shugenja de Feu rival. Vous invoquez un jet de flammes qui fonce vers la cible avec une fureur débridée. Les flammes infligent 5k3 Blessures à l'impact, puis encerclent l'adversaire pour la durée du sort, attendant qu'il commette une erreur. Si la cible lance un sort de Feu pendant ce temps, les kami de Feu frappent instantanément, infligeant 3k3 Blessures supplémentaires et faisant automatiquement échouer le jet de Lancer de Sort (la cible perd tout de même l'emplacement de sort correspondant, comme d'habitude).",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 5,
+      "kept": 3,
+      "note": "+3k3 supplémentaires si la cible lance un sort de Feu pendant l'encerclement (son jet de Lancer de Sort échoue aussi automatiquement)."
+    }
+  },
+  "effects": [],
+  "folder": "v3huryt01LtUecPn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

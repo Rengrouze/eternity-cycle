@@ -1,0 +1,42 @@
+{
+  "_id": "ISLykOi8dc20JatJ",
+  "_key": "!items!ISLykOi8dc20JatJ",
+  "name": "Chiffre Élémentaire",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-chiffre-elementaire",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Illusion",
+    "range": "Contact",
+    "areaOfEffect": "1 page écrite",
+    "duration": "1 mois",
+    "raises": "Durée (+1 semaine par Augmentation), Zone d'Effet (+1 page par Augmentation)",
+    "description": "Spécial : ce sort n'est connu que des familles Impériales, et est particulièrement prisé des Shugenja Seppun. Comprendre les voies de l'Air révèle la frontière indistincte entre langage et chiffre. Un Shugenja peut placer un écrit sous un chiffre élémentaire, incitant les kami à jouer un petit jeu avec ceux qui lisent le texte. Le bloc de texte devient totalement inintelligible, sauf pour son auteur original ou le destinataire prévu, dont le nom est murmuré au moment du lancer. Normalement, un Chiffre Élémentaire ne peut être cassé par le déchiffrage traditionnel, et les kami ne révèlent le texte véritable qu'au destinataire prévu. D'autres Shugenja peuvent cependant déjouer le jeu des kami et lire le texte via un jet d'Art de la Magie / Intelligence à un TN égal au total du jet de Lancer de Sort original.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

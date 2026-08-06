@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-6-puissance-du-dragon-de-terre",
     "ring": "earth",
     "masteryRank": 6,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 créature cible",
     "duration": "10 minutes",
     "raises": "Durée (+1 minute), Portée (+3 m), Cibles (+1), Spécial (absorption de dégâts +10 Blessures par Augmentation)",
-    "description": "Le plus puissant des sorts de Terre à vocation protectrice, ce sort fait appel à la faveur du Dragon de Terre pour envelopper les cibles d'une protection contre toute forme de dommage. Les esprits de Terre absorbent tous les dégâts subis par les cibles pendant la durée du sort. Il existe cependant des limites même à l'endurance de la Terre : les Nemuranai peuvent contourner cette protection, et si les esprits de Terre protégeant une cible donnée ont absorbé un total de 100 Blessures, ils s'épuisent et l'effet du sort prend fin pour cette cible."
+    "description": "Le plus puissant des sorts de Terre à vocation protectrice, ce sort fait appel à la faveur du Dragon de Terre pour envelopper les cibles d'une protection contre toute forme de dommage. Les esprits de Terre absorbent tous les dégâts subis par les cibles pendant la durée du sort. Il existe cependant des limites même à l'endurance de la Terre : les Nemuranai peuvent contourner cette protection, et si les esprits de Terre protégeant une cible donnée ont absorbé un total de 100 Blessures, ils s'épuisent et l'effet du sort prend fin pour cette cible.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "wBjefqIzcamTBNu1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

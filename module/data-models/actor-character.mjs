@@ -1,6 +1,7 @@
 import { computeWoundTrack } from "../rules/wound-track.mjs";
 import { getLethality } from "../settings.mjs";
 import { AFFINITY_CHOICES } from "../rules/spellcasting.mjs";
+import { STANCE_CHOICES } from "../rules/stances.mjs";
 
 const { HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
@@ -54,6 +55,22 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
         otherBonus: new NumberField({ required: true, integer: true, initial: 0 })
       }),
 
+      // État de combat : posture actuelle (voir module/rules/stances.mjs),
+      // bonus fixe d'Initiative (édité à la main, ex: Kaiu Turtle...), et le
+      // bonus temporaire de TN d'Armure gagné en déclarant la Pleine Défense
+      // (moitié du jet Défense/Réflexes, remis à 0 en quittant cette posture
+      // - voir SystemActor#setStance et #rollFullDefense). stanceRound est le
+      // numéro du round de combat pour lequel `stance` a été confirmée : tant
+      // qu'il ne correspond pas au round en cours, le personnage est
+      // considéré "en attente" de la Phase de Réaction (voir
+      // module/hooks/reaction-phase.mjs et combat-tracker-stances.mjs).
+      combat: new SchemaField({
+        stance: new StringField({ required: true, choices: STANCE_CHOICES, initial: "attack" }),
+        stanceRound: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+        initiativeBonus: new NumberField({ required: true, integer: true, initial: 0 }),
+        fullDefenseBonus: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
+      }),
+
       // Magie (Shugenja) : le rang d'école définit le rang de sort max
       // apprenable (avant bonus d'affinité), et sert de "rang de compétence"
       // dans le jet de lancer de sort (voir SystemActor#rollSpell). Une
@@ -83,9 +100,6 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
         water: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) }),
         void: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) })
       }),
-
-      // Rang d'Initié/École (Insight Rank au sens large, affiché dans le header).
-      rank: new NumberField({ required: true, integer: true, min: 1, initial: 1 }),
 
       // XP : on stocke le total acquis et le total dépensé, la valeur
       // disponible est dérivée (voir prepareDerivedData) pour ne jamais

@@ -1,0 +1,42 @@
+{
+  "_id": "CktFCtlYCU8mW8qe",
+  "_key": "!items!CktFCtlYCU8mW8qe",
+  "name": "Clarté d'Intention",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-clarte-d-intention",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "Bataille",
+    "range": "Personnelle",
+    "areaOfEffect": "3 m de rayon autour du lanceur",
+    "duration": "2 tours",
+    "raises": "Zone (+1,5 m), Durée (+1 tour par 2 Augmentations)",
+    "description": "L'une des nombreuses forces de l'eau réside dans sa vitesse. Tous les alliés dans la zone d'effet de ce sort gagnent un bonus de +5 à leur score d'Initiative pour la durée du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

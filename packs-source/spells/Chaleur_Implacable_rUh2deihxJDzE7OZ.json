@@ -1,0 +1,42 @@
+{
+  "_id": "rUh2deihxJDzE7OZ",
+  "_key": "!items!rUh2deihxJDzE7OZ",
+  "name": "Chaleur Implacable",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-2-chaleur-implacable",
+    "ring": "fire",
+    "masteryRank": 2,
+    "keywords": "Défense",
+    "range": "Contact",
+    "areaOfEffect": "1 armure",
+    "duration": "10 tours",
+    "raises": "Durée (+2 tours)",
+    "description": "Ce sort est conçu pour protéger les bushi en imprégnant leur armure d'un kami de Feu. Le sort cible une armure, qui se met à luire de la force d'un soleil de désert impitoyable. Tout adversaire tentant de frapper le porteur de l'armure, que l'attaque touche ou non, est immédiatement considéré Fatigué jusqu'au début de son prochain tour. Ce malus s'applique au jet d'attaque qui a déclenché le sort, et tout attaquant en Posture d'Attaque Totale adopte immédiatement la Posture d'Attaque à la place. Ce sort n'a aucun effet sur les attaques à distance ni sur les sorts ciblant le porteur de l'armure.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "LbDGmZdOK1q2Cieh",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

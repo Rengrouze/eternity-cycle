@@ -1,0 +1,42 @@
+{
+  "_id": "iXYYW9fjWyHqlKO1",
+  "_key": "!items!iXYYW9fjWyHqlKO1",
+  "name": "Refermer le Voile",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-4-refermer-le-voile",
+    "ring": "void",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 esprit cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m), Cibles (+1 par Augmentation)",
+    "description": "Le néant qui constitue le Vide fait partie intégrante de ce qui sépare les différents royaumes spirituels les uns des autres, et il est possible de le renforcer dans certaines zones. Vous pouvez cibler tout esprit non natif du royaume mortel de Ningen-do. Cet esprit est banni vers son royaume d'origine pour une durée minimale égale à votre Anneau de Vide en mois. Les esprits possédant un corps physique dans le royaume mortel, comme les oni ou les esprits changeformes, nécessitent un jet Contesté de Volonté pour être affectés par ce sort. Les esprits significativement plus puissants que vous (à la discrétion du MJ) peuvent s'avérer immunisés aux effets de ce sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "SSnB3xX2fXxNekIx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

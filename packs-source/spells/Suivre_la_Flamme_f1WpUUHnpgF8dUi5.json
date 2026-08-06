@@ -1,0 +1,42 @@
+{
+  "_id": "f1WpUUHnpgF8dUi5",
+  "_key": "!items!f1WpUUHnpgF8dUi5",
+  "name": "Suivre la Flamme",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-5-suivre-la-flamme",
+    "ring": "fire",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "Voir description",
+    "duration": "5 tours",
+    "raises": "Dégâts (+1k0 par Augmentation)",
+    "description": "Ce sort vous accorde un contrôle exceptionnel des kami de Feu environnants, vous permettant de les persuader de mener une attaque aussi inhabituelle que terrifiante. Au tour où ce sort est lancé et à chaque tour suivant, vous pouvez désigner une cible en ligne de vue à moins de 90 m et envoyer vers elle un jet de flammes qui serpente le long du sol (aux tours suivants, désigner une cible ainsi est une Action Simple). Le jet de flammes se déplace à raison de 23 m par tour et contourne les obstacles infranchissables (ou ininflammables) pour atteindre sa cible. Une fois le feu arrivé à destination, la cible s'embrase et subit 6k5 Blessures. Elle prend feu et subit la moitié de ce nombre de Blessures (arrondi à l'inférieur) chaque tour suivant, jusqu'à ce que le feu soit éteint normalement ou que la durée du sort expire.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 6,
+      "kept": 5,
+      "note": "Puis la moitié de ce total (arrondie à l'inférieur) chaque tour suivant jusqu'à extinction ou fin du sort."
+    }
+  },
+  "effects": [],
+  "folder": "YC6hvzbF1MzidNEW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

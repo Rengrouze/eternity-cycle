@@ -1,0 +1,42 @@
+{
+  "_id": "q7yiDpz1XCngrs0M",
+  "_key": "!items!q7yiDpz1XCngrs0M",
+  "name": "Tempête d'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-1-tempete-d-air",
+    "ring": "air",
+    "masteryRank": 1,
+    "keywords": "Tonnerre",
+    "range": "Personnelle",
+    "areaOfEffect": "Cône de 23 m de long et 4,5 m de large à son extrémité",
+    "duration": "Instantané",
+    "raises": "Zone (+1,5 m à la largeur du cône), Dégâts (+1k0), Portée (+1,5 m à la longueur du cône), Spécial (+5 au TN d'Air contre le Renversement par Augmentation)",
+    "description": "Vous invoquez une puissante rafale d'air émanant de votre position, qui s'abat sur tout ce qui se trouve sur son passage et projette au sol quiconque en est frappé. Toutes les cibles dans la zone d'effet subissent 1k1 Blessures et doivent réussir un jet Contesté de leur Terre contre votre Air. Toute cible qui échoue subit un Renversement.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 1,
+      "kept": 1,
+      "note": "La cible subit aussi un Renversement si elle échoue son jet Contesté de Terre."
+    }
+  },
+  "effects": [],
+  "folder": "Z0LbN40lfyacuNmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

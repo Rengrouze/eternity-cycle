@@ -1,0 +1,42 @@
+{
+  "_id": "XJ12LT7yHdR5UZry",
+  "_key": "!items!XJ12LT7yHdR5UZry",
+  "name": "Toucher de Benten",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-toucher-de-benten",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "Personnelle/Contact",
+    "areaOfEffect": "Individu cible (peut être le lanceur)",
+    "duration": "1 heure",
+    "raises": "Portée (peut passer à 1,5 m avec une seule Augmentation)",
+    "description": "En faisant appel aux kami d'Air pour murmurer des suggestions à autrui, vous pouvez faire percevoir la cible de ce sort de façon plus favorable qu'elle ne le serait autrement. La cible gagne un bonus de +1k1, plus votre Anneau d'Air, au total de tous les jets de Compétence Sociale pendant la durée du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

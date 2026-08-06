@@ -1,0 +1,42 @@
+{
+  "_id": "fuFkoZp4uPzI6J1I",
+  "_key": "!items!fuFkoZp4uPzI6J1I",
+  "name": "Sagesse du Kami",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-sagesse-du-kami",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "Le lanceur",
+    "duration": "1 minute",
+    "raises": "Durée (+1 minute par Augmentation), Spécial (+1 rang de Compétence supplémentaire, une fois, pour 3 Augmentations)",
+    "description": "Cette prière invite les kami d'Air dans l'esprit même du Shugenja, rehaussant son esprit et ses pensées, lui permettant de mieux tirer parti de ses compétences et de son savoir. Pendant la durée du sort, le lanceur gagne 1 rang dans toutes les Compétences qu'il possède déjà normalement, et peut bénéficier de toute Capacité de Maîtrise que cela lui octroierait. Cela ne peut accorder de rangs que dans des Compétences déjà possédées par le Shugenja - les kami d'Air ne peuvent évoquer un savoir que le lanceur ne possède pas. À l'expiration du sort, tous les bénéfices sont perdus, et les souvenirs du savoir ou de la perspicacité gagnés pendant sa durée restent au mieux flous ; aucun compte précis ou détaillé ne peut jamais en être donné, et de sévères migraines sont connues pour affliger ceux qui s'y essaient trop fort. Les bénéfices de ce sort ne s'appliquent qu'aux Compétences réellement connues du lanceur - il ne peut augmenter le rang de Compétences temporairement acquises par magie, ni se combiner à des Avantages comme Ingénieux.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

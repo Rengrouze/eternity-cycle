@@ -1,0 +1,42 @@
+{
+  "_id": "20tSPxqicAp2E6TW",
+  "_key": "!items!20tSPxqicAp2E6TW",
+  "name": "Connaître l'Esprit",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-connaitre-l-esprit",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "3 m",
+    "areaOfEffect": "Individu cible",
+    "duration": "3 tours",
+    "raises": "Durée (+1 tour), Portée (+1,5 m)",
+    "description": "Bien que les secrets ultimes de l'esprit humain restent à jamais cachés au vent, les kami d'Air peuvent cueillir les pensées les plus immédiates dans l'esprit des autres et les murmurer à ceux qui ont leur faveur. Pendant la durée de ce sort, vous entendez essentiellement les pensées de surface de la cible : vous n'apprenez que ce à quoi elle pense activement. Par exemple, si vous demandez le nom de la fille de la cible, ce nom apparaîtrait instantanément dans son esprit même si elle n'avait aucune intention de le prononcer à voix haute. Un jet Contesté de votre Perception contre l'Intuition de la cible vous permet aussi d'évaluer son véritable état émotionnel, indépendamment de son apparence physique.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

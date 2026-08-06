@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-2-la-terre-devient-le-ciel",
     "ring": "earth",
     "masteryRank": 2,
     "keywords": "Jade, Tonnerre",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 créature cible",
     "duration": "Instantané",
     "raises": "Dégâts (+1k0), Cibles (+1 cible), Spécial (rend les rochers de Jade avec 2 Augmentations)",
-    "description": "Ce sort invoque plusieurs énormes rochers depuis la terre et les projette pour frapper infailliblement une (ou plusieurs) créature cible. La cible touchée subit des dégâts avec un DR égal à l'Anneau de Terre du lanceur. Si plusieurs cibles sont frappées, le DR est réduit de 1k1 par cible supplémentaire, jusqu'à un minimum de 1k1 par cible. Ces rochers sont de pierre ordinaire et mondaine, et ne peuvent donc normalement pas contourner la Réduction ou l'Invulnérabilité - mais un lanceur puissant peut infuser les rochers de la puissance du Jade."
+    "description": "Ce sort invoque plusieurs énormes rochers depuis la terre et les projette pour frapper infailliblement une (ou plusieurs) créature cible. La cible touchée subit des dégâts avec un DR égal à l'Anneau de Terre du lanceur. Si plusieurs cibles sont frappées, le DR est réduit de 1k1 par cible supplémentaire, jusqu'à un minimum de 1k1 par cible. Ces rochers sont de pierre ordinaire et mondaine, et ne peuvent donc normalement pas contourner la Réduction ou l'Invulnérabilité - mais un lanceur puissant peut infuser les rochers de la puissance du Jade.",
+    "damage": {
+      "mode": "ring",
+      "ring": "earth",
+      "rolled": 0,
+      "kept": 0,
+      "note": "DR réduit de 1k1 par cible supplémentaire touchée (minimum 1k1 par cible)."
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "lWa2nT5IVs48Uzkv",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

@@ -1,0 +1,22 @@
+{
+  "_id": "TDop2U4ELmo4xmf6",
+  "_key": "!folders!TDop2U4ELmo4xmf6",
+  "name": "Rang 3",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 10,
+  "color": null,
+  "folder": "ky03u8efbMmyIIXF",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

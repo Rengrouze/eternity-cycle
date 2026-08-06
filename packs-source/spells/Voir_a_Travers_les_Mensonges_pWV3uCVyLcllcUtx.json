@@ -1,0 +1,42 @@
+{
+  "_id": "pWV3uCVyLcllcUtx",
+  "_key": "!items!pWV3uCVyLcllcUtx",
+  "name": "Voir à Travers les Mensonges",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-1-voir-a-travers-les-mensonges",
+    "ring": "void",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "7,5 m",
+    "areaOfEffect": "Individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m), Spécial (1 Avantage/Désavantage supplémentaire par Augmentation)",
+    "description": "Les motifs qui composent toute chose dans le Vide existent aussi chez les individus, et avec l'entraînement, les ishiken peuvent les reconnaître. Vous apprenez l'Avantage de plus haute valeur ou le Désavantage de plus haute valeur (à votre choix) possédé par la cible de ce sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "zCkpcxT4GgdQUj1N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

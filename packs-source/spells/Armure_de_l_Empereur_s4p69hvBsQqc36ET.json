@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-4-armure-de-l-empereur",
     "ring": "earth",
     "masteryRank": 4,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Soi-même",
     "duration": "5 tours",
     "raises": "Durée (+2 tours)",
-    "description": "Ce sort recouvre le lanceur d'une épaisse couche d'esprits de Terre robustes et résistants, repoussant tous les dégâts, qu'ils soient physiques ou magiques. Chaque fois que le lanceur subit des dégâts d'une attaque ennemie physique ou magique, le total de chaque dé de dégâts individuel est réduit du Rang d'École de Shugenja du lanceur (sans pouvoir descendre sous 0)."
+    "description": "Ce sort recouvre le lanceur d'une épaisse couche d'esprits de Terre robustes et résistants, repoussant tous les dégâts, qu'ils soient physiques ou magiques. Chaque fois que le lanceur subit des dégâts d'une attaque ennemie physique ou magique, le total de chaque dé de dégâts individuel est réduit du Rang d'École de Shugenja du lanceur (sans pouvoir descendre sous 0).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "1XS15ce2uyxUysYl",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

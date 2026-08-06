@@ -1,0 +1,42 @@
+{
+  "_id": "VXUAgZhkuBMemCll",
+  "_key": "!items!VXUAgZhkuBMemCll",
+  "name": "Vent de la Lune",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-6-vent-de-la-lune",
+    "ring": "air",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 personne cible",
+    "duration": "1 minute",
+    "raises": "Durée (+1 minute par 2 Augmentations), Spécial (+1k1 au jet Contesté d'Air pour 3 Augmentations)",
+    "description": "Les adeptes d'Air d'une certaine puissance réalisent qu'il est possible de lire les pensées d'autrui, mais quelques Shugenja n'y ont vu qu'un début de ce que l'Air permet d'accomplir. Par des invocations extrêmement avancées et puissantes des kami d'Air, un Shugenja peut non seulement lire les pensées de surface d'une autre personne, mais aussi transmettre ses propres pensées dans son esprit. Cet acte est considéré hautement discutable, et le Clan du Phénix estime que ce sort frôle le blasphème. Néanmoins, les immenses avantages tirés d'une telle manipulation totale d'autrui font que le sort continue de circuler discrètement à travers l'Empire. Pour que cette prière réussisse, le lanceur doit connaître le nom de la cible et pouvoir la voir clairement. Sans ce lien visuel, les pensées de la cible seront trop confuses pour être déchiffrées, n'entraînant qu'un mal de tête douloureux pour le lanceur comme pour la cible. Si le nom connu du lanceur est faux (la cible utilisant un alias, par exemple), le jet de Lancer de Sort subit un malus de +10 au TN, le faux nom troublant les esprits. De plus, pour imposer avec succès ses pensées dans l'esprit de la cible, le lanceur doit remporter un jet Contesté d'Air contre elle ; en cas d'échec, le contact est rompu et les deux parties subissent le même mal de tête sévère. Si le jet d'Air réussit en revanche, la cible ignore tout du contact mental et croit, pour la durée du sort, que les pensées surgissant dans son esprit sont entièrement les siennes. Le lanceur doit maintenir une concentration partielle pour la durée du sort - si elle est rompue, le sort prend fin immédiatement. Effet secondaire particulier : pendant une heure après la fin du sort, le lanceur et la cible ont du mal à se mentir convaincamment l'un à l'autre, subissant un malus de +10 au TN à tout jet de Sincérité (Mensonge) effectué l'un contre l'autre.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "if0Bk679rqL63DqQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

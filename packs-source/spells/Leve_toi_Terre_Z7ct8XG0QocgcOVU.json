@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-6-leve-toi-terre",
     "ring": "earth",
     "masteryRank": 6,
     "keywords": "",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 esprit invoqué",
     "duration": "Concentration",
     "raises": "Aucune",
-    "description": "La Terre elle-même se lève et prend forme pour vous défendre. Aboutissement ultime du sort d'Invocation, cette prière invoque un kami massif de Terre pure à votre service. Il prend une forme vaguement humanoïde d'environ 3 mètres de haut, au corps large et aux membres épais, entièrement formés de terre et de pierre. Ce puissant kami de Terre peut se déplacer jusqu'à 5 x votre Anneau de Terre en mètres par tour, et ses pas font trembler le sol dans un rayon de 6 m autour de lui, empêchant quiconque dans cette zone d'effectuer des Actions de Mouvement Simples. Cet esprit de Terre est considéré comme ayant tous ses Traits Physiques égaux à votre Anneau de Terre, et attaque avec un rang de compétence Jiujutsu égal à la moitié de votre Anneau de Terre. Le kami peut porter jusqu'à 450 kg s'il en reçoit l'ordre, et ses coups sont assez puissants pour détruire toute structure en bois et briser des murs de pierre de 30 cm d'épaisseur. Pour déterminer les dégâts qu'il subit, l'esprit est considéré avoir des Blessures comme un humain avec un Anneau de Terre égal au vôtre, mais ne subit aucun malus de blessure. Il est Invulnérable. S'il est ramené à zéro Blessure, il est dissipé."
+    "description": "La Terre elle-même se lève et prend forme pour vous défendre. Aboutissement ultime du sort d'Invocation, cette prière invoque un kami massif de Terre pure à votre service. Il prend une forme vaguement humanoïde d'environ 3 mètres de haut, au corps large et aux membres épais, entièrement formés de terre et de pierre. Ce puissant kami de Terre peut se déplacer jusqu'à 5 x votre Anneau de Terre en mètres par tour, et ses pas font trembler le sol dans un rayon de 6 m autour de lui, empêchant quiconque dans cette zone d'effectuer des Actions de Mouvement Simples. Cet esprit de Terre est considéré comme ayant tous ses Traits Physiques égaux à votre Anneau de Terre, et attaque avec un rang de compétence Jiujutsu égal à la moitié de votre Anneau de Terre. Le kami peut porter jusqu'à 450 kg s'il en reçoit l'ordre, et ses coups sont assez puissants pour détruire toute structure en bois et briser des murs de pierre de 30 cm d'épaisseur. Pour déterminer les dégâts qu'il subit, l'esprit est considéré avoir des Blessures comme un humain avec un Anneau de Terre égal au vôtre, mais ne subit aucun malus de blessure. Il est Invulnérable. S'il est ramené à zéro Blessure, il est dissipé.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "wBjefqIzcamTBNu1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

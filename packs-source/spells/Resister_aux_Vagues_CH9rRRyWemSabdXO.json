@@ -1,0 +1,42 @@
+{
+  "_id": "CH9rRRyWemSabdXO",
+  "_key": "!items!CH9rRRyWemSabdXO",
+  "name": "Résister aux Vagues",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-2-resister-aux-vagues",
+    "ring": "water",
+    "masteryRank": 2,
+    "keywords": "Bataille",
+    "range": "3 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+3 m par 3 Augmentations)",
+    "description": "Un samouraï possédant la vitesse et la force du puissant fleuve est un adversaire redoutable. La cible de ce sort gagne une Action Simple pendant la Phase de Réactions du Tour de Combat en cours. Cette action ne peut être utilisée que pour effectuer une attaque. Si la cible est incapable d'effectuer une attaque en Action Simple, ce sort lui accorde une Action Complexe à la place. Ce sort ne peut accorder à un Shugenja la capacité de lancer un second sort dans le même tour.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "xrr9cidy19fp80X0",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

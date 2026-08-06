@@ -1,0 +1,42 @@
+{
+  "_id": "BqdZXB7gWai0FDxD",
+  "_key": "!items!BqdZXB7gWai0FDxD",
+  "name": "Frappe des Eaux Courantes",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-4-frappe-des-eaux-courantes",
+    "ring": "water",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "3 m",
+    "areaOfEffect": "1 individu cible (peut être le lanceur)",
+    "duration": "1 tour",
+    "raises": "Durée (+1 tour), Portée (+1,5 m)",
+    "description": "L'eau s'écoule sur et à travers les obstacles, tout comme ceux qui sont infusés de son énergie. La cible de ce sort peut ignorer le bonus au TN d'Armure de ses adversaires conféré par une armure portée, par des effets de sort de Rang de Maîtrise 3 ou moins, et par d'autres effets mécaniques hors Technique. Contre des créatures non-humaines sans armure, cela permet à la cible de considérer leur TN d'Armure comme inférieur de 5. Ce sort n'annule pas la Réduction accordée par une armure, ni n'ignore l'augmentation du TN d'Armure conférée par l'adoption des Postures de Défense ou de Pleine Défense.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "3dLby7b4ZtGGX5Tk",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

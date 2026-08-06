@@ -1,0 +1,42 @@
+{
+  "_id": "CuJcJ6vknYykn3Uv",
+  "_key": "!items!CuJcJ6vknYykn3Uv",
+  "name": "Queue du Dragon de Feu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-2-queue-du-dragon-de-feu",
+    "ring": "fire",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "4 tours",
+    "raises": "Durée (+1 tour)",
+    "description": "Ce sort invoque plusieurs kami de Feu pour former un tentacule semblable à un fouet qui s'étend depuis la main du lanceur. Le tentacule de flamme ne vous brûle pas, les kami étant reconnaissants de pouvoir brûler autrui sur votre commande. Vous pouvez utiliser ce tentacule pour frapper des ennemis jusqu'à 9 m de distance, le déployant et le rétractant avec une vitesse aveuglante. Votre jet d'attaque avec le tentacule est égal à votre Agilité + (deux fois votre Rang d'École), en gardant votre Agilité. Le tentacule a un DR égal à votre Anneau de Feu.",
+    "damage": {
+      "mode": "ring",
+      "ring": "fire",
+      "rolled": 0,
+      "kept": 0,
+      "note": "Jet d'attaque du tentacule = Agilité + 2x Rang d'École, en gardant l'Agilité."
+    }
+  },
+  "effects": [],
+  "folder": "LbDGmZdOK1q2Cieh",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

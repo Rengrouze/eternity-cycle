@@ -1,0 +1,42 @@
+{
+  "_id": "lcnhu2oY2OH8S7pN",
+  "_key": "!items!lcnhu2oY2OH8S7pN",
+  "name": "L'Œil ne Verra Point",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-l-il-ne-verra-point",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "Défense",
+    "range": "Personnelle ou Contact",
+    "areaOfEffect": "Soi-même ou individu cible",
+    "duration": "Concentration",
+    "raises": "Aucune",
+    "description": "Vous faites appel aux kami pour créer une zone de distraction autour de vous, détournant toute attention de vous et de vos actions. Les kami murmurent aux oreilles de quiconque se trouve à moins de 6 m de vous (ou de la cible, si le sort est lancé sur quelqu'un d'autre), les distrayant opportunément de votre présence. Vous n'êtes pas invisible, mais quiconque se trouve à moins de 6 m ne vous verra pas tant que vous ne faites pas de bruit fort ni n'attirez autrement l'attention sur vous. Ceux qui se trouvent au-delà de cette distance ne sont pas distraits et vous voient parfaitement, quelles que soient vos actions.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

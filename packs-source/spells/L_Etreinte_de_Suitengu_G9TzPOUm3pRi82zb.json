@@ -1,0 +1,42 @@
+{
+  "_id": "G9TzPOUm3pRi82zb",
+  "_key": "!items!G9TzPOUm3pRi82zb",
+  "name": "L'Étreinte de Suitengu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-5-l-etreinte-de-suitengu",
+    "ring": "water",
+    "masteryRank": 5,
+    "keywords": "Tonnerre",
+    "range": "7,5 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m)",
+    "description": "La Fortune de la Mer est courroucée, et nécessite peu d'incitation de la part de ses fidèles adeptes pour frapper autrui. En invoquant les kami de l'Eau, vous pouvez emplir les poumons d'une cible d'eau de mer, la paralysant et pouvant potentiellement la tuer. En cas de succès, la cible ne peut entreprendre aucune action autre que de tenter de résister au sort - à toutes fins utiles, elle est réduite au rang de blessure Épuisé en termes de capacité à agir. Chaque tour, elle doit réussir un jet de Constitution (TN 15) pour résister. Si la cible obtient trois succès au total, elle passe un tour supplémentaire à vomir de l'eau de mer, puis se rétablit complètement. Cependant, si elle subit deux échecs consécutifs, elle tombe inconsciente et mourra dans la minute, sauf intervention magique ou médicale. Bien que les moyens de lutter contre la noyade soient peu connus à Rokugan, il est possible de sauver un individu incapacité par ce sort via un jet de Médecine / Intelligence réussi à TN 50.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "yTiaFOBDOjb1Fl9y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

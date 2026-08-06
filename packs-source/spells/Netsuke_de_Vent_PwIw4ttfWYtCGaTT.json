@@ -1,0 +1,42 @@
+{
+  "_id": "PwIw4ttfWYtCGaTT",
+  "_key": "!items!PwIw4ttfWYtCGaTT",
+  "name": "Netsuke de Vent",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-netsuke-de-vent",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Artisanat, Illusion",
+    "range": "Contact",
+    "areaOfEffect": "Un objet tenu en main",
+    "duration": "1 heure",
+    "raises": "Durée (+10 minutes)",
+    "description": "Bien que cela requière une grande faveur, les kami d'Air acceptent de se solidifier temporairement s'ils sont suffisamment attachés au prêtre qui les prie. Vous pouvez créer un petit objet à partir de l'air lui-même, tenable dans une ou deux mains et pesant au maximum 9 kg. Cette création est une illusion, mais peut être utilisée fonctionnellement, y compris pour infliger des dégâts s'il s'agit d'une arme. L'objet disparaît complètement à la fin de la durée du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

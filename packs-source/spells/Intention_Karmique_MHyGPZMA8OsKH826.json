@@ -1,0 +1,42 @@
+{
+  "_id": "MHyGPZMA8OsKH826",
+  "_key": "!items!MHyGPZMA8OsKH826",
+  "name": "Intention Karmique",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-3-intention-karmique",
+    "ring": "void",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "6 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "10 minutes",
+    "raises": "Durée (+1 minute), Portée (+1,5 m)",
+    "description": "Les liens forgés par le Vide permettent le passage d'une énergie considérable, la substance même de l'univers, entre ceux qui la partagent. Vous pouvez cibler avec ce sort un individu consentant. Tous les Points de Vide restants que vous possédez tous deux sont placés dans une réserve commune, dans laquelle chacun peut puiser normalement. Ce sort permet essentiellement à deux individus de partager leurs Points de Vide comme bon leur semble, y compris les Points de Vide supplémentaires gagnés via d'autres sorts de Vide. À la fin de la durée du sort, tous les Points de Vide restants sont répartis entre les participants, jusqu'à leur maximum normal respectif.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TxaV7PBMvzpEwJuD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

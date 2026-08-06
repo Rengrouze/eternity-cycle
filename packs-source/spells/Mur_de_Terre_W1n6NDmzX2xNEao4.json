@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-4-mur-de-terre",
     "ring": "earth",
     "masteryRank": 4,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Mur de 3 m de haut maximum et 30 m de large maximum",
     "duration": "10 minutes",
     "raises": "Zone (+30 cm de hauteur ou +3 m de largeur par Augmentation), Durée (+1 minute), Portée (+3 m)",
-    "description": "Ce sort fait surgir les esprits de la Terre pour former une barrière épaisse et puissante protégeant le lanceur. Le mur de terre dure comme le roc peut être façonné à volonté, courbé, placé sur un flanc de colline, ou même formé en cercle. Il est extrêmement résistant : un jet de Force contre un TN égal à (Terre + Rang d'École du lanceur) x 5 est nécessaire pour le briser. Il est assez solide pour contenir une inondation, une coulée de lave, ou des vents d'ouragan, tant que le sort dure. À l'expiration du sort, la barrière de terre s'effrite en quelques instants."
+    "description": "Ce sort fait surgir les esprits de la Terre pour former une barrière épaisse et puissante protégeant le lanceur. Le mur de terre dure comme le roc peut être façonné à volonté, courbé, placé sur un flanc de colline, ou même formé en cercle. Il est extrêmement résistant : un jet de Force contre un TN égal à (Terre + Rang d'École du lanceur) x 5 est nécessaire pour le briser. Il est assez solide pour contenir une inondation, une coulée de lave, ou des vents d'ouragan, tant que le sort dure. À l'expiration du sort, la barrière de terre s'effrite en quelques instants.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "1XS15ce2uyxUysYl",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

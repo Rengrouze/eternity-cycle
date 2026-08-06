@@ -1,0 +1,42 @@
+{
+  "_id": "YgbvKpnvDkBe8TpR",
+  "_key": "!items!YgbvKpnvDkBe8TpR",
+  "name": "Lève-toi, Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-6-leve-toi-air",
+    "ring": "air",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "Un esprit invoqué",
+    "duration": "Concentration",
+    "raises": "Aucune",
+    "description": "Le vent lui-même prend forme pour vous défendre. Aboutissement ultime du sort d'Invocation, ce sort invoque un kami massif d'air pur à votre service. Il prend une forme vaguement humanoïde d'environ 3 mètres de haut, son contour indistinct ne se révélant que par les petits débris pris dans son corps. Le kami peut se déplacer jusqu'à 3 m x votre Air par tour, et génère de puissants vents dans un rayon de 6 m autour de lui, entravant le mouvement et empêchant quiconque dans cette zone d'effectuer des Actions de Mouvement Simples. Le kami manifesté est considéré comme ayant tous ses Traits Physiques égaux à votre Anneau d'Air, et attaque avec un rang de compétence Jiujutsu égal à la moitié de votre Anneau d'Air (un esprit invoqué par un Shugenja avec un Anneau d'Air 6 infligerait ainsi 6k6 dégâts avec ses attaques). Pour déterminer les dégâts qu'il subit, l'esprit est considéré avoir des Blessures comme un humain avec un Anneau de Terre égal à votre Anneau d'Air, mais ne subit aucun malus de blessure. Il est Invulnérable. S'il est ramené à zéro Blessure, il est dissipé.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "if0Bk679rqL63DqQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

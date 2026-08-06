@@ -1,0 +1,22 @@
+{
+  "_id": "v3huryt01LtUecPn",
+  "_key": "!folders!v3huryt01LtUecPn",
+  "name": "Rang 3",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 17,
+  "color": null,
+  "folder": "Ju3aOP139hxsulPm",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

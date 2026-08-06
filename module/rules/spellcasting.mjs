@@ -54,3 +54,32 @@ export function computeCastingRounds(masteryRank) {
 export function computeMaxLearnableRank(schoolRank, affinity) {
   return schoolRank + affinityMaxRankBonus(affinity);
 }
+
+/**
+ * TN cible réel d'un jet de Lancer de Sort donné, Augmentations déclarées
+ * comprises (+5 par Augmentation, quel qu'en soit l'usage prévu - voir
+ * computeSpellTN).
+ * @param {number} masteryRank
+ * @param {number} [augmentations=0]
+ */
+export function computeSpellTargetTN(masteryRank, augmentations = 0) {
+  return computeSpellTN(masteryRank) + 5 * augmentations;
+}
+
+/**
+ * Calcule les dés de dégâts (lancés/gardés) d'un sort à partir de sa config
+ * `system.damage` (voir SpellDataModel) et des rangs d'Anneaux du lanceur.
+ * Renvoie null si le sort n'inflige pas de dégâts bruts (mode "none").
+ * @param {{mode: string, ring: string, rolled: number, kept: number}} damage
+ * @param {Record<string, number>} ringRanks  ex: {air, earth, fire, water, void}
+ * @returns {{rolled: number, kept: number}|null}
+ */
+export function computeSpellDamageDice(damage, ringRanks) {
+  if (!damage || damage.mode === "none") return null;
+  if (damage.mode === "fixed") return { rolled: damage.rolled, kept: damage.kept };
+  if (damage.mode === "ring") {
+    const base = ringRanks?.[damage.ring] ?? 0;
+    return { rolled: base + damage.rolled, kept: base + damage.kept };
+  }
+  return null;
+}

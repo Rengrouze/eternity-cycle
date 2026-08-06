@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-rempart-elementaire",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Protections",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Une cible",
     "duration": "1 heure",
     "raises": "Durée (+1/2 heure), Cibles (+1 par 2 Augmentations)",
-    "description": "Ce sort utilise la puissance de la Terre pour renforcer la résistance à la magie hostile : les esprits de la Terre protègent le corps et l'âme de la cible, repoussant les autres kami qui tentent de l'affecter. Le lanceur choisit un Élément (autre que le Vide ou le Maho) à la création du sort : tout sort de cet Élément lancé sur une cible protégée subit un malus égal au Rang d'École du lanceur x 5 à son jet de Lancer de Sort (y compris une magie \"amicale\" comme la guérison)."
+    "description": "Ce sort utilise la puissance de la Terre pour renforcer la résistance à la magie hostile : les esprits de la Terre protègent le corps et l'âme de la cible, repoussant les autres kami qui tentent de l'affecter. Le lanceur choisit un Élément (autre que le Vide ou le Maho) à la création du sort : tout sort de cet Élément lancé sur une cible protégée subit un malus égal au Rang d'École du lanceur x 5 à son jet de Lancer de Sort (y compris une magie \"amicale\" comme la guérison).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

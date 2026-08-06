@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-5-frappe-aux-racines",
     "ring": "earth",
     "masteryRank": 5,
     "keywords": "",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 créature cible",
     "duration": "3 tours",
     "raises": "Durée (+1 tour), Portée (+3 m), Cibles (+1 par 2 Augmentations), Spécial (jet Contesté, +1k1 au lanceur par Augmentation)",
-    "description": "Forme plus puissante et dévastatrice de la Merci du Loup, ce sort déchaîne la véritable colère de la Terre sur la cible, drainant toute la faveur de la Terre de son corps et la laissant faible, tremblante et impuissante. Après le lancer, le lanceur doit réussir un jet Contesté de Terre contre la cible (séparément pour chaque cible si plusieurs sont visées). Si la cible perd, son Anneau de Terre est immédiatement réduit à 1 pour la durée du sort - ce qui réduit aussi ses rangs de blessure et peut entraîner sa mort immédiate si elle a déjà subi des blessures."
+    "description": "Forme plus puissante et dévastatrice de la Merci du Loup, ce sort déchaîne la véritable colère de la Terre sur la cible, drainant toute la faveur de la Terre de son corps et la laissant faible, tremblante et impuissante. Après le lancer, le lanceur doit réussir un jet Contesté de Terre contre la cible (séparément pour chaque cible si plusieurs sont visées). Si la cible perd, son Anneau de Terre est immédiatement réduit à 1 pour la durée du sort - ce qui réduit aussi ses rangs de blessure et peut entraîner sa mort immédiate si elle a déjà subi des blessures.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "jw5p3SBiYYI8QIX3",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

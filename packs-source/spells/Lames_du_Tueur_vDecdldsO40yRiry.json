@@ -1,0 +1,42 @@
+{
+  "_id": "vDecdldsO40yRiry",
+  "_key": "!items!vDecdldsO40yRiry",
+  "name": "Lames du Tueur",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-lames-du-tueur",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "Tonnerre",
+    "range": "9 m",
+    "areaOfEffect": "Corridor d'air de 3 m de large",
+    "duration": "Instantané",
+    "raises": "Zone (+1 m de large), Dégâts (+1k0 par 3 Augmentations)",
+    "description": "Le vent peut être mortel pour qui n'est pas préparé à sa furie. Vous invoquez un vent puissant qui déchire tout sur son passage. À votre demande, les kami créent un corridor d'air empli d'un vent tranchant infligeant un DR égal à votre Anneau d'Air +2k0 à tout ce qui se trouve sur son chemin (par exemple, un Shugenja avec un Anneau d'Air 4 infligerait 6k4 dégâts avec ce sort). Le papier et les tissus légers sont détruits instantanément, tandis que les tissus plus épais ne sont qu'endommagés. Quiconque subit des dégâts de ces vents doit réussir un jet d'Anneau de Terre (TN 20) ou être Renversé.",
+    "damage": {
+      "mode": "ring",
+      "ring": "air",
+      "rolled": 2,
+      "kept": 0,
+      "note": "La cible subit aussi un Renversement si elle échoue son jet d'Anneau de Terre (TN 20)."
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

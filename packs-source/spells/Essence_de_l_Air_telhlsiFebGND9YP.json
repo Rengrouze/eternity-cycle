@@ -1,0 +1,42 @@
+{
+  "_id": "telhlsiFebGND9YP",
+  "_key": "!items!telhlsiFebGND9YP",
+  "name": "Essence de l'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-essence-de-l-air",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "Défense",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour)",
+    "description": "L'Air peut se mêler à l'essence d'un mortel, ce qui peut conférer des capacités formidables, au prix d'un grand risque pour le lanceur. Vous vous mêlez au vent lui-même et devenez immatériel : vous ne pouvez interagir avec aucun objet physique tant que vous êtes immatériel, bien que vous restiez au sol, et pouvez traverser des objets solides à raison de 30 cm par tour. Votre Anneau d'Eau est considéré réduit de moitié (arrondi au inférieur) tant que vous restez immatériel, et vous ne pouvez lancer aucun autre sort avant de redevenir solide.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

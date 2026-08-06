@@ -1,0 +1,42 @@
+{
+  "_id": "AOEkKUpxsnv4zIJO",
+  "_key": "!items!AOEkKUpxsnv4zIJO",
+  "name": "Toucher le Néant",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-1-toucher-le-neant",
+    "ring": "void",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m)",
+    "description": "La sensation de faire l'expérience directe du Vide peut être extrêmement perturbante pour ceux qui n'y sont pas habitués. La cible de ce sort subit 1k1 dégâts et est Hébétée.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 1,
+      "kept": 1,
+      "note": "La cible est aussi Hébétée."
+    }
+  },
+  "effects": [],
+  "folder": "zCkpcxT4GgdQUj1N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

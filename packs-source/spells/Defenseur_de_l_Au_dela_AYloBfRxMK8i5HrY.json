@@ -1,0 +1,42 @@
+{
+  "_id": "AYloBfRxMK8i5HrY",
+  "_key": "!items!AYloBfRxMK8i5HrY",
+  "name": "Défenseur de l'Au-delà",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-defenseur-de-l-au-dela",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "Bataille",
+    "range": "9 m",
+    "areaOfEffect": "1 esprit invoqué",
+    "duration": "5 minutes",
+    "raises": "Durée (+1 minute par Augmentation)",
+    "description": "Spécial : doit être un Shugenja Kitsu. Parmi les cercles les plus intimes de la famille Kitsu se trouvent les Shugenja ancestraux porteurs du sang des premiers esprits kitsu. Ces Shugenja secrets ont découvert des rituels capables de convaincre les kami d'Air de porter un message jusqu'à Yomi elle-même, appelant à l'aide un shiryo ancestral. Seuls les Shugenja Kitsu peuvent apprendre ce sort, un secret de l'ordre des sodan-senzo. Au lancer, le Shugenja implore les esprits ancestraux de Yomi d'envoyer de l'aide. Si le jet de Lancer de Sort réussit, un shiryo - un esprit venu de Yomi - arrive sur les lieux en cinq tours. À son arrivée, l'esprit reprend sa forme mortelle, mais sa nature spirituelle se ressent aisément à la lueur céleste qui l'entoure. Il offre toute l'aide qu'il peut au lanceur, que ce soit un conseil, un savoir ou un soutien au combat, mais ne fera rien de déshonorant. Mécaniquement, un shiryo typique possède le trait de créature Esprit, un rang de 3 dans tous ses Anneaux et Traits, et un rang de 4 dans toute Compétence utile. Une fois la durée du sort expirée, le shiryo retourne immédiatement à Yomi ; il y retourne aussi si son corps physique est détruit (réduit à zéro Blessure). Bien que ce sort invoque normalement un shiryo \"générique\", le MJ peut choisir de permettre au Shugenja d'invoquer un esprit ancestral nommé et spécifique avec des Augmentations supplémentaires, ou de faire répondre un shiryo plus puissant ou célèbre si les circonstances le justifient. Les shiryo les plus puissants possèdent une École adaptée à leur clan ancestral, typiquement avec un Rang d'École entre 3 et 5.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

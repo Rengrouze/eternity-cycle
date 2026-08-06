@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-toucher-de-la-terre",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Une cible",
     "duration": "1 heure",
     "raises": "Durée (+1/2 heure), Cibles (+1 par 2 Augmentations, maximum 3 cibles au total)",
-    "description": "Le Shugenja invoque la Terre de la cible (qui peut être lui-même) pour renforcer sa santé et sa force mentale. Pendant la durée du sort, l'un des Traits de Terre de la cible (au choix du lanceur) est augmenté de 1. Cela n'augmente pas l'Anneau lui-même, mais peut améliorer la capacité de la cible à résister à la tentation, aux poisons, ou à dominer les autres."
+    "description": "Le Shugenja invoque la Terre de la cible (qui peut être lui-même) pour renforcer sa santé et sa force mentale. Pendant la durée du sort, l'un des Traits de Terre de la cible (au choix du lanceur) est augmenté de 1. Cela n'augmente pas l'Anneau lui-même, mais peut améliorer la capacité de la cible à résister à la tentation, aux poisons, ou à dominer les autres.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

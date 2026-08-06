@@ -1,0 +1,42 @@
+{
+  "_id": "vduhCVrt57DLaf3d",
+  "_key": "!items!vduhCVrt57DLaf3d",
+  "name": "Force Déclinante",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-force-declinante",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "Défense",
+    "range": "6 m",
+    "areaOfEffect": "1 créature cible",
+    "duration": "3 tours",
+    "raises": "Durée (+1 tour), Portée (+1,5 m)",
+    "description": "L'énergie circule à travers l'univers tout comme l'eau circule à travers l'enveloppe mortelle. Vous pouvez envoyer votre énergie vers autrui, vous affaiblissant tout en le renforçant. Vous pouvez réduire l'un de vos Traits Physiques d'un montant allant jusqu'à votre Rang d'École. La cible de ce sort voit ce même Trait Physique augmenter du même montant. Si votre Trait est réduit à 0 par ce sort, vous tombez immédiatement inconscient et la durée du sort est réduite à 1 tour. Aucun Trait ne peut être rehaussé au-delà du double de son rang normal par ce sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

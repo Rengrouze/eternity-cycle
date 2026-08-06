@@ -1,0 +1,42 @@
+{
+  "_id": "dVdFk8yBRbdbIz8n",
+  "_key": "!items!dVdFk8yBRbdbIz8n",
+  "name": "Anneau du Vide",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-6-anneau-du-vide",
+    "ring": "void",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "Concentration (nécessite 1 heure d'incantation)",
+    "raises": "Durée (+5 minutes au temps d'incantation)",
+    "description": "Rare et extraordinairement puissante, même selon les standards des Shugenja, cette prière fait appel à la faveur unique du dragon dont le domaine est celui que foulent les ishiken : le Dragon du Vide. Contrairement à la plupart des sorts, celui-ci n'est pas enseigné par autrui, mais simplement appris par la perspicacité de ceux capables de le lancer (et n'est donc associé à aucun parchemin). Ce sort, davantage un rituel de méditation, vous permet en réalité de communier avec le Dragon du Vide lui-même, un exploit que peu de mortels ont jamais réussi à accomplir. Pendant vos brefs instants de contact avec cette entité divine, vous pouvez lui poser les questions de votre choix. Le Dragon du Vide connaît tout ce qui peut être connu, bien qu'il ne soit nullement obligé de vous répondre directement, ni même de répondre du tout. Le respect doit être maintenu en toute circonstance, car ceux qui ont tenté cet exploit par le passé sans rendre hommage à leur patron ont purement et simplement cessé d'exister.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TWHyQBe6UAM9bHNI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

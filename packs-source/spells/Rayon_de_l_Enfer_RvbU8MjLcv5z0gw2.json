@@ -1,0 +1,42 @@
+{
+  "_id": "RvbU8MjLcv5z0gw2",
+  "_key": "!items!RvbU8MjLcv5z0gw2",
+  "name": "Rayon de l'Enfer",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-6-rayon-de-l-enfer",
+    "ring": "fire",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "60 m",
+    "areaOfEffect": "1 cible",
+    "duration": "Instantané",
+    "raises": "Aucune",
+    "description": "C'est peut-être le sort isolé le plus meurtrier à la disposition des Shugenja, et l'un des sorts les plus redoutables jamais conçus dans l'Empire. La prière invoque un formidable jet de feu contre la cible choisie, qui subit 10k10 Blessures. Le sort plonge tous les kami de Feu de la zone dans un état d'agitation, et les feux normaux à portée brûleront plus fort et plus violemment pendant de longues minutes après le lancer de ce sort.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 10,
+      "kept": 10,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "PeyuBx9EIqy9rgO8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-courage-des-sept-tonnerres",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Bataille",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Cibles jusqu'au Rang d'École de Shugenja du lanceur",
     "duration": "10 minutes",
     "raises": "Durée (+1 minute), Cibles (+1)",
-    "description": "Ce sort infuse les cibles (le lanceur inclus) d'un courage inébranlable, soutenu par la puissance éternelle de la Terre. Pendant la durée du sort, toutes les cibles gagnent +5k0 pour résister à tout effet de Peur, magique ou naturel. Les samouraïs qui ne descendent pas des Sept Grands Clans d'origine ne reçoivent que +3k0. Quiconque possède au moins un rang complet de Souillure des Terres de l'Ombre ne peut bénéficier de ce sort, sans que cela ne révèle sa Souillure. Ce sort peut être lancé en rituel combiné par deux Shugenja ou plus le connaissant : ils peuvent alors ajouter le plus haut Anneau de Terre parmi eux à la somme de leurs Rangs d'École pour déterminer le nombre de cibles affectées."
+    "description": "Ce sort infuse les cibles (le lanceur inclus) d'un courage inébranlable, soutenu par la puissance éternelle de la Terre. Pendant la durée du sort, toutes les cibles gagnent +5k0 pour résister à tout effet de Peur, magique ou naturel. Les samouraïs qui ne descendent pas des Sept Grands Clans d'origine ne reçoivent que +3k0. Quiconque possède au moins un rang complet de Souillure des Terres de l'Ombre ne peut bénéficier de ce sort, sans que cela ne révèle sa Souillure. Ce sort peut être lancé en rituel combiné par deux Shugenja ou plus le connaissant : ils peuvent alors ajouter le plus haut Anneau de Terre parmi eux à la somme de leurs Rangs d'École pour déterminer le nombre de cibles affectées.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

@@ -1,0 +1,42 @@
+{
+  "_id": "CPyLynZCAE8sE57d",
+  "_key": "!items!CPyLynZCAE8sE57d",
+  "name": "Quiétude de l'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-quietude-de-l-air",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Protections",
+    "range": "Centrée sur le lanceur",
+    "areaOfEffect": "Sphère de 9 m de diamètre",
+    "duration": "10 tours",
+    "raises": "Portée (passe à 15 m pour 2 Augmentations), Durée (+3 tours par Augmentation)",
+    "description": "La sécurité des communications est primordiale dans bien des situations, et les Shugenja se retrouvent souvent à devoir garantir une conversation totalement privée, ou à ne pas pouvoir se laisser interrompre par des bruits extérieurs. En apaisant les esprits de l'Air, un Shugenja peut les convaincre de créer une barrière contre les sons, une bulle de silence à travers laquelle aucun son ne passe. Cette barrière sphérique est normalement centrée sur le lanceur, bien qu'avec plus d'effort elle puisse aussi être centrée sur un objet physique jusqu'à 15 m de distance. Une fois le sort lancé, les kami n'autorisent aucun son à entrer ou sortir de la bulle, créant une intimité absolue pour quiconque s'y trouve. Une fois créée, la bulle ne se déplace pas, même si le lanceur ou l'objet cible se déplace. Les personnages d'un côté de la barrière gagnent deux Relances Gratuites sur leurs jets de Discrétion effectués contre des personnages de l'autre côté. Les Shugenja Ninube peuvent lancer Quiétude de l'Air comme un Sort de Rien.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

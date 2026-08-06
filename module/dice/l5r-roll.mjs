@@ -43,12 +43,64 @@ export class L5RRollKeep extends Roll {
   }
 
   /**
+   * keepCount/flatBonus/woundPenalty pilotent l'affichage (dés gardés/écartés,
+   * total) mais ne font pas partie du schéma standard d'un Roll Foundry - il
+   * faut les sérialiser nous-mêmes pour qu'ils survivent à un aller-retour en
+   * base. C'est systématique dès qu'un Roll est posté dans un message de
+   * chat : Foundry le sérialise en JSON puis le reconstruit via fromData()
+   * (voir plus bas) sans jamais rappeler evaluate() - sans ce override, tout
+   * message de chat relu (y compris juste après sa propre création, voir
+   * module/hooks/initiative-chat-card.mjs) perdrait ces valeurs et
+   * afficherait une carte sans détail de dés.
+   * @override
+   */
+  toJSON() {
+    return {
+      ...super.toJSON(),
+      keepCount: this.keepCount,
+      flatBonus: this.flatBonus,
+      woundPenalty: this.woundPenalty
+    };
+  }
+
+  /**
+   * Restaure keepCount/flatBonus/woundPenalty puis relance _computeKeep() à
+   * partir des résultats déjà lancés (aucune relance de dés, juste une
+   * reconstruction de l'affichage) - le pendant obligatoire de #toJSON.
+   * @override
+   */
+  static fromData(data) {
+    const roll = super.fromData(data);
+    roll.keepCount = data.keepCount;
+    roll.flatBonus = data.flatBonus;
+    roll.woundPenalty = data.woundPenalty;
+    if (roll._evaluated) roll._computeKeep();
+    return roll;
+  }
+
+  /**
+   * Le total "brut" hérité de Roll (somme de TOUS les termes, gardés ET
+   * écartés) n'a aucun sens en Retiens & Garde - on expose keptTotal à sa
+   * place dès qu'il est disponible (après évaluation). Nécessaire pour toute
+   * intégration native Foundry qui lit `.total` directement (ex : le Combat
+   * Tracker calcule l'Initiative via `roll.total`, voir
+   * SystemCombatant#getInitiativeRoll) - avant évaluation, retombe sur le
+   * comportement hérité (non pertinent mais inoffensif).
+   * @override
+   */
+  get total() {
+    return this.keptTotal ?? super.total;
+  }
+
+  /**
    * Trie les dés par résultat décroissant, sépare gardés/écartés, et calcule
    * le total final (somme des gardés + bonus fixe). Calcule aussi une liste
    * d'objets d'affichage (couleurs) prête à consommer par le template de chat.
    */
   _computeKeep() {
     const dice = this.terms.filter((t) => t instanceof L5RExplodingDie);
+    this.rolledCount = dice.length;
+
     const sorted = [...dice].sort((a, b) => b.total - a.total);
 
     this.keptDice = sorted.slice(0, this.keepCount ?? dice.length);

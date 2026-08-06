@@ -1,0 +1,42 @@
+{
+  "_id": "BsFYDdO9eOQNaBCC",
+  "_key": "!items!BsFYDdO9eOQNaBCC",
+  "name": "Défaire le Monde",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-6-defaire-le-monde",
+    "ring": "void",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 créature, individu ou objet cible",
+    "duration": "Instantané",
+    "raises": "Portée (+3 m)",
+    "description": "La capacité la plus puissante et terrifiante de ceux qui commandent le Vide est celle de détruire les liens existant entre les cinq éléments. En éradiquant les liens entre les éléments existants, vous pouvez effectivement faire cesser d'exister un objet ou une créature. Lancé sur une créature vivante, ce sort exige un jet Contesté de votre Vide contre la Terre de la cible. En cas de succès, elle est instantanément tuée, et sa dépouille disparaît dans le Vide. Le succès est automatique contre un objet non-magique, mais tenter de détruire un objet éveillé, comme un Nemuranai, peut avoir de graves conséquences à la discrétion du MJ (les kami contenus dans un objet éveillé réagissent souvent très mal à ce type d'attaque, par exemple).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TWHyQBe6UAM9bHNI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

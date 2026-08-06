@@ -1,0 +1,42 @@
+{
+  "_id": "Ow5JGEvx2eKBSx5h",
+  "_key": "!items!Ow5JGEvx2eKBSx5h",
+  "name": "Protection de Pureté",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-2-protection-de-purete",
+    "ring": "fire",
+    "masteryRank": 2,
+    "keywords": "Protections",
+    "range": "Contact",
+    "areaOfEffect": "4,5 m de rayon autour de l'objet touché",
+    "duration": "1 jour",
+    "raises": "Aucune",
+    "description": "Bien que la Terre soit la méthode traditionnelle pour s'opposer aux forces maléfiques comme la Souillure des Terres de l'Ombre, les esprits de Feu peuvent aussi être invoqués pour purger et détruire de telles abominations spirituelles. Ce sort lie un kami de Feu à un lieu précis, qu'il protège contre les forces du mal. Le lancer nécessite d'inscrire d'élaborés kanjis sur une surface plane à la craie ou à l'encre, ce qui prend une minute d'effort concentré, après quoi le jet de Lancer de Sort doit être effectué. Une fois la Protection de Pureté activée et le pouvoir du kami pleinement engagé, celui-ci protège la zone contre l'influence des Terres de l'Ombre ou de l'Obscurité Rampante. Les personnes ou créatures possédant au moins 1 rang de Souillure, ou sous le contrôle de l'Obscurité Rampante, doivent réussir un jet Contesté de Volonté contre vous pour entrer dans la zone d'effet de la Protection (vous gagnez un bonus de +5 à ce jet). De plus, les créatures qui réussissent à y pénétrer subissent une douleur extrême, le pouvoir de la protection brûlant leur essence même : leur corps s'enflamme et elles subissent des Blessures égales au total de votre Anneau de Feu + votre Rang de Réputation, chaque tour où elles restent dans la zone d'effet. Les sorts et projectiles ne sont pas affectés par la Protection de Pureté. L'objet sur lequel la protection est inscrite doit rester immobile et l'inscription clairement visible en permanence, sous peine de dissiper la protection. En cas de superposition de plusieurs Protections de Pureté, leurs effets ne se cumulent pas.",
+    "damage": {
+      "mode": "ring",
+      "ring": "fire",
+      "rolled": 0,
+      "kept": 0,
+      "note": "Ajoutez aussi votre Rang de Réputation au DR (lancés et gardés) - à ajuster manuellement. Infligé chaque tour où la cible reste dans la zone protégée."
+    }
+  },
+  "effects": [],
+  "folder": "LbDGmZdOK1q2Cieh",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

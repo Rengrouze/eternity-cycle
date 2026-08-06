@@ -1,0 +1,42 @@
+{
+  "_id": "I0XYDXXkpu0bUBoJ",
+  "_key": "!items!I0XYDXXkpu0bUBoJ",
+  "name": "Reforger",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-5-reforger",
+    "ring": "void",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 objet",
+    "duration": "Permanente",
+    "raises": "Aucune",
+    "description": "Tout est un et un est tout. Vous pouvez prendre n'importe quel objet et le transformer en tout autre objet de taille comparable. Cela ne fonctionne qu'avec un objet de construction uniforme, plutôt qu'assemblé à partir de plusieurs pièces. Ce sort n'affecte pas la matière vivante. Bien que l'effet de ce sort soit permanent, il peut être inversé par un second lancer sur le même objet, même par un ishiken différent.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "oy1QwgqQxKn75kMZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

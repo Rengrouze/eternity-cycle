@@ -1,9 +1,30 @@
 <div class="l5r4ec chat-card flex flex-col gap-2 p-1">
 
-  <header class="flex justify-between items-center">
-    <strong class="font-l5r-display">{{flavor}}</strong>
-    <span class="text-xl font-bold text-l5r-accent">{{keptTotal}}</span>
+  <header class="flex justify-between items-start gap-2">
+    <strong class="font-l5r-display min-w-0">{{flavor}}</strong>
+    <span class="text-xl font-bold text-l5r-accent shrink-0 whitespace-nowrap">{{keptTotal}}</span>
   </header>
+
+  {{#if spellInfo}}
+    <div class="text-xs text-neutral-600 border rounded px-2 py-1 bg-black/5 flex flex-col gap-0.5">
+      <div>{{spellInfo.ring}} {{spellInfo.masteryRank}}{{#if spellInfo.keywords}} — {{spellInfo.keywords}}{{/if}}</div>
+      <div>{{localize "L5R4EC.Sheet.SpellRange"}} : {{spellInfo.range}} · {{localize "L5R4EC.Sheet.AreaOfEffect"}} : {{spellInfo.areaOfEffect}} · {{localize "L5R4EC.Sheet.Duration"}} : {{spellInfo.duration}}</div>
+      {{#if spellInfo.raises}}
+        <div>{{localize "L5R4EC.Sheet.Raises"}} : {{spellInfo.raises}}</div>
+      {{/if}}
+    </div>
+  {{/if}}
+
+  {{#if weaponInfo}}
+    <div class="text-xs text-neutral-600 border rounded px-2 py-1 bg-black/5 flex flex-col gap-0.5">
+      <div>{{localize "L5R4EC.Sheet.AssociatedSkill"}} : {{weaponInfo.associatedSkill}}</div>
+      <div>{{localize "L5R4EC.Sheet.DamageRoll"}} : {{weaponInfo.dr}}</div>
+    </div>
+  {{/if}}
+
+  {{#if rolled}}
+    <div class="text-xs font-mono text-neutral-500">{{rolled}}g{{kept}}</div>
+  {{/if}}
 
   <div class="flex flex-wrap gap-1">
     {{#each keptDice}}
@@ -43,6 +64,33 @@
     <div class="text-xs text-red-500">
       {{localize "L5R4EC.Chat.WoundPenalty"}} : {{woundPenalty}}
     </div>
+  {{/if}}
+
+  {{#if targetTN}}
+    <div class="flex items-center justify-between text-sm border rounded px-2 py-1
+      {{#if success}}border-green-600 bg-green-50 text-green-700{{else}}border-red-600 bg-red-50 text-red-700{{/if}}">
+      <span>{{localize "L5R4EC.Chat.TargetTn"}} {{targetTN}}
+        {{#if augmentations}}({{augmentations}} {{localize "L5R4EC.Chat.AugmentationsDeclared"}}){{/if}}
+        {{#if targets}}· {{targets}} {{localize "L5R4EC.Chat.Targets"}}{{/if}}
+        {{#if targetName}}· {{localize "L5R4EC.Chat.Target"}} : {{targetName}}{{/if}}
+      </span>
+      <strong>{{#if success}}{{localize "L5R4EC.Chat.Success"}}{{else}}{{localize "L5R4EC.Chat.Failure"}}{{/if}}</strong>
+    </div>
+  {{/if}}
+
+  {{#if damageButton}}
+    <button type="button" data-action="rollDamage"
+            data-actor-id="{{damageButton.actorId}}"
+            data-item-name="{{damageButton.itemName}}"
+            data-rolled="{{damageButton.rolled}}"
+            data-kept="{{damageButton.kept}}"
+            data-note="{{damageButton.note}}"
+            class="flex items-center justify-center gap-2 text-sm px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+      <i class="fa-solid fa-fire"></i> {{localize "L5R4EC.Chat.RollDamage"}} ({{damageButton.rolled}}k{{damageButton.kept}})
+    </button>
+    {{#if damageButton.note}}
+      <div class="text-[0.65rem] text-neutral-400 italic">{{localize "L5R4EC.Chat.DamageNote"}} : {{damageButton.note}}</div>
+    {{/if}}
   {{/if}}
 
   <div class="flex gap-3 text-[0.65rem] text-neutral-400 border-t border-black/10 pt-1">

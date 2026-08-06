@@ -90,10 +90,31 @@
       "Spells": "Sorts",
       "MasteryRank": "Rang du sort",
       "SpellsSection": "Grimoire",
-      "SpellRing": "Anneau"
+      "SpellRing": "Anneau",
+      "SpellKeyHint": "Identifiant interne stable (généré au build du compendium), prévu pour un futur système d'effets automatiques",
+      "DamageRoll": "Jet de Dégâts",
+      "Damage": "Dégâts",
+      "DamageMode": "Type de DR",
+      "DamageModeNone": "Aucun (pas de dégâts bruts)",
+      "DamageModeFixed": "Fixe",
+      "DamageModeRing": "Basé sur un Anneau",
+      "DamageRingHint": "Ajouté au rang de l'Anneau du lanceur au moment du jet",
+      "DamageNote": "Note (conditions, nuances non automatisables)",
+      "AttackRoll": "Jet d'Attaque",
+      "InitiativeRoll": "Jet d'Initiative",
+      "FullDefenseRoll": "Déclarer Pleine Défense",
+      "Initiative": "Initiative",
+      "InitiativeBonus": "Bonus fixe",
+      "InitiativeFormulaHint": "(Rang + Réflexes)g(Réflexes)",
+      "Stance": "Posture",
+      "Attacks": "Attaques",
+      "NoWeaponEquipped": "Aucune arme équipée - équipe une arme depuis l'onglet Inventaire.",
+      "AssociatedSkillMissing": "Compétence introuvable sur la fiche - jet d'Agilité seule",
+      "ArmorTnFromStance": "posture",
+      "CannotAttackInStance": "Impossible d'attaquer dans cette posture",
+      "StanceNotInCombatHint": "Rejoins un combat actif (Combat Tracker) pour pouvoir changer de posture."
     },
     "Header": {
-      "Rank": "Rang",
       "XPTotal": "XP total",
       "XPSpent": "XP dépensé",
       "XPAvailable": "XP dispo",
@@ -102,7 +123,7 @@
       "Glory": "Gloire",
       "Status": "Statut",
       "Reputation": "Réputation",
-      "ReputationHint": "Calculée : (somme des Anneaux x10) + somme des rangs de Compétence",
+      "ReputationHint": "Calculée automatiquement : (somme des Anneaux x10) + somme des rangs de Compétence. C'est le \"Rang\" du personnage - utilisé notamment pour le Jet d'Initiative.",
       "Taint": "Souillure",
       "ToggleTaint": "Afficher/masquer la Souillure"
     },
@@ -147,7 +168,23 @@
     },
     "Notif": {
       "CharacterOut": "{name} est Hors de Combat - ce jet est probablement injustifié.",
-      "NoSpellSlot": "{name} : aucun emplacement de sort disponible dans cet Anneau ou en Vide (le MJ peut autoriser un dépassement)."
+      "NoSpellSlot": "{name} : aucun emplacement de sort disponible dans cet Anneau ou en Vide (le MJ peut autoriser un dépassement).",
+      "CannotAttackInStance": "{name} : impossible d'attaquer en posture {stance}.",
+      "NoWeaponSkill": "Compétence \"{skill}\" introuvable sur la fiche - jet d'Agilité seule.",
+      "NotInCombat": "{name} : rejoins un combat actif pour changer de posture."
+    },
+    "Stance": {
+      "Attack": "Attaque",
+      "FullAttack": "Attaque Totale",
+      "Defense": "Défense",
+      "FullDefense": "Pleine Défense",
+      "Center": "Centre",
+      "AttackDesc": "Aucune restriction d'Action.",
+      "FullAttackDesc": "+2k1 aux jets d'attaque ce tour, TN d'Armure -10. Pas d'attaque à distance, pas d'Action Simple/Complexe hors attaque (mouvement bonus non automatisé).",
+      "DefenseDesc": "TN d'Armure += Anneau d'Air + rang de la Compétence Défense. Aucune attaque possible ; les autres Actions restent libres.",
+      "FullDefenseDesc": "Jet de Défense/Réflexes déclaré (Action Complexe) : la moitié du résultat gardé (arrondi au supérieur) s'ajoute au TN d'Armure jusqu'au changement de posture.",
+      "CenterDesc": "Aucune Action ce tour. Au tour suivant : +1k1 + Anneau de Vide sur un jet au choix, +10 à l'Initiative (non automatisé, à appliquer manuellement).",
+      "Pending": "En attente de la Phase de Réaction"
     },
     "SkillCategory": {
       "noble": "Compétences Nobles",
@@ -184,14 +221,32 @@
       "DeleteItemConfirm": "Supprimer définitivement \"{name}\" ?",
       "Delete": "Supprimer",
       "Specialization": "Spécialisation",
-      "NoSpecialization": "Aucune"
+      "NoSpecialization": "Aucune",
+      "SpellCastTitle": "Lancer {name}",
+      "SpellBaseTn": "TN de base :",
+      "SpellTnPerAugmentation": "+5 par Augmentation déclarée",
+      "Augmentations": "Augmentations déclarées",
+      "Targets": "Nombre de cibles",
+      "DamageRollTitle": "Lancer les dégâts - {name}",
+      "ConfirmStanceTitle": "Confirmer la posture",
+      "ConfirmStanceBody": "Déclarer la posture <strong>{stance}</strong> pour ce round ?",
+      "ReactionPhaseTitle": "Phase de Réaction - {name}",
+      "ReactionPhaseBody": "Choisis ta posture pour le round {round}."
     },
     "Chat": {
       "FlatBonus": "Bonus fixe",
       "LegendExplode": "Dé explosé",
       "LegendOne": "1 final",
       "LegendReroll": "1 relancé",
-      "WoundPenalty": "Malus de blessure"
+      "WoundPenalty": "Malus de blessure",
+      "TargetTn": "TN",
+      "Success": "Réussite",
+      "Failure": "Échec",
+      "AugmentationsDeclared": "Augmentation(s) déclarée(s)",
+      "Targets": "Cible(s)",
+      "RollDamage": "Lancer les dégâts",
+      "DamageNote": "Note",
+      "Target": "Cible"
     },
     "Ring": {
       "Air": "Air",

@@ -1,0 +1,42 @@
+{
+  "_id": "Lgma7GaDtdyX8pWH",
+  "_key": "!items!Lgma7GaDtdyX8pWH",
+  "name": "Ailes du Phénix",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-5-ailes-du-phenix",
+    "ring": "fire",
+    "masteryRank": 5,
+    "keywords": "Voyage",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "10 tours",
+    "raises": "Aucune",
+    "description": "Le Phénix est l'un des symboles du Feu les plus puissants connus des Rokugani, et ce sort fait appel à l'essence de cet être pour accorder à son lanceur le pouvoir du vol. Au lancer, vous invoquez des nuées de kami de Feu qui prennent la forme d'ailes géantes surgissant de votre dos. Vous gagnez la capacité de voler pour la durée du sort, à une vitesse d'Eau x10 en Action Libre ou d'Eau x20 en Action Simple. Si vous êtes en vol quand le sort expire, les kami de Feu vous ramèneront doucement au sol avant de partir.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "YC6hvzbF1MzidNEW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

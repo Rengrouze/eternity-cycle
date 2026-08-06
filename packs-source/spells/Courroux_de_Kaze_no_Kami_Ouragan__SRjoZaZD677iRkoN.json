@@ -1,0 +1,42 @@
+{
+  "_id": "SRjoZaZD677iRkoN",
+  "_key": "!items!SRjoZaZD677iRkoN",
+  "name": "Courroux de Kaze-no-Kami (Ouragan)",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-6-courroux-de-kaze-no-kami-ouragan",
+    "ring": "air",
+    "masteryRank": 6,
+    "keywords": "Tonnerre",
+    "range": "Personnelle",
+    "areaOfEffect": "1,6 km de rayon, centré sur le lanceur",
+    "duration": "Concentration (spéciale)",
+    "raises": "Aucune",
+    "description": "La colère des kami d'Air, et de la Fortune du Vent, est véritablement terrible à contempler. En lançant ce sort, vous déchaînez toute la force d'un ouragan sur vos ennemis. Une fois le sort actif, vous vous tenez dans l'œil de la tempête, une zone rayonnant sur 6 m dans toutes les directions autour de vous, où aucun effet néfaste du sort n'est subi. Hors de cet œil, cependant, les effets brutaux de la tempête déchirent tout sur leur passage. Les objets pesant moins de 225 kg sont soulevés par le vent et projetés dans la tempête. Les individus présents dans cette zone doivent s'accrocher à quelque chose d'immobile ou être emportés par les vents vers une mort certaine. Quiconque dans la région affectée sans abri solide subit 1k1 Blessures chaque minute à cause des vents et débris mineurs ; il y a une chance sur dix chaque minute qu'un individu exposé subisse plutôt 5k5 Blessures pour avoir été frappé par un objet emporté par le vent. Ce sort dure au maximum une heure, bien qu'il puisse durer bien moins longtemps si vous êtes interrompu en le maintenant. Ce sort ne peut être lancé plus d'une fois par mois dans une zone donnée, car il épuise entièrement les faveurs des kami d'Air nécessaires à son accomplissement.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 1,
+      "kept": 1,
+      "note": "Par minute passée hors abri ; 1 chance sur 10 de subir 5k5 à la place (frappé par un objet emporté)."
+    }
+  },
+  "effects": [],
+  "folder": "if0Bk679rqL63DqQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

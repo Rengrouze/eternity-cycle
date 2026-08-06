@@ -1,0 +1,42 @@
+{
+  "_id": "oycVwAFeEFbztTrI",
+  "_key": "!items!oycVwAFeEFbztTrI",
+  "name": "Vivacité Mentale",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-2-vivacite-mentale",
+    "ring": "fire",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 objet",
+    "duration": "10 minutes",
+    "raises": "Aucune",
+    "description": "Les kami de Feu peuvent être imprégnés dans des objets physiques, leur permettant de rester présents plus longtemps. Les Shugenja ont conçu de nombreuses façons d'utiliser cette technique pour s'aider eux-mêmes et autrui. Ce sort, l'un des plus basiques de ce type, imprègne un objet matériel de l'intelligence et de la vivacité du Feu. Quiconque porte cet objet voit son Trait d'Intelligence augmenté de 3 pour la durée du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "LbDGmZdOK1q2Cieh",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "p0kO8XgBzDCAT4Sa",
+  "_key": "!items!p0kO8XgBzDCAT4Sa",
+  "name": "Toucher de la Grâce de l'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-toucher-de-la-grace-de-l-air",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "Illusion",
+    "range": "Contact",
+    "areaOfEffect": "1 personne cible (peut être le lanceur)",
+    "duration": "1 heure",
+    "raises": "Durée (+10 minutes par Augmentation)",
+    "description": "Cette illusion fut à l'origine conçue par la famille Soshi, mais des prières similaires ont depuis été développées par d'autres clans fréquentant les couloirs et jardins des palais de cour de Rokugan. Le sort incite les kami d'Air à subtilement rehausser l'attrait physique de la cible, soulignant ses meilleurs traits et lissant ses imperfections. Les kami d'Air trouvent cela un jeu délicieux et se montrent souvent fort créatifs dans les petites astuces employées pour améliorer l'attrait de la cible. Mécaniquement, le sort annule les effets des Désavantages Physionomie Repoussante et Malédiction de Benten pour sa durée. Si la cible ne possède pas l'un ou l'autre de ces Désavantages, elle gagne à la place les bénéfices de l'Avantage correspondant (Beauté Dangereuse ou Bénédiction de Benten). Si elle possède déjà les deux Avantages, le sort n'apporte aucun bénéfice supplémentaire (les kami d'Air trouvent ennuyeux d'essayer d'améliorer quelqu'un déjà si séduisant).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

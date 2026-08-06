@@ -1,0 +1,42 @@
+{
+  "_id": "1zrHJgqeseBB2llJ",
+  "_key": "!items!1zrHJgqeseBB2llJ",
+  "name": "Boire de Votre Essence",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-2-boire-de-votre-essence",
+    "ring": "void",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m)",
+    "description": "À mesure qu'un ishiken gagne en puissance, il peut tirer davantage d'informations en examinant le motif d'un individu dans le Vide. Vous apprenez de nombreuses informations sur la cible de ce sort, y compris ses Anneaux individuels (mais pas ses Traits), ses malus de blessure actuels, et un mot résumant son humeur présente (\"hostile\", \"affligée\", \"confuse\", etc.).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "cox0txMXcHdDl3l1",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

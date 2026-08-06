@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-2-etreinte-de-kenro-ji-jin",
     "ring": "earth",
     "masteryRank": 2,
     "keywords": "Voyage",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 créature cible",
     "duration": "1 heure",
     "raises": "Durée (+1/2 heure)",
-    "description": "Ce sort permet à la cible (le lanceur ou une autre personne) de plonger littéralement dans le sol, qui devient pour elle aussi clair et facile à traverser que de l'eau. Elle peut voir à travers la terre sur environ 90 m et s'y déplacer dans toutes les directions aussi facilement que dans l'air. La cible peut voir le monde normal à travers la limite de la terre, mais ne peut ni attaquer, ni lancer de sort, ni parler, ni entendre, ni interagir autrement avec l'extérieur tant qu'elle n'en émerge pas (ce qui met fin immédiatement au sort). Si le sort expire alors que la cible est encore sous terre, les esprits de la Terre, offensés par sa présence prolongée, l'expulsent immédiatement vers l'air libre le plus proche."
+    "description": "Ce sort permet à la cible (le lanceur ou une autre personne) de plonger littéralement dans le sol, qui devient pour elle aussi clair et facile à traverser que de l'eau. Elle peut voir à travers la terre sur environ 90 m et s'y déplacer dans toutes les directions aussi facilement que dans l'air. La cible peut voir le monde normal à travers la limite de la terre, mais ne peut ni attaquer, ni lancer de sort, ni parler, ni entendre, ni interagir autrement avec l'extérieur tant qu'elle n'en émerge pas (ce qui met fin immédiatement au sort). Si le sort expire alors que la cible est encore sous terre, les esprits de la Terre, offensés par sa présence prolongée, l'expulsent immédiatement vers l'air libre le plus proche.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "lWa2nT5IVs48Uzkv",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

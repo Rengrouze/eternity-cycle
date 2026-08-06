@@ -1,0 +1,42 @@
+{
+  "_id": "TMnWrGJ4kjeoYbkR",
+  "_key": "!items!TMnWrGJ4kjeoYbkR",
+  "name": "Affronter Ses Démons",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-affronter-ses-demons",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "1 personne ou créature cible",
+    "duration": "10 tours",
+    "raises": "Portée (+3 m par Augmentation), Durée (+2 tours par Augmentation)",
+    "description": "Sort dangereux et puissant, apparu de temps à autre chez les Shugenja ronin depuis près d'un millénaire d'histoire rokugani. Souvent considéré comme malfaisant par les Shugenja de Clan, les ronin qui l'apprennent en gardent jalousement le secret et ne le transmettent qu'à leurs élèves les plus fiables - généralement, pas plus d'un ou deux Shugenja par génération l'apprennent. À l'époque des Guerres de Clan, son utilisateur le plus célèbre fut le ronin Heichi Chokei, qui prétendait descendre du Clan du Sanglier disparu depuis longtemps. Interrogé sur le but du sort, Chokei répondit en souriant : \"Il est pour quiconque a le courage de l'utiliser.\" Plus tard, il devint aussi connu comme le sort favori de Naka Kuro, le soi-disant Grand Maître des Éléments, et de son élève et successeur Naka Tokei. Affronter Ses Démons semble faire appel aux kami d'Air pour éprouver l'équilibre karmique et élémentaire d'une âme en désalignant délibérément les Éléments de la cible. Le sort échange le Trait le plus élevé et le plus bas de la cible pour sa durée, ce qui peut entraîner des changements dans ses rangs d'Anneau, avec des conséquences potentiellement sévères (par exemple, un Anneau de Terre réduit diminuant les Blessures disponibles). Le lanceur peut choisir les Traits affectés en cas d'égalité. Ceux qui utilisent Affronter Ses Démons y voient un moyen d'enseigner à autrui l'importance de l'équilibre en toute chose, mais des usages bien plus sinistres et cruels sont certainement possibles et ont été employés plus d'une fois, valant au sort une réputation funeste. Les esprits d'Air semblent trouver le sort amusant, car ils ne reconnaissent pas toujours le mal qu'il peut causer.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "J31ueyTimhw0uoLy",
+  "_key": "!items!J31ueyTimhw0uoLy",
+  "name": "Liberté de l'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-liberte-de-l-air",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Protections",
+    "range": "15 m",
+    "areaOfEffect": "1 maison ou autre bâtiment résidentiel",
+    "duration": "Heures égales à l'Air du lanceur",
+    "raises": "Zone d'effet (3 Augmentations pour affecter un bâtiment de la taille d'une auberge, 6 pour un château)",
+    "description": "Rituel purificateur utilisé par les Shugenja pour préparer une maison ou un bâtiment avant un événement important comme un mariage ou un festival. Le sort convainc les kami d'Air de soulever un vent doux mais soigneusement contrôlé qui balaie toute la saleté, les insectes et autres immondices hors du bâtiment. Il a aussi un effet purificateur spirituel, rendant les esprits malveillants réticents à demeurer dans la demeure : tout kansen, fantôme ou autre esprit désincarné hostile présent quitte les lieux pour un nombre d'heures égal à l'Air du lanceur (les esprits maléfiques exceptionnellement puissants ou fortement attachés au bâtiment ne peuvent être bannis par ce sort de base - au MJ de juger si un esprit est assez fort pour résister à Liberté de l'Air). Ce sort fut conçu à l'origine par les Shugenja Seppun, mais s'est répandu dans tout l'Empire en raison de son utilité.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

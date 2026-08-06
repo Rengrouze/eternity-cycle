@@ -1,0 +1,42 @@
+{
+  "_id": "HWzE3YZdMDhhdsTG",
+  "_key": "!items!HWzE3YZdMDhhdsTG",
+  "name": "Hurlement d'Isora",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-hurlement-d-isora",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Tonnerre",
+    "range": "30 m",
+    "areaOfEffect": "12 m de diamètre",
+    "duration": "Instantané",
+    "raises": "Portée (+6 m par Augmentation), Zone d'Effet (+1,5 m de diamètre pour 2 Augmentations), Spécial (+1k0 dégâts par Augmentation)",
+    "description": "Ce sort fait appel au pouvoir d'Isora, la Fortune du Rivage, pour déchaîner une bourrasque d'air chargé de tempête et de foudre qui frappe une zone à portée. L'assaut soudain et grondant de vent, de pluie et de foudre inflige 3k2 dégâts à tous ceux présents dans la zone d'effet, qui doivent réussir un jet de Terre à TN 30 ou être Fatigués par le hurlement d'Isora. Le sort endommage aussi les objets physiques fragiles ou vulnérables : les cloisons de papier sont soufflées, les parchemins trempés, etc. Ceux qui ont la chance d'être bénis par le Sang d'Osano-Wo sont immunisés aux effets de ce sort.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 3,
+      "kept": 2,
+      "note": "Immunisé si béni par le Sang d'Osano-Wo."
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

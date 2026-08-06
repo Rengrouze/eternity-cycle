@@ -1,0 +1,42 @@
+{
+  "_id": "Xyg5TOtYqGqCwBsh",
+  "_key": "!items!Xyg5TOtYqGqCwBsh",
+  "name": "Lire l'Essence",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-3-lire-l-essence",
+    "ring": "void",
+    "masteryRank": 3,
+    "keywords": "Divination",
+    "range": "Personnelle",
+    "areaOfEffect": "1 objet cible",
+    "duration": "Instantané (voir description)",
+    "raises": "Aucune",
+    "description": "Même les objets ont une résonance, et conservent un peu de la mémoire de ceux qui les ont détenus, ainsi que des événements majeurs qui les ont impliqués. En méditant sur un objet, vous pouvez obtenir une vision de la dernière personne qui l'a tenu, ou d'un événement majeur qui pourrait l'avoir concerné d'une manière ou d'une autre. Utiliser ce sort sur un pinceau de calligraphie pourrait par exemple montrer la dernière personne qui l'a utilisé pour écrire une lettre ; l'utiliser sur une arme pourrait plutôt montrer la dernière mort qu'elle a infligée. Le MJ a l'autorité ultime sur la vision transmise par le sort. Des objets extrêmement importants, comme des armes ou étendards ancestraux, peuvent produire des visions puissantes qui saisissent le lanceur pour des périodes plus longues, plutôt que de simples visions instantanées.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TxaV7PBMvzpEwJuD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

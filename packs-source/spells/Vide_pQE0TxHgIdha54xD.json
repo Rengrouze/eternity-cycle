@@ -1,0 +1,22 @@
+{
+  "_id": "pQE0TxHgIdha54xD",
+  "_key": "!folders!pQE0TxHgIdha54xD",
+  "name": "Vide",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 28,
+  "color": null,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

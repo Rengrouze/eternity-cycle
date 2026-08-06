@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-3-protection-de-la-terre",
     "ring": "earth",
     "masteryRank": 3,
     "keywords": "Défense, Protections",
@@ -12,10 +13,17 @@
     "areaOfEffect": "3 m de rayon autour du lanceur",
     "duration": "Concentration",
     "raises": "Zone (+1,5 m de rayon par 2 Augmentations, jusqu'à un maximum de 9 m de rayon), Spécial (dégâts réduits de +1k1 supplémentaire pour 2 Augmentations)",
-    "description": "Ce sort fait appel aux esprits de la Terre pour protéger la zone autour du lanceur des effets des trois autres Éléments (Air, Feu, Eau) pendant un court instant. Tant que le lanceur se concentre pour maintenir la faveur des esprits de Terre, les effets des sorts appelant ces trois autres éléments sont atténués. Tout sort hostile d'Air, de Feu ou d'Eau lancé dans la zone de Protection de la Terre, ou qui y étend ses effets, subit un malus de +10 au TN de son jet de Lancer de Sort. De plus, tous les dégâts que ces sorts infligent aux créatures présentes dans la zone sont réduits de 1k1 (minimum 1k1)."
+    "description": "Ce sort fait appel aux esprits de la Terre pour protéger la zone autour du lanceur des effets des trois autres Éléments (Air, Feu, Eau) pendant un court instant. Tant que le lanceur se concentre pour maintenir la faveur des esprits de Terre, les effets des sorts appelant ces trois autres éléments sont atténués. Tout sort hostile d'Air, de Feu ou d'Eau lancé dans la zone de Protection de la Terre, ou qui y étend ses effets, subit un malus de +10 au TN de son jet de Lancer de Sort. De plus, tous les dégâts que ces sorts infligent aux créatures présentes dans la zone sont réduits de 1k1 (minimum 1k1).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "1OtxvWvfjSP5xP57",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

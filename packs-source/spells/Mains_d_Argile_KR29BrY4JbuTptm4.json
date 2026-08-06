@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-2-mains-d-argile",
     "ring": "earth",
     "masteryRank": 2,
     "keywords": "Voyage",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Soi-même",
     "duration": "10 minutes",
     "raises": "Durée (+5 minutes)",
-    "description": "Ce sort infuse les mains et les pieds du lanceur d'esprits de Terre, leur permettant de fusionner avec la terre présente dans le bois, la terre et la pierre. Le lanceur peut ainsi marcher et grimper le long de surfaces verticales, y compris des murs et des falaises, à la moitié de sa vitesse normale (arrondie au supérieur). Il peut même se suspendre aux plafonds et s'y déplacer, mais alors seulement d'1 m par Action Simple. Quand le sort prend fin, l'effet cesse sans prévenir, pouvant provoquer une chute douloureuse."
+    "description": "Ce sort infuse les mains et les pieds du lanceur d'esprits de Terre, leur permettant de fusionner avec la terre présente dans le bois, la terre et la pierre. Le lanceur peut ainsi marcher et grimper le long de surfaces verticales, y compris des murs et des falaises, à la moitié de sa vitesse normale (arrondie au supérieur). Il peut même se suspendre aux plafonds et s'y déplacer, mais alors seulement d'1 m par Action Simple. Quand le sort prend fin, l'effet cesse sans prévenir, pouvant provoquer une chute douloureuse.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "lWa2nT5IVs48Uzkv",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

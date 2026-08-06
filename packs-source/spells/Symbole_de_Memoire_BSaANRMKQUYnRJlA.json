@@ -1,0 +1,42 @@
+{
+  "_id": "BSaANRMKQUYnRJlA",
+  "_key": "!items!BSaANRMKQUYnRJlA",
+  "name": "Symbole de Mémoire",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-1-symbole-de-memoire",
+    "ring": "air",
+    "masteryRank": 1,
+    "keywords": "Artisanat, Illusion",
+    "range": "3 m",
+    "areaOfEffect": "Un petit objet illusoire (30 cm cube ou moins)",
+    "duration": "1 heure",
+    "raises": "Zone (+30 cm cube à la taille de l'objet illusoire), Durée (+1 heure)",
+    "description": "Vous pouvez créer une illusion parfaite d'un objet. Celui-ci semble réel à tous égards jusqu'à l'expiration du sort, où il disparaît. Pour créer un objet familier et spécifique, comme le katana d'un autre samouraï, vous devez déclarer une Augmentation ; cet individu peut alors tenter un jet Contesté de Perception contre le total de votre jet de Lancer de Sort pour détecter la supercherie. Les images créées par ce sort sont parfaitement immobiles et disparaissent instantanément si elles se retrouvent dans une situation exigeant du mouvement (comme flotter sur l'eau). Une image de katana pourrait ainsi être créée posée sur un râtelier, mais pas dans l'obi d'un samouraï en mouvement. Les objets créés par ce sort n'ont aucune substance physique réelle et ne peuvent supporter de poids ni infliger de dégâts.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "Z0LbN40lfyacuNmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "M5W5uQCs2Sev0cq1",
+  "_key": "!items!M5W5uQCs2Sev0cq1",
+  "name": "Régénérer la Blessure",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-3-regenerer-la-blessure",
+    "ring": "water",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Concentration",
+    "raises": "Spécial (votre Eau est augmentée de 1 pour les besoins de la guérison par Augmentation)",
+    "description": "L'eau s'écoule en toute chose et s'en écoule. En s'écoulant, elle peut emporter ce qui est indésirable. La douleur et la souffrance infligées par des blessures peuvent être canalisées loin d'un individu et rejetées dans l'océan infini où elles se perdent à jamais. La cible de ce sort récupère un nombre de Blessures égal à votre Anneau d'Eau plus votre Rang d'École à chaque tour où le sort est actif. Vous devez toucher la cible au moment du lancer, mais le sort peut ensuite être maintenu sans contact physique.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "tp8Rf7mZwjWRWqVD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

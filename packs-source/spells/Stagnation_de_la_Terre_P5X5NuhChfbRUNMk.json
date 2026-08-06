@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-stagnation-de-la-terre",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Une cible",
     "duration": "6 tours",
     "raises": "Durée (+2 tours), Portée (+3 m), Cibles (+1, maximum 4 cibles au total)",
-    "description": "Ce sort fait appel à la Terre présente dans le corps de la cible pour l'alourdir et entraver ses mouvements. La cible subit un malus de -2k0 à tous les jets utilisant l'Agilité, et son Anneau d'Eau est considéré inférieur d'1 rang pour déterminer sa distance de déplacement."
+    "description": "Ce sort fait appel à la Terre présente dans le corps de la cible pour l'alourdir et entraver ses mouvements. La cible subit un malus de -2k0 à tous les jets utilisant l'Agilité, et son Anneau d'Eau est considéré inférieur d'1 rang pour déterminer sa distance de déplacement.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

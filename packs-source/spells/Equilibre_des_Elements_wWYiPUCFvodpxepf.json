@@ -1,0 +1,42 @@
+{
+  "_id": "wWYiPUCFvodpxepf",
+  "_key": "!items!wWYiPUCFvodpxepf",
+  "name": "Équilibre des Éléments",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-4-equilibre-des-elements",
+    "ring": "void",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible (peut être le lanceur)",
+    "duration": "5 tours / 5 minutes (voir description)",
+    "raises": "Durée (+1 tour / +1 minute, voir description), Spécial (+1k1 Blessures soignées par 2 Augmentations)",
+    "description": "Les failles dans le grand motif du Vide peuvent être surmontées, quelle que soit leur sévérité. Vous pouvez annuler tous les Désavantages de la cible pour la durée du sort. Les effets négatifs infligés par des sorts (comme des malus de TN, une réduction de TN d'Armure, ou une réduction de Trait/Anneau) sont également annulés, tant que le Rang de Maîtrise du sort responsable est de 3 ou moins. Utilisé dans l'environnement éprouvant du combat, la durée du sort est extrêmement limitée (5 tours). Hors combat en revanche, les effets du sort peuvent durer significativement plus longtemps (5 minutes). Cette restauration temporaire du motif de la cible soigne aussi 3k3 Blessures.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "SSnB3xX2fXxNekIx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

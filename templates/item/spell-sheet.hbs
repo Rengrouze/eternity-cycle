@@ -2,9 +2,14 @@
   <header class="flex items-center gap-2 p-2 border-b">
     <img src="{{item.img}}" data-action="editImage" data-edit="img"
          class="w-12 h-12 rounded border cursor-pointer object-cover" title="{{localize 'L5R4EC.Sheet.EditImage'}}">
-    <input type="text" name="name" value="{{item.name}}"
-           class="flex-1 text-lg font-l5r-display border rounded px-2 py-1"
-           placeholder="{{localize 'L5R4EC.Dialog.SpellNameHint'}}">
+    <div class="flex-1 flex flex-col gap-0.5">
+      <input type="text" name="name" value="{{item.name}}"
+             class="text-lg font-l5r-display border rounded px-2 py-1"
+             placeholder="{{localize 'L5R4EC.Dialog.SpellNameHint'}}">
+      {{#if system.key}}
+        <span class="text-xs font-mono text-neutral-400 px-1" title="{{localize 'L5R4EC.Sheet.SpellKeyHint'}}">{{system.key}}</span>
+      {{/if}}
+    </div>
   </header>
 
   <div class="flex-1 overflow-y-auto p-2 flex flex-col gap-2 text-sm">
@@ -51,6 +56,50 @@
       {{localize "L5R4EC.Sheet.Raises"}}
       <textarea name="system.raises" rows="3" class="border rounded px-1 py-0.5">{{system.raises}}</textarea>
     </label>
+
+    <fieldset class="border rounded px-2 py-1 flex flex-col gap-2">
+      <legend class="text-xs uppercase tracking-wide px-1">{{localize "L5R4EC.Sheet.Damage"}}</legend>
+
+      <div class="flex gap-2">
+        <label class="flex flex-col gap-0.5 flex-1">
+          {{localize "L5R4EC.Sheet.DamageMode"}}
+          <select name="system.damage.mode" class="border rounded px-1 py-0.5">
+            {{#each damageModeOptions}}
+              <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+            {{/each}}
+          </select>
+        </label>
+        {{#if damageModeIsRing}}
+          <label class="flex flex-col gap-0.5 flex-1">
+            {{localize "L5R4EC.Sheet.SpellRing"}}
+            <select name="system.damage.ring" class="border rounded px-1 py-0.5">
+              {{#each damageRingOptions}}
+                <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+              {{/each}}
+            </select>
+          </label>
+        {{/if}}
+      </div>
+
+      <div class="flex gap-2 items-end">
+        <label class="flex flex-col gap-0.5 w-24">
+          {{localize "L5R4EC.Sheet.DamageRolled"}}
+          <input type="number" name="system.damage.rolled" value="{{system.damage.rolled}}" min="0" step="1" class="border rounded px-1 py-0.5">
+        </label>
+        <label class="flex flex-col gap-0.5 w-24">
+          {{localize "L5R4EC.Sheet.DamageKept"}}
+          <input type="number" name="system.damage.kept" value="{{system.damage.kept}}" min="0" step="1" class="border rounded px-1 py-0.5">
+        </label>
+        {{#if damageModeIsRing}}
+          <span class="text-xs text-neutral-500 pb-1.5">{{localize "L5R4EC.Sheet.DamageRingHint"}}</span>
+        {{/if}}
+      </div>
+
+      <label class="flex flex-col gap-0.5">
+        {{localize "L5R4EC.Sheet.DamageNote"}}
+        <textarea name="system.damage.note" rows="2" class="border rounded px-1 py-0.5">{{system.damage.note}}</textarea>
+      </label>
+    </fieldset>
 
     <label class="flex flex-col gap-0.5 flex-1">
       {{localize "L5R4EC.Sheet.Description"}}

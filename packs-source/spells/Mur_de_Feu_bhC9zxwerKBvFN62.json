@@ -1,0 +1,42 @@
+{
+  "_id": "bhC9zxwerKBvFN62",
+  "_key": "!items!bhC9zxwerKBvFN62",
+  "name": "Mur de Feu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-4-mur-de-feu",
+    "ring": "fire",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "30 m",
+    "areaOfEffect": "Spéciale (voir description)",
+    "duration": "1 heure",
+    "raises": "Zone d'Effet (+1 incrément, voir description)",
+    "description": "Vous invoquez les kami de Feu pour qu'ils surgissent et forment un mur de flammes, barrant tout passage. Le mur mesure 3 m de haut, 30 cm de large et 7,5 m de long, et inflige 6k6 Blessures à quiconque le touche. Ce mur peut être rendu plus court ou plus fin selon vos désirs, dans les limites des spécifications totales, mais toute la masse des flammes doit être utilisée d'une manière ou d'une autre. Le mur peut être créé à un endroit où se trouvent des personnes ou des créatures, les forçant à réussir un jet de Réflexes contre un TN de 20 pour éviter de subir les Blessures du feu. Vous pouvez déclarer une Augmentation pour augmenter l'une des spécifications (hauteur, largeur ou longueur) de son incrément de base (3 m, 30 cm ou 7,5 m respectivement).",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 6,
+      "kept": 6,
+      "note": "Infligé à quiconque touche le mur de flammes."
+    }
+  },
+  "effects": [],
+  "folder": "iBXhhDsfcupow2tB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

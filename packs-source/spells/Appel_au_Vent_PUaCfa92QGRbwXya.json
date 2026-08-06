@@ -1,0 +1,42 @@
+{
+  "_id": "PUaCfa92QGRbwXya",
+  "_key": "!items!PUaCfa92QGRbwXya",
+  "name": "Appel au Vent",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-appel-au-vent",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Voyage",
+    "range": "Personnelle ou 6 m",
+    "areaOfEffect": "Individu cible (peut être le lanceur)",
+    "duration": "1 minute",
+    "raises": "Durée (+1 minute), Portée (+1,5 m)",
+    "description": "Les vents peuvent soulever et porter, transportant même le plus lourd des fardeaux dans les airs pour une courte période. La cible de ce sort gagne une forme limitée de vol, lui permettant de se déplacer dans les airs sans entrave. Elle peut effectuer des Actions de Mouvement Libres, mais pas des Actions de Mouvement Simples, et ne se déplace jamais de plus de 3 m par tour. De forts vents peuvent gêner ce mouvement ou l'empêcher entièrement. À la fin de la durée du sort, la cible redescend sans dommage jusqu'au sol, quelle que soit sa hauteur.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

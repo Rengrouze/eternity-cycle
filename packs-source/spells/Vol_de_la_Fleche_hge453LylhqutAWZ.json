@@ -1,0 +1,42 @@
+{
+  "_id": "hge453LylhqutAWZ",
+  "_key": "!items!hge453LylhqutAWZ",
+  "name": "Vol de la Flèche",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-1-vol-de-la-fleche",
+    "ring": "air",
+    "masteryRank": 1,
+    "keywords": "Bataille",
+    "range": "Contact",
+    "areaOfEffect": "1 flèche",
+    "duration": "3 tours",
+    "raises": "Durée (+1 tour par Augmentation), Spécial (+1 flèche supplémentaire par Augmentation)",
+    "description": "Prière utilisée par les Shugenja pour aider les bushi lorsqu'une flèche doit absolument atteindre sa cible. Le Shugenja convainc les kami d'Air de guider la flèche par jeu : si elle est tirée pendant la durée du sort, elle frappe infailliblement sa cible (elle doit néanmoins être tirée par quelqu'un ayant au moins 1 rang de Kyujutsu). Comme ce sont les kami qui garantissent le tir, celui-ci ne peut bénéficier des effets d'Augmentations ou de Techniques.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "Z0LbN40lfyacuNmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "ORweh5ou09UhC8Wa",
+  "_key": "!items!ORweh5ou09UhC8Wa",
+  "name": "Témoin de l'Indicible",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-1-temoin-de-l-indicible",
+    "ring": "void",
+    "masteryRank": 1,
+    "keywords": "Divination",
+    "range": "4,5 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "3 tours",
+    "raises": "Portée (+1,5 m)",
+    "description": "Il est possible d'entrevoir fugacement des choses qui ne se sont pas encore produites en scrutant à travers le Vide. Si vous retardez votre action, vous pouvez interrompre la cible de ce sort après qu'elle a déclaré son action mais avant qu'elle ne l'exécute, lorsque son tour arrive. Cela peut être fait à chaque tour pour la durée du sort (normalement, quelqu'un retardant son Action ne peut interrompre l'Action d'un autre participant).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "zCkpcxT4GgdQUj1N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

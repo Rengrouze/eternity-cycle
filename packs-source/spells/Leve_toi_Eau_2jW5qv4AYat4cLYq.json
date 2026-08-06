@@ -1,0 +1,42 @@
+{
+  "_id": "2jW5qv4AYat4cLYq",
+  "_key": "!items!2jW5qv4AYat4cLYq",
+  "name": "Lève-toi, Eau",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-6-leve-toi-eau",
+    "ring": "water",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "Un esprit invoqué",
+    "duration": "Concentration",
+    "raises": "Aucune",
+    "description": "La mer elle-même prend forme pour vous défendre. Aboutissement ultime du sort d'Invocation, ce sort invoque un kami massif d'eau pure à votre service. Il prend une forme vaguement humanoïde d'environ 3 mètres de haut, son contour changeant constamment en raison de sa constitution fluide. Le kami peut se déplacer jusqu'à 4,5 m x votre Eau par tour, et sature le sol dans un rayon de 6 m autour de lui, garantissant que tout terrain dans cette zone soit au moins un Terrain Modéré (à moins qu'il ne soit déjà Difficile). Le kami manifesté est considéré comme ayant tous ses Traits Physiques égaux à votre Anneau d'Eau, et attaque avec un rang de compétence Jiujutsu égal à la moitié de votre Anneau d'Eau. Les dégâts de ces attaques ont un DR égal à votre Anneau d'Eau. Pour déterminer les dégâts qu'il subit, l'esprit est considéré avoir des Blessures comme un humain avec un Anneau de Terre égal à votre Anneau d'Eau, mais ne subit aucun malus de blessure. Il est Invulnérable. S'il est ramené à zéro Blessure, il est dissipé.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "YkmRG6Yw8INxynqy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

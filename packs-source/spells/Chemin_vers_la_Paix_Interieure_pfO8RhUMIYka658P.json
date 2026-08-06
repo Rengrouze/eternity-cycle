@@ -1,0 +1,42 @@
+{
+  "_id": "pfO8RhUMIYka658P",
+  "_key": "!items!pfO8RhUMIYka658P",
+  "name": "Chemin vers la Paix Intérieure",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-chemin-vers-la-paix-interieure",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Aucune",
+    "description": "Les kami de l'eau peuvent influencer le flux d'eau à travers le corps, accélérant considérablement le processus de guérison naturel. Vous pouvez utiliser ce sort pour soigner les Blessures subies par un autre individu. Ce sort restaure à la cible un nombre de Blessures égal au montant par lequel le jet de Lancer de Sort a dépassé le TN nécessaire pour le lancer.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

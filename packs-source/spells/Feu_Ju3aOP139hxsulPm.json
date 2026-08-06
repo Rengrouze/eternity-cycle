@@ -1,0 +1,22 @@
+{
+  "_id": "Ju3aOP139hxsulPm",
+  "_key": "!folders!Ju3aOP139hxsulPm",
+  "name": "Feu",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 14,
+  "color": null,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

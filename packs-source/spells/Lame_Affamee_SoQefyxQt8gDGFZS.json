@@ -1,0 +1,42 @@
+{
+  "_id": "SoQefyxQt8gDGFZS",
+  "_key": "!items!SoQefyxQt8gDGFZS",
+  "name": "Lame Affamée",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-3-lame-affamee",
+    "ring": "fire",
+    "masteryRank": 3,
+    "keywords": "Artisanat",
+    "range": "15 m",
+    "areaOfEffect": "1 arme",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour)",
+    "description": "Ce sort est une version plus puissante d'Acier Mordant, conçue pour renforcer n'importe quelle arme plutôt qu'une simple épée. Le sort renforce les esprits de Feu présents dans une arme cible, les faisant surgir pour former un léger fourreau de flammes autour d'elle. Le porteur de l'arme ajoute +1k0 à tous ses jets d'attaque, et tous ses dés de dégâts explosent sur un résultat de 8 ou plus. Chaque dé ne peut cependant exploser sur un 8 ou un 9 qu'une seule fois par jet, même si le porteur bénéficie d'autres effets permettant l'explosion sur 9.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "v3huryt01LtUecPn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

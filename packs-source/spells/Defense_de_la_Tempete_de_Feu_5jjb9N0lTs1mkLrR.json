@@ -1,0 +1,42 @@
+{
+  "_id": "5jjb9N0lTs1mkLrR",
+  "_key": "!items!5jjb9N0lTs1mkLrR",
+  "name": "Défense de la Tempête de Feu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-4-defense-de-la-tempete-de-feu",
+    "ring": "fire",
+    "masteryRank": 4,
+    "keywords": "Défense",
+    "range": "Contact",
+    "areaOfEffect": "1 armure cible",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour)",
+    "description": "Forme plus puissante de sorts comme Lumière Éclatante, cette prière invoque une aura de flammes magiques depuis une armure, entourant et protégeant son porteur. Ces flammes ne blessent ni le porteur de l'armure ni les êtres vivants. Cependant, toutes les armes en bois (y compris les flèches et de nombreuses armes d'hast) brûlent instantanément avant d'atteindre leur cible, sans infliger de dégâts. Les flammes gênent aussi la vue de la cible, augmentant son TN d'Armure de 20.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "iBXhhDsfcupow2tB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

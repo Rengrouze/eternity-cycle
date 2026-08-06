@@ -1,0 +1,42 @@
+{
+  "_id": "prmy6460HgOqD8J5",
+  "_key": "!items!prmy6460HgOqD8J5",
+  "name": "Vue Sans Limites",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-1-vue-sans-limites",
+    "ring": "void",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "80 km",
+    "areaOfEffect": "Soi-même",
+    "duration": "4 tours",
+    "raises": "Durée (+1 tour), Portée (+8 km)",
+    "description": "La leçon la plus essentielle des ishiken est que tout est relié à travers le Vide, et qu'à travers le Vide tout peut être perçu. En concentrant votre énergie, vous pouvez percer le voile et voir un autre lieu comme si vous vous y trouviez. Ce lieu doit vous être familier, et vous devez vous y être déjà rendu au moins une fois. Pendant la durée du sort, vous pouvez voir et entendre tout ce qui s'y passe, mais vous ne pouvez être détecté ni interagir d'aucune façon avec les choses ou les personnes présentes. Pendant ce sort, votre corps est dans un état de transe qui vous rend extrêmement vulnérable aux attaques (votre TN d'Armure est réduit à 5).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "zCkpcxT4GgdQUj1N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

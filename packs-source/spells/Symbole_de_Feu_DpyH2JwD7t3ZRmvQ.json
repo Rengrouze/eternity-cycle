@@ -1,0 +1,42 @@
+{
+  "_id": "DpyH2JwD7t3ZRmvQ",
+  "_key": "!items!DpyH2JwD7t3ZRmvQ",
+  "name": "Symbole de Feu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-4-symbole-de-feu",
+    "ring": "fire",
+    "masteryRank": 4,
+    "keywords": "Protections",
+    "range": "30 m",
+    "areaOfEffect": "3 m de rayon",
+    "duration": "Permanente",
+    "raises": "Aucune",
+    "description": "Les prêtres des kami peuvent inscrire de puissantes protections invoquant la puissance des éléments contre quiconque tenterait de les franchir. Un Symbole de Feu peut être inscrit sur un objet solide, le plus souvent une porte, une fenêtre, un portail ou tout autre passage. Quiconque tente de franchir ce passage ou de contourner la protection est affecté par sa puissance et doit réussir un jet Contesté d'Eau contre l'Anneau de Feu du lanceur. Ceux qui échouent sont Hébétés, Aveuglés pendant un tour, et subissent 3k3 Blessures. Ce sort peut être dissipé par un autre lancer de Symbole de Feu par n'importe quel Shugenja, ou en détruisant la surface où le Symbole a été gravé. Un seul Symbole de Feu peut exister à la fois, et des sorts Symbole d'éléments différents ne peuvent jamais affecter la même zone.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 3,
+      "kept": 3,
+      "note": "Déclenché si la cible échoue son jet Contesté d'Eau contre l'Anneau de Feu du lanceur."
+    }
+  },
+  "effects": [],
+  "folder": "iBXhhDsfcupow2tB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

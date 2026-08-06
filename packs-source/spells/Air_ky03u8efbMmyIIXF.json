@@ -1,0 +1,22 @@
+{
+  "_id": "ky03u8efbMmyIIXF",
+  "_key": "!folders!ky03u8efbMmyIIXF",
+  "name": "Air",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 7,
+  "color": null,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_id": "CwCSFoT4YuESW7Lt",
+  "_key": "!folders!CwCSFoT4YuESW7Lt",
+  "name": "Rang 4",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 11,
+  "color": null,
+  "folder": "ky03u8efbMmyIIXF",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

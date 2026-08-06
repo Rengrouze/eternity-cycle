@@ -1,0 +1,42 @@
+{
+  "_id": "oVGO4BlzS9bgqcAV",
+  "_key": "!items!oVGO4BlzS9bgqcAV",
+  "name": "Voix du Vent",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-1-voix-du-vent",
+    "ring": "air",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 personne cible (peut être le lanceur)",
+    "duration": "10 minutes",
+    "raises": "Portée (passe à 6 m pour 2 Augmentations), Durée (+2 minutes par Augmentation)",
+    "description": "Les kami d'Air affectionnent les sons, portés par leur Élément, et peuvent prêter leur pouvoir pour renforcer la beauté, la passion et la conviction de la voix humaine. Le bénéficiaire de ce sort voit sa voix gagner en timbre, en profondeur et en résonance, devenant en tout point plus impressionnante. Pendant la durée du sort, la cible bénéficie de l'Avantage Voix (si elle le possède déjà, les bénéfices se cumulent) et gagne un bonus de +1k0 à tout jet de Compétence Sociale impliquant la parole.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "Z0LbN40lfyacuNmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

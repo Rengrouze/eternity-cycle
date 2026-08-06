@@ -1,0 +1,42 @@
+{
+  "_id": "sSbfXsRHoFCR3klA",
+  "_key": "!items!sSbfXsRHoFCR3klA",
+  "name": "Flux à Travers le Vide",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-1-flux-a-travers-le-vide",
+    "ring": "void",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "Jusqu'à 30 cm cube de matière élémentaire pure",
+    "duration": "Permanente",
+    "raises": "Zone (+30 cm cube)",
+    "description": "Dans le Vide, toute chose est égale, tout est un et rien à la fois. En puisant dans cette connexion, vous pouvez transformer une petite quantité de matière élémentaire pure - eau, feu, air, ou terre sous forme de terreau ou de sol - en n'importe quel autre élément.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "zCkpcxT4GgdQUj1N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

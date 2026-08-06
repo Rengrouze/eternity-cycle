@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-ame-de-pierre",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Une cible",
     "duration": "1 heure",
     "raises": "Durée (+1/2 heure)",
-    "description": "Ce sort emplit l'âme de la cible de la force inébranlable de la pierre. Pendant la durée du sort, les sentiments de la cible sont inamovibles et toute tentative de la détourner ou de la distraire est résistée avec une détermination surnaturelle : +3k0 à tout jet résistant à la manipulation émotionnelle ou aux tentations, y compris Courtisan (Manipulation), Tentation, les Compulsions, ou tout effet similaire jugé approprié par le MJ. Cependant, ce contrôle de pierre rend aussi difficile la lecture des émotions d'autrui : la cible subit un malus de -1k0 à tous les jets d'Intuition et aux jets de Compétence liés à l'Intuition visant à influencer les autres."
+    "description": "Ce sort emplit l'âme de la cible de la force inébranlable de la pierre. Pendant la durée du sort, les sentiments de la cible sont inamovibles et toute tentative de la détourner ou de la distraire est résistée avec une détermination surnaturelle : +3k0 à tout jet résistant à la manipulation émotionnelle ou aux tentations, y compris Courtisan (Manipulation), Tentation, les Compulsions, ou tout effet similaire jugé approprié par le MJ. Cependant, ce contrôle de pierre rend aussi difficile la lecture des émotions d'autrui : la cible subit un malus de -1k0 à tous les jets d'Intuition et aux jets de Compétence liés à l'Intuition visant à influencer les autres.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

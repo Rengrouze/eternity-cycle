@@ -1,0 +1,42 @@
+{
+  "_id": "uUrzGyx9WaM1zyoI",
+  "_key": "!items!uUrzGyx9WaM1zyoI",
+  "name": "Percer les Cieux",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-6-percer-les-cieux",
+    "ring": "air",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "N/A",
+    "areaOfEffect": "N/A",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour par 3 Augmentations)",
+    "description": "Spécial : doit être un Shugenja du Clan du Phénix. Connu seulement des véritables maîtres de la magie, ce sort est un secret du Phénix jamais intentionnellement partagé avec une autre École de Shugenja, pas même l'École Impériale. Il est considéré comme une confiance sacrée parmi les prêtres Phénix les plus haut placés, et même tous les Maîtres Élémentaires n'ont pas été jugés dignes de son pouvoir - car abuser de cette prière, c'est appeler la colère même du Ciel. Cette prière requiert l'attention directe d'une Fortune nommée par le Shugenja. Elle ne peut être accomplie que dans un temple ou sanctuaire spécifiquement dédié à cette Fortune, et ne peut jamais être lancée plus d'une fois par mois sous peine d'irriter l'entièreté de Tengoku. Si le sort réussit, une parcelle de l'essence de la Fortune se manifeste dans l'icône sacrée du sanctuaire, et le Shugenja est autorisé à communier brièvement avec l'être divin. La Fortune n'est ni contrainte de répondre aux questions posées ni d'accorder les faveurs demandées, et le plus grand respect doit être maintenu sous peine de déclencher sa colère immédiate et terrible. Cependant, si un véritable respect est témoigné et la cause jugée digne, la Fortune peut offrir une aide disponible nulle part ailleurs.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "if0Bk679rqL63DqQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

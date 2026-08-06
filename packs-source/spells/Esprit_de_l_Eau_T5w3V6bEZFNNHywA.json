@@ -1,0 +1,42 @@
+{
+  "_id": "T5w3V6bEZFNNHywA",
+  "_key": "!items!T5w3V6bEZFNNHywA",
+  "name": "Esprit de l'Eau",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-esprit-de-l-eau",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "Bataille",
+    "range": "6 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m), Spécial (transforme l'action supplémentaire en Action Complexe pour 5 Augmentations)",
+    "description": "L'esprit de l'eau est à la fois fluide et rapide. La cible gagne une Action Simple supplémentaire pendant la Phase de Réactions du tour où ce sort est achevé. Cette Action ne peut être utilisée pour effectuer une attaque.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

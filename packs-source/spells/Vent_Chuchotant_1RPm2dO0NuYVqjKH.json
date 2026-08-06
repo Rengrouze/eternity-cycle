@@ -1,0 +1,42 @@
+{
+  "_id": "1RPm2dO0NuYVqjKH",
+  "_key": "!items!1RPm2dO0NuYVqjKH",
+  "name": "Vent Chuchotant",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-vent-chuchotant",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Divination",
+    "range": "6 m",
+    "areaOfEffect": "Individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m)",
+    "description": "Les kami d'Air font peu de différence entre la parole et la pensée, et peuvent percevoir les deux avec une relative aisance. En comparant les deux, les kami peuvent déterminer si ce qui a été dit est vrai ou mensonger. Malheureusement, leur capacité d'attention est notoirement courte, et ils ne peuvent donc évaluer que des conversations extrêmement récentes. En invoquant ce sort, vous pouvez déterminer si la dernière chose dite par la cible était vraie ou fausse. Les kami n'ont cependant aucune notion d'opinion personnelle : si la cible croit sincèrement que ce qu'elle a dit était vrai, les kami le croiront aussi.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

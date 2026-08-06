@@ -1,0 +1,42 @@
+{
+  "_id": "7jsFy6yp19VtTqmU",
+  "_key": "!items!7jsFy6yp19VtTqmU",
+  "name": "Appeler l'Esprit",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-appeler-l-esprit",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "Spéciale",
+    "areaOfEffect": "Esprit cible",
+    "duration": "5 minutes",
+    "raises": "Durée (+1 minute)",
+    "description": "Forme extrêmement puissante et spécifique du sort de base Invocation, Appeler l'Esprit permet à un Shugenja d'invoquer n'importe quel esprit précis, quel que soit son royaume, pour un entretien. Vous pouvez invoquer tout esprit issu de n'importe quel royaume spirituel, bien que les habitants de ces royaumes qui ne sont pas des esprits (comme les Fortunes) y soient immunisés. Si vous savez quelque chose de spécifique sur l'esprit, l'ayant déjà vu ou connaissant intimement ses actes (par exemple \"l'esprit qui a tué mon père\"), vous pouvez invoquer cet esprit en particulier. La nature du sort empêche l'esprit de vous attaquer sauf si vous attaquez le premier, mais il ne sera pas nécessairement amical. L'esprit disparaît dès l'expiration du sort. Ce sort peut potentiellement invoquer des créatures extrêmement dangereuses, comme des oni, et doit être utilisé avec prudence.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

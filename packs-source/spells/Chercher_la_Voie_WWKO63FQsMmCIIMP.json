@@ -1,0 +1,42 @@
+{
+  "_id": "WWKO63FQsMmCIIMP",
+  "_key": "!items!WWKO63FQsMmCIIMP",
+  "name": "Chercher la Voie",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-chercher-la-voie",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Illusion",
+    "range": "Contact",
+    "areaOfEffect": "Trace du lanceur sur 800 m",
+    "duration": "3 heures",
+    "raises": "Durée (+1 heure par Augmentation), Zone d'Effet (1 trace de personne supplémentaire par Augmentation), Spécial (400 m de trace supplémentaires par Augmentation)",
+    "description": "Ce sort est une illusion subtile utilisée pour dissimuler la trace d'un Shugenja à ses poursuivants. Il convainc les kami d'Air facétieux de cacher les traces du Shugenja (et de sa monture, le cas échéant), ainsi que toute autre preuve de son passage (branches cassées, etc.), et de créer à la place une fausse piste de preuves similaires menant dans une direction complètement différente sur la même distance. La piste illusoire suit un itinéraire raisonnable (elle ne grimpera pas droit une falaise ni ne plongera directement dans un lac) et est normalement irréprochable pour la perception d'autrui ; cependant, quelqu'un pistant à l'odorat pourra sentir la trace originale, et des pisteurs habiles peuvent potentiellement percer l'illusion via un jet de Chasse / Perception contre l'Art de la Magie / Air du lanceur. Les Shugenja puissants peuvent persuader les kami de dissimuler aussi les traces de leurs compagnons (et montures), ainsi que d'allonger la distance de trace dissimulée et remplacée.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

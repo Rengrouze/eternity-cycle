@@ -1,0 +1,42 @@
+{
+  "_id": "8MLMKPwQdzE01JPa",
+  "_key": "!items!8MLMKPwQdzE01JPa",
+  "name": "La Forge Réparatrice",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-4-la-forge-reparatrice",
+    "ring": "fire",
+    "masteryRank": 4,
+    "keywords": "Artisanat",
+    "range": "Contact",
+    "areaOfEffect": "1 objet cible",
+    "duration": "Instantané",
+    "raises": "Aucune",
+    "description": "Ce sort simple et puissant n'a qu'une seule fonction : faire appel au pouvoir créateur du Feu pour ramener ce qui a été détruit. Tout objet matériel endommagé ou détruit peut être restauré par ce sort, à condition que tous ses morceaux soient rassemblés devant le lanceur (si des morceaux manquent, le sort échoue automatiquement). Le sort prend une minute à lancer, durant laquelle vous devez vous concentrer. En cas de succès, le sort restaure l'objet dans un état intact et sans dommage. Notez que les kami de Feu doivent travailler plus dur pour réparer des objets de qualité inhabituelle : pour réparer un Nemuranai ou un objet de qualité Fine ou supérieure avec ce sort, vous devez offrir aux kami de Feu un présent (un autre objet à brûler et détruire) proportionné à la valeur de l'objet.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "iBXhhDsfcupow2tB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

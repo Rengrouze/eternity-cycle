@@ -1,0 +1,42 @@
+{
+  "_id": "sKcmlncnOMQmbHC5",
+  "_key": "!items!sKcmlncnOMQmbHC5",
+  "name": "Lumière du Soleil",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-5-lumiere-du-soleil",
+    "ring": "fire",
+    "masteryRank": 5,
+    "keywords": "Jade",
+    "range": "30 m",
+    "areaOfEffect": "9 m de rayon",
+    "duration": "10 tours",
+    "raises": "Aucune",
+    "description": "Cette prière invoque le pouvoir du Soleil, vénéré et adoré dans tout Rokugan, et particulièrement prisée par la famille Moshi, bien que des Shugenja de tout l'Empire l'aient apprise. Le sort fait descendre un rayon concentré de pure lumière solaire pour punir les indignes. Quiconque est pris dans la zone d'effet subit 2k2 Blessures par tour à cause de la chaleur intense. Les cibles humaines (uniquement) subissent 2k1 Blessures supplémentaires pour chaque rang d'Honneur en dessous de 4, et 2k2 Blessures supplémentaires si elles possèdent au moins 1 rang de Souillure des Terres de l'Ombre ou sont contrôlées par l'Obscurité Rampante. Les cibles humaines avec un rang d'Honneur de 0 sont Aveuglées pendant un nombre de tours égal à votre Anneau de Feu.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 2,
+      "kept": 2,
+      "note": "Par tour. Cibles humaines : +2k1 par rang d'Honneur sous 4, +2k2 si Souillure/Obscurité Rampante."
+    }
+  },
+  "effects": [],
+  "folder": "YC6hvzbF1MzidNEW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

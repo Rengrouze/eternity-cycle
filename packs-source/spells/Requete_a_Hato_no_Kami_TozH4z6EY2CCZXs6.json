@@ -1,0 +1,42 @@
+{
+  "_id": "TozH4z6EY2CCZXs6",
+  "_key": "!items!TozH4z6EY2CCZXs6",
+  "name": "Requête à Hato-no-Kami",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-requete-a-hato-no-kami",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Voyage",
+    "range": "45 m",
+    "areaOfEffect": "1 oiseau",
+    "duration": "1 heure",
+    "raises": "Portée (+15 m par Augmentation), Durée (+1 heure par Augmentation)",
+    "description": "Variante spécialisée de Toucher de la Nature, ce sort est une prière aux Fortunes portée par les kami d'Air jusqu'aux oreilles d'un oiseau au hasard dans la portée du sort (en l'absence d'oiseau disponible, le sort n'a aucun effet). L'oiseau descend se poser sur la main du lanceur, qui peut lui confier une tâche simple (transporter un message, distraire un ennemi) pour la durée du sort. Avec un jet d'Élevage / Intuition réussi à TN 20, le lanceur peut persuader l'oiseau d'accomplir une tâche plus complexe, comme fouiller une zone à la recherche d'ennemis potentiels et faire son rapport (à l'appréciation du MJ, une tâche trop complexe dépassant l'entendement de l'oiseau). Dans tous les cas, l'oiseau ne prend jamais d'action suicidaire (comme voler dans un feu) et rompt immédiatement sa tâche pour fuir s'il est blessé.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

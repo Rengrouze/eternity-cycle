@@ -6,7 +6,8 @@ import { DEFAULT_ARMORS } from "../data/default-armors.mjs";
 import { DEFAULT_WEAPONS } from "../data/default-weapons.mjs";
 import { DEFAULT_AMMO } from "../data/default-ammo.mjs";
 import { QUALITY_OPTIONS, qualityBadge } from "./mixins/quality.mjs";
-import { AFFINITY_CHOICES, computeMaxLearnableRank } from "../rules/spellcasting.mjs";
+import { AFFINITY_CHOICES, computeMaxLearnableRank, computeSpellTN } from "../rules/spellcasting.mjs";
+import { STANCES, canAttackInStance } from "../rules/stances.mjs";
 
 /**
  * Les 5 Anneaux, utilisés à la fois pour le sélecteur d'Anneau d'un sort et
@@ -74,6 +75,10 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollSkill: CharacterSheet.#onRollSkill,
       rollSpell: CharacterSheet.#onRollSpell,
       addSpell: CharacterSheet.#onAddSpell,
+      rollAttack: CharacterSheet.#onRollAttack,
+      rollInitiative: CharacterSheet.#onRollInitiative,
+      rollFullDefense: CharacterSheet.#onRollFullDefense,
+      setStance: CharacterSheet.#onSetStance,
       showSkillInfo: CharacterSheet.#onShowItemInfo,
       showItemInfo: CharacterSheet.#onShowItemInfo,
       openItem: CharacterSheet.#onOpenItem,
@@ -188,8 +193,58 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     context.inventory = this._buildInventory();
     context.activeBuffs = this.actor.system.activeBuffs ?? [];
     context.magic = this._buildMagic();
+    context.combat = this._buildCombat();
 
     return context;
+  }
+
+  /**
+   * Construit le contexte de l'onglet Combat : postures disponibles (avec
+   * leur description non-automatisée, voir module/rules/stances.mjs) et la
+   * liste des Armes équipées prêtes à attaquer, avec la Compétence associée
+   * résolue par nom sur la fiche (même logique que SystemActor#rollAttack -
+   * dupliquée ici uniquement pour l'affichage, "trouvée ou non").
+   */
+  _buildCombat() {
+    const s = this.actor.system;
+    const stance = s.combat.stance;
+
+    const attacks = this.actor.items
+      .filter((i) => i.type === "weapon" && i.system.equipped)
+      .map((item) => {
+        const skillName = item.system.associatedSkill.trim().toLowerCase();
+        const skillItem = skillName
+          ? this.actor.items.find((i) => i.type === "skill" && i.name.trim().toLowerCase() === skillName)
+          : null;
+        return {
+          id: item.id,
+          name: item.name,
+          associatedSkill: item.system.associatedSkill,
+          dr: `${item.system.damageRolled}k${item.system.damageKept}`,
+          isRanged: item.system.isRanged,
+          range: item.system.range,
+          skillFound: Boolean(skillItem),
+          skillRank: skillItem?.system.rank ?? 0
+        };
+      });
+
+    // Barre de vie : pourcentage + couleur dérivés du rang de blessure actuel
+    // (system.wounds.rankIndex, calculé par CharacterDataModel) - précalculés
+    // ici plutôt qu'en Handlebars, qui n'a pas d'opérateur arithmétique/ternaire
+    // garanti (voir pièges du projet).
+    const woundsColors = ["bg-green-500", "bg-green-500", "bg-yellow-500", "bg-yellow-500", "bg-orange-500", "bg-orange-500", "bg-red-600", "bg-red-800"];
+
+    return {
+      stance,
+      stances: STANCES.map((st) => ({ ...st, active: st.key === stance, isFullDefense: st.key === "fullDefense" })),
+      canAttack: canAttackInStance(stance),
+      inCombat: this.actor.isInCombat,
+      attacks,
+      initiativeBonus: s.combat.initiativeBonus,
+      fullDefenseBonus: s.combat.fullDefenseBonus,
+      woundsPercent: s.wounds.max > 0 ? Math.min(100, Math.round((s.wounds.value / s.wounds.max) * 100)) : 0,
+      woundsColorClass: woundsColors[s.wounds.rankIndex] ?? "bg-red-800"
+    };
   }
 
   /**
@@ -415,10 +470,113 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
 
+    const options = await CharacterSheet.#promptSpellCast(item);
+    if (options === null) return;
+
+    await this.actor.rollSpell(item.id, options);
+  }
+
+  /**
+   * Modale de lancer de sort : Augmentations déclarées (+5 au TN chacune) et
+   * nombre de cibles visées (informatifs - reportés sur la carte de chat
+   * pour interprétation manuelle du texte "Augmentations" du sort, voir
+   * pièges du projet sur les bonus non automatisables), plus les bonus de
+   * dés lancés/gardés classiques.
+   * @param {Item} item  L'Item Sort concerné, pour afficher son TN de base.
+   * @returns {Promise<{augmentations:number, targets:number, rollBonus:number, keepBonus:number}|null>}
+   */
+  static async #promptSpellCast(item) {
+    const baseTn = computeSpellTN(item.system.masteryRank);
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/l5r4ec/templates/dialogs/spell-cast.hbs",
+      { baseTn }
+    );
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.format("L5R4EC.Dialog.SpellCastTitle", { name: item.name }) },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "roll",
+          label: game.i18n.localize("L5R4EC.Dialog.Roll"),
+          icon: "fa-solid fa-dice-d10",
+          default: true,
+          callback: (event, button) => ({
+            augmentations: Number(button.form.elements.augmentations.value) || 0,
+            targets: Number(button.form.elements.targets.value) || 1,
+            rollBonus: Number(button.form.elements.rollBonus.value) || 0,
+            keepBonus: Number(button.form.elements.keepBonus.value) || 0
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel") return null;
+    return result;
+  }
+
+  /**
+   * Handler d'action pour le clic sur "Attaquer" d'une Arme équipée.
+   * @this {CharacterSheet}
+   */
+  static async #onRollAttack(event, target) {
     const bonus = await CharacterSheet.#promptRollBonus();
     if (bonus === null) return;
 
-    await this.actor.rollSpell(item.id, bonus);
+    await this.actor.rollAttack(target.dataset.itemId, bonus);
+  }
+
+  /**
+   * Handler d'action pour le clic sur "Lancer l'Initiative".
+   * @this {CharacterSheet}
+   */
+  static async #onRollInitiative() {
+    await this.actor.rollInitiative();
+  }
+
+  /**
+   * Handler d'action pour le clic sur "Déclarer Pleine Défense" (jet inclus,
+   * voir SystemActor#rollFullDefense).
+   * @this {CharacterSheet}
+   */
+  static async #onRollFullDefense() {
+    const confirmed = await CharacterSheet.#confirmStance("fullDefense");
+    if (!confirmed) return;
+
+    await this.actor.rollFullDefense();
+  }
+
+  /**
+   * Handler d'action pour le clic sur une posture autre que Pleine Défense
+   * (qui passe par #onRollFullDefense, car sa déclaration implique un jet).
+   * @this {CharacterSheet}
+   */
+  static async #onSetStance(event, target) {
+    const stance = target.dataset.stance;
+    const confirmed = await CharacterSheet.#confirmStance(stance);
+    if (!confirmed) return;
+
+    await this.actor.setStance(stance);
+  }
+
+  /**
+   * Confirmation avant tout changement de posture - une déclaration de
+   * posture engage le personnage pour tout le round, mieux vaut éviter un
+   * clic accidentel (voir demande utilisateur : confirmation systématique).
+   * @param {string} stance  Une valeur de STANCE_CHOICES.
+   * @returns {Promise<boolean>}
+   */
+  static async #confirmStance(stance) {
+    const label = game.i18n.localize(`L5R4EC.Stance.${stance.charAt(0).toUpperCase()}${stance.slice(1)}`);
+    return DialogV2.confirm({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.ConfirmStanceTitle") },
+      content: `<p>${game.i18n.format("L5R4EC.Dialog.ConfirmStanceBody", { stance: label })}</p>`,
+      modal: true,
+      rejectClose: false
+    });
   }
 
   /**

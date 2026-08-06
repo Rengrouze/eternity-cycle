@@ -1,0 +1,42 @@
+{
+  "_id": "Fi6DlwzXc4lc7qhX",
+  "_key": "!items!Fi6DlwzXc4lc7qhX",
+  "name": "Voiler l'Esprit",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-voiler-l-esprit",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "Un individu cible",
+    "duration": "Permanente",
+    "raises": "Spécial (+1 jour d'effet)",
+    "description": "Ce sort extrêmement intrusif est considéré comme blasphématoire par la plupart des Shugenja honorables, et de nombreux ordres respectables y verraient un motif d'excommunication, voire d'exécution pure et simple. Il fait appel aux kami d'Air pour désorienter et troubler une cible, envahissant son esprit et altérant sa capacité à se souvenir exactement de ce qui lui est arrivé sur une certaine période. Lorsque ce sort est lancé avec succès contre une cible, le lanceur doit réussir un jet Contesté de son Air contre la Terre de la cible. En cas de succès, les souvenirs de la cible sont perturbés, et elle oublie ce qui lui est arrivé durant la semaine (cinq jours) écoulée - cette information est totalement perdue pour elle. Pire encore, le sort la rend extrêmement susceptible à la suggestion, et le lanceur peut alors lui raconter ce qui lui est \"arrivé\" durant la période manquante. Cela permet à des Shugenja sans scrupules d'exploiter autrui en leur donnant essentiellement de faux souvenirs, bien que certains individus soient très résistants à ce type de manipulation. Il est possible de déterminer qu'un individu a été la cible de ce sort via l'usage du sort Communion, mais cela exige de demander spécifiquement aux kami s'ils peuvent détecter une telle manipulation.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

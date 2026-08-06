@@ -1,0 +1,42 @@
+{
+  "_id": "pQuovc2LguNHyep5",
+  "_key": "!items!pQuovc2LguNHyep5",
+  "name": "Vague Destructrice",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-5-vague-destructrice",
+    "ring": "fire",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "7,5 m de rayon",
+    "duration": "Instantané",
+    "raises": "Dégâts (+1k1 par 2 Augmentations)",
+    "description": "Sort offensif extrêmement puissant, conçu à l'origine par les Maîtres Élémentaires Isawa, cette prière invoque une immense masse de kami de Feu, qui déferle depuis le lanceur en une vague de flammes brûlantes. Chaque cible dans la zone d'effet, alliée ou ennemie, subit 7k7 Blessures - les flammes déchaînées ne faisant aucune distinction. Vous seul ne subissez aucun dégât du sort.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 7,
+      "kept": 7,
+      "note": "Touche alliés et ennemis dans la zone ; le lanceur seul est épargné."
+    }
+  },
+  "effects": [],
+  "folder": "YC6hvzbF1MzidNEW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

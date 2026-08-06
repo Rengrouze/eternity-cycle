@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-3-liens-de-ningen-do",
     "ring": "earth",
     "masteryRank": 3,
     "keywords": "Protections",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 créature spirituelle cible",
     "duration": "30 jours",
     "raises": "Durée (+1 jour), Portée (+3 m), Cibles (+1 par 2 Augmentations)",
-    "description": "Forme plus puissante et spécialisée d'Entrave Mineure, ce rituel lie ou bannit les créatures gênantes venues des royaumes spirituels (Sakkaku, Chikushudo, Gaki-Do, Toshigoku ou Yume-Do). Le lancer prend 10 minutes, réduites d'1 minute par Shugenja supplémentaire assistant le rituel (minimum 1 minute). Si la créature ciblée est à portée à la complétion du sort, elle peut être liée ou bannie. Si elle est liée, elle doit obéir aux ordres du lanceur pour la durée du sort (les ordres suicidaires brisent le sort) - c'est ainsi que les Kuni forcent les esprits mujina à travailler dans leurs mines de fer (usage considéré controversé, voire blasphématoire, par beaucoup à Rokugan). Si elle est bannie, elle quitte immédiatement Ningen-Do pour son royaume spirituel d'origine et ne peut y revenir avant la fin de la durée du sort. Dans tous les cas, la créature spirituelle considérera le lanceur comme un ennemi et cherchera probablement vengeance si elle le peut."
+    "description": "Forme plus puissante et spécialisée d'Entrave Mineure, ce rituel lie ou bannit les créatures gênantes venues des royaumes spirituels (Sakkaku, Chikushudo, Gaki-Do, Toshigoku ou Yume-Do). Le lancer prend 10 minutes, réduites d'1 minute par Shugenja supplémentaire assistant le rituel (minimum 1 minute). Si la créature ciblée est à portée à la complétion du sort, elle peut être liée ou bannie. Si elle est liée, elle doit obéir aux ordres du lanceur pour la durée du sort (les ordres suicidaires brisent le sort) - c'est ainsi que les Kuni forcent les esprits mujina à travailler dans leurs mines de fer (usage considéré controversé, voire blasphématoire, par beaucoup à Rokugan). Si elle est bannie, elle quitte immédiatement Ningen-Do pour son royaume spirituel d'origine et ne peut y revenir avant la fin de la durée du sort. Dans tous les cas, la créature spirituelle considérera le lanceur comme un ennemi et cherchera probablement vengeance si elle le peut.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "1OtxvWvfjSP5xP57",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

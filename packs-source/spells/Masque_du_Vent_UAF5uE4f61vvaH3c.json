@@ -1,0 +1,42 @@
+{
+  "_id": "UAF5uE4f61vvaH3c",
+  "_key": "!items!UAF5uE4f61vvaH3c",
+  "name": "Masque du Vent",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-masque-du-vent",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "Illusion",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "1 heure",
+    "raises": "Zone (peut cibler une autre personne avec 2 Augmentations), Durée (+10 minutes)",
+    "description": "Un Shugenja habile peut prier les kami de créer des illusions incroyablement élaborées pour dissimuler son identité et son apparence. Vous pouvez adopter l'apparence de toute créature humanoïde de taille approximativement similaire, jusqu'à 30 cm de plus ou de moins que vous. Vous pourriez ainsi prendre l'apparence d'un kenku, à peu près de la même taille qu'un humain, mais pas d'un gobelin ou d'un ogre, respectivement trop petit et trop grand.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

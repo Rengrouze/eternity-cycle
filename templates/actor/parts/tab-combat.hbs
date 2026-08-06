@@ -1,13 +1,17 @@
 <section class="tab {{tabs.combat.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.combat.id}}" data-group="{{tabs.combat.group}}">
  <div class="flex flex-col gap-4">
   <div class="flex gap-6 flex-wrap">
-    <div>
+    <div class="w-48">
       <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Wounds"}}</h2>
       <label class="flex items-center gap-1 text-sm">
         <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0" class="w-12 border rounded text-center">
         /
         <span class="w-12 text-center font-bold" title="{{localize 'L5R4EC.Sheet.WoundsMaxHint'}}">{{system.wounds.max}}</span>
       </label>
+
+      <div class="mt-1 h-2 rounded-full bg-black/10 overflow-hidden">
+        <div class="h-full {{combat.woundsColorClass}}" style="width: {{combat.woundsPercent}}%"></div>
+      </div>
 
       <div class="mt-2 text-sm {{#if system.wounds.isOut}}text-red-600 font-bold{{/if}}">
         {{localize system.wounds.rankLabelKey}}
@@ -17,20 +21,98 @@
       </div>
     </div>
 
-    <div>
+    <div class="w-56">
       <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.ArmorTn"}}</h2>
-      <div class="text-3xl font-bold text-center" title="{{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} + {{system.armorTn.armorBonus}} + {{system.armorTn.otherBonus}}">
+      <div class="text-3xl font-bold text-center"
+           title="{{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} + {{system.armorTn.armorBonus}} + {{system.armorTn.otherBonus}} + {{system.armorTn.stanceBonus}}">
         {{system.armorTn.total}}
       </div>
       <div class="text-xs text-neutral-500 text-center mt-1">
         {{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromReflexes"}})
         {{#if system.armorTn.armorBonus}} + {{system.armorTn.armorBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromArmor"}}){{/if}}
+        {{#if system.armorTn.stanceBonus}} {{system.armorTn.stanceBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromStance"}}){{/if}}
       </div>
       <label class="flex items-center justify-center gap-1 text-sm mt-2">
         {{localize "L5R4EC.Sheet.ArmorTnOther"}}
         <input type="number" name="system.armorTn.otherBonus" value="{{system.armorTn.otherBonus}}" class="w-14 border rounded text-center">
       </label>
+      <div class="text-sm text-center mt-1">
+        {{localize "L5R4EC.Sheet.Reduction"}} : <strong>{{system.armorTn.reduction}}</strong>
+      </div>
     </div>
+
+    <div class="w-48">
+      <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Initiative"}}</h2>
+      <div class="text-xs text-neutral-500 mb-1">{{localize "L5R4EC.Sheet.InitiativeFormulaHint"}}</div>
+      <label class="flex items-center justify-center gap-1 text-sm">
+        {{localize "L5R4EC.Sheet.InitiativeBonus"}}
+        <input type="number" name="system.combat.initiativeBonus" value="{{system.combat.initiativeBonus}}" class="w-14 border rounded text-center">
+      </label>
+      <button type="button" data-action="rollInitiative"
+              class="mt-2 w-full flex items-center justify-center gap-2 text-sm px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-dice-d10"></i> {{localize "L5R4EC.Sheet.InitiativeRoll"}}
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Stance"}}</h2>
+    {{#unless combat.inCombat}}
+      <p class="text-xs text-neutral-400 mb-1">{{localize "L5R4EC.Sheet.StanceNotInCombatHint"}}</p>
+    {{/unless}}
+    <div class="flex flex-wrap gap-1">
+      {{#each combat.stances}}
+        {{#if this.isFullDefense}}
+          <button type="button" data-action="rollFullDefense" {{#unless ../combat.inCombat}}disabled{{/unless}}
+                  class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
+                  title="{{localize this.descriptionKey}}">
+            {{localize this.labelKey}}
+          </button>
+        {{else}}
+          <button type="button" data-action="setStance" data-stance="{{this.key}}" {{#unless ../combat.inCombat}}disabled{{/unless}}
+                  class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
+                  title="{{localize this.descriptionKey}}">
+            {{localize this.labelKey}}
+          </button>
+        {{/if}}
+      {{/each}}
+    </div>
+    {{#each combat.stances}}
+      {{#if this.active}}
+        <p class="text-xs text-neutral-500 mt-1">{{localize this.descriptionKey}}</p>
+      {{/if}}
+    {{/each}}
+  </div>
+
+  <div>
+    <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Attacks"}}</h2>
+    {{#unless combat.canAttack}}
+      <p class="text-xs text-red-500 mb-1">{{localize "L5R4EC.Sheet.CannotAttackInStance"}}</p>
+    {{/unless}}
+    {{#if combat.attacks.length}}
+      <div class="flex flex-col divide-y divide-black/5">
+        {{#each combat.attacks}}
+          <div class="grid grid-cols-[1fr_8rem_4rem_auto] gap-2 items-center text-sm py-1">
+            <span class="truncate" title="{{this.name}}">
+              {{this.name}}
+              {{#if this.isRanged}}<span class="text-xs text-neutral-400">({{this.range}} m)</span>{{/if}}
+            </span>
+            <span class="text-xs text-neutral-500 truncate flex items-center gap-1" title="{{this.associatedSkill}}">
+              {{this.associatedSkill}}{{#if this.skillFound}} ({{this.skillRank}}){{/if}}
+              {{#unless this.skillFound}}<i class="fa-solid fa-triangle-exclamation text-orange-500" title="{{localize 'L5R4EC.Sheet.AssociatedSkillMissing'}}"></i>{{/unless}}
+            </span>
+            <span class="text-xs text-center font-bold">{{this.dr}}</span>
+            <button type="button" data-action="rollAttack" data-item-id="{{this.id}}"
+                    {{#unless ../combat.canAttack}}disabled{{/unless}}
+                    class="flex items-center justify-center gap-1 text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white disabled:opacity-30 disabled:cursor-not-allowed">
+              <i class="fa-solid fa-khanda"></i> {{localize "L5R4EC.Sheet.AttackRoll"}}
+            </button>
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="text-sm text-neutral-400">{{localize "L5R4EC.Sheet.NoWeaponEquipped"}}</p>
+    {{/if}}
   </div>
 
   <div>
@@ -48,7 +130,5 @@
       <p class="text-sm text-neutral-400">{{localize "L5R4EC.Sheet.NoBuffs"}}</p>
     {{/if}}
   </div>
-
-  {{!-- À venir : armes, armures, jets de dégâts... --}}
  </div>
 </section>

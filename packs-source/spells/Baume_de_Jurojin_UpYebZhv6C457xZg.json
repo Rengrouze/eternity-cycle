@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-baume-de-jurojin",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 cible",
     "duration": "1 heure",
     "raises": "Durée (+1/2 heure), Cibles (+1 par 2 Augmentations, maximum 5 cibles au total)",
-    "description": "Ce sort emplit le corps de la cible de la pureté et de la vigueur de la Terre, chassant poisons et impuretés. Si la cible subit les effets d'un poison ou d'une toxine pendant la durée du sort, ou en subit déjà les effets au moment où le sort est lancé, elle peut relancer tout jet de Constitution raté pour y résister, avec un bonus de +2k0 sur ce second jet (si ce second jet échoue aussi, le poison fait son plein effet). Effet secondaire : ce sort guérit également l'ivresse, et il est impossible de s'enivrer pendant sa durée."
+    "description": "Ce sort emplit le corps de la cible de la pureté et de la vigueur de la Terre, chassant poisons et impuretés. Si la cible subit les effets d'un poison ou d'une toxine pendant la durée du sort, ou en subit déjà les effets au moment où le sort est lancé, elle peut relancer tout jet de Constitution raté pour y résister, avec un bonus de +2k0 sur ce second jet (si ce second jet échoue aussi, le poison fait son plein effet). Effet secondaire : ce sort guérit également l'ivresse, et il est impossible de s'enivrer pendant sa durée.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

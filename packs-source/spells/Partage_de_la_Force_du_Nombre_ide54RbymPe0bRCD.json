@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-3-partage-de-la-force-du-nombre",
     "ring": "earth",
     "masteryRank": 3,
     "keywords": "",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 à 6 personnes cibles à portée",
     "duration": "5 tours",
     "raises": "Durée (+1 tour), Portée (+1,5 m)",
-    "description": "Ce sort infuse jusqu'à six cibles (le lanceur inclus) de la puissance de la Terre, leur permettant de puiser dans la Terre de leurs compagnons pour soutenir leurs efforts. Pendant la durée du sort, le plus bas Anneau de Terre parmi toutes les cibles est ajouté au total de tous leurs jets d'Anneau, de Trait et de Compétence (mais pas aux jets de Lancer de Sort)."
+    "description": "Ce sort infuse jusqu'à six cibles (le lanceur inclus) de la puissance de la Terre, leur permettant de puiser dans la Terre de leurs compagnons pour soutenir leurs efforts. Pendant la durée du sort, le plus bas Anneau de Terre parmi toutes les cibles est ajouté au total de tous leurs jets d'Anneau, de Trait et de Compétence (mais pas aux jets de Lancer de Sort).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "1OtxvWvfjSP5xP57",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

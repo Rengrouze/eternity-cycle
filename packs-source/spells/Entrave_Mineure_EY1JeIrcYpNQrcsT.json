@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-entrave-mineure",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Artisanat",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 cible",
     "duration": "2 heures",
     "raises": "Durée (+1 heure), Portée (+6 m)",
-    "description": "Mis au point par la famille Kuni mais aujourd'hui utilisé par d'autres Shugenja combattant les forces des Terres de l'Ombre (Scorpion, Phénix...), ce sort emprisonne sans danger une créature mineure des Terres de l'Ombre, typiquement pour l'interroger. Seule une créature des Terres de l'Ombre avec un Anneau de Terre de 3 ou moins peut être ciblée - il ne peut affecter les Perdus, les Seigneurs Oni ou leur engeance, ni une créature avec un Anneau de Terre de 4 ou plus, ni une créature non-souillée. En cas de succès, des menottes de fer forgées d'esprits de Terre pure surgissent et immobilisent physiquement la cible pour la durée du sort. À l'expiration du sort, les menottes s'effritent instantanément en poussière."
+    "description": "Mis au point par la famille Kuni mais aujourd'hui utilisé par d'autres Shugenja combattant les forces des Terres de l'Ombre (Scorpion, Phénix...), ce sort emprisonne sans danger une créature mineure des Terres de l'Ombre, typiquement pour l'interroger. Seule une créature des Terres de l'Ombre avec un Anneau de Terre de 3 ou moins peut être ciblée - il ne peut affecter les Perdus, les Seigneurs Oni ou leur engeance, ni une créature avec un Anneau de Terre de 4 ou plus, ni une créature non-souillée. En cas de succès, des menottes de fer forgées d'esprits de Terre pure surgissent et immobilisent physiquement la cible pour la durée du sort. À l'expiration du sort, les menottes s'effritent instantanément en poussière.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

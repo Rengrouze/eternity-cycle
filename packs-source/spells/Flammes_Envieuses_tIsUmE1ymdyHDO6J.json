@@ -1,0 +1,42 @@
+{
+  "_id": "tIsUmE1ymdyHDO6J",
+  "_key": "!items!tIsUmE1ymdyHDO6J",
+  "name": "Flammes Envieuses",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-1-flammes-envieuses",
+    "ring": "fire",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "1 cible",
+    "duration": "Instantané",
+    "raises": "Aucune",
+    "description": "Le pouvoir le plus élémentaire du Feu est la destruction, et les esprits de Feu invoqués peuvent facilement être déchaînés sur ses ennemis. Ce sort invoque un unique kami de Feu, qui fonce vers la cible et la frappe infailliblement tant qu'elle est à portée. Le sort inflige 2k2 Blessures. Les brûlures infligées par ce sort sont particulièrement douloureuses : si le sort touche un Shugenja en train de lancer un sort, son jet de Volonté a un TN de 20 plus les dégâts subis, au lieu des 10 habituels plus les dégâts.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 2,
+      "kept": 2,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "7DRIQU9ft15JrVsG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

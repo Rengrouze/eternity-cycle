@@ -1,0 +1,42 @@
+{
+  "_id": "KXCbwKVAgXB4a6Db",
+  "_key": "!items!KXCbwKVAgXB4a6Db",
+  "name": "Protection du Tonnerre",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-4-protection-du-tonnerre",
+    "ring": "fire",
+    "masteryRank": 4,
+    "keywords": "Défense, Protections, Tonnerre",
+    "range": "Contact",
+    "areaOfEffect": "4,5 m de rayon autour de l'armure",
+    "duration": "1 heure",
+    "raises": "Aucune",
+    "description": "La protection d'Osano-Wo peut être temporairement invoquée pour une armure en lançant ce sort et en inscrivant le kanji du tonnerre dessus. Quiconque se trouve à moins de 4,5 m de l'armure est sous la protection d'Osano-Wo, et est totalement protégé du feu et du tonnerre non-magiques pour la durée du sort. De plus, tout sort de Feu lancé par un Shugenja autre que vous et ciblant quelque chose dans la zone d'effet voit son TN de Lancer de Sort augmenté de 20.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "iBXhhDsfcupow2tB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

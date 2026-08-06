@@ -1,0 +1,42 @@
+{
+  "_id": "jfZAn8af5P7X6j8a",
+  "_key": "!items!jfZAn8af5P7X6j8a",
+  "name": "Fléchette de Vide",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-4-flechette-de-vide",
+    "ring": "void",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "30 m",
+    "areaOfEffect": "Une créature cible",
+    "duration": "Instantané",
+    "raises": "Portée (+30 m par Augmentation), Cibles (+1 cible par 2 Augmentations, maximum de cibles égal à votre Anneau de Vide)",
+    "description": "Le sort Fléchette de Vide fut créé par le Shugenja Ekuro lors de sa célèbre bataille. Le sort a été préservé comme secret de l'Ordre des Cinq Armes, mais on pense que les Phénix pourraient aussi le posséder dans leurs bibliothèques, et il est possible que d'autres familles de Shugenja en aient des copies. Lancer ce sort nécessite de dépenser un Point de Vide ; le sort invoque un projectile de Vide pur qui fonce et frappe infailliblement une cible à portée. La Fléchette inflige des dégâts avec un DR égal à votre Vide. Ces dégâts ignorent l'Invulnérabilité et la Réduction, quelle qu'en soit la source.",
+    "damage": {
+      "mode": "ring",
+      "ring": "void",
+      "rolled": 0,
+      "kept": 0,
+      "note": "Ignore l'Invulnérabilité et la Réduction, quelle qu'en soit la source."
+    }
+  },
+  "effects": [],
+  "folder": "SSnB3xX2fXxNekIx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

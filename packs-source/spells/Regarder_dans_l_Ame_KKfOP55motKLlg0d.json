@@ -1,0 +1,42 @@
+{
+  "_id": "KKfOP55motKLlg0d",
+  "_key": "!items!KKfOP55motKLlg0d",
+  "name": "Regarder dans l'Âme",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-regarder-dans-l-ame",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Divination",
+    "range": "15 m",
+    "areaOfEffect": "1 personne ou créature cible",
+    "duration": "1 tour",
+    "raises": "Zone d'Effet (1 cible supplémentaire par 2 Augmentations), Spécial (apprend un Anneau supplémentaire par Augmentation)",
+    "description": "Lorsqu'un prêtre invoque cette incantation, les kami d'Air se rassemblent et forment une lentille mystique à travers laquelle le Shugenja peut voir le monde comme les esprits eux-mêmes le perçoivent. La lentille ne dure que quelques instants et le lanceur ne peut normalement l'utiliser que pour observer une seule personne ou créature. Ce bref moment d'observation lui permet cependant d'apprendre les 2 Anneaux les plus faibles de la cible et les valeurs de leurs Traits constitutifs, révélant en partie sa composition élémentaire (si les Anneaux du personnage sont tous parfaitement équilibrés, le sort les révèle au hasard). Des Anneaux supplémentaires peuvent être appris avec des Augmentations. Le sort ne peut cependant jamais révéler le Vide de la cible, un tel niveau de compréhension et de perception n'étant possible que par la maîtrise de l'Ishiken-do.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "yuPcOkRxObJ0Hr2m",
+  "_key": "!items!yuPcOkRxObJ0Hr2m",
+  "name": "Acier Mordant",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-1-acier-mordant",
+    "ring": "fire",
+    "masteryRank": 1,
+    "keywords": "Artisanat",
+    "range": "Contact",
+    "areaOfEffect": "1 arme tranchante",
+    "duration": "1 minute",
+    "raises": "Durée (+1 minute)",
+    "description": "Les esprits du Feu peuvent infuser le métal de leur propre fureur, transformant un tranchant acéré en un tranchant suprêmement parfait. Ce sort renforce les dégâts des armes tranchantes en acier, comme les épées, couteaux, naginata, etc. Acier Mordant ne peut affecter une arme qui n'est pas une lame métallique, qui est un Nemuranai, ou qui a déjà été rehaussée par un effet magique. Le DR de l'arme est augmenté de 1k1 pour la durée du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "7DRIQU9ft15JrVsG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

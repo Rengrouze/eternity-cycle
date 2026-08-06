@@ -11,6 +11,12 @@ const RING_OPTIONS = [
   { key: "void", labelKey: "L5R4EC.Ring.Void" }
 ];
 
+const DAMAGE_MODE_OPTIONS = [
+  { key: "none", labelKey: "L5R4EC.Sheet.DamageModeNone" },
+  { key: "fixed", labelKey: "L5R4EC.Sheet.DamageModeFixed" },
+  { key: "ring", labelKey: "L5R4EC.Sheet.DamageModeRing" }
+];
+
 /**
  * Fiche d'Item Sort (ItemSheetV2) - édition complète, indépendante de la
  * fiche Acteur (voir weapon-sheet.mjs pour le raisonnement général).
@@ -39,6 +45,10 @@ export class SpellSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.ringOptions = RING_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === this.item.system.ring }));
     context.castingTn = computeSpellTN(this.item.system.masteryRank);
     context.castingRounds = computeCastingRounds(this.item.system.masteryRank);
+
+    context.damageModeOptions = DAMAGE_MODE_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === this.item.system.damage.mode }));
+    context.damageRingOptions = RING_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === this.item.system.damage.ring }));
+    context.damageModeIsRing = this.item.system.damage.mode === "ring";
     return context;
   }
 

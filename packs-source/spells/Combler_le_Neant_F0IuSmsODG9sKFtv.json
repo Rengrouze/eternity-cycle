@@ -1,0 +1,42 @@
+{
+  "_id": "F0IuSmsODG9sKFtv",
+  "_key": "!items!F0IuSmsODG9sKFtv",
+  "name": "Combler le Néant",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-4-combler-le-neant",
+    "ring": "void",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (peut passer à 3 m avec 3 Augmentations)",
+    "description": "Renforcer la connexion d'un individu au Vide peut restaurer ses réserves d'énergie intérieure. La cible de ce sort récupère tous ses Points de Vide perdus, jusqu'à son maximum.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "SSnB3xX2fXxNekIx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

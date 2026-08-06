@@ -1,0 +1,42 @@
+{
+  "_id": "sjWyvlCDaUQORhPL",
+  "_key": "!items!sjWyvlCDaUQORhPL",
+  "name": "Jamais Seul",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-1-jamais-seul",
+    "ring": "fire",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 cible",
+    "duration": "5 tours (voir description)",
+    "raises": "Cibles (+1)",
+    "description": "Ce sort invoque l'élément de connaissance et de compréhension du Feu, renforçant l'esprit d'un de vos alliés en ouvrant ses yeux au courage de ses ancêtres. La cible du sort reçoit un bonus égal à votre Anneau de Feu à tous ses jets d'attaque, de Compétence et de Trait. Cet effet dure jusqu'à ce que le sort expire, ou jusqu'à ce que la cible échoue un jet d'attaque ou de Compétence, ou jusqu'à ce qu'elle subisse des Blessures de quelque source que ce soit - le premier de ces événements qui survient met fin à l'effet.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "7DRIQU9ft15JrVsG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

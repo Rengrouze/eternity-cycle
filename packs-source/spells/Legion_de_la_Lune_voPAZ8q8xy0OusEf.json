@@ -1,0 +1,42 @@
+{
+  "_id": "voPAZ8q8xy0OusEf",
+  "_key": "!items!voPAZ8q8xy0OusEf",
+  "name": "Légion de la Lune",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-legion-de-la-lune",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "Illusion",
+    "range": "Personnelle",
+    "areaOfEffect": "3 m de rayon autour du lanceur",
+    "duration": "5 minutes",
+    "raises": "Zone (+1,5 m), Durée (+1 minute)",
+    "description": "La Lune peut révéler ce qui est caché, mais aussi dissimuler ceux qui reçoivent ses bénédictions. Vous pouvez invoquer la plus grande bénédiction de la Lune et en envelopper un large groupe de personnes, les soustrayant complètement à la vue. Chaque individu que vous choisissez dans la zone d'effet devient invisible à tous les sens normaux pour la durée du sort. Ceux présents dans la zone que vous choisissez d'exclure ne sont pas affectés. Quiconque affecté par le sort et effectuant une action impliquant un contact physique avec un autre individu est immédiatement exclu de l'effet du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

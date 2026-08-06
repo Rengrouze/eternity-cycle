@@ -1,0 +1,42 @@
+{
+  "_id": "DeSct34FP2L6Sez9",
+  "_key": "!items!DeSct34FP2L6Sez9",
+  "name": "Château d'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-chateau-d-air",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Défense, Illusion",
+    "range": "Soi-même",
+    "areaOfEffect": "6 m de rayon autour du lanceur",
+    "duration": "10 tours",
+    "raises": "Durée (+2 tours par Augmentation), Spécial (voir description)",
+    "description": "La prière communément appelée Château d'Eau protège le lanceur en créant une barrière physique d'esprits d'eau pour bloquer les attaquants. Le Château d'Air, à l'inverse, protège le lanceur en créant une illusion rusée qui déroute et confond les attaquants. Les kami d'Air créent une barrière circulaire de faux sons et images, rendant incroyablement difficile pour les attaquants de percevoir l'emplacement réel de quiconque se trouve dans les limites du Château d'Air - un attaquant peut croire frapper le lanceur alors qu'il ne frappe que le vide. La barrière circulaire d'illusions est centrée sur le lanceur ; une fois lancée, elle reste en place quel que soit son déplacement. Les illusions ne peuvent être pleinement perçues que par ceux qui se trouvaient hors du Château au moment du lancer ; ceux qui s'y trouvaient déjà perçoivent aisément la nature ombreuse et immatérielle des illusions. Si des ennemis venus de l'extérieur tentent d'attaquer quelqu'un à l'intérieur, les illusions tentent de les tromper : mécaniquement, ces attaquants doivent réussir un jet Contesté de Perception contre l'Air du lanceur à chaque tentative d'attaque. Un succès signifie qu'ils voient brièvement à travers l'illusion et peuvent attaquer normalement ce tour-là (seulement). Un échec signifie que l'illusion les trompe, leur infligeant un malus de -5k0 à leur jet d'attaque ce tour. Les illusions n'affectent pas les sorts ennemis, les kami d'Air ne pouvant tromper d'autres kami.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

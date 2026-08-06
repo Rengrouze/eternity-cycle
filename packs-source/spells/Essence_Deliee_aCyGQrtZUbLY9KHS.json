@@ -1,0 +1,42 @@
+{
+  "_id": "aCyGQrtZUbLY9KHS",
+  "_key": "!items!aCyGQrtZUbLY9KHS",
+  "name": "Essence Déliée",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-5-essence-deliee",
+    "ring": "void",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "7,5 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "1 heure",
+    "raises": "Durée (+1 heure), Portée (+1,5 m)",
+    "description": "Altérer le motif du Vide d'un autre être peut entraîner des changements catastrophiques dans ses capacités. Les Anneaux de la cible sont réordonnés aléatoirement, de même que ses Traits. Par exemple, une cible pourrait échanger son Anneau d'Air contre son Anneau de Feu, et son Anneau d'Eau contre son Anneau de Terre, pour la durée du sort. Les Traits Mentaux et Physiques échangent leurs valeurs si celles-ci dépassent celle de l'Anneau. Dans l'exemple ci-dessus, si la cible a Air 3 et Réflexes 4, elle aurait à la place Feu 3 et Agilité 4, avec ses valeurs de Traits réassignées à son Air et ses Réflexes.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "oy1QwgqQxKn75kMZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

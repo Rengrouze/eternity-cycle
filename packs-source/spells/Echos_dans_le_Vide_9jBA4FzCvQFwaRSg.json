@@ -1,0 +1,42 @@
+{
+  "_id": "9jBA4FzCvQFwaRSg",
+  "_key": "!items!9jBA4FzCvQFwaRSg",
+  "name": "Échos dans le Vide",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-3-echos-dans-le-vide",
+    "ring": "void",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "7,5 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Concentration",
+    "raises": "Portée (+1,5 m)",
+    "description": "Les pensées sont comme des murmures dans le Vide, pour qui sait écouter. Tant que ce sort est actif et que vous maintenez votre concentration sur une cible dans la zone d'effet, vous pouvez entendre ce que cette personne pense. La manière dont cela se manifeste peut varier selon l'individu : des guerriers résolus peuvent avoir des pensées courtes et abruptes résumant leurs intentions, tandis que des artisans peuvent penser en termes poétiques.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TxaV7PBMvzpEwJuD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

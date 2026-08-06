@@ -51,6 +51,21 @@ function safeFilename(name) {
     .replace(/[^a-zA-Z0-9]+/g, "_");
 }
 
+/**
+ * Id lisible et stable ("earth-1-armure-de-terre") pour un futur système
+ * d'effets automatiques accroché à system.key (voir item-spell.mjs) - pas un
+ * hash, pour rester lisible dans du code qui ferait `SPELL_EFFECTS["earth-1-..."]`.
+ * Reste stable tant que le nom français du sort n'est pas modifié.
+ */
+function slugify(text) {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function buildItemDoc({ name, type, system, id, folder = null }) {
   return {
     _id: id,
@@ -235,7 +250,9 @@ const PACKS = [
       const items = DEFAULT_SPELLS.map((entry) => {
         const { name, ...rest } = entry;
         const id = stableId(`spell:${rest.ring}:${rest.masteryRank}:${name}`);
+        const key = slugify(`${rest.ring}-${rest.masteryRank}-${name}`);
         const system = {
+          key,
           ring: rest.ring,
           masteryRank: rest.masteryRank,
           keywords: rest.keywords ?? "",
@@ -243,7 +260,14 @@ const PACKS = [
           areaOfEffect: rest.areaOfEffect ?? "",
           duration: rest.duration ?? "",
           raises: rest.raises ?? "",
-          description: rest.description ?? ""
+          description: rest.description ?? "",
+          damage: {
+            mode: rest.damage?.mode ?? "none",
+            ring: rest.damage?.ring ?? "",
+            rolled: rest.damage?.rolled ?? 0,
+            kept: rest.damage?.kept ?? 0,
+            note: rest.damage?.note ?? ""
+          }
         };
         return buildItemDoc({ name, type: "spell", system, id, folder: folderIdFor(rest.ring, rest.masteryRank) });
       });

@@ -1,0 +1,42 @@
+{
+  "_id": "VobMKeMsQmSK0NYc",
+  "_key": "!items!VobMKeMsQmSK0NYc",
+  "name": "Puissance de l'Océan",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-5-puissance-de-l-ocean",
+    "ring": "water",
+    "masteryRank": 5,
+    "keywords": "Défense",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Un nombre de jours égal à votre Rang d'École",
+    "raises": "Durée (+1 jour par 3 Augmentations)",
+    "description": "Peut-être le plus grand don que l'Eau puisse offrir nécessite un Shugenja puissant pour le transmettre à autrui. Ce sort est un rituel complexe nécessitant une heure d'incantation, et ne peut être lancé que sur une cible consentante. Pendant la durée du sort, la cible n'a besoin ni de nourriture, ni de boisson, ni de sommeil. Un nombre de fois pendant la durée égal à votre Rang d'École, la cible peut restaurer ses Points de Vide en Action Simple ; ceci équivaut à récupérer des Points de Vide via une nuit complète de repos. La cible récupère aussi un nombre de Blessures par heure égal à deux fois votre Anneau d'Eau. Si la cible de ce sort est un Shugenja, elle regagne tous ses emplacements de sort dépensés au lever du soleil, qu'elle se soit reposée ou non. Après l'expiration du sort, la cible sombre dans un état d'épuisement complet, qui dure exactement la moitié de la durée de l'effet du sort. Pendant ce temps, la cible ne peut entreprendre aucune action physique significative, et ne peut se déplacer que lentement. Tout voyage est totalement impossible.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "yTiaFOBDOjb1Fl9y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

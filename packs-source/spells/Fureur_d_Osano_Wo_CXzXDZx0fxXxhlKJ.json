@@ -1,0 +1,42 @@
+{
+  "_id": "CXzXDZx0fxXxhlKJ",
+  "_key": "!items!CXzXDZx0fxXxhlKJ",
+  "name": "Fureur d'Osano-Wo",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-1-fureur-d-osano-wo",
+    "ring": "fire",
+    "masteryRank": 1,
+    "keywords": "Tonnerre",
+    "range": "90 m",
+    "areaOfEffect": "1 cible",
+    "duration": "Instantané",
+    "raises": "Dégâts (+1k0 par 2 Augmentations)",
+    "description": "Ce sort est en réalité une prière à la Fortune du Feu et du Tonnerre, invitant sa colère sur votre ennemi. Il ne peut être lancé qu'en extérieur, et invoque un éclair venu du ciel qui frappe la cible pour 5k2 Blessures. Quiconque se trouve à moins de 3 m de la cible doit réussir un jet de Constitution contre un TN de 15 pour éviter d'être assourdi pendant 2 tours. Si ce sort est lancé pendant un orage, les dégâts passent à 6k2 pour une tempête modérée et 6k3 pour une tempête catastrophique ou un ouragan.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 5,
+      "kept": 2,
+      "note": "6k2 si lancé pendant un orage modéré, 6k3 pendant une tempête catastrophique ou un ouragan."
+    }
+  },
+  "effects": [],
+  "folder": "7DRIQU9ft15JrVsG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

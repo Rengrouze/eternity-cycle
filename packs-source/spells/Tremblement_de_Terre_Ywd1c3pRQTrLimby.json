@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-5-tremblement-de-terre",
     "ring": "earth",
     "masteryRank": 5,
     "keywords": "",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1,6 km de rayon",
     "duration": "1 minute",
     "raises": "Zone (+450 m), Durée (+1 minute par 2 Augmentations)",
-    "description": "Ce sort déclenche un terrible séisme dévastateur, centré sur le lanceur, seul à en être épargné. Le séisme détruit entièrement tous les bâtiments en bois dans le rayon d'effet et inflige de sévères dégâts aux structures de pierre. Toutes les personnes présentes dans la zone sont projetées au sol, restent Prostrées et Étourdies pour la durée du sort, et subissent 2k1 Blessures. Les individus à l'intérieur de bâtiments (lanceur inclus) subissent 6k6 dégâts dus aux débris, effondrements de toits, etc. Lancer ce sort à portée d'une zone habitée importante est généralement considéré comme un acte de guerre."
+    "description": "Ce sort déclenche un terrible séisme dévastateur, centré sur le lanceur, seul à en être épargné. Le séisme détruit entièrement tous les bâtiments en bois dans le rayon d'effet et inflige de sévères dégâts aux structures de pierre. Toutes les personnes présentes dans la zone sont projetées au sol, restent Prostrées et Étourdies pour la durée du sort, et subissent 2k1 Blessures. Les individus à l'intérieur de bâtiments (lanceur inclus) subissent 6k6 dégâts dus aux débris, effondrements de toits, etc. Lancer ce sort à portée d'une zone habitée importante est généralement considéré comme un acte de guerre.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 2,
+      "kept": 1,
+      "note": "6k6 pour les personnes à l'intérieur d'un bâtiment (débris/effondrements) au lieu de 2k1."
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "jw5p3SBiYYI8QIX3",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

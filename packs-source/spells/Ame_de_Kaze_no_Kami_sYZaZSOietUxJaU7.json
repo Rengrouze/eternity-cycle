@@ -1,0 +1,42 @@
+{
+  "_id": "sYZaZSOietUxJaU7",
+  "_key": "!items!sYZaZSOietUxJaU7",
+  "name": "Âme de Kaze-no-Kami",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-ame-de-kaze-no-kami",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "6 m",
+    "areaOfEffect": "1 personne cible (peut être le lanceur)",
+    "duration": "10 minutes",
+    "raises": "Durée (+2 minutes par Augmentation)",
+    "description": "Ce sort invoque la Fortune du Vent pour infuser l'âme de la cible de la sérénité glaciale d'une brise nordique, la rendant résistante aux pressions de l'émotion et du stress. La cible semble imperméable à toute manipulation émotionnelle ou pression psychologique ; en réalité, elle ressent des émotions normales, mais la présence des kami d'Air en atténue l'impact, si bien que la cible perçoit ses propres émotions comme quelque chose de distant et d'abstrait. La cible gagne un bonus de +2k2 pour résister aux effets de tout jet de Compétence Sociale ou effet de Peur. Cependant, cette même sérénité glaciale qui la rend résistante à la manipulation d'autrui lui rend aussi difficile de percevoir les émotions des autres : elle subit un malus de -2k0 à tout jet social basé sur l'Intuition.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

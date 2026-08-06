@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-frappe-de-jade",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Jade, Tonnerre",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Une cible",
     "duration": "Instantané",
     "raises": "Dégâts (+1k0), Portée (+3 m), Cibles (+1 cible, maximum 5 cibles au total)",
-    "description": "Ce sort invoque les plus purs kami de la Terre, ceux de jade, sous la forme d'un jet d'énergie vert irisé. Le pouvoir de jade frappe infailliblement la cible choisie - il ne peut être intercepté ni dévié, bien qu'une Résistance Magique ou une autre forme de défense magique puisse le contrer. Si la cible possède au moins un rang de Souillure, la Frappe de Jade inflige des dégâts avec un DR de 3k3, brûlant et noircissant la chair souillée. Une cible sans Souillure complète ne subit en revanche aucun dégât. Lancer ce sort sur une cible non-souillée est généralement considéré comme une grave insulte - sauf peut-être chez les membres les plus paranoïaques de la famille Kuni, où c'est vu comme une précaution raisonnable."
+    "description": "Ce sort invoque les plus purs kami de la Terre, ceux de jade, sous la forme d'un jet d'énergie vert irisé. Le pouvoir de jade frappe infailliblement la cible choisie - il ne peut être intercepté ni dévié, bien qu'une Résistance Magique ou une autre forme de défense magique puisse le contrer. Si la cible possède au moins un rang de Souillure, la Frappe de Jade inflige des dégâts avec un DR de 3k3, brûlant et noircissant la chair souillée. Une cible sans Souillure complète ne subit en revanche aucun dégât. Lancer ce sort sur une cible non-souillée est généralement considéré comme une grave insulte - sauf peut-être chez les membres les plus paranoïaques de la famille Kuni, où c'est vu comme une précaution raisonnable.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 3,
+      "kept": 3,
+      "note": "Uniquement si la cible a au moins 1 rang de Souillure des Terres de l'Ombre."
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

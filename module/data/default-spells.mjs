@@ -75,7 +75,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "Une cible",
     duration: "Instantané",
     raises: "Dégâts (+1k0), Portée (+3 m), Cibles (+1 cible, maximum 5 cibles au total)",
-    description: "Ce sort invoque les plus purs kami de la Terre, ceux de jade, sous la forme d'un jet d'énergie vert irisé. Le pouvoir de jade frappe infailliblement la cible choisie - il ne peut être intercepté ni dévié, bien qu'une Résistance Magique ou une autre forme de défense magique puisse le contrer. Si la cible possède au moins un rang de Souillure, la Frappe de Jade inflige des dégâts avec un DR de 3k3, brûlant et noircissant la chair souillée. Une cible sans Souillure complète ne subit en revanche aucun dégât. Lancer ce sort sur une cible non-souillée est généralement considéré comme une grave insulte - sauf peut-être chez les membres les plus paranoïaques de la famille Kuni, où c'est vu comme une précaution raisonnable."
+    description: "Ce sort invoque les plus purs kami de la Terre, ceux de jade, sous la forme d'un jet d'énergie vert irisé. Le pouvoir de jade frappe infailliblement la cible choisie - il ne peut être intercepté ni dévié, bien qu'une Résistance Magique ou une autre forme de défense magique puisse le contrer. Si la cible possède au moins un rang de Souillure, la Frappe de Jade inflige des dégâts avec un DR de 3k3, brûlant et noircissant la chair souillée. Une cible sans Souillure complète ne subit en revanche aucun dégât. Lancer ce sort sur une cible non-souillée est généralement considéré comme une grave insulte - sauf peut-être chez les membres les plus paranoïaques de la famille Kuni, où c'est vu comme une précaution raisonnable.",
+    damage: { mode: "fixed", rolled: 3, kept: 3, note: "Uniquement si la cible a au moins 1 rang de Souillure des Terres de l'Ombre." }
   },
   {
     name: "Baume de Jurojin",
@@ -143,7 +144,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "1 créature cible",
     duration: "Instantané",
     raises: "Dégâts (+1k0), Cibles (+1 cible), Spécial (rend les rochers de Jade avec 2 Augmentations)",
-    description: "Ce sort invoque plusieurs énormes rochers depuis la terre et les projette pour frapper infailliblement une (ou plusieurs) créature cible. La cible touchée subit des dégâts avec un DR égal à l'Anneau de Terre du lanceur. Si plusieurs cibles sont frappées, le DR est réduit de 1k1 par cible supplémentaire, jusqu'à un minimum de 1k1 par cible. Ces rochers sont de pierre ordinaire et mondaine, et ne peuvent donc normalement pas contourner la Réduction ou l'Invulnérabilité - mais un lanceur puissant peut infuser les rochers de la puissance du Jade."
+    description: "Ce sort invoque plusieurs énormes rochers depuis la terre et les projette pour frapper infailliblement une (ou plusieurs) créature cible. La cible touchée subit des dégâts avec un DR égal à l'Anneau de Terre du lanceur. Si plusieurs cibles sont frappées, le DR est réduit de 1k1 par cible supplémentaire, jusqu'à un minimum de 1k1 par cible. Ces rochers sont de pierre ordinaire et mondaine, et ne peuvent donc normalement pas contourner la Réduction ou l'Invulnérabilité - mais un lanceur puissant peut infuser les rochers de la puissance du Jade.",
+    damage: { mode: "ring", ring: "earth", rolled: 0, kept: 0, note: "DR réduit de 1k1 par cible supplémentaire touchée (minimum 1k1 par cible)." }
   },
   {
     name: "Étreinte de Kenro-Ji-Jin",
@@ -323,7 +325,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "Spéciale",
     duration: "Permanente",
     raises: "Dégâts (+1k0)",
-    description: "Les prêtres des kami peuvent inscrire de puissantes protections invoquant la puissance des éléments contre quiconque tenterait de les franchir. Un Symbole de Terre peut être inscrit sur un objet solide, le plus souvent une porte, une fenêtre, un portail ou tout autre passage. Quiconque tente de franchir ce passage ou de contourner la protection est affecté par sa puissance et doit réussir un jet Contesté d'Air contre l'Anneau de Terre du lanceur. Ceux qui échouent sont frappés par une puissante onde de choc et doivent réussir un jet de Force contre le total du jet de Lancer de Sort ayant créé la protection, sous peine d'être projetés au sol et Étourdis. S'ils possèdent au moins un rang de Souillure, ils subissent en plus 2k2 Blessures. Un seul Symbole de Terre peut exister à la fois, et des sorts Symbole d'éléments différents ne peuvent jamais affecter la même zone. Ce sort peut être dissipé par un autre lancer de Symbole de Terre par n'importe quel Shugenja, ou en détruisant la surface où le Symbole a été gravé."
+    description: "Les prêtres des kami peuvent inscrire de puissantes protections invoquant la puissance des éléments contre quiconque tenterait de les franchir. Un Symbole de Terre peut être inscrit sur un objet solide, le plus souvent une porte, une fenêtre, un portail ou tout autre passage. Quiconque tente de franchir ce passage ou de contourner la protection est affecté par sa puissance et doit réussir un jet Contesté d'Air contre l'Anneau de Terre du lanceur. Ceux qui échouent sont frappés par une puissante onde de choc et doivent réussir un jet de Force contre le total du jet de Lancer de Sort ayant créé la protection, sous peine d'être projetés au sol et Étourdis. S'ils possèdent au moins un rang de Souillure, ils subissent en plus 2k2 Blessures. Un seul Symbole de Terre peut exister à la fois, et des sorts Symbole d'éléments différents ne peuvent jamais affecter la même zone. Ce sort peut être dissipé par un autre lancer de Symbole de Terre par n'importe quel Shugenja, ou en détruisant la surface où le Symbole a été gravé.",
+    damage: { mode: "fixed", rolled: 2, kept: 2, note: "Déclenché si la cible échoue son jet Contesté d'Air et possède au moins 1 rang de Souillure." }
   },
   {
     name: "Tombeau de Jade",
@@ -334,7 +337,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "1 créature cible",
     duration: "Concentration",
     raises: "Portée (+3 m), Spécial (jet Contesté, +1k1 au lanceur par Augmentation)",
-    description: "Considéré par beaucoup de Shugenja comme le sort ultime pour s'opposer aux créatures des Terres de l'Ombre, ce sort fait appel aux esprits de Terre les plus purs, ceux de jade, pour consumer la Souillure au sein de la cible. Le sort ne peut affecter qu'une cible possédant au moins un rang complet de Souillure ; en cas d'échec, le lanceur ne sait pas automatiquement que la cible est indemne de Souillure - il est toujours possible qu'elle ait simplement résisté au sort. Une fois Tombeau de Jade lancé, la cible est momentanément immobilisée pendant que les esprits de Terre pénètrent son corps. Chaque tour, à partir du premier, le lanceur doit réussir un jet Contesté de Terre contre la cible. Si la cible gagne, le sort prend fin. Si le lanceur gagne, la cible subit 2k2 Blessures tandis que les esprits commencent à transformer son corps en jade. Cela continue chaque tour jusqu'à ce que la cible résiste avec succès, que le lanceur cesse de se concentrer, ou que la cible meure. Ceux tués par ce sort sont transformés en statues de jade pur, qui s'effritent en poussière mondaine en 24 heures."
+    description: "Considéré par beaucoup de Shugenja comme le sort ultime pour s'opposer aux créatures des Terres de l'Ombre, ce sort fait appel aux esprits de Terre les plus purs, ceux de jade, pour consumer la Souillure au sein de la cible. Le sort ne peut affecter qu'une cible possédant au moins un rang complet de Souillure ; en cas d'échec, le lanceur ne sait pas automatiquement que la cible est indemne de Souillure - il est toujours possible qu'elle ait simplement résisté au sort. Une fois Tombeau de Jade lancé, la cible est momentanément immobilisée pendant que les esprits de Terre pénètrent son corps. Chaque tour, à partir du premier, le lanceur doit réussir un jet Contesté de Terre contre la cible. Si la cible gagne, le sort prend fin. Si le lanceur gagne, la cible subit 2k2 Blessures tandis que les esprits commencent à transformer son corps en jade. Cela continue chaque tour jusqu'à ce que la cible résiste avec succès, que le lanceur cesse de se concentrer, ou que la cible meure. Ceux tués par ce sort sont transformés en statues de jade pur, qui s'effritent en poussière mondaine en 24 heures.",
+    damage: { mode: "fixed", rolled: 2, kept: 2, note: "Uniquement si la cible a au moins 1 rang de Souillure ; infligé chaque tour où le lanceur gagne le jet Contesté de Terre." }
   },
   {
     name: "Mur de Terre",
@@ -358,7 +362,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "1,6 km de rayon",
     duration: "1 minute",
     raises: "Zone (+450 m), Durée (+1 minute par 2 Augmentations)",
-    description: "Ce sort déclenche un terrible séisme dévastateur, centré sur le lanceur, seul à en être épargné. Le séisme détruit entièrement tous les bâtiments en bois dans le rayon d'effet et inflige de sévères dégâts aux structures de pierre. Toutes les personnes présentes dans la zone sont projetées au sol, restent Prostrées et Étourdies pour la durée du sort, et subissent 2k1 Blessures. Les individus à l'intérieur de bâtiments (lanceur inclus) subissent 6k6 dégâts dus aux débris, effondrements de toits, etc. Lancer ce sort à portée d'une zone habitée importante est généralement considéré comme un acte de guerre."
+    description: "Ce sort déclenche un terrible séisme dévastateur, centré sur le lanceur, seul à en être épargné. Le séisme détruit entièrement tous les bâtiments en bois dans le rayon d'effet et inflige de sévères dégâts aux structures de pierre. Toutes les personnes présentes dans la zone sont projetées au sol, restent Prostrées et Étourdies pour la durée du sort, et subissent 2k1 Blessures. Les individus à l'intérieur de bâtiments (lanceur inclus) subissent 6k6 dégâts dus aux débris, effondrements de toits, etc. Lancer ce sort à portée d'une zone habitée importante est généralement considéré comme un acte de guerre.",
+    damage: { mode: "fixed", rolled: 2, kept: 1, note: "6k6 pour les personnes à l'intérieur d'un bâtiment (débris/effondrements) au lieu de 2k1." }
   },
   {
     name: "Entrave Majeure",
@@ -538,7 +543,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "Cône de 23 m de long et 4,5 m de large à son extrémité",
     duration: "Instantané",
     raises: "Zone (+1,5 m à la largeur du cône), Dégâts (+1k0), Portée (+1,5 m à la longueur du cône), Spécial (+5 au TN d'Air contre le Renversement par Augmentation)",
-    description: "Vous invoquez une puissante rafale d'air émanant de votre position, qui s'abat sur tout ce qui se trouve sur son passage et projette au sol quiconque en est frappé. Toutes les cibles dans la zone d'effet subissent 1k1 Blessures et doivent réussir un jet Contesté de leur Terre contre votre Air. Toute cible qui échoue subit un Renversement."
+    description: "Vous invoquez une puissante rafale d'air émanant de votre position, qui s'abat sur tout ce qui se trouve sur son passage et projette au sol quiconque en est frappé. Toutes les cibles dans la zone d'effet subissent 1k1 Blessures et doivent réussir un jet Contesté de leur Terre contre votre Air. Toute cible qui échoue subit un Renversement.",
+    damage: { mode: "fixed", rolled: 1, kept: 1, note: "La cible subit aussi un Renversement si elle échoue son jet Contesté de Terre." }
   },
   {
     name: "Symbole de Mémoire",
@@ -940,7 +946,8 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "12 m de diamètre",
     duration: "Instantané",
     raises: "Portée (+6 m par Augmentation), Zone d'Effet (+1,5 m de diamètre pour 2 Augmentations), Spécial (+1k0 dégâts par Augmentation)",
-    description: "Ce sort fait appel au pouvoir d'Isora, la Fortune du Rivage, pour déchaîner une bourrasque d'air chargé de tempête et de foudre qui frappe une zone à portée. L'assaut soudain et grondant de vent, de pluie et de foudre inflige 3k2 dégâts à tous ceux présents dans la zone d'effet, qui doivent réussir un jet de Terre à TN 30 ou être Fatigués par le hurlement d'Isora. Le sort endommage aussi les objets physiques fragiles ou vulnérables : les cloisons de papier sont soufflées, les parchemins trempés, etc. Ceux qui ont la chance d'être bénis par le Sang d'Osano-Wo sont immunisés aux effets de ce sort."
+    description: "Ce sort fait appel au pouvoir d'Isora, la Fortune du Rivage, pour déchaîner une bourrasque d'air chargé de tempête et de foudre qui frappe une zone à portée. L'assaut soudain et grondant de vent, de pluie et de foudre inflige 3k2 dégâts à tous ceux présents dans la zone d'effet, qui doivent réussir un jet de Terre à TN 30 ou être Fatigués par le hurlement d'Isora. Le sort endommage aussi les objets physiques fragiles ou vulnérables : les cloisons de papier sont soufflées, les parchemins trempés, etc. Ceux qui ont la chance d'être bénis par le Sang d'Osano-Wo sont immunisés aux effets de ce sort.",
+    damage: { mode: "fixed", rolled: 3, kept: 2, note: "Immunisé si béni par le Sang d'Osano-Wo." }
   },
   {
     name: "Connaître l'Esprit",
@@ -1053,8 +1060,1364 @@ export const DEFAULT_SPELLS = [
     duration: "5 minutes",
     raises: "Durée (+1 minute par Augmentation)",
     description: "Spécial : doit être un Shugenja Kitsu. Parmi les cercles les plus intimes de la famille Kitsu se trouvent les Shugenja ancestraux porteurs du sang des premiers esprits kitsu. Ces Shugenja secrets ont découvert des rituels capables de convaincre les kami d'Air de porter un message jusqu'à Yomi elle-même, appelant à l'aide un shiryo ancestral. Seuls les Shugenja Kitsu peuvent apprendre ce sort, un secret de l'ordre des sodan-senzo. Au lancer, le Shugenja implore les esprits ancestraux de Yomi d'envoyer de l'aide. Si le jet de Lancer de Sort réussit, un shiryo - un esprit venu de Yomi - arrive sur les lieux en cinq tours. À son arrivée, l'esprit reprend sa forme mortelle, mais sa nature spirituelle se ressent aisément à la lueur céleste qui l'entoure. Il offre toute l'aide qu'il peut au lanceur, que ce soit un conseil, un savoir ou un soutien au combat, mais ne fera rien de déshonorant. Mécaniquement, un shiryo typique possède le trait de créature Esprit, un rang de 3 dans tous ses Anneaux et Traits, et un rang de 4 dans toute Compétence utile. Une fois la durée du sort expirée, le shiryo retourne immédiatement à Yomi ; il y retourne aussi si son corps physique est détruit (réduit à zéro Blessure). Bien que ce sort invoque normalement un shiryo \"générique\", le MJ peut choisir de permettre au Shugenja d'invoquer un esprit ancestral nommé et spécifique avec des Augmentations supplémentaires, ou de faire répondre un shiryo plus puissant ou célèbre si les circonstances le justifient. Les shiryo les plus puissants possèdent une École adaptée à leur clan ancestral, typiquement avec un Rang d'École entre 3 et 5."
+  },
+  {
+    name: "Repousser l'Ombre",
+    ring: "air",
+    masteryRank: 5,
+    keywords: "",
+    range: "30 m",
+    areaOfEffect: "9 m de rayon",
+    duration: "Instantané",
+    raises: "Zone (+1,5 m de rayon), Portée (+3 m)",
+    description: "Tout comme les kami façonnent les illusions, ils peuvent aussi les dissiper. Dans la zone affectée par ce sort, toute illusion créée par un sort de Rang de Maîtrise 4 ou inférieur est automatiquement dissipée. Les sorts de Rang de Maîtrise 5 ou 6 nécessitent un jet Contesté d'Air entre vous et le Shugenja qui les a créés ; en cas de succès, ces illusions sont également dissipées. Les effets magiques persistants qui ne sont pas des illusions peuvent aussi être dissipés par ce sort, mais nécessitent un jet Contesté d'Anneau entre vous et leur créateur, votre Air contre son Anneau approprié."
+  },
+  {
+    name: "Échos sur la Brise",
+    ring: "air",
+    masteryRank: 5,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Un individu cible",
+    duration: "Concentration",
+    raises: "Aucune",
+    description: "Aucune destination n'échappe à la portée du vent. Par une simple prière aux kami, vous pouvez porter vos mots à travers tout l'Empire, murmurant à l'oreille de quiconque vous devez contacter. La personne doit vous être connue, et le sort établit un lien entre vous deux tant que vous vous concentrez. Vous pouvez alors communiquer l'un avec l'autre, bien que vous n'entendiez chacun que des murmures. Les deux participants prennent instantanément conscience de la connexion établie, et l'un ou l'autre peut y mettre fin à tout moment."
+  },
+  {
+    name: "Affronter Ses Démons",
+    ring: "air",
+    masteryRank: 5,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "1 personne ou créature cible",
+    duration: "10 tours",
+    raises: "Portée (+3 m par Augmentation), Durée (+2 tours par Augmentation)",
+    description: "Sort dangereux et puissant, apparu de temps à autre chez les Shugenja ronin depuis près d'un millénaire d'histoire rokugani. Souvent considéré comme malfaisant par les Shugenja de Clan, les ronin qui l'apprennent en gardent jalousement le secret et ne le transmettent qu'à leurs élèves les plus fiables - généralement, pas plus d'un ou deux Shugenja par génération l'apprennent. À l'époque des Guerres de Clan, son utilisateur le plus célèbre fut le ronin Heichi Chokei, qui prétendait descendre du Clan du Sanglier disparu depuis longtemps. Interrogé sur le but du sort, Chokei répondit en souriant : \"Il est pour quiconque a le courage de l'utiliser.\" Plus tard, il devint aussi connu comme le sort favori de Naka Kuro, le soi-disant Grand Maître des Éléments, et de son élève et successeur Naka Tokei. Affronter Ses Démons semble faire appel aux kami d'Air pour éprouver l'équilibre karmique et élémentaire d'une âme en désalignant délibérément les Éléments de la cible. Le sort échange le Trait le plus élevé et le plus bas de la cible pour sa durée, ce qui peut entraîner des changements dans ses rangs d'Anneau, avec des conséquences potentiellement sévères (par exemple, un Anneau de Terre réduit diminuant les Blessures disponibles). Le lanceur peut choisir les Traits affectés en cas d'égalité. Ceux qui utilisent Affronter Ses Démons y voient un moyen d'enseigner à autrui l'importance de l'équilibre en toute chose, mais des usages bien plus sinistres et cruels sont certainement possibles et ont été employés plus d'une fois, valant au sort une réputation funeste. Les esprits d'Air semblent trouver le sort amusant, car ils ne reconnaissent pas toujours le mal qu'il peut causer."
+  },
+  {
+    name: "Légion de la Lune",
+    ring: "air",
+    masteryRank: 5,
+    keywords: "Illusion",
+    range: "Personnelle",
+    areaOfEffect: "3 m de rayon autour du lanceur",
+    duration: "5 minutes",
+    raises: "Zone (+1,5 m), Durée (+1 minute)",
+    description: "La Lune peut révéler ce qui est caché, mais aussi dissimuler ceux qui reçoivent ses bénédictions. Vous pouvez invoquer la plus grande bénédiction de la Lune et en envelopper un large groupe de personnes, les soustrayant complètement à la vue. Chaque individu que vous choisissez dans la zone d'effet devient invisible à tous les sens normaux pour la durée du sort. Ceux présents dans la zone que vous choisissez d'exclure ne sont pas affectés. Quiconque affecté par le sort et effectuant une action impliquant un contact physique avec un autre individu est immédiatement exclu de l'effet du sort."
+  },
+  {
+    name: "Lames du Tueur",
+    ring: "air",
+    masteryRank: 5,
+    keywords: "Tonnerre",
+    range: "9 m",
+    areaOfEffect: "Corridor d'air de 3 m de large",
+    duration: "Instantané",
+    raises: "Zone (+1 m de large), Dégâts (+1k0 par 3 Augmentations)",
+    description: "Le vent peut être mortel pour qui n'est pas préparé à sa furie. Vous invoquez un vent puissant qui déchire tout sur son passage. À votre demande, les kami créent un corridor d'air empli d'un vent tranchant infligeant un DR égal à votre Anneau d'Air +2k0 à tout ce qui se trouve sur son chemin (par exemple, un Shugenja avec un Anneau d'Air 4 infligerait 6k4 dégâts avec ce sort). Le papier et les tissus légers sont détruits instantanément, tandis que les tissus plus épais ne sont qu'endommagés. Quiconque subit des dégâts de ces vents doit réussir un jet d'Anneau de Terre (TN 20) ou être Renversé.",
+    damage: { mode: "ring", ring: "air", rolled: 2, kept: 0, note: "La cible subit aussi un Renversement si elle échoue son jet d'Anneau de Terre (TN 20)." }
+  },
+
+  // ============ Sorts d'Air - Rang 6 ============
+  {
+    name: "Lève-toi, Air",
+    ring: "air",
+    masteryRank: 6,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "Un esprit invoqué",
+    duration: "Concentration",
+    raises: "Aucune",
+    description: "Le vent lui-même prend forme pour vous défendre. Aboutissement ultime du sort d'Invocation, ce sort invoque un kami massif d'air pur à votre service. Il prend une forme vaguement humanoïde d'environ 3 mètres de haut, son contour indistinct ne se révélant que par les petits débris pris dans son corps. Le kami peut se déplacer jusqu'à 3 m x votre Air par tour, et génère de puissants vents dans un rayon de 6 m autour de lui, entravant le mouvement et empêchant quiconque dans cette zone d'effectuer des Actions de Mouvement Simples. Le kami manifesté est considéré comme ayant tous ses Traits Physiques égaux à votre Anneau d'Air, et attaque avec un rang de compétence Jiujutsu égal à la moitié de votre Anneau d'Air (un esprit invoqué par un Shugenja avec un Anneau d'Air 6 infligerait ainsi 6k6 dégâts avec ses attaques). Pour déterminer les dégâts qu'il subit, l'esprit est considéré avoir des Blessures comme un humain avec un Anneau de Terre égal à votre Anneau d'Air, mais ne subit aucun malus de blessure. Il est Invulnérable. S'il est ramené à zéro Blessure, il est dissipé."
+  },
+  {
+    name: "La Fausse Légion",
+    ring: "air",
+    masteryRank: 6,
+    keywords: "Bataille, Illusion",
+    range: "Personnelle",
+    areaOfEffect: "Dans un rayon de 30 m autour du lanceur",
+    duration: "Concentration",
+    raises: "Zone (+3 m), Spécial (+5 silhouettes illusoires par Augmentation)",
+    description: "Le plus grand don illusoire du vent est la légion. Dans la zone d'effet de ce sort, vous pouvez créer un nombre de silhouettes illusoires égal à votre Anneau d'Air x 10. Ces silhouettes peuvent être aussi détaillées ou vagues que vous le souhaitez (par exemple \"bushi Grue\" contre \"infanterie lourde de la quatrième légion Daidoji\"), bien que vous deviez connaître l'apparence en question pour que le sort prenne effet (vous ne pourriez, par exemple, pas répliquer un mon familial que vous n'avez jamais vu). Les silhouettes sont pleinement mobiles et effectuent les actions que vous désirez tant qu'elles ne quittent pas la zone d'effet du sort. Elles peuvent être vues, entendues, voire senties, mais comme la plupart des illusions, elles ne peuvent physiquement interagir avec des objets ou individus d'aucune manière."
+  },
+  {
+    name: "Percer les Cieux",
+    ring: "air",
+    masteryRank: 6,
+    keywords: "",
+    range: "N/A",
+    areaOfEffect: "N/A",
+    duration: "5 tours",
+    raises: "Durée (+1 tour par 3 Augmentations)",
+    description: "Spécial : doit être un Shugenja du Clan du Phénix. Connu seulement des véritables maîtres de la magie, ce sort est un secret du Phénix jamais intentionnellement partagé avec une autre École de Shugenja, pas même l'École Impériale. Il est considéré comme une confiance sacrée parmi les prêtres Phénix les plus haut placés, et même tous les Maîtres Élémentaires n'ont pas été jugés dignes de son pouvoir - car abuser de cette prière, c'est appeler la colère même du Ciel. Cette prière requiert l'attention directe d'une Fortune nommée par le Shugenja. Elle ne peut être accomplie que dans un temple ou sanctuaire spécifiquement dédié à cette Fortune, et ne peut jamais être lancée plus d'une fois par mois sous peine d'irriter l'entièreté de Tengoku. Si le sort réussit, une parcelle de l'essence de la Fortune se manifeste dans l'icône sacrée du sanctuaire, et le Shugenja est autorisé à communier brièvement avec l'être divin. La Fortune n'est ni contrainte de répondre aux questions posées ni d'accorder les faveurs demandées, et le plus grand respect doit être maintenu sous peine de déclencher sa colère immédiate et terrible. Cependant, si un véritable respect est témoigné et la cause jugée digne, la Fortune peut offrir une aide disponible nulle part ailleurs."
+  },
+  {
+    name: "Vent de la Lune",
+    ring: "air",
+    masteryRank: 6,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "1 personne cible",
+    duration: "1 minute",
+    raises: "Durée (+1 minute par 2 Augmentations), Spécial (+1k1 au jet Contesté d'Air pour 3 Augmentations)",
+    description: "Les adeptes d'Air d'une certaine puissance réalisent qu'il est possible de lire les pensées d'autrui, mais quelques Shugenja n'y ont vu qu'un début de ce que l'Air permet d'accomplir. Par des invocations extrêmement avancées et puissantes des kami d'Air, un Shugenja peut non seulement lire les pensées de surface d'une autre personne, mais aussi transmettre ses propres pensées dans son esprit. Cet acte est considéré hautement discutable, et le Clan du Phénix estime que ce sort frôle le blasphème. Néanmoins, les immenses avantages tirés d'une telle manipulation totale d'autrui font que le sort continue de circuler discrètement à travers l'Empire. Pour que cette prière réussisse, le lanceur doit connaître le nom de la cible et pouvoir la voir clairement. Sans ce lien visuel, les pensées de la cible seront trop confuses pour être déchiffrées, n'entraînant qu'un mal de tête douloureux pour le lanceur comme pour la cible. Si le nom connu du lanceur est faux (la cible utilisant un alias, par exemple), le jet de Lancer de Sort subit un malus de +10 au TN, le faux nom troublant les esprits. De plus, pour imposer avec succès ses pensées dans l'esprit de la cible, le lanceur doit remporter un jet Contesté d'Air contre elle ; en cas d'échec, le contact est rompu et les deux parties subissent le même mal de tête sévère. Si le jet d'Air réussit en revanche, la cible ignore tout du contact mental et croit, pour la durée du sort, que les pensées surgissant dans son esprit sont entièrement les siennes. Le lanceur doit maintenir une concentration partielle pour la durée du sort - si elle est rompue, le sort prend fin immédiatement. Effet secondaire particulier : pendant une heure après la fin du sort, le lanceur et la cible ont du mal à se mentir convaincamment l'un à l'autre, subissant un malus de +10 au TN à tout jet de Sincérité (Mensonge) effectué l'un contre l'autre."
+  },
+  {
+    name: "Courroux de Kaze-no-Kami (Ouragan)",
+    ring: "air",
+    masteryRank: 6,
+    keywords: "Tonnerre",
+    range: "Personnelle",
+    areaOfEffect: "1,6 km de rayon, centré sur le lanceur",
+    duration: "Concentration (spéciale)",
+    raises: "Aucune",
+    description: "La colère des kami d'Air, et de la Fortune du Vent, est véritablement terrible à contempler. En lançant ce sort, vous déchaînez toute la force d'un ouragan sur vos ennemis. Une fois le sort actif, vous vous tenez dans l'œil de la tempête, une zone rayonnant sur 6 m dans toutes les directions autour de vous, où aucun effet néfaste du sort n'est subi. Hors de cet œil, cependant, les effets brutaux de la tempête déchirent tout sur leur passage. Les objets pesant moins de 225 kg sont soulevés par le vent et projetés dans la tempête. Les individus présents dans cette zone doivent s'accrocher à quelque chose d'immobile ou être emportés par les vents vers une mort certaine. Quiconque dans la région affectée sans abri solide subit 1k1 Blessures chaque minute à cause des vents et débris mineurs ; il y a une chance sur dix chaque minute qu'un individu exposé subisse plutôt 5k5 Blessures pour avoir été frappé par un objet emporté par le vent. Ce sort dure au maximum une heure, bien qu'il puisse durer bien moins longtemps si vous êtes interrompu en le maintenant. Ce sort ne peut être lancé plus d'une fois par mois dans une zone donnée, car il épuise entièrement les faveurs des kami d'Air nécessaires à son accomplissement.",
+    damage: { mode: "fixed", rolled: 1, kept: 1, note: "Par minute passée hors abri ; 1 chance sur 10 de subir 5k5 à la place (frappé par un objet emporté)." }
+  },
+
+  // ============ Sorts de Feu - Rang 1 ============
+  {
+    name: "Acier Mordant",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "Artisanat",
+    range: "Contact",
+    areaOfEffect: "1 arme tranchante",
+    duration: "1 minute",
+    raises: "Durée (+1 minute)",
+    description: "Les esprits du Feu peuvent infuser le métal de leur propre fureur, transformant un tranchant acéré en un tranchant suprêmement parfait. Ce sort renforce les dégâts des armes tranchantes en acier, comme les épées, couteaux, naginata, etc. Acier Mordant ne peut affecter une arme qui n'est pas une lame métallique, qui est un Nemuranai, ou qui a déjà été rehaussée par un effet magique. Le DR de l'arme est augmenté de 1k1 pour la durée du sort."
+  },
+  {
+    name: "Baiser Brûlant de l'Acier",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "Bataille",
+    range: "Contact",
+    areaOfEffect: "Une arme de mêlée en main du lanceur",
+    duration: "5 minutes",
+    raises: "Durée (+2 minutes)",
+    description: "Ce sort embrase une arme de feu, la rendant plus grande et plus efficace. Au lancer, une volute de flamme s'étend de vos mains pour engloutir votre arme (si vous la lâchez ou la perdez, l'effet du sort cesse). Cette arme gagne un bonus de +1k1 aux jets d'attaque de mêlée. Le bonus passe à +2k2 contre des adversaires montés ou de taille supérieure à celle d'un humain."
+  },
+  {
+    name: "Flammes Envieuses",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "1 cible",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Le pouvoir le plus élémentaire du Feu est la destruction, et les esprits de Feu invoqués peuvent facilement être déchaînés sur ses ennemis. Ce sort invoque un unique kami de Feu, qui fonce vers la cible et la frappe infailliblement tant qu'elle est à portée. Le sort inflige 2k2 Blessures. Les brûlures infligées par ce sort sont particulièrement douloureuses : si le sort touche un Shugenja en train de lancer un sort, son jet de Volonté a un TN de 20 plus les dégâts subis, au lieu des 10 habituels plus les dégâts.",
+    damage: { mode: "fixed", rolled: 2, kept: 2, note: "" }
+  },
+  {
+    name: "Extinction",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "30 m de rayon",
+    duration: "Instantané",
+    raises: "Zone (+6 m)",
+    description: "Les esprits de Feu peuvent être chassés par l'invocation appropriée, une capacité fort utile dans les villes et villages rokugani entièrement construits en bois et papier. Le sort renvoie les kami de Feu actifs dans la zone. Tout feu non-magique dans la zone d'effet est immédiatement éteint, et tout dégât infligé par le feu (magique ou non) voit son DR réduit de 1k1 jusqu'au début du tour suivant."
+  },
+  {
+    name: "Feux de Pureté",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "Défense",
+    range: "7,5 m",
+    areaOfEffect: "1 cible",
+    duration: "1 minute",
+    raises: "Dégâts (+1k0 par 2 Augmentations)",
+    description: "Ce sort, l'une des rares prières directement protectrices impliquant les kami de Feu, demande aux esprits de protéger une personne en enveloppant la cible d'un linceul de flammes vives. Ni la cible ni ce qu'elle porte ne subit de dégâts du sort, mais quiconque entre en contact avec elle ou la frappe en mêlée subit 2k2 Blessures. Quiconque la cible frappe en mêlée à mains nues ou avec une arme qu'elle portait au moment du lancer subit également 2k2 Blessures supplémentaires. Cependant, tout ce que la cible pose ne peut être ramassé sans subir les dégâts du sort. Les armes à distance comme les flèches contournent cette barrière de feu et infligent leurs dégâts normalement.",
+    damage: { mode: "fixed", rolled: 2, kept: 2, note: "+2k2 supplémentaires si la cible frappe en mêlée avec une arme portée au moment du lancer." }
+  },
+  {
+    name: "Les Feux qui Purifient",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "",
+    range: "Soi-même",
+    areaOfEffect: "9 m de rayon",
+    duration: "Instantané",
+    raises: "Zone d'Effet (+1,5 m par 2 Augmentations)",
+    description: "La destruction est l'une des pulsions élémentaires du Feu, et ce sort fait appel à cette pulsion pour répandre la destruction autour du lanceur. Le sort fouette les kami dans un chaos frénétique, détruisant tout autour de vous. Tous ceux présents dans la zone d'effet, vous y compris, subissent des dégâts avec un DR égal à votre Anneau de Feu. Ce résultat est tiré une seule fois et appliqué à tous dans la zone - vous ne subissez cependant que la moitié des dégâts (arrondie au supérieur), les kami faisant un effort pour vous épargner.",
+    damage: { mode: "ring", ring: "fire", rolled: 0, kept: 0, note: "Touche tous ceux présents dans la zone ; le lanceur ne subit que la moitié de ces dégâts (arrondie au supérieur)." }
+  },
+  {
+    name: "Fureur d'Osano-Wo",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "Tonnerre",
+    range: "90 m",
+    areaOfEffect: "1 cible",
+    duration: "Instantané",
+    raises: "Dégâts (+1k0 par 2 Augmentations)",
+    description: "Ce sort est en réalité une prière à la Fortune du Feu et du Tonnerre, invitant sa colère sur votre ennemi. Il ne peut être lancé qu'en extérieur, et invoque un éclair venu du ciel qui frappe la cible pour 5k2 Blessures. Quiconque se trouve à moins de 3 m de la cible doit réussir un jet de Constitution contre un TN de 15 pour éviter d'être assourdi pendant 2 tours. Si ce sort est lancé pendant un orage, les dégâts passent à 6k2 pour une tempête modérée et 6k3 pour une tempête catastrophique ou un ouragan.",
+    damage: { mode: "fixed", rolled: 5, kept: 2, note: "6k2 si lancé pendant un orage modéré, 6k3 pendant une tempête catastrophique ou un ouragan." }
+  },
+  {
+    name: "Katana de Feu",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "Bataille, Artisanat",
+    range: "Personnelle ou 6 m",
+    areaOfEffect: "1 arme créée",
+    duration: "5 minutes",
+    raises: "Dégâts (+1k0), Durée (+5 minutes), Portée (+1,5 m)",
+    description: "Vous invoquez une lame de feu pur, flamboyante comme l'âme d'un guerrier honorable. L'arme prend par défaut la forme d'un katana, mais une Augmentation permet de choisir n'importe quelle autre épée. Le katana a un DR de 2k2. En le maniant, vous pouvez utiliser votre Rang d'École à la place de votre compétence Kenjutsu. Si vous possédez déjà cette compétence, vous ajoutez votre rang d'Honneur à tous les jets de dégâts effectués avec cette arme. Le katana de feu disparaît s'il quitte votre main. Vous pouvez aussi le faire apparaître dans les mains d'un allié à moins de 6 m ; celui-ci est alors considéré comme le lanceur pour les besoins du sort, mais ne gagne pas le bonus d'Honneur aux dégâts."
+  },
+  {
+    name: "Jamais Seul",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 cible",
+    duration: "5 tours (voir description)",
+    raises: "Cibles (+1)",
+    description: "Ce sort invoque l'élément de connaissance et de compréhension du Feu, renforçant l'esprit d'un de vos alliés en ouvrant ses yeux au courage de ses ancêtres. La cible du sort reçoit un bonus égal à votre Anneau de Feu à tous ses jets d'attaque, de Compétence et de Trait. Cet effet dure jusqu'à ce que le sort expire, ou jusqu'à ce que la cible échoue un jet d'attaque ou de Compétence, ou jusqu'à ce qu'elle subisse des Blessures de quelque source que ce soit - le premier de ces événements qui survient met fin à l'effet."
+  },
+  {
+    name: "La Forge Déchaînée",
+    ring: "fire",
+    masteryRank: 1,
+    keywords: "Artisanat",
+    range: "Contact",
+    areaOfEffect: "1 arme ou armure",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Le Feu est l'élément de la création autant que de la destruction, et un Shugenja habile peut en tirer grand profit. Ce sort invoque les pouvoirs de la forge, puissants et sans pitié, pour refaçonner un objet matériel, comme une arme ou une armure, dans sa forme parfaite. L'objet ciblé perd toutes ses imperfections, fissures et entailles comprises. Ce sort ne peut réparer un objet réellement brisé ou détruit ; il ne peut affecter que des objets de qualité ordinaire."
+  },
+
+  // ============ Sorts de Feu - Rang 2 ============
+  {
+    name: "Perturber l'Aura",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "Personne ou créature cible",
+    duration: "24 heures",
+    raises: "Durée (+12 heures par Augmentation)",
+    description: "Quiconque a ses éléments déséquilibrés en ressent les effets, et ce sort crée délibérément cette condition en aggravant le Feu présent dans le corps de la cible. Tant que le sort est actif, la cible ne peut être soignée par des moyens magiques : les sorts, objets ou Techniques magiques tentant de restaurer ses Blessures échouent automatiquement (les soins mondains via la compétence Médecine restent efficaces). La cible peut sentir que quelque chose ne va pas physiquement, mais ne peut découvrir ce qui se passe sans l'aide d'un Shugenja - lancer Perception (Feu) révélera la présence de nombreux esprits de Feu excités dans son corps."
+  },
+  {
+    name: "Attiser la Danse des Flammes",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "6 m de rayon",
+    duration: "2 tours",
+    raises: "Durée (+1 tour)",
+    description: "Version plus puissante des Feux qui Purifient, ce sort garde les kami de Feu sous un contrôle plus strict et les persuade de rester présents plus longtemps. En cas de succès, des kami de Feu jaillissent en une danse violente et féroce à l'endroit de votre choix, embrasant la zone. Chaque cible dans la zone subit 3k2 Blessures au tour où le sort prend effet. Au début de chaque tour suivant, si le sort est toujours actif, chaque cible encore présente dans la zone affectée subit 2k1 Blessures supplémentaires.",
+    damage: { mode: "fixed", rolled: 3, kept: 2, note: "+2k1 Blessures supplémentaires à chaque tour suivant si le sort reste actif." }
+  },
+  {
+    name: "Les Feux Intérieurs",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "",
+    range: "30 m",
+    areaOfEffect: "1 cible",
+    duration: "Instantané",
+    raises: "Cible (+1 cible par 2 Augmentations)",
+    description: "Probablement le sort offensif le plus connu et reconnu de l'élément du Feu, cette prière est utilisée par les Shugenja rokugani depuis les tout premiers jours de l'Empire. Vous invoquez des kami de Feu pour former un orbe de flamme qui flotte un instant dans votre paume avant de foncer vers la cible. La sphère gagne en vitesse et en taille jusqu'à toucher sa cible, offrant un spectacle visuel saisissant. Le sort a un DR égal à votre Anneau de Feu.",
+    damage: { mode: "ring", ring: "fire", rolled: 0, kept: 0, note: "" }
+  },
+  {
+    name: "Pas Précipités",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "2 tours (voir description)",
+    raises: "Aucune",
+    description: "Le Feu est l'élément de la pensée, et la pensée est prompte en effet. Vous puisez dans la vitesse des kami de Feu pour vous aider dans le prochain sort que vous lancerez. Le temps d'incantation du prochain sort de Feu que vous lancez est réduit de 4 tours. Si ce prochain sort est de Rang de Maîtrise 3 ou moins, il s'incante instantanément en Action Simple. Si vous ne commencez pas à incanter le nouveau sort dans les 2 tours suivants, le bénéfice de Pas Précipités s'estompe."
+  },
+  {
+    name: "Vivacité Mentale",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 objet",
+    duration: "10 minutes",
+    raises: "Aucune",
+    description: "Les kami de Feu peuvent être imprégnés dans des objets physiques, leur permettant de rester présents plus longtemps. Les Shugenja ont conçu de nombreuses façons d'utiliser cette technique pour s'aider eux-mêmes et autrui. Ce sort, l'un des plus basiques de ce type, imprègne un objet matériel de l'intelligence et de la vivacité du Feu. Quiconque porte cet objet voit son Trait d'Intelligence augmenté de 3 pour la durée du sort."
+  },
+  {
+    name: "Chaleur Implacable",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "Défense",
+    range: "Contact",
+    areaOfEffect: "1 armure",
+    duration: "10 tours",
+    raises: "Durée (+2 tours)",
+    description: "Ce sort est conçu pour protéger les bushi en imprégnant leur armure d'un kami de Feu. Le sort cible une armure, qui se met à luire de la force d'un soleil de désert impitoyable. Tout adversaire tentant de frapper le porteur de l'armure, que l'attaque touche ou non, est immédiatement considéré Fatigué jusqu'au début de son prochain tour. Ce malus s'applique au jet d'attaque qui a déclenché le sort, et tout attaquant en Posture d'Attaque Totale adopte immédiatement la Posture d'Attaque à la place. Ce sort n'a aucun effet sur les attaques à distance ni sur les sorts ciblant le porteur de l'armure."
+  },
+  {
+    name: "Queue du Dragon de Feu",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "4 tours",
+    raises: "Durée (+1 tour)",
+    description: "Ce sort invoque plusieurs kami de Feu pour former un tentacule semblable à un fouet qui s'étend depuis la main du lanceur. Le tentacule de flamme ne vous brûle pas, les kami étant reconnaissants de pouvoir brûler autrui sur votre commande. Vous pouvez utiliser ce tentacule pour frapper des ennemis jusqu'à 9 m de distance, le déployant et le rétractant avec une vitesse aveuglante. Votre jet d'attaque avec le tentacule est égal à votre Agilité + (deux fois votre Rang d'École), en gardant votre Agilité. Le tentacule a un DR égal à votre Anneau de Feu.",
+    damage: { mode: "ring", ring: "fire", rolled: 0, kept: 0, note: "Jet d'attaque du tentacule = Agilité + 2x Rang d'École, en gardant l'Agilité." }
+  },
+  {
+    name: "Protection de Pureté",
+    ring: "fire",
+    masteryRank: 2,
+    keywords: "Protections",
+    range: "Contact",
+    areaOfEffect: "4,5 m de rayon autour de l'objet touché",
+    duration: "1 jour",
+    raises: "Aucune",
+    description: "Bien que la Terre soit la méthode traditionnelle pour s'opposer aux forces maléfiques comme la Souillure des Terres de l'Ombre, les esprits de Feu peuvent aussi être invoqués pour purger et détruire de telles abominations spirituelles. Ce sort lie un kami de Feu à un lieu précis, qu'il protège contre les forces du mal. Le lancer nécessite d'inscrire d'élaborés kanjis sur une surface plane à la craie ou à l'encre, ce qui prend une minute d'effort concentré, après quoi le jet de Lancer de Sort doit être effectué. Une fois la Protection de Pureté activée et le pouvoir du kami pleinement engagé, celui-ci protège la zone contre l'influence des Terres de l'Ombre ou de l'Obscurité Rampante. Les personnes ou créatures possédant au moins 1 rang de Souillure, ou sous le contrôle de l'Obscurité Rampante, doivent réussir un jet Contesté de Volonté contre vous pour entrer dans la zone d'effet de la Protection (vous gagnez un bonus de +5 à ce jet). De plus, les créatures qui réussissent à y pénétrer subissent une douleur extrême, le pouvoir de la protection brûlant leur essence même : leur corps s'enflamme et elles subissent des Blessures égales au total de votre Anneau de Feu + votre Rang de Réputation, chaque tour où elles restent dans la zone d'effet. Les sorts et projectiles ne sont pas affectés par la Protection de Pureté. L'objet sur lequel la protection est inscrite doit rester immobile et l'inscription clairement visible en permanence, sous peine de dissiper la protection. En cas de superposition de plusieurs Protections de Pureté, leurs effets ne se cumulent pas.",
+    damage: { mode: "ring", ring: "fire", rolled: 0, kept: 0, note: "Ajoutez aussi votre Rang de Réputation au DR (lancés et gardés) - à ajuster manuellement. Infligé chaque tour où la cible reste dans la zone protégée." }
+  },
+
+  // ============ Sorts de Feu - Rang 3 ============
+  {
+    name: "Souffle du Dragon de Feu",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Jet de 4,5 m de long, 1,5 m de large",
+    duration: "4 tours",
+    raises: "Aucune",
+    description: "Ce sort est une prière au Dragon de Feu, l'un des plus puissants êtres célestes, le suppliant de partager un peu de son pouvoir. En cas de succès, vous gagnez la capacité de souffler un jet de flammes par la bouche une fois par tour, en Action Simple. Le jet a un DR égal à votre Anneau de Feu et frappe toute cible devant vous dans la zone d'effet. Vous pouvez choisir d'effectuer d'autres actions que souffler du feu pendant que le sort est actif, mais vous ne pouvez ni parler ni lancer de sorts. Le sort expire après quatre tours, mais vous pouvez choisir d'y mettre fin pendant la Phase de Réactions de n'importe quel tour antérieur.",
+    damage: { mode: "ring", ring: "fire", rolled: 0, kept: 0, note: "Attaque répétable une fois par tour en Action Simple tant que le sort est actif." }
+  },
+  {
+    name: "Courroux Ardent",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "",
+    range: "30 m",
+    areaOfEffect: "Une structure autonome, ou une zone de 15 m x 15 m",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Courroux Ardent fut à l'origine conçu pour défricher des terres agricoles et démolir des structures en bois avec un minimum d'effort et sans danger ; il sert aussi à allumer des feux de joie pour des rituels et célébrations. Le sort vous permet de détruire un bâtiment ou une autre structure en faisant appel aux kami de Feu excitables présents dans les matériaux de la cible. Tous les matériaux inflammables dans la zone d'effet s'enflamment immédiatement et brûlent jusqu'à ce qu'il ne reste que des cendres. Le feu ne peut être éteint que par des moyens magiques ; l'eau, le sable et autres retardateurs mondains n'ont aucun effet. Une seule structure peut être ciblée par le sort, et le feu ne se propage pas aux structures adjacentes, vos prières maintenant les kami de Feu sous un contrôle strict. Les êtres vivants et les matériaux non-inflammables ne sont pas affectés ; en fait, si les vêtements portés par les personnes prises dans la zone d'effet brûlent, leur chair ne sera même pas roussie."
+  },
+  {
+    name: "Le Poing d'Osano-Wo",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "Tonnerre",
+    range: "15 m",
+    areaOfEffect: "6 m de rayon",
+    duration: "1 tour",
+    raises: "Zone d'Effet (+3 m de rayon)",
+    description: "Prière plus puissante à la Fortune du Tonnerre, ce sort invoque sa colère pour dévaster une zone ciblée. De massifs éclairs et des jets de flamme vaguement en forme de poing s'abattent du ciel, frappant la zone d'effet. Les structures fragiles et facilement inflammables (comme la plupart des maisons rokugani) sont détruites par la fureur du sort, ou prennent feu et sont consumées. Le sort a un DR égal à votre Anneau de Feu, infligé à quiconque se trouve dans la zone d'effet. Utiliser ce sort en zone habitée est généralement considéré comme un acte criminel, sauf si le Shugenja peut invoquer des circonstances extrêmes, les incendies étant terriblement dangereux pour les villes rokugani.",
+    damage: { mode: "ring", ring: "fire", rolled: 0, kept: 0, note: "" }
+  },
+  {
+    name: "Brume de Bataille",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "Bataille",
+    range: "3 m",
+    areaOfEffect: "1 cible",
+    duration: "5 tours, ou 1 heure hors combat",
+    raises: "Durée (+1 tour)",
+    description: "Les esprits de Feu sont connus pour leur nature erratique et impulsive, et les Shugenja peuvent gravement perturber leurs ennemis au combat en leur imprégnant cet aspect de l'élément. La cible de ce sort est emplie de la fureur désordonnée du Feu, l'enrageant et lui faisant perdre toute mesure. Elle adopte immédiatement la Posture d'Attaque Totale et ne peut en changer pour la durée du sort. Si le sort est lancé hors combat, la cible gagne les Désavantages Impétueux et Contrariant pour la durée du sort. Les effets de ce sort peuvent être surmontés par les esprits forts : la cible peut tenter d'y résister par un jet de Volonté opposé, mais vous ajoutez votre Feu au total de votre jet. Si le sort est lancé en combat, ce jet a lieu pendant la Phase de Réactions (et peut être tenté chaque tour). S'il est lancé hors combat, le jet a lieu toutes les 10 minutes."
+  },
+  {
+    name: "Lame Affamée",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "Artisanat",
+    range: "15 m",
+    areaOfEffect: "1 arme",
+    duration: "5 tours",
+    raises: "Durée (+1 tour)",
+    description: "Ce sort est une version plus puissante d'Acier Mordant, conçue pour renforcer n'importe quelle arme plutôt qu'une simple épée. Le sort renforce les esprits de Feu présents dans une arme cible, les faisant surgir pour former un léger fourreau de flammes autour d'elle. Le porteur de l'arme ajoute +1k0 à tous ses jets d'attaque, et tous ses dés de dégâts explosent sur un résultat de 8 ou plus. Chaque dé ne peut cependant exploser sur un 8 ou un 9 qu'une seule fois par jet, même si le porteur bénéficie d'autres effets permettant l'explosion sur 9."
+  },
+  {
+    name: "Nuées Voraces",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "1 personne cible",
+    duration: "5 tours",
+    raises: "Durée (+1 tour)",
+    description: "Forme plus puissante et sophistiquée de la prière invoquant les Feux Intérieurs, ce sort non seulement endommage la cible mais perturbe aussi ses propres tentatives d'invoquer les kami de Feu, en faisant une arme très efficace contre un Shugenja de Feu rival. Vous invoquez un jet de flammes qui fonce vers la cible avec une fureur débridée. Les flammes infligent 5k3 Blessures à l'impact, puis encerclent l'adversaire pour la durée du sort, attendant qu'il commette une erreur. Si la cible lance un sort de Feu pendant ce temps, les kami de Feu frappent instantanément, infligeant 3k3 Blessures supplémentaires et faisant automatiquement échouer le jet de Lancer de Sort (la cible perd tout de même l'emplacement de sort correspondant, comme d'habitude).",
+    damage: { mode: "fixed", rolled: 5, kept: 3, note: "+3k3 supplémentaires si la cible lance un sort de Feu pendant l'encerclement (son jet de Lancer de Sort échoue aussi automatiquement)." }
+  },
+  {
+    name: "Lumière Éclatante",
+    ring: "fire",
+    masteryRank: 3,
+    keywords: "Défense",
+    range: "9 m",
+    areaOfEffect: "1 armure cible",
+    duration: "10 tours",
+    raises: "Dégâts (+1k0 par 2 Augmentations), Durée (+2 tours)",
+    description: "Autre exemple de sort pouvant imprégner des kami de Feu dans des objets, ce sort lie temporairement un kami de Feu à une pièce d'armure (comme un casque ou un plastron). L'armure émet une lumière vive qui devient aveuglante chaque fois que son porteur est attaqué. Chaque fois que le porteur de l'armure est attaqué en mêlée, l'adversaire subit immédiatement après 2k2 Blessures et est Aveuglé jusqu'à la Phase de Réactions de ce même tour. Le sort n'a aucun effet sur les attaques à distance.",
+    damage: { mode: "fixed", rolled: 2, kept: 2, note: "Déclenché quand le porteur de l'armure est attaqué en mêlée ; l'attaquant est aussi Aveuglé jusqu'à la Phase de Réactions." }
+  },
+
+  // ============ Sorts de Feu - Rang 4 ============
+  {
+    name: "Mort de la Flamme",
+    ring: "fire",
+    masteryRank: 4,
+    keywords: "",
+    range: "30 m",
+    areaOfEffect: "1 cible",
+    duration: "5 tours",
+    raises: "Aucune",
+    description: "Ce sort déchaîne la colère du Feu sur la cible, supprimant son Feu élémentaire et réduisant à la fois son Agilité et son Intelligence d'un montant égal à votre Anneau de Feu (minimum 1). Si vous maintenez votre Concentration pour la durée de l'effet, la cible ne peut y échapper. Si vous ne maintenez pas la Concentration, chaque tour au début de son tour, la cible peut tenter un jet Contesté de Feu contre vous (en utilisant son Anneau de Feu original, non modifié) pour mettre fin à l'effet du sort."
+  },
+  {
+    name: "Défense de la Tempête de Feu",
+    ring: "fire",
+    masteryRank: 4,
+    keywords: "Défense",
+    range: "Contact",
+    areaOfEffect: "1 armure cible",
+    duration: "5 tours",
+    raises: "Durée (+1 tour)",
+    description: "Forme plus puissante de sorts comme Lumière Éclatante, cette prière invoque une aura de flammes magiques depuis une armure, entourant et protégeant son porteur. Ces flammes ne blessent ni le porteur de l'armure ni les êtres vivants. Cependant, toutes les armes en bois (y compris les flèches et de nombreuses armes d'hast) brûlent instantanément avant d'atteindre leur cible, sans infliger de dégâts. Les flammes gênent aussi la vue de la cible, augmentant son TN d'Armure de 20."
+  },
+  {
+    name: "La Forge Réparatrice",
+    ring: "fire",
+    masteryRank: 4,
+    keywords: "Artisanat",
+    range: "Contact",
+    areaOfEffect: "1 objet cible",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Ce sort simple et puissant n'a qu'une seule fonction : faire appel au pouvoir créateur du Feu pour ramener ce qui a été détruit. Tout objet matériel endommagé ou détruit peut être restauré par ce sort, à condition que tous ses morceaux soient rassemblés devant le lanceur (si des morceaux manquent, le sort échoue automatiquement). Le sort prend une minute à lancer, durant laquelle vous devez vous concentrer. En cas de succès, le sort restaure l'objet dans un état intact et sans dommage. Notez que les kami de Feu doivent travailler plus dur pour réparer des objets de qualité inhabituelle : pour réparer un Nemuranai ou un objet de qualité Fine ou supérieure avec ce sort, vous devez offrir aux kami de Feu un présent (un autre objet à brûler et détruire) proportionné à la valeur de l'objet."
+  },
+  {
+    name: "Symbole de Feu",
+    ring: "fire",
+    masteryRank: 4,
+    keywords: "Protections",
+    range: "30 m",
+    areaOfEffect: "3 m de rayon",
+    duration: "Permanente",
+    raises: "Aucune",
+    description: "Les prêtres des kami peuvent inscrire de puissantes protections invoquant la puissance des éléments contre quiconque tenterait de les franchir. Un Symbole de Feu peut être inscrit sur un objet solide, le plus souvent une porte, une fenêtre, un portail ou tout autre passage. Quiconque tente de franchir ce passage ou de contourner la protection est affecté par sa puissance et doit réussir un jet Contesté d'Eau contre l'Anneau de Feu du lanceur. Ceux qui échouent sont Hébétés, Aveuglés pendant un tour, et subissent 3k3 Blessures. Ce sort peut être dissipé par un autre lancer de Symbole de Feu par n'importe quel Shugenja, ou en détruisant la surface où le Symbole a été gravé. Un seul Symbole de Feu peut exister à la fois, et des sorts Symbole d'éléments différents ne peuvent jamais affecter la même zone.",
+    damage: { mode: "fixed", rolled: 3, kept: 3, note: "Déclenché si la cible échoue son jet Contesté d'Eau contre l'Anneau de Feu du lanceur." }
+  },
+  {
+    name: "Mur de Feu",
+    ring: "fire",
+    masteryRank: 4,
+    keywords: "",
+    range: "30 m",
+    areaOfEffect: "Spéciale (voir description)",
+    duration: "1 heure",
+    raises: "Zone d'Effet (+1 incrément, voir description)",
+    description: "Vous invoquez les kami de Feu pour qu'ils surgissent et forment un mur de flammes, barrant tout passage. Le mur mesure 3 m de haut, 30 cm de large et 7,5 m de long, et inflige 6k6 Blessures à quiconque le touche. Ce mur peut être rendu plus court ou plus fin selon vos désirs, dans les limites des spécifications totales, mais toute la masse des flammes doit être utilisée d'une manière ou d'une autre. Le mur peut être créé à un endroit où se trouvent des personnes ou des créatures, les forçant à réussir un jet de Réflexes contre un TN de 20 pour éviter de subir les Blessures du feu. Vous pouvez déclarer une Augmentation pour augmenter l'une des spécifications (hauteur, largeur ou longueur) de son incrément de base (3 m, 30 cm ou 7,5 m respectivement).",
+    damage: { mode: "fixed", rolled: 6, kept: 6, note: "Infligé à quiconque touche le mur de flammes." }
+  },
+  {
+    name: "Protection du Tonnerre",
+    ring: "fire",
+    masteryRank: 4,
+    keywords: "Défense, Protections, Tonnerre",
+    range: "Contact",
+    areaOfEffect: "4,5 m de rayon autour de l'armure",
+    duration: "1 heure",
+    raises: "Aucune",
+    description: "La protection d'Osano-Wo peut être temporairement invoquée pour une armure en lançant ce sort et en inscrivant le kanji du tonnerre dessus. Quiconque se trouve à moins de 4,5 m de l'armure est sous la protection d'Osano-Wo, et est totalement protégé du feu et du tonnerre non-magiques pour la durée du sort. De plus, tout sort de Feu lancé par un Shugenja autre que vous et ciblant quelque chose dans la zone d'effet voit son TN de Lancer de Sort augmenté de 20."
+  },
+
+  // ============ Sorts de Feu - Rang 5 ============
+  {
+    name: "Vague Destructrice",
+    ring: "fire",
+    masteryRank: 5,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "7,5 m de rayon",
+    duration: "Instantané",
+    raises: "Dégâts (+1k1 par 2 Augmentations)",
+    description: "Sort offensif extrêmement puissant, conçu à l'origine par les Maîtres Élémentaires Isawa, cette prière invoque une immense masse de kami de Feu, qui déferle depuis le lanceur en une vague de flammes brûlantes. Chaque cible dans la zone d'effet, alliée ou ennemie, subit 7k7 Blessures - les flammes déchaînées ne faisant aucune distinction. Vous seul ne subissez aucun dégât du sort.",
+    damage: { mode: "fixed", rolled: 7, kept: 7, note: "Touche alliés et ennemis dans la zone ; le lanceur seul est épargné." }
+  },
+  {
+    name: "Rage Éternellement Brûlante",
+    ring: "fire",
+    masteryRank: 5,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "1 cible",
+    duration: "1 tour",
+    raises: "Durée (+1 tour), Cibles (+1)",
+    description: "Puissante malédiction qui imprègne le corps de la cible d'esprits de Feu en colère, la torturant de douleur tandis que les kami brûlent ses nerfs et ligaments. Pendant la durée du sort, la victime est considérée au rang de blessure Épuisé et subit tous les malus et conditions associés, bien qu'elle ne subisse aucune Blessure réelle du sort. Quand le sort expire, la douleur cesse instantanément et la cible peut se relever comme si de rien n'était. Ce sort est quelque peu controversé dans certaines Écoles de Shugenja, en particulier les plus pacifiques, puisqu'il ne revient guère qu'à infliger délibérément de la douleur. Quelques Shugenja ont même noté d'inquiétantes similitudes entre les effets de ce sort et ceux de certaines malédictions de maho."
+  },
+  {
+    name: "Suivre la Flamme",
+    ring: "fire",
+    masteryRank: 5,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Voir description",
+    duration: "5 tours",
+    raises: "Dégâts (+1k0 par Augmentation)",
+    description: "Ce sort vous accorde un contrôle exceptionnel des kami de Feu environnants, vous permettant de les persuader de mener une attaque aussi inhabituelle que terrifiante. Au tour où ce sort est lancé et à chaque tour suivant, vous pouvez désigner une cible en ligne de vue à moins de 90 m et envoyer vers elle un jet de flammes qui serpente le long du sol (aux tours suivants, désigner une cible ainsi est une Action Simple). Le jet de flammes se déplace à raison de 23 m par tour et contourne les obstacles infranchissables (ou ininflammables) pour atteindre sa cible. Une fois le feu arrivé à destination, la cible s'embrase et subit 6k5 Blessures. Elle prend feu et subit la moitié de ce nombre de Blessures (arrondi à l'inférieur) chaque tour suivant, jusqu'à ce que le feu soit éteint normalement ou que la durée du sort expire.",
+    damage: { mode: "fixed", rolled: 6, kept: 5, note: "Puis la moitié de ce total (arrondie à l'inférieur) chaque tour suivant jusqu'à extinction ou fin du sort." }
+  },
+  {
+    name: "Lumière du Soleil",
+    ring: "fire",
+    masteryRank: 5,
+    keywords: "Jade",
+    range: "30 m",
+    areaOfEffect: "9 m de rayon",
+    duration: "10 tours",
+    raises: "Aucune",
+    description: "Cette prière invoque le pouvoir du Soleil, vénéré et adoré dans tout Rokugan, et particulièrement prisée par la famille Moshi, bien que des Shugenja de tout l'Empire l'aient apprise. Le sort fait descendre un rayon concentré de pure lumière solaire pour punir les indignes. Quiconque est pris dans la zone d'effet subit 2k2 Blessures par tour à cause de la chaleur intense. Les cibles humaines (uniquement) subissent 2k1 Blessures supplémentaires pour chaque rang d'Honneur en dessous de 4, et 2k2 Blessures supplémentaires si elles possèdent au moins 1 rang de Souillure des Terres de l'Ombre ou sont contrôlées par l'Obscurité Rampante. Les cibles humaines avec un rang d'Honneur de 0 sont Aveuglées pendant un nombre de tours égal à votre Anneau de Feu.",
+    damage: { mode: "fixed", rolled: 2, kept: 2, note: "Par tour. Cibles humaines : +2k1 par rang d'Honneur sous 4, +2k2 si Souillure/Obscurité Rampante." }
+  },
+  {
+    name: "Ailes du Phénix",
+    ring: "fire",
+    masteryRank: 5,
+    keywords: "Voyage",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "10 tours",
+    raises: "Aucune",
+    description: "Le Phénix est l'un des symboles du Feu les plus puissants connus des Rokugani, et ce sort fait appel à l'essence de cet être pour accorder à son lanceur le pouvoir du vol. Au lancer, vous invoquez des nuées de kami de Feu qui prennent la forme d'ailes géantes surgissant de votre dos. Vous gagnez la capacité de voler pour la durée du sort, à une vitesse d'Eau x10 en Action Libre ou d'Eau x20 en Action Simple. Si vous êtes en vol quand le sort expire, les kami de Feu vous ramèneront doucement au sol avant de partir."
+  },
+
+  // ============ Sorts de Feu - Rang 6 ============
+  {
+    name: "Rayon de l'Enfer",
+    ring: "fire",
+    masteryRank: 6,
+    keywords: "",
+    range: "60 m",
+    areaOfEffect: "1 cible",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "C'est peut-être le sort isolé le plus meurtrier à la disposition des Shugenja, et l'un des sorts les plus redoutables jamais conçus dans l'Empire. La prière invoque un formidable jet de feu contre la cible choisie, qui subit 10k10 Blessures. Le sort plonge tous les kami de Feu de la zone dans un état d'agitation, et les feux normaux à portée brûleront plus fort et plus violemment pendant de longues minutes après le lancer de ce sort.",
+    damage: { mode: "fixed", rolled: 10, kept: 10, note: "" }
+  },
+  {
+    name: "Globe du Soleil Éternel",
+    ring: "fire",
+    masteryRank: 6,
+    keywords: "Défense",
+    range: "150 m",
+    areaOfEffect: "1,6 km",
+    duration: "1 jour",
+    raises: "Aucune",
+    description: "Cette puissante prière demande à tous les kami de Feu de la zone de rester calmes et paisibles, apaisant l'agitation qui les afflige si souvent. Elle est souvent invoquée lors de grands festivals, comme le couronnement d'un nouvel Empereur. Pendant la durée du sort, tous les bâtiments dans la zone d'effet sont immunisés aux effets du feu magique, et tous les sorts de Feu lancés dans la zone voient le TN de leur jet de Lancer de Sort augmenté de 15. Les feux normaux continuent de s'allumer et de brûler, mais le font paresseusement et ne se propagent pas facilement."
+  },
+  {
+    name: "La Lame de l'Âme",
+    ring: "fire",
+    masteryRank: 6,
+    keywords: "Artisanat",
+    range: "Contact",
+    areaOfEffect: "1 arme cible",
+    duration: "5 tours",
+    raises: "Durée (+1 tour par 3 Augmentations)",
+    description: "Ce sort imprègne une arme d'esprits de Feu incroyablement puissants, lui conférant toute la fureur d'une tempête de feu déchaînée. Un bushi armé de cette arme est un adversaire terrible, les esprits de Feu choquant et hébétant ses ennemis à chaque coup. Pendant la durée du sort, l'arme surmonte l'Invulnérabilité, et chaque cible touchée par elle est automatiquement Étourdie."
+  },
+
+  // ============ Sorts d'Eau - Rang 1 ============
+  {
+    name: "Bo d'Eau",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Artisanat",
+    range: "Personnelle ou 6 m",
+    areaOfEffect: "1 arme créée",
+    duration: "5 minutes",
+    raises: "Dégâts (+1k0), Durée (+5 minutes), Portée (+1,5 m)",
+    description: "Vous invoquez un bâton d'eau pure, aussi rigide que le véritable objet malgré sa nature fluide. L'arme prend par défaut la forme d'un bo, mais une Augmentation permet de choisir n'importe quel autre bâton. L'arme a un DR de 1k2. Si vous ne possédez pas la compétence Bâton, vous pouvez utiliser votre Rang d'École à la place. Si vous la possédez, cette arme confère une Relance Gratuite utilisable uniquement pour la manœuvre de Renversement. L'arme disparaît si elle quitte votre main. Vous pouvez aussi la faire apparaître dans les mains d'un allié à moins de 6 m ; celui-ci est alors considéré comme le lanceur pour les besoins du sort, mais ne gagne pas la Relance Gratuite."
+  },
+  {
+    name: "Clarté d'Intention",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Bataille",
+    range: "Personnelle",
+    areaOfEffect: "3 m de rayon autour du lanceur",
+    duration: "2 tours",
+    raises: "Zone (+1,5 m), Durée (+1 tour par 2 Augmentations)",
+    description: "L'une des nombreuses forces de l'eau réside dans sa vitesse. Tous les alliés dans la zone d'effet de ce sort gagnent un bonus de +5 à leur score d'Initiative pour la durée du sort."
+  },
+  {
+    name: "Force Déclinante",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Défense",
+    range: "6 m",
+    areaOfEffect: "1 créature cible",
+    duration: "3 tours",
+    raises: "Durée (+1 tour), Portée (+1,5 m)",
+    description: "L'énergie circule à travers l'univers tout comme l'eau circule à travers l'enveloppe mortelle. Vous pouvez envoyer votre énergie vers autrui, vous affaiblissant tout en le renforçant. Vous pouvez réduire l'un de vos Traits Physiques d'un montant allant jusqu'à votre Rang d'École. La cible de ce sort voit ce même Trait Physique augmenter du même montant. Si votre Trait est réduit à 0 par ce sort, vous tombez immédiatement inconscient et la durée du sort est réduite à 1 tour. Aucun Trait ne peut être rehaussé au-delà du double de son rang normal par ce sort."
+  },
+  {
+    name: "Chemin vers la Paix Intérieure",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Les kami de l'eau peuvent influencer le flux d'eau à travers le corps, accélérant considérablement le processus de guérison naturel. Vous pouvez utiliser ce sort pour soigner les Blessures subies par un autre individu. Ce sort restaure à la cible un nombre de Blessures égal au montant par lequel le jet de Lancer de Sort a dépassé le TN nécessaire pour le lancer."
+  },
+  {
+    name: "Reflets de Pan Ku",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Divination",
+    range: "Contact",
+    areaOfEffect: "1 objet",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Deviner les capacités d'un objet compte parmi les leçons les plus simples qu'un étudiant de l'eau apprend au temple. Si ce sort est lancé avec succès sur un objet, vous apprenez automatiquement tous les pouvoirs et capacités que cet objet possède. Le plus souvent utilisé pour identifier les qualités surnaturelles d'un objet, comme un Nemuranai ou une arme maudite, il peut aussi identifier le sort contenu dans un parchemin de prière de Shugenja. Ce sort ne permet pas à un Shugenja de lire un parchemin écrit dans un chiffre qu'il ne comprend pas, mais il peut au moins identifier le sort en question. Ce sort accorde aussi au lanceur une connaissance très générale de l'origine de l'objet, comme le lieu où il a été forgé, le Clan de la personne qui l'a porté le plus longtemps, ou quelque chose de similaire à la discrétion du MJ."
+  },
+  {
+    name: "Retournement de Fortune",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "",
+    range: "3 m",
+    areaOfEffect: "1 individu cible",
+    duration: "3 tours",
+    raises: "Durée (+1 tour), Portée (+1,5 m)",
+    description: "La polyvalence est le domaine de l'eau, et ceux qui portent sa bénédiction en récoltent les fruits. Pendant la durée de ce sort, la cible peut immédiatement relancer un jet de son choix par tour. Cela doit être fait immédiatement après le premier jet, et la cible peut conserver l'un ou l'autre résultat."
+  },
+  {
+    name: "La Vague Déferlante",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Voyage",
+    range: "3 m",
+    areaOfEffect: "1 individu cible",
+    duration: "1 tour",
+    raises: "Durée (+1 tour), Portée (+1,5 m)",
+    description: "Vous pouvez temporairement augmenter la vitesse de votre cible. Ce sort lui permet d'effectuer une Action de Mouvement Libre jusqu'à Eau x10 m (au lieu du x5 m normal). Sans Augmentation de Durée, ce bénéfice doit être utilisé au tour suivant de la cible, sous peine d'être perdu."
+  },
+  {
+    name: "Vitesse de la Cascade",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Voyage",
+    range: "Contact",
+    areaOfEffect: "1 individu ou créature cible",
+    duration: "1 heure",
+    raises: "Durée (+10 minutes), Portée (peut passer à 3 m pour 2 Augmentations)",
+    description: "Ceux emplis de l'essence de l'eau se déplacent bien plus vite qu'auparavant. La cible de ce sort peut se déplacer d'une distance totale par tour égale à Eau x6 m plus un montant égal à deux fois votre Anneau d'Eau. Ce sort n'accorde pas de mouvement supplémentaire à la cible, il augmente simplement la distance maximale qu'elle peut parcourir en un tour pour la durée du sort."
+  },
+  {
+    name: "Esprit de l'Eau",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "Bataille",
+    range: "6 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m), Spécial (transforme l'action supplémentaire en Action Complexe pour 5 Augmentations)",
+    description: "L'esprit de l'eau est à la fois fluide et rapide. La cible gagne une Action Simple supplémentaire pendant la Phase de Réactions du tour où ce sort est achevé. Cette Action ne peut être utilisée pour effectuer une attaque."
+  },
+  {
+    name: "Énergies Sympathiques",
+    ring: "water",
+    masteryRank: 1,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m), Spécial (voir description)",
+    description: "L'énergie circule entre tous les êtres vivants comme l'eau circule à travers la terre. Vous pouvez transférer n'importe quel effet de sort actif sur vous vers une cible consentante de ce sort. Avec 3 Augmentations, vous pouvez transférer un effet de sort d'une cible vivante consentante à une autre cible consentante. Vous ne pouvez pas transférer de sorts entre cibles non consentantes."
+  },
+
+  // ============ Sorts d'Eau - Rang 2 ============
+  {
+    name: "Manteau des Miya",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "Défense",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "5 tours",
+    raises: "Durée (+1 tour)",
+    description: "Vous vous enveloppez dans l'étreinte protectrice de la vague. Votre TN d'Armure est augmenté d'un montant égal à votre Anneau d'Eau plus votre Rang d'École pour la durée de ce sort."
+  },
+  {
+    name: "Bénédiction d'Inari",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "Artisanat",
+    range: "Personnelle",
+    areaOfEffect: "Nourriture créée",
+    duration: "Instantané",
+    raises: "Spécial (nourriture suffisante pour 1 personne supplémentaire par Augmentation)",
+    description: "Inari est la Fortune du Riz, l'une des entités divines les plus adorées de tout l'Empire. Ce sort invoque la bénédiction d'Inari et crée nourriture et boisson nourrissantes sur votre commande. Ce sort génère assez de nourriture et de boisson pour subvenir aux besoins d'un nombre d'individus égal à votre Rang d'École +1, pour une journée. Sans Augmentation, cette nourriture est fade mais nourrissante, comme du riz nature et de l'eau ; avec des Augmentations, vous pouvez en améliorer la qualité jusqu'à des fruits de mer ou du thé, à la discrétion du MJ. Le TN pour lancer ce sort est doublé dans les Terres de l'Ombre."
+  },
+  {
+    name: "Bassin Réfléchissant",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "Divination",
+    range: "16 km",
+    areaOfEffect: "Plan d'eau / lieu cible",
+    duration: "5 minutes",
+    raises: "Durée (+1 minute), Portée (+16 km)",
+    description: "Le savoir insondable de l'eau est une grande bénédiction pour ceux qui savent comment l'invoquer. Vous pouvez fixer un plan d'eau, aussi petit qu'une flaque, et à travers lui observer un lieu familier comme si vous y étiez présent, bien que vous ne puissiez qu'y voir ce qui s'y passe, pas l'entendre. Pour qu'un lieu vous soit familier, vous devez soit y avoir passé beaucoup de temps (votre maison, le dojo, un temple de prédilection...), soit y avoir médité pendant au moins dix minutes. N'importe quel plan d'eau peut être utilisé pour ce sort, mais les visions transmises étant visuelles, les images seront plus claires avec de plus grandes étendues d'eau."
+  },
+  {
+    name: "Vapeurs Régénérantes",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Cibles (+1 par 2 Augmentations)",
+    description: "L'eau lave toute impureté, rafraîchissant et revigorant tout ce qu'elle touche. La cible de ce sort est instantanément rafraîchie comme si elle venait de se lever d'une nuit de sommeil complète. Cela ne restaure pas les Points de Vide dépensés, mais élimine la fatigue et l'épuisement. Utilisé sur un Shugenja, ce sort restaure les emplacements de sort associés à l'Anneau de Vide (utilisables pour n'importe quel élément), mais pas les emplacements associés aux autres Anneaux. Les capacités qu'un personnage ne peut utiliser qu'un nombre limité de fois par jour ne sont pas restaurées par ce sort. Aucun individu ne peut bénéficier des Vapeurs Régénérantes plus d'une fois par période de 24 heures."
+  },
+  {
+    name: "Résister aux Vagues",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "Bataille",
+    range: "3 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+3 m par 3 Augmentations)",
+    description: "Un samouraï possédant la vitesse et la force du puissant fleuve est un adversaire redoutable. La cible de ce sort gagne une Action Simple pendant la Phase de Réactions du Tour de Combat en cours. Cette action ne peut être utilisée que pour effectuer une attaque. Si la cible est incapable d'effectuer une attaque en Action Simple, ce sort lui accorde une Action Complexe à la place. Ce sort ne peut accorder à un Shugenja la capacité de lancer un second sort dans le même tour."
+  },
+  {
+    name: "Les Liens qui Unissent",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "Divination",
+    range: "16 km",
+    areaOfEffect: "Soi-même",
+    duration: "Instantané",
+    raises: "Portée (+3 km)",
+    description: "Même le plus léger contact forge un lien, et à travers les esprits de l'eau, ce lien peut être exploré. Ce sort vous permet de localiser les esprits d'Eau au sein d'un objet unique et spécifique. Vous devez être familier de cet objet, ayant passé beaucoup de temps à son contact ou l'ayant manipulé personnellement. Si l'objet se trouve dans la portée de ce sort, vous connaîtrez la direction et la distance relative qui vous en sépare."
+  },
+  {
+    name: "Vitesse Portée par la Vague",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "Voyage",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "2 tours",
+    raises: "Aucune",
+    description: "La vitesse du fleuve peut être transmise par un Shugenja averti. Votre Anneau d'Eau est augmenté de 2 pour déterminer la distance que vous pouvez parcourir dans le cadre de toute Action de Mouvement effectuée pendant le tour en cours ou le suivant."
+  },
+  {
+    name: "Sagesse et Clarté",
+    ring: "water",
+    masteryRank: 2,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "1 heure",
+    raises: "Durée (+30 minutes), Cibles (peut cibler une autre personne avec 2 Augmentations)",
+    description: "En sollicitant la perspicacité des kami de l'Eau, un Shugenja peut considérablement accroître sa capacité à percevoir le monde qui l'entoure. Pendant la durée de ce sort, votre vitesse de lecture double, et vous mémorisez parfaitement tout ce que vous lisez sous l'influence de ce sort. Ce sort n'améliore cependant pas la compréhension : toute langue ou tout chiffre que vous ne connaissez pas reste totalement indéchiffrable."
+  },
+
+  // ============ Sorts d'Eau - Rang 3 ============
+  {
+    name: "Proche de la Glace",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "5 tours",
+    raises: "Durée (+1 tour), Portée (passe à 3 m avec 2 Augmentations)",
+    description: "Tout comme l'eau devient durable et résistante avec l'arrivée de l'hiver, l'eau présente dans le corps humain peut elle aussi devenir plus ferme et plus endurante. Tous les malus de blessure actuels de la cible sont annulés pour la durée du sort. Tout malus supplémentaire subi prend pleinement effet, en utilisant la différence entre le malus annulé et le nouveau malus comme malus effectif. Les Blessures ne sont pas soignées par cet effet, elles cessent simplement d'entraver ceux qui en souffrent."
+  },
+  {
+    name: "Régénérer la Blessure",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Concentration",
+    raises: "Spécial (votre Eau est augmentée de 1 pour les besoins de la guérison par Augmentation)",
+    description: "L'eau s'écoule en toute chose et s'en écoule. En s'écoulant, elle peut emporter ce qui est indésirable. La douleur et la souffrance infligées par des blessures peuvent être canalisées loin d'un individu et rejetées dans l'océan infini où elles se perdent à jamais. La cible de ce sort récupère un nombre de Blessures égal à votre Anneau d'Eau plus votre Rang d'École à chaque tour où le sort est actif. Vous devez toucher la cible au moment du lancer, mais le sort peut ensuite être maintenu sans contact physique."
+  },
+  {
+    name: "Eaux Silencieuses",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "Défense",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "Variable",
+    raises: "Aucune",
+    description: "La mémoire de l'océan est infinie, et son immense pouvoir peut patienter très longtemps avant de se manifester. Une fois ce sort lancé avec succès, vous pouvez immédiatement en lancer un second, de n'importe quel élément. Ce second sort doit être un sort que vous pouvez normalement lancer, de Rang de Maîtrise 3 ou inférieur. Si le second jet de Lancer de Sort réussit, ce second sort est stocké en vous et ne s'activera que lorsqu'un effet physique précis se produira, que vous spécifiez au moment du lancer (prononcer un certain mot, dégainer une lame, tomber au combat, par exemple). Quel que soit le déclencheur, quand il survient, le second sort prend immédiatement effet comme si vous veniez de terminer de le lancer. Un personnage ne peut jamais bénéficier de plusieurs utilisations simultanées d'Eaux Silencieuses. Si une seconde utilisation du sort est lancée sur le même individu, le sort actuellement \"stocké\" est immédiatement dissipé et remplacé par le nouveau."
+  },
+  {
+    name: "Frappe du Tsunami",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "Bataille",
+    range: "7,5 m",
+    areaOfEffect: "Cône partant du lanceur, 3 m de large à son extrémité",
+    duration: "Instantané",
+    raises: "Dégâts (+1k0), Portée (+1,5 m), Spécial (+5 au TN du jet de Terre par Augmentation)",
+    description: "L'eau est partout, et obéit aux ordres du Shugenja qu'elle favorise. Vous invoquez une vague écrasante d'eau qui submerge tout sur son passage. La vague inflige 3k3 Blessures à tout ce qui se trouve dans la zone affectée, et tous les adversaires présents doivent réussir un jet de Terre (TN 15) ou subir un Renversement. Naturellement, tout ce qui se trouve dans la zone d'effet est trempé."
+  },
+  {
+    name: "Visions du Futur",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "Divination",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "1 minute",
+    raises: "Aucune",
+    description: "Bien que moins fiable que le don naturel (quoiqu'extrêmement rare) de prescience ou les sorts de Vide (tout aussi rares) permettant la divination, ce sort permet néanmoins de puissantes visions du futur. Développé pour la première fois par la famille Tonbo du Clan de la Libellule, il est rarement rencontré en dehors de leurs rangs. Le sort nécessite l'usage d'un grand bassin d'eau calme dans lequel vous devez plonger votre regard. Une fois le sort achevé, vous entrez dans une brève transe et voyez des images d'événements qui ne se sont pas encore produits. Ces images sont rarement directes et tendent à être symboliques (la violence est dépeinte comme une scène de bataille, par exemple), mais les événements prévus sont parfaitement exacts et se produiront, à moins d'être empêchés par votre intervention directe. Seul le Shugenja lançant ce sort peut voir les événements dépeints dans la vision. Beaucoup de Shugenja estiment que l'usage de ce sort contrecarre l'ordre naturel, et considèrent négativement à la fois le sort et ceux qui l'utilisent."
+  },
+  {
+    name: "Marcher sur les Vagues",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "Voyage",
+    range: "Contact",
+    areaOfEffect: "1 individu cible (peut être le lanceur)",
+    duration: "10 minutes",
+    raises: "Durée (+1 minute), Cibles (+1 par Augmentation)",
+    description: "Les kami de l'Eau soutiennent ceux qui portent leur faveur et leur accordent le passage. La cible de ce sort peut se déplacer sur la surface de l'eau comme s'il s'agissait de terrain solide (Terrain de Base). Si la surface de l'eau est perturbée, par une tempête, des vagues déferlantes, ou tout événement similaire, elle compte comme Terrain Difficile."
+  },
+  {
+    name: "Bénédiction du Kami d'Eau",
+    ring: "water",
+    masteryRank: 3,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible (peut être le lanceur)",
+    duration: "5 tours",
+    raises: "Spécial (votre Anneau d'Eau est considéré supérieur d'1 rang par 2 Augmentations)",
+    description: "En invoquant la clarté de l'eau, vous pouvez recevoir une immense perspicacité sur le monde qui vous entoure. La cible de ce sort reçoit un bonus à tous ses jets basés sur la Perception, qu'il s'agisse de jets de Trait, de Compétence, ou autre, consistant en des dés lancés supplémentaires égaux à votre Anneau d'Eau."
+  },
+
+  // ============ Sorts d'Eau - Rang 4 ============
+  {
+    name: "Dominion de Suitengu",
+    ring: "water",
+    masteryRank: 4,
+    keywords: "Divination",
+    range: "160 km",
+    areaOfEffect: "2 plans d'eau",
+    duration: "Concentration",
+    raises: "Portée (+16 km)",
+    description: "La Fortune de la Mer est une entité courroucée, mais qui bénit néanmoins ceux qui le sollicitent correctement. Ce sort, créé par le Clan de la Mante, vous permet de fixer un plan d'eau (au moins 30 cm de large et 2,5 cm de profondeur) et de voir à travers n'importe quel autre plan d'eau de l'Empire, tant qu'il est à portée du sort - un point du littoral, un lac, une rivière, un ruisseau, voire une flaque, mais vous devez connaître l'emplacement du plan d'eau visé. Vous pouvez voir tout ce qui entoure ce plan d'eau comme si vous y étiez immergé. Vous ne pouvez pas entendre ce qui s'y passe, seulement le voir."
+  },
+  {
+    name: "Flux et Reflux de la Bataille",
+    ring: "water",
+    masteryRank: 4,
+    keywords: "Bataille",
+    range: "Personnelle",
+    areaOfEffect: "Tous les alliés choisis dans un rayon de 15 m autour du lanceur",
+    duration: "5 tours",
+    raises: "Durée (+1 tour par 2 Augmentations)",
+    description: "La mobilité est l'une des plus grandes forces de l'Eau. Dans une escarmouche ou une bataille, la mobilité est la clé de la survie. Ce sort augmente la vitesse de déplacement de tous les alliés à portée. Vous pouvez choisir d'exclure certains alliés de ses effets si vous le souhaitez. Tous ceux affectés par le sort peuvent se déplacer d'une distance égale à leur Anneau d'Eau x 3 m en Action Libre (normalement une Action Simple)."
+  },
+  {
+    name: "Cœur du Dragon d'Eau",
+    ring: "water",
+    masteryRank: 4,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "Cibles en nombre égal au Rang d'École du lanceur (lanceur inclus possible)",
+    duration: "1 tour par Rang d'École",
+    raises: "Durée (+1 tour), Spécial (+1k0 soigné par 2 Augmentations)",
+    description: "Le Dragon d'Eau est une entité bienveillante, et ses bénédictions sont puissantes. Chaque fois qu'une cible de ce sort subit des dégâts pendant sa durée, elle récupère instantanément 1k1 Blessures."
+  },
+  {
+    name: "Le Chemin Non Emprunté",
+    ring: "water",
+    masteryRank: 4,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "1 jour",
+    raises: "Spécial (gagne 1 emplacement de sort bonus par 5 Augmentations)",
+    description: "Aucun élément ne peut égaler la pure polyvalence et l'adaptabilité de l'Eau. Avant de lancer ce sort, vous devez choisir un Anneau que vous affaiblirez temporairement, et un que vous renforcerez temporairement. Une fois le sort réussi, vous pouvez transférer un nombre d'emplacements de sort quotidiens inutilisés de l'Anneau affaibli vers l'Anneau renforcé. Ce sort dure exactement un jour, après quoi ses effets sont perdus."
+  },
+  {
+    name: "Frappe des Eaux Courantes",
+    ring: "water",
+    masteryRank: 4,
+    keywords: "",
+    range: "3 m",
+    areaOfEffect: "1 individu cible (peut être le lanceur)",
+    duration: "1 tour",
+    raises: "Durée (+1 tour), Portée (+1,5 m)",
+    description: "L'eau s'écoule sur et à travers les obstacles, tout comme ceux qui sont infusés de son énergie. La cible de ce sort peut ignorer le bonus au TN d'Armure de ses adversaires conféré par une armure portée, par des effets de sort de Rang de Maîtrise 3 ou moins, et par d'autres effets mécaniques hors Technique. Contre des créatures non-humaines sans armure, cela permet à la cible de considérer leur TN d'Armure comme inférieur de 5. Ce sort n'annule pas la Réduction accordée par une armure, ni n'ignore l'augmentation du TN d'Armure conférée par l'adoption des Postures de Défense ou de Pleine Défense."
+  },
+  {
+    name: "Symbole d'Eau",
+    ring: "water",
+    masteryRank: 4,
+    keywords: "Protections",
+    range: "Contact",
+    areaOfEffect: "Spéciale",
+    duration: "Permanente",
+    raises: "Aucune",
+    description: "Les prêtres des kami peuvent inscrire de puissantes protections invoquant la puissance des éléments contre quiconque tenterait de les franchir. Un Symbole d'Eau peut être inscrit sur un objet solide, le plus souvent une porte, une fenêtre, un portail ou tout autre passage. Quiconque tente de franchir ce passage ou de traverser la zone est affecté par la protection, et doit réussir un jet Contesté de Feu contre l'Anneau d'Eau du lanceur. Ceux qui échouent sont saisis d'une terreur paralysante et doivent immédiatement effectuer un jet contre un effet de Peur 7. Un seul Symbole d'Eau peut exister à la fois, et des sorts Symbole d'éléments différents ne peuvent jamais affecter la même zone. Ce sort peut être dissipé par un autre lancer de Symbole d'Eau par n'importe quel Shugenja, ou en détruisant la surface où le Symbole a été gravé."
+  },
+
+  // ============ Sorts d'Eau - Rang 5 ============
+  {
+    name: "Vagues Changeantes",
+    ring: "water",
+    masteryRank: 5,
+    keywords: "Illusion",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "1 heure",
+    raises: "Durée (+1 heure)",
+    description: "La maîtrise ultime de l'Eau permet à la chair de s'écouler comme un liquide. Ce sort vous permet de modifier physiquement votre corps mortel, changeant votre forme pour correspondre à celle d'une autre créature naturelle. Sous cette forme, vous conservez vos Traits Mentaux. Pour les Traits Physiques, vous conservez le plus élevé des deux, le vôtre ou celui de l'animal en lequel vous vous êtes transformé. D'autres capacités naturelles sont également acquises, y compris des armes naturelles ou des capacités sensorielles. Certaines sectes de Shugenja traditionalistes méprisent ce sort, le jugeant impur."
+  },
+  {
+    name: "Le Lien Ultime",
+    ring: "water",
+    masteryRank: 5,
+    keywords: "Divination",
+    range: "Spéciale",
+    areaOfEffect: "1 objet ou individu cible",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "Les plus grands liens ne peuvent jamais être brisés. Ce sort vous permet de détecter l'emplacement d'un objet ou d'un individu que vous connaissez bien, quel que soit son emplacement. L'objet doit être un objet auprès duquel vous avez passé énormément de temps, ou que vous avez fréquemment manipulé. Si la cible est un individu, elle doit vous être bien connue, comme un membre de votre famille proche ou un ami proche. Vous connaissez instantanément son emplacement approximatif, suffisant pour considérablement restreindre toute recherche (par exemple, \"la ville de Ryoko Owari Toshi\", ou \"les confins nord de la Forêt de Shinomen\"). Si la cible se trouve hors de l'Empire de Rokugan, le sort échoue automatiquement."
+  },
+  {
+    name: "Mains des Marées",
+    ring: "water",
+    masteryRank: 5,
+    keywords: "Bataille, Voyage",
+    range: "30 m de rayon centré sur le lanceur",
+    areaOfEffect: "Cibles jusqu'à l'Anneau d'Eau du lanceur",
+    duration: "Instantané",
+    raises: "Zone (+3 m), Cibles (+1 par 2 Augmentations)",
+    description: "L'échange d'énergie via l'Eau est une chose simple qui peut finalement mener à l'échange de chair également. Dans la zone d'effet de ce sort, vous pouvez choisir un nombre de cibles consentantes jusqu'à votre Anneau d'Eau. Vous pouvez échanger les positions de ces cibles comme bon vous semble, en substituant l'une à l'autre. À la fin du sort, une personne doit se trouver à chaque position occupée au début du sort, mais laquelle s'y trouve peut varier selon le nombre de personnes affectées."
+  },
+  {
+    name: "Puissance de l'Océan",
+    ring: "water",
+    masteryRank: 5,
+    keywords: "Défense",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Un nombre de jours égal à votre Rang d'École",
+    raises: "Durée (+1 jour par 3 Augmentations)",
+    description: "Peut-être le plus grand don que l'Eau puisse offrir nécessite un Shugenja puissant pour le transmettre à autrui. Ce sort est un rituel complexe nécessitant une heure d'incantation, et ne peut être lancé que sur une cible consentante. Pendant la durée du sort, la cible n'a besoin ni de nourriture, ni de boisson, ni de sommeil. Un nombre de fois pendant la durée égal à votre Rang d'École, la cible peut restaurer ses Points de Vide en Action Simple ; ceci équivaut à récupérer des Points de Vide via une nuit complète de repos. La cible récupère aussi un nombre de Blessures par heure égal à deux fois votre Anneau d'Eau. Si la cible de ce sort est un Shugenja, elle regagne tous ses emplacements de sort dépensés au lever du soleil, qu'elle se soit reposée ou non. Après l'expiration du sort, la cible sombre dans un état d'épuisement complet, qui dure exactement la moitié de la durée de l'effet du sort. Pendant ce temps, la cible ne peut entreprendre aucune action physique significative, et ne peut se déplacer que lentement. Tout voyage est totalement impossible."
+  },
+  {
+    name: "L'Étreinte de Suitengu",
+    ring: "water",
+    masteryRank: 5,
+    keywords: "Tonnerre",
+    range: "7,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m)",
+    description: "La Fortune de la Mer est courroucée, et nécessite peu d'incitation de la part de ses fidèles adeptes pour frapper autrui. En invoquant les kami de l'Eau, vous pouvez emplir les poumons d'une cible d'eau de mer, la paralysant et pouvant potentiellement la tuer. En cas de succès, la cible ne peut entreprendre aucune action autre que de tenter de résister au sort - à toutes fins utiles, elle est réduite au rang de blessure Épuisé en termes de capacité à agir. Chaque tour, elle doit réussir un jet de Constitution (TN 15) pour résister. Si la cible obtient trois succès au total, elle passe un tour supplémentaire à vomir de l'eau de mer, puis se rétablit complètement. Cependant, si elle subit deux échecs consécutifs, elle tombe inconsciente et mourra dans la minute, sauf intervention magique ou médicale. Bien que les moyens de lutter contre la noyade soient peu connus à Rokugan, il est possible de sauver un individu incapacité par ce sort via un jet de Médecine / Intelligence réussi à TN 50."
+  },
+
+  // ============ Sorts d'Eau - Rang 6 ============
+  {
+    name: "Paix du Kami",
+    ring: "water",
+    masteryRank: 6,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Aucune",
+    description: "La bienveillance ultime du Dragon d'Eau est sans mesure. La cible est instantanément guérie de toutes les maladies, son organisme purgé de tout poison, et toutes ses Blessures sont entièrement soignées."
+  },
+  {
+    name: "Lève-toi, Eau",
+    ring: "water",
+    masteryRank: 6,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "Un esprit invoqué",
+    duration: "Concentration",
+    raises: "Aucune",
+    description: "La mer elle-même prend forme pour vous défendre. Aboutissement ultime du sort d'Invocation, ce sort invoque un kami massif d'eau pure à votre service. Il prend une forme vaguement humanoïde d'environ 3 mètres de haut, son contour changeant constamment en raison de sa constitution fluide. Le kami peut se déplacer jusqu'à 4,5 m x votre Eau par tour, et sature le sol dans un rayon de 6 m autour de lui, garantissant que tout terrain dans cette zone soit au moins un Terrain Modéré (à moins qu'il ne soit déjà Difficile). Le kami manifesté est considéré comme ayant tous ses Traits Physiques égaux à votre Anneau d'Eau, et attaque avec un rang de compétence Jiujutsu égal à la moitié de votre Anneau d'Eau. Les dégâts de ces attaques ont un DR égal à votre Anneau d'Eau. Pour déterminer les dégâts qu'il subit, l'esprit est considéré avoir des Blessures comme un humain avec un Anneau de Terre égal à votre Anneau d'Eau, mais ne subit aucun malus de blessure. Il est Invulnérable. S'il est ramené à zéro Blessure, il est dissipé."
+  },
+  {
+    name: "Douce Clarté de l'Eau",
+    ring: "water",
+    masteryRank: 6,
+    keywords: "Divination",
+    range: "Personnelle",
+    areaOfEffect: "Plan d'eau cible",
+    duration: "3 tours",
+    raises: "Aucune",
+    description: "La plus grande forme d'augure est celle qui parle directement et permet à d'autres d'en être témoins. En concentrant votre énergie sur un plan d'eau calme, vous pouvez invoquer de puissantes visions du futur en réponse à vos questions. Vous pouvez poser une question, et les eaux en révéleront la réponse. La réponse prend la forme de trois images distinctes, qui peuvent être liées de multiples façons, y compris des événements se déroulant dans le temps, ou peut-être trois facettes d'un même événement. Contrairement à d'autres formes d'augure, d'autres personnes peuvent également être témoins de ces visions."
+  },
+
+  // ============ Sorts de Vide - Rang 1 ============
+  {
+    name: "Vue Sans Limites",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "80 km",
+    areaOfEffect: "Soi-même",
+    duration: "4 tours",
+    raises: "Durée (+1 tour), Portée (+8 km)",
+    description: "La leçon la plus essentielle des ishiken est que tout est relié à travers le Vide, et qu'à travers le Vide tout peut être perçu. En concentrant votre énergie, vous pouvez percer le voile et voir un autre lieu comme si vous vous y trouviez. Ce lieu doit vous être familier, et vous devez vous y être déjà rendu au moins une fois. Pendant la durée du sort, vous pouvez voir et entendre tout ce qui s'y passe, mais vous ne pouvez être détecté ni interagir d'aucune façon avec les choses ou les personnes présentes. Pendant ce sort, votre corps est dans un état de transe qui vous rend extrêmement vulnérable aux attaques (votre TN d'Armure est réduit à 5)."
+  },
+  {
+    name: "Puiser dans le Vide",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "Instantané",
+    raises: "Spécial (+1 Point de Vide gagné par 3 Augmentations)",
+    description: "La capacité de puiser dans le Vide lui-même et d'en tirer force est une leçon essentielle dans la formation de tout ishiken. Une fois ce sort achevé, vous gagnez un nombre de Points de Vide supplémentaires égal à votre Rang d'École plus un. Si ces Points de Vide vous font dépasser le nombre que vous pouvez normalement posséder, vous perdez l'un de ces Points de Vide supplémentaires chaque tour où vous n'en dépensez pas."
+  },
+  {
+    name: "Flux à Travers le Vide",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "Jusqu'à 30 cm cube de matière élémentaire pure",
+    duration: "Permanente",
+    raises: "Zone (+30 cm cube)",
+    description: "Dans le Vide, toute chose est égale, tout est un et rien à la fois. En puisant dans cette connexion, vous pouvez transformer une petite quantité de matière élémentaire pure - eau, feu, air, ou terre sous forme de terreau ou de sol - en n'importe quel autre élément."
+  },
+  {
+    name: "Voir à Travers les Mensonges",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "Individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m), Spécial (1 Avantage/Désavantage supplémentaire par Augmentation)",
+    description: "Les motifs qui composent toute chose dans le Vide existent aussi chez les individus, et avec l'entraînement, les ishiken peuvent les reconnaître. Vous apprenez l'Avantage de plus haute valeur ou le Désavantage de plus haute valeur (à votre choix) possédé par la cible de ce sort."
+  },
+  {
+    name: "Percevoir le Vide",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "7,5 m de rayon autour du lanceur",
+    duration: "Concentration",
+    raises: "Zone (+1,5 m)",
+    description: "La vie est aussi évidente dans le Vide que les étoiles dans le ciel nocturne. Ce sort vous fait entrer en transe, période durant laquelle vous prenez conscience de l'existence et de l'emplacement de toutes les créatures vivantes dans le rayon du sort. Bien que vous connaissiez leur emplacement, vous ne pouvez ni les voir ni percevoir de détails. Vous sauriez par exemple que trois humains attendent hors des murs du château, sans pouvoir les reconnaître autrement que par leur présence. Cela vous donne aussi des informations sur les créatures vivantes naturelles non-sentientes. Les esprits et les créatures des Terres de l'Ombre se reconnaissent comme un vide dans votre perception, bien que ce sort ne puisse reconnaître les humains souillés autrement que comme des humains."
+  },
+  {
+    name: "Toucher le Néant",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m)",
+    description: "La sensation de faire l'expérience directe du Vide peut être extrêmement perturbante pour ceux qui n'y sont pas habitués. La cible de ce sort subit 1k1 dégâts et est Hébétée.",
+    damage: { mode: "fixed", rolled: 1, kept: 1, note: "La cible est aussi Hébétée." }
+  },
+  {
+    name: "La Caresse du Vide",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "Un individu cible",
+    duration: "1 minute",
+    raises: "Durée (+1 minute)",
+    description: "Bien que les étudiants débutants de l'ishiken-do ne puissent affecter le motif du Vide, ils peuvent y apporter de très brèves altérations. Vous pouvez annuler un Désavantage Mental ou Spirituel possédé par la cible de ce sort, jusqu'à une valeur maximale de 5 points. La Souillure des Terres de l'Ombre ne peut être retirée par ce sort, bien que les troubles mentaux qu'elle peut causer puissent être temporairement soulagés."
+  },
+  {
+    name: "Témoin de l'Indicible",
+    ring: "void",
+    masteryRank: 1,
+    keywords: "Divination",
+    range: "4,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "3 tours",
+    raises: "Portée (+1,5 m)",
+    description: "Il est possible d'entrevoir fugacement des choses qui ne se sont pas encore produites en scrutant à travers le Vide. Si vous retardez votre action, vous pouvez interrompre la cible de ce sort après qu'elle a déclaré son action mais avant qu'elle ne l'exécute, lorsque son tour arrive. Cela peut être fait à chaque tour pour la durée du sort (normalement, quelqu'un retardant son Action ne peut interrompre l'Action d'un autre participant)."
+  },
+
+  // ============ Sorts de Vide - Rang 2 ============
+  {
+    name: "Altérer le Cours",
+    ring: "void",
+    masteryRank: 2,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "1 minute",
+    raises: "Durée (+1 minute)",
+    description: "Les ishiken ont une bien plus grande capacité à puiser dans le Vide que les autres, et peuvent le faire consciemment plutôt qu'inconsciemment. Vous pouvez dépenser plusieurs Points de Vide sur n'importe quel jet effectué pendant la durée de ce sort. Ce doit toujours être un jet sur lequel la dépense de Points de Vide est normalement autorisée (aucun jet de dégâts ne peut être augmenté par ce sort, par exemple)."
+  },
+  {
+    name: "Boire de Votre Essence",
+    ring: "void",
+    masteryRank: 2,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m)",
+    description: "À mesure qu'un ishiken gagne en puissance, il peut tirer davantage d'informations en examinant le motif d'un individu dans le Vide. Vous apprenez de nombreuses informations sur la cible de ce sort, y compris ses Anneaux individuels (mais pas ses Traits), ses malus de blessure actuels, et un mot résumant son humeur présente (\"hostile\", \"affligée\", \"confuse\", etc.)."
+  },
+  {
+    name: "La Voix Vide",
+    ring: "void",
+    masteryRank: 2,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "5 minutes",
+    raises: "Aucune",
+    description: "Puiser dans l'essence de toute chose permet à un ishiken d'invoquer les kami avec bien plus de facilité que la normale. Pendant la durée de ce sort, vous pouvez lancer des sorts d'autres éléments sans prononcer vos prières à voix haute. Cela ne s'applique qu'aux sorts de Rang de Maîtrise égal ou inférieur (tout sort de Rang de Maîtrise 1 ou 2)."
+  },
+  {
+    name: "Faux Murmures",
+    ring: "void",
+    masteryRank: 2,
+    keywords: "",
+    range: "9 m",
+    areaOfEffect: "1 individu cible",
+    duration: "1 minute",
+    raises: "Aucune",
+    description: "Mêler le Vide de deux êtres, même un instant, peut amener l'un des deux à être manipulé s'il n'y est pas préparé. La cible de ce sort répète mot pour mot la prochaine phrase que vous prononcez, sans aucune conscience préalable de ce qu'elle fait. Elle prononce les mots de sa propre voix normale, quelle que soit la façon dont vous les avez dits. Cet effet ne permet pas à d'autres de lancer des sorts, même si vous leur faites réciter une portion d'un sort. Ce sort ne permet cet effet qu'une seule fois, la première fois que vous prononcez une phrase pendant la durée du sort."
+  },
+  {
+    name: "Atteindre à Travers le Vide",
+    ring: "void",
+    masteryRank: 2,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "Objet cible, jusqu'à 2,5 kg",
+    duration: "Instantané",
+    raises: "Zone (+1 kg par 2 Augmentations), Portée (+1,5 m)",
+    description: "Toute chose, vivante ou non, existe au sein du Vide, et peut être touchée à travers lui. Vous pouvez manipuler des objets à travers le Vide, les déplaçant sans les toucher. Ces objets sont petits, généralement jusqu'à 2,5 kg seulement, bien qu'un Shugenja puissant puisse déclarer suffisamment d'Augmentations pour déplacer des objets un peu plus lourds."
+  },
+  {
+    name: "Coupé du Courant",
+    ring: "void",
+    masteryRank: 2,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "5 tours",
+    raises: "Durée (+1 tour), Portée (+1,5 m)",
+    description: "Les ishiken talentueux peuvent priver autrui de sa capacité à puiser dans le Vide, ne serait-ce que temporairement. Si ce sort réussit, la cible doit remporter un jet Contesté de Vide contre vous avant de pouvoir dépenser le moindre Point de Vide. Ce jet ne compte pas comme une action pour la cible, et elle ne doit réussir qu'un seul jet Contesté par tour, même si elle dépense plusieurs Points de Vide par tour grâce à une Technique ou une autre capacité."
+  },
+
+  // ============ Sorts de Vide - Rang 3 ============
+  {
+    name: "Échos dans le Vide",
+    ring: "void",
+    masteryRank: 3,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Concentration",
+    raises: "Portée (+1,5 m)",
+    description: "Les pensées sont comme des murmures dans le Vide, pour qui sait écouter. Tant que ce sort est actif et que vous maintenez votre concentration sur une cible dans la zone d'effet, vous pouvez entendre ce que cette personne pense. La manière dont cela se manifeste peut varier selon l'individu : des guerriers résolus peuvent avoir des pensées courtes et abruptes résumant leurs intentions, tandis que des artisans peuvent penser en termes poétiques."
+  },
+  {
+    name: "Intention Karmique",
+    ring: "void",
+    masteryRank: 3,
+    keywords: "",
+    range: "6 m",
+    areaOfEffect: "1 individu cible",
+    duration: "10 minutes",
+    raises: "Durée (+1 minute), Portée (+1,5 m)",
+    description: "Les liens forgés par le Vide permettent le passage d'une énergie considérable, la substance même de l'univers, entre ceux qui la partagent. Vous pouvez cibler avec ce sort un individu consentant. Tous les Points de Vide restants que vous possédez tous deux sont placés dans une réserve commune, dans laquelle chacun peut puiser normalement. Ce sort permet essentiellement à deux individus de partager leurs Points de Vide comme bon leur semble, y compris les Points de Vide supplémentaires gagnés via d'autres sorts de Vide. À la fin de la durée du sort, tous les Points de Vide restants sont répartis entre les participants, jusqu'à leur maximum normal respectif."
+  },
+  {
+    name: "Instant de Clarté",
+    ring: "void",
+    masteryRank: 3,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "2 tours",
+    raises: "Durée (+1 tour)",
+    description: "L'intégralité de l'accomplissement humain se reflète dans le Vide. Vous pouvez sélectionner n'importe quelle Compétence : vous gagnez des rangs temporaires dans cette Compétence égaux à votre Anneau de Vide. Si vous possédez déjà des rangs dans cette Compétence, ce nouveau niveau remplace l'ancien ; les deux ne se cumulent pas."
+  },
+  {
+    name: "Lire l'Essence",
+    ring: "void",
+    masteryRank: 3,
+    keywords: "Divination",
+    range: "Personnelle",
+    areaOfEffect: "1 objet cible",
+    duration: "Instantané (voir description)",
+    raises: "Aucune",
+    description: "Même les objets ont une résonance, et conservent un peu de la mémoire de ceux qui les ont détenus, ainsi que des événements majeurs qui les ont impliqués. En méditant sur un objet, vous pouvez obtenir une vision de la dernière personne qui l'a tenu, ou d'un événement majeur qui pourrait l'avoir concerné d'une manière ou d'une autre. Utiliser ce sort sur un pinceau de calligraphie pourrait par exemple montrer la dernière personne qui l'a utilisé pour écrire une lettre ; l'utiliser sur une arme pourrait plutôt montrer la dernière mort qu'elle a infligée. Le MJ a l'autorité ultime sur la vision transmise par le sort. Des objets extrêmement importants, comme des armes ou étendards ancestraux, peuvent produire des visions puissantes qui saisissent le lanceur pour des périodes plus longues, plutôt que de simples visions instantanées."
+  },
+  {
+    name: "Relâchement du Vide",
+    ring: "void",
+    masteryRank: 3,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m)",
+    description: "La plupart ignorent le Vide qui coule en eux, et ne réalisent pas qu'il peut leur être dérobé. Vous devez réussir un jet Contesté de Vide contre la cible de ce sort. En cas de succès, la cible perd un Point de Vide, et vous en gagnez un. Un point supplémentaire est échangé pour chaque tranche de 5 points par laquelle vous dépassez le jet de la cible. Ces Points de Vide temporaires peuvent vous faire dépasser votre nombre maximal de Points de Vide, mais expirent en une heure s'ils ne sont pas utilisés. Ce sort ne peut être utilisé sur une créature ne possédant pas de Points de Vide, ou disposant d'un autre effet mécanique s'y substituant (comme l'Akasha Naga ou le Nom des Ratlings)."
+  },
+
+  // ============ Sorts de Vide - Rang 4 ============
+  {
+    name: "Équilibre des Éléments",
+    ring: "void",
+    masteryRank: 4,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible (peut être le lanceur)",
+    duration: "5 tours / 5 minutes (voir description)",
+    raises: "Durée (+1 tour / +1 minute, voir description), Spécial (+1k1 Blessures soignées par 2 Augmentations)",
+    description: "Les failles dans le grand motif du Vide peuvent être surmontées, quelle que soit leur sévérité. Vous pouvez annuler tous les Désavantages de la cible pour la durée du sort. Les effets négatifs infligés par des sorts (comme des malus de TN, une réduction de TN d'Armure, ou une réduction de Trait/Anneau) sont également annulés, tant que le Rang de Maîtrise du sort responsable est de 3 ou moins. Utilisé dans l'environnement éprouvant du combat, la durée du sort est extrêmement limitée (5 tours). Hors combat en revanche, les effets du sort peuvent durer significativement plus longtemps (5 minutes). Cette restauration temporaire du motif de la cible soigne aussi 3k3 Blessures."
+  },
+  {
+    name: "Fléchette de Vide",
+    ring: "void",
+    masteryRank: 4,
+    keywords: "",
+    range: "30 m",
+    areaOfEffect: "Une créature cible",
+    duration: "Instantané",
+    raises: "Portée (+30 m par Augmentation), Cibles (+1 cible par 2 Augmentations, maximum de cibles égal à votre Anneau de Vide)",
+    description: "Le sort Fléchette de Vide fut créé par le Shugenja Ekuro lors de sa célèbre bataille. Le sort a été préservé comme secret de l'Ordre des Cinq Armes, mais on pense que les Phénix pourraient aussi le posséder dans leurs bibliothèques, et il est possible que d'autres familles de Shugenja en aient des copies. Lancer ce sort nécessite de dépenser un Point de Vide ; le sort invoque un projectile de Vide pur qui fonce et frappe infailliblement une cible à portée. La Fléchette inflige des dégâts avec un DR égal à votre Vide. Ces dégâts ignorent l'Invulnérabilité et la Réduction, quelle qu'en soit la source.",
+    damage: { mode: "ring", ring: "void", rolled: 0, kept: 0, note: "Ignore l'Invulnérabilité et la Réduction, quelle qu'en soit la source." }
+  },
+  {
+    name: "Refermer le Voile",
+    ring: "void",
+    masteryRank: 4,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "1 esprit cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m), Cibles (+1 par Augmentation)",
+    description: "Le néant qui constitue le Vide fait partie intégrante de ce qui sépare les différents royaumes spirituels les uns des autres, et il est possible de le renforcer dans certaines zones. Vous pouvez cibler tout esprit non natif du royaume mortel de Ningen-do. Cet esprit est banni vers son royaume d'origine pour une durée minimale égale à votre Anneau de Vide en mois. Les esprits possédant un corps physique dans le royaume mortel, comme les oni ou les esprits changeformes, nécessitent un jet Contesté de Volonté pour être affectés par ce sort. Les esprits significativement plus puissants que vous (à la discrétion du MJ) peuvent s'avérer immunisés aux effets de ce sort."
+  },
+  {
+    name: "Combler le Néant",
+    ring: "void",
+    masteryRank: 4,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (peut passer à 3 m avec 3 Augmentations)",
+    description: "Renforcer la connexion d'un individu au Vide peut restaurer ses réserves d'énergie intérieure. La cible de ce sort récupère tous ses Points de Vide perdus, jusqu'à son maximum."
+  },
+  {
+    name: "Frappe du Vide",
+    ring: "void",
+    masteryRank: 4,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané",
+    raises: "Portée (+1,5 m), Spécial (+1k0 dégâts par 2 Augmentations)",
+    description: "L'enveloppe mortelle ne peut endurer qu'un contact limité et direct avec le Vide ; au-delà, la chair peut être détruite par l'exposition. Ce sort inflige des dégâts avec un DR égal à votre Anneau de Vide.",
+    damage: { mode: "ring", ring: "void", rolled: 0, kept: 0, note: "" }
+  },
+
+  // ============ Sorts de Vide - Rang 5 ============
+  {
+    name: "Diviser l'Âme",
+    ring: "void",
+    masteryRank: 5,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "1 minute",
+    raises: "Durée (+1 minute)",
+    description: "Les véritables mystères du Vide dépassent l'entendement des non-ishiken. Grâce à ce sort, vous pouvez diviser votre âme à travers le Vide et exister en deux endroits du royaume mortel simultanément. Le second \"vous\" apparaît où vous le souhaitez dans votre champ de vision au moment du lancer. Vous avez une pleine conscience de tout ce qui se passe aux deux endroits, et pouvez agir simultanément comme s'il s'agissait de deux individus distincts. Une seule manifestation peut effectuer un jet de Lancer de Sort par tour. Toutes les Blessures subies par l'une ou l'autre manifestation sont combinées à la fin du sort, et si l'un de vos deux corps meurt, les deux meurent."
+  },
+  {
+    name: "Reforger",
+    ring: "void",
+    masteryRank: 5,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 objet",
+    duration: "Permanente",
+    raises: "Aucune",
+    description: "Tout est un et un est tout. Vous pouvez prendre n'importe quel objet et le transformer en tout autre objet de taille comparable. Cela ne fonctionne qu'avec un objet de construction uniforme, plutôt qu'assemblé à partir de plusieurs pièces. Ce sort n'affecte pas la matière vivante. Bien que l'effet de ce sort soit permanent, il peut être inversé par un second lancer sur le même objet, même par un ishiken différent."
+  },
+  {
+    name: "Essence Déliée",
+    ring: "void",
+    masteryRank: 5,
+    keywords: "",
+    range: "7,5 m",
+    areaOfEffect: "1 individu cible",
+    duration: "1 heure",
+    raises: "Durée (+1 heure), Portée (+1,5 m)",
+    description: "Altérer le motif du Vide d'un autre être peut entraîner des changements catastrophiques dans ses capacités. Les Anneaux de la cible sont réordonnés aléatoirement, de même que ses Traits. Par exemple, une cible pourrait échanger son Anneau d'Air contre son Anneau de Feu, et son Anneau d'Eau contre son Anneau de Terre, pour la durée du sort. Les Traits Mentaux et Physiques échangent leurs valeurs si celles-ci dépassent celle de l'Anneau. Dans l'exemple ci-dessus, si la cible a Air 3 et Réflexes 4, elle aurait à la place Feu 3 et Agilité 4, avec ses valeurs de Traits réassignées à son Air et ses Réflexes."
+  },
+
+  // ============ Sorts de Vide - Rang 6 ============
+  {
+    name: "Anneau du Vide",
+    ring: "void",
+    masteryRank: 6,
+    keywords: "",
+    range: "Personnelle",
+    areaOfEffect: "Soi-même",
+    duration: "Concentration (nécessite 1 heure d'incantation)",
+    raises: "Durée (+5 minutes au temps d'incantation)",
+    description: "Rare et extraordinairement puissante, même selon les standards des Shugenja, cette prière fait appel à la faveur unique du dragon dont le domaine est celui que foulent les ishiken : le Dragon du Vide. Contrairement à la plupart des sorts, celui-ci n'est pas enseigné par autrui, mais simplement appris par la perspicacité de ceux capables de le lancer (et n'est donc associé à aucun parchemin). Ce sort, davantage un rituel de méditation, vous permet en réalité de communier avec le Dragon du Vide lui-même, un exploit que peu de mortels ont jamais réussi à accomplir. Pendant vos brefs instants de contact avec cette entité divine, vous pouvez lui poser les questions de votre choix. Le Dragon du Vide connaît tout ce qui peut être connu, bien qu'il ne soit nullement obligé de vous répondre directement, ni même de répondre du tout. Le respect doit être maintenu en toute circonstance, car ceux qui ont tenté cet exploit par le passé sans rendre hommage à leur patron ont purement et simplement cessé d'exister."
+  },
+  {
+    name: "Renaître des Cendres",
+    ring: "void",
+    masteryRank: 6,
+    keywords: "",
+    range: "Contact",
+    areaOfEffect: "1 individu cible",
+    duration: "Instantané (nécessite 1 heure d'incantation)",
+    raises: "Spécial (+1 heure de régression par Augmentation)",
+    description: "Tout ce qui existe a un motif dans le Vide, un fil tissé dans la tapisserie de l'existence. En évoquant le souvenir de ce motif, vous pouvez inverser les effets récents survenus à une créature vivante. En lançant ce sort sur un individu, vous restaurez essentiellement son existence au sein du Vide conformément à son état antérieur. Une fois le sort achevé, la personne est immédiatement ramenée à l'état dans lequel elle se trouvait huit heures avant le début du sort. Toute blessure subie pendant cette période, les effets de maladies ou de poisons, et même l'acquisition de conditions surnaturelles comme la Souillure des Terres de l'Ombre ou la corruption par l'Obscurité Rampante, peuvent ainsi être annulés. Une fois ce sort achevé, vous perdez tous vos Points de Vide, et ne pouvez en regagner pendant une période de trois jours, après quoi ils recommencent à se régénérer à raison d'un Point de Vide par jour jusqu'à ce que vous retrouviez votre maximum normal. Ce sort ne peut être utilisé pour ramener quelqu'un qui est mort."
+  },
+  {
+    name: "Défaire le Monde",
+    ring: "void",
+    masteryRank: 6,
+    keywords: "",
+    range: "15 m",
+    areaOfEffect: "1 créature, individu ou objet cible",
+    duration: "Instantané",
+    raises: "Portée (+3 m)",
+    description: "La capacité la plus puissante et terrifiante de ceux qui commandent le Vide est celle de détruire les liens existant entre les cinq éléments. En éradiquant les liens entre les éléments existants, vous pouvez effectivement faire cesser d'exister un objet ou une créature. Lancé sur une créature vivante, ce sort exige un jet Contesté de votre Vide contre la Terre de la cible. En cas de succès, elle est instantanément tuée, et sa dépouille disparaît dans le Vide. Le succès est automatique contre un objet non-magique, mais tenter de détruire un objet éveillé, comme un Nemuranai, peut avoir de graves conséquences à la discrétion du MJ (les kami contenus dans un objet éveillé réagissent souvent très mal à ce type d'attaque, par exemple)."
   }
-  // TODO: description tronquée côté utilisateur à "Draw Back the Shadow"
-  // (Air 5) - il manque cette entrée, le reste du Rang 5, et tout le Rang 6
-  // d'Air. À compléter dès réception du texte complet.
 ];

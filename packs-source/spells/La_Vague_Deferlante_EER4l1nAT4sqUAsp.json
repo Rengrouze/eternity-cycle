@@ -1,0 +1,42 @@
+{
+  "_id": "EER4l1nAT4sqUAsp",
+  "_key": "!items!EER4l1nAT4sqUAsp",
+  "name": "La Vague Déferlante",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-la-vague-deferlante",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "Voyage",
+    "range": "3 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "1 tour",
+    "raises": "Durée (+1 tour), Portée (+1,5 m)",
+    "description": "Vous pouvez temporairement augmenter la vitesse de votre cible. Ce sort lui permet d'effectuer une Action de Mouvement Libre jusqu'à Eau x10 m (au lieu du x5 m normal). Sans Augmentation de Durée, ce bénéfice doit être utilisé au tour suivant de la cible, sous peine d'être perdu.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "dyQoiV0rVh3oiYOe",
+  "_key": "!items!dyQoiV0rVh3oiYOe",
+  "name": "Repousser l'Ombre",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-repousser-l-ombre",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "30 m",
+    "areaOfEffect": "9 m de rayon",
+    "duration": "Instantané",
+    "raises": "Zone (+1,5 m de rayon), Portée (+3 m)",
+    "description": "Tout comme les kami façonnent les illusions, ils peuvent aussi les dissiper. Dans la zone affectée par ce sort, toute illusion créée par un sort de Rang de Maîtrise 4 ou inférieur est automatiquement dissipée. Les sorts de Rang de Maîtrise 5 ou 6 nécessitent un jet Contesté d'Air entre vous et le Shugenja qui les a créés ; en cas de succès, ces illusions sont également dissipées. Les effets magiques persistants qui ne sont pas des illusions peuvent aussi être dissipés par ce sort, mais nécessitent un jet Contesté d'Anneau entre vous et leur créateur, votre Air contre son Anneau approprié.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

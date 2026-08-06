@@ -1,0 +1,42 @@
+{
+  "_id": "D8ZF0hVBJbXhpptm",
+  "_key": "!items!D8ZF0hVBJbXhpptm",
+  "name": "Bénédiction du Kami d'Eau",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-3-benediction-du-kami-d-eau",
+    "ring": "water",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible (peut être le lanceur)",
+    "duration": "5 tours",
+    "raises": "Spécial (votre Anneau d'Eau est considéré supérieur d'1 rang par 2 Augmentations)",
+    "description": "En invoquant la clarté de l'eau, vous pouvez recevoir une immense perspicacité sur le monde qui vous entoure. La cible de ce sort reçoit un bonus à tous ses jets basés sur la Perception, qu'il s'agisse de jets de Trait, de Compétence, ou autre, consistant en des dés lancés supplémentaires égaux à votre Anneau d'Eau.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "tp8Rf7mZwjWRWqVD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

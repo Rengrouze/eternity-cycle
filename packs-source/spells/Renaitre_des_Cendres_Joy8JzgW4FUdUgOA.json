@@ -1,0 +1,42 @@
+{
+  "_id": "Joy8JzgW4FUdUgOA",
+  "_key": "!items!Joy8JzgW4FUdUgOA",
+  "name": "Renaître des Cendres",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-6-renaitre-des-cendres",
+    "ring": "void",
+    "masteryRank": 6,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané (nécessite 1 heure d'incantation)",
+    "raises": "Spécial (+1 heure de régression par Augmentation)",
+    "description": "Tout ce qui existe a un motif dans le Vide, un fil tissé dans la tapisserie de l'existence. En évoquant le souvenir de ce motif, vous pouvez inverser les effets récents survenus à une créature vivante. En lançant ce sort sur un individu, vous restaurez essentiellement son existence au sein du Vide conformément à son état antérieur. Une fois le sort achevé, la personne est immédiatement ramenée à l'état dans lequel elle se trouvait huit heures avant le début du sort. Toute blessure subie pendant cette période, les effets de maladies ou de poisons, et même l'acquisition de conditions surnaturelles comme la Souillure des Terres de l'Ombre ou la corruption par l'Obscurité Rampante, peuvent ainsi être annulés. Une fois ce sort achevé, vous perdez tous vos Points de Vide, et ne pouvez en regagner pendant une période de trois jours, après quoi ils recommencent à se régénérer à raison d'un Point de Vide par jour jusqu'à ce que vous retrouviez votre maximum normal. Ce sort ne peut être utilisé pour ramener quelqu'un qui est mort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TWHyQBe6UAM9bHNI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

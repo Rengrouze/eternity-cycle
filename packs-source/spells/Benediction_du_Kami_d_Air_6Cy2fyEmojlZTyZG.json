@@ -1,0 +1,42 @@
+{
+  "_id": "6Cy2fyEmojlZTyZG",
+  "_key": "!items!6Cy2fyEmojlZTyZG",
+  "name": "Bénédiction du Kami d'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-benediction-du-kami-d-air",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "Le lanceur",
+    "duration": "8 heures",
+    "raises": "Spécial (double le bonus pour 4 Augmentations)",
+    "description": "Prière unique, autant méditation que sort, enseignée uniquement dans les Écoles de Shugenja ayant l'Air pour Affinité. Elle aligne plus justement les kami d'Air au sein de l'âme du lanceur, lui donnant une bien meilleure prise sur le cœur et l'âme des autres, ainsi qu'une certaine vivacité de réaction. Tant que la bénédiction dure, le Shugenja peut ajouter son Anneau d'Air au total de tous les jets basés sur l'Intuition, ainsi qu'à son TN d'Armure. Ceux qui connaissent ce sort accomplissent typiquement la Bénédiction chaque matin lors de leur méditation quotidienne. Les effets de ce sort ne se cumulent pas.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

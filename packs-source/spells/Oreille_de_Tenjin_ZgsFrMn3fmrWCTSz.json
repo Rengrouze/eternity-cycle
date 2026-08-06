@@ -1,0 +1,42 @@
+{
+  "_id": "ZgsFrMn3fmrWCTSz",
+  "_key": "!items!ZgsFrMn3fmrWCTSz",
+  "name": "Oreille de Tenjin",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-oreille-de-tenjin",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Voyage",
+    "range": "Lanceur",
+    "areaOfEffect": "9 m de rayon autour du lanceur",
+    "duration": "5 minutes",
+    "raises": "Portée (passe à Contact pour 3 Augmentations), Zone d'Effet (+1,5 m de rayon par Augmentation), Durée (+1 minute par Augmentation)",
+    "description": "Spécial : doit être un Shugenja du Clan de la Licorne. Nommée d'après la Fortune des Scribes, cette puissante incantation fut conçue à l'origine par la Licorne et dérivée de leur magie secrète du Meishodo. À la connaissance de tous, ce sort n'a jamais été enseigné hors du Clan de la Licorne. Il persuade les kami d'Air de porter le vrai sens des mots jusqu'à l'oreille du lanceur, lui permettant de comprendre la langue des étrangers. Pendant la durée du sort, toute parole humaine audible dans la zone d'effet devient intelligible pour le lanceur, quelle que soit la langue employée. Le sort ne confère aucune ouïe renforcée (les murmures restent donc inaudibles), ni la capacité de répondre dans cette langue.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

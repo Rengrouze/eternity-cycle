@@ -1,0 +1,42 @@
+{
+  "_id": "ZGb0YfcY4yUeexlO",
+  "_key": "!items!ZGb0YfcY4yUeexlO",
+  "name": "Tourbillon Rassembleur",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-1-tourbillon-rassembleur",
+    "ring": "air",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "Centrée sur le lanceur",
+    "areaOfEffect": "6 m de rayon autour du lanceur",
+    "duration": "1 tour",
+    "raises": "Zone d'Effet (+1,5 m de rayon par 2 Augmentations)",
+    "description": "Ce sort, souvent trouvé dans les besaces à parchemins des magistrats et de leurs assistants, semble être une version simplifiée de la prière utilisée pour Liberté de l'Air. Il fait souffler les kami d'Air avec vigueur dans la zone d'effet ; après un bref moment de chaos apparent, les vents rassemblent plusieurs objets non tenus et les déposent en une pile nette (mais pas organisée) à l'endroit choisi par le lanceur dans la zone, y compris dans ses mains si désiré. Le lanceur doit nommer les objets à rassembler au moment du lancer - seuls ceux-ci seront collectés. Pratique pour rassembler des papiers éparpillés, retrouver une note enfouie sous une pile, ou récupérer quelque chose d'important avec un minimum d'effort. Peut aussi, plus subtilement, récupérer un objet dissimulé ou caché - un usage que les magistrats trouvent fort utile. Il ne peut cependant pas arracher un objet des mains ou de la personne de quelqu'un d'autre - les esprits d'Air considèrent cela comme gâchant le jeu.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "Z0LbN40lfyacuNmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

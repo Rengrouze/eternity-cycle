@@ -1,0 +1,42 @@
+{
+  "_id": "j3phqdKU0y7vyjYX",
+  "_key": "!items!j3phqdKU0y7vyjYX",
+  "name": "Royaume Trompeur",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-royaume-trompeur",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Bataille, Illusion",
+    "range": "75 m",
+    "areaOfEffect": "30 m de rayon",
+    "duration": "1 heure",
+    "raises": "Zone (+3 m de rayon), Durée (+10 minutes)",
+    "description": "Les plus grands maîtres du vent peuvent créer des illusions d'une beauté et d'une clarté telles que ceux qui en sont affectés pourraient réellement croire se trouver ailleurs. Vous pouvez entièrement modifier l'apparence du terrain dans la zone d'effet de ce sort : faire ressembler, sonner et sentir un marais misérable comme un magnifique jardin, ou l'inverse. Bien que ces illusions puissent être extraordinairement complexes et totalement convaincantes pour tous les autres sens, elles n'ont aucune substance et ne peuvent être touchées.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

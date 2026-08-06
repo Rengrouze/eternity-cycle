@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-2 p-1 w-64">
+  <div class="text-xs text-neutral-500 border rounded px-2 py-1 bg-black/5">
+    {{localize "L5R4EC.Dialog.SpellBaseTn"}} <strong>{{baseTn}}</strong> ({{localize "L5R4EC.Dialog.SpellTnPerAugmentation"}})
+  </div>
+
+  <label class="flex justify-between items-center gap-2">
+    {{localize "L5R4EC.Dialog.Augmentations"}}
+    <input type="number" name="augmentations" value="0" min="0" class="w-16 border rounded text-center">
+  </label>
+
+  <label class="flex justify-between items-center gap-2">
+    {{localize "L5R4EC.Dialog.Targets"}}
+    <input type="number" name="targets" value="1" min="1" class="w-16 border rounded text-center">
+  </label>
+
+  <hr class="border-black/10">
+
+  <label class="flex justify-between items-center gap-2">
+    {{localize "L5R4EC.Dialog.RollBonus"}}
+    <input type="number" name="rollBonus" value="0" min="0" class="w-16 border rounded text-center">
+  </label>
+  <label class="flex justify-between items-center gap-2">
+    {{localize "L5R4EC.Dialog.KeepBonus"}}
+    <input type="number" name="keepBonus" value="0" min="0" class="w-16 border rounded text-center">
+  </label>
+</div>

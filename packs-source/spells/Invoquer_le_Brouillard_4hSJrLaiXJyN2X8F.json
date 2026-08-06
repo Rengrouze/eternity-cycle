@@ -1,0 +1,42 @@
+{
+  "_id": "4hSJrLaiXJyN2X8F",
+  "_key": "!items!4hSJrLaiXJyN2X8F",
+  "name": "Invoquer le Brouillard",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-invoquer-le-brouillard",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "30 m",
+    "areaOfEffect": "15 m de rayon",
+    "duration": "1 minute",
+    "raises": "Zone (+1,5 m de rayon), Durée (+1 minute), Portée (+3 m)",
+    "description": "On peut prier les kami de se rassembler dans une zone comme ils le font sur les côtes, créant un brouillard épais et opaque. Dans la zone affectée, la visibilité est réduite à seulement 1,5 m. Les tissus et autres matériaux absorbants présents dans la zone deviendront humides, voire trempés, s'ils y restent assez longtemps. De petites sources de flamme nue, comme des bougies, peuvent aussi s'éteindre, à la discrétion du MJ. L'humidité du brouillard est particulièrement dommageable pour le papier de riz.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

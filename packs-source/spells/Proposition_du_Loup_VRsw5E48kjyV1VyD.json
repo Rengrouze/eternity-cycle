@@ -1,0 +1,42 @@
+{
+  "_id": "VRsw5E48kjyV1VyD",
+  "_key": "!items!VRsw5E48kjyV1VyD",
+  "name": "Proposition du Loup",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-proposition-du-loup",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Illusion",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "10 minutes",
+    "raises": "Zone (peut cibler une autre personne avec 2 Augmentations), Durée (+5 minutes), Spécial (+1 rang d'Honneur par 2 Augmentations)",
+    "description": "Ce sort, conçu pour faciliter les premiers contacts entre groupes, est facilement détourné à des fins malveillantes. Il appelle les kami à créer une subtile aura de suggestion autour du lanceur, qui ne déguise pas son apparence mais amène les autres à le percevoir comme légèrement plus bienveillant qu'il ne l'est peut-être réellement. Pendant la durée du sort, votre rang d'Honneur est considéré supérieur de 3 rangs pour tout jet de Connaissance : Bushido visant à déterminer votre rang d'Honneur.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

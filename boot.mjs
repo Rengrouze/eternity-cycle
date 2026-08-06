@@ -1,4 +1,4 @@
-import { SystemActor, SystemItem } from "./module/documents/_module.mjs";
+import { SystemActor, SystemItem, SystemCombatant } from "./module/documents/_module.mjs";
 import { CharacterDataModel, ItemDataModel, SkillDataModel, WeaponDataModel, ArmorDataModel, MiscItemDataModel, AmmoDataModel, SpellDataModel } from "./module/data-models/_module.mjs";
 import { CharacterSheet } from "./module/sheets/actor-sheet.mjs";
 import { WeaponSheet } from "./module/sheets/weapon-sheet.mjs";
@@ -10,6 +10,10 @@ import { L5RExplodingDie } from "./module/dice/l5r-die.mjs";
 import { L5RRollKeep } from "./module/dice/l5r-roll.mjs";
 import { registerSkillSeeding } from "./module/hooks/seed-default-skills.mjs";
 import { registerSystemSettings } from "./module/settings.mjs";
+import { registerDamageChatActions } from "./module/chat/damage-chat-actions.mjs";
+import { registerCombatTrackerStanceBadges } from "./module/hooks/combat-tracker-stances.mjs";
+import { registerReactionPhasePrompts } from "./module/hooks/reaction-phase.mjs";
+import { registerInitiativeChatCard } from "./module/hooks/initiative-chat-card.mjs";
 
 Hooks.once("init", () => {
    console.log("L5R4EC | Initialisation du système Eternity Cycle");
@@ -20,6 +24,9 @@ Hooks.once("init", () => {
    // ---- Document classes custom ----
    CONFIG.Actor.documentClass = SystemActor;
    CONFIG.Item.documentClass = SystemItem;
+   // Raccroche l'Initiative native du Combat Tracker au moteur de dés
+   // Retiens & Garde (voir SystemCombatant#getInitiativeRoll).
+   CONFIG.Combatant.documentClass = SystemCombatant;
 
    // ---- Data Models ----
    CONFIG.Actor.dataModels = {
@@ -76,4 +83,16 @@ Hooks.once("init", () => {
 
    // ---- Peuplement automatique des Compétences par défaut ----
    registerSkillSeeding();
+
+   // ---- Bouton "Lancer les dégâts" sur les cartes de Jet de Sort/Attaque ----
+   registerDamageChatActions();
+
+   // ---- Icône de posture par combattant dans le Combat Tracker ----
+   registerCombatTrackerStanceBadges();
+
+   // ---- Phase de Réaction : demande la posture à chaque joueur en début de round ----
+   registerReactionPhasePrompts();
+
+   // ---- Harmonise la carte de chat de l'Initiative lancée depuis le Combat Tracker ----
+   registerInitiativeChatCard();
 });

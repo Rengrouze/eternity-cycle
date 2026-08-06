@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-3-purge-de-la-souillure",
     "ring": "earth",
     "masteryRank": 3,
     "keywords": "Jade",
@@ -12,10 +13,17 @@
     "areaOfEffect": "15 m de rayon autour du lanceur",
     "duration": "Permanente",
     "raises": "Zone (+3 m de rayon)",
-    "description": "Créé à l'origine par la famille Kuni et toujours principalement pratiqué par elle, bien que la connaissance de ses prières se soit répandue à d'autres Clans, ce rituel élaboré (une heure d'incantation) fait appel à la puissance de la Terre pour purger la terre elle-même de la Souillure des Terres de l'Ombre, chassant tous les kansen malfaisants de la zone. Le sort retire la Souillure du sol, de la végétation et des objets inanimés dans la zone d'effet. Il ne retire pas la Souillure des créatures vivantes, et n'affecte pas les artefacts souillés puissants ni les objets d'obsidienne. Ce nettoyage a un prix : les kami élémentaires de la zone, en particulier les esprits de Terre sollicités pour alimenter le sort, en ressortent affaiblis et dispersés, infligeant un malus de +15 au TN de tous les jets de Lancer de Sort dans la zone. Cet effet négatif peut s'estomper avec le temps, surtout si le sort est lancé en un lieu isolé entouré de terres normales. Mais s'il est lancé sur une vaste zone, comme les Terres Perdues Kuni, les kami élémentaires quittent généralement la zone de façon permanente, la réduisant à une étendue grise et sans vie."
+    "description": "Créé à l'origine par la famille Kuni et toujours principalement pratiqué par elle, bien que la connaissance de ses prières se soit répandue à d'autres Clans, ce rituel élaboré (une heure d'incantation) fait appel à la puissance de la Terre pour purger la terre elle-même de la Souillure des Terres de l'Ombre, chassant tous les kansen malfaisants de la zone. Le sort retire la Souillure du sol, de la végétation et des objets inanimés dans la zone d'effet. Il ne retire pas la Souillure des créatures vivantes, et n'affecte pas les artefacts souillés puissants ni les objets d'obsidienne. Ce nettoyage a un prix : les kami élémentaires de la zone, en particulier les esprits de Terre sollicités pour alimenter le sort, en ressortent affaiblis et dispersés, infligeant un malus de +15 au TN de tous les jets de Lancer de Sort dans la zone. Cet effet négatif peut s'estomper avec le temps, surtout si le sort est lancé en un lieu isolé entouré de terres normales. Mais s'il est lancé sur une vaste zone, comme les Terres Perdues Kuni, les kami élémentaires quittent généralement la zone de façon permanente, la réduisant à une étendue grise et sans vie.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "1OtxvWvfjSP5xP57",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

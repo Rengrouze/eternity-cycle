@@ -1,0 +1,42 @@
+{
+  "_id": "xU43JBL5Bdp8WdyE",
+  "_key": "!items!xU43JBL5Bdp8WdyE",
+  "name": "Énergies Sympathiques",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-energies-sympathiques",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "7,5 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m), Spécial (voir description)",
+    "description": "L'énergie circule entre tous les êtres vivants comme l'eau circule à travers la terre. Vous pouvez transférer n'importe quel effet de sort actif sur vous vers une cible consentante de ce sort. Avec 3 Augmentations, vous pouvez transférer un effet de sort d'une cible vivante consentante à une autre cible consentante. Vous ne pouvez pas transférer de sorts entre cibles non consentantes.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

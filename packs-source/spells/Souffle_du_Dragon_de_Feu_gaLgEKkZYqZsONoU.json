@@ -1,0 +1,42 @@
+{
+  "_id": "gaLgEKkZYqZsONoU",
+  "_key": "!items!gaLgEKkZYqZsONoU",
+  "name": "Souffle du Dragon de Feu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-3-souffle-du-dragon-de-feu",
+    "ring": "fire",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "Jet de 4,5 m de long, 1,5 m de large",
+    "duration": "4 tours",
+    "raises": "Aucune",
+    "description": "Ce sort est une prière au Dragon de Feu, l'un des plus puissants êtres célestes, le suppliant de partager un peu de son pouvoir. En cas de succès, vous gagnez la capacité de souffler un jet de flammes par la bouche une fois par tour, en Action Simple. Le jet a un DR égal à votre Anneau de Feu et frappe toute cible devant vous dans la zone d'effet. Vous pouvez choisir d'effectuer d'autres actions que souffler du feu pendant que le sort est actif, mais vous ne pouvez ni parler ni lancer de sorts. Le sort expire après quatre tours, mais vous pouvez choisir d'y mettre fin pendant la Phase de Réactions de n'importe quel tour antérieur.",
+    "damage": {
+      "mode": "ring",
+      "ring": "fire",
+      "rolled": 0,
+      "kept": 0,
+      "note": "Attaque répétable une fois par tour en Action Simple tant que le sort est actif."
+    }
+  },
+  "effects": [],
+  "folder": "v3huryt01LtUecPn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

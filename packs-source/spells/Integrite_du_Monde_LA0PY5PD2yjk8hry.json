@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-2-integrite-du-monde",
     "ring": "earth",
     "masteryRank": 2,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 créature cible",
     "duration": "10 minutes",
     "raises": "Durée (+1 minute), Portée (+1,5 m), Cibles (+1 par 2 Augmentations)",
-    "description": "Ce sort infuse la cible de la force de la Terre au point que ses Anneaux et Traits deviennent totalement résistants à tout effort visant à les modifier. Tout effet physique ou magique qui augmenterait ou réduirait ses Traits ou Anneaux est complètement inefficace pendant la durée du sort, les kami de Terre repoussant fermement toute tentative d'altérer l'équilibre élémentaire de la cible."
+    "description": "Ce sort infuse la cible de la force de la Terre au point que ses Anneaux et Traits deviennent totalement résistants à tout effort visant à les modifier. Tout effet physique ou magique qui augmenterait ou réduirait ses Traits ou Anneaux est complètement inefficace pendant la durée du sort, les kami de Terre repoussant fermement toute tentative d'altérer l'équilibre élémentaire de la cible.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "lWa2nT5IVs48Uzkv",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

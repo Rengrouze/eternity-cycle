@@ -1,0 +1,42 @@
+{
+  "_id": "Th7IKwr3wsiWfyW6",
+  "_key": "!items!Th7IKwr3wsiWfyW6",
+  "name": "Vol de Colombes",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-vol-de-colombes",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "Illusion",
+    "range": "7,5 m",
+    "areaOfEffect": "Récit conté par 1 personne cible",
+    "duration": "10 minutes",
+    "raises": "Portée (+1,5 m par Augmentation), Durée (+5 minutes par Augmentation)",
+    "description": "Ce sort fut à l'origine conçu par les Illusionnistes Shiba, et compte parmi leurs rares contributions significatives à la magie de Rokugan. Fidèle aux traditions Shiba, il est destiné avant tout au divertissement, mais peut parfois avoir des usages plus pratiques (comme aider un messager à décrire son expérience à son seigneur). Le sort invoque les kami d'Air pour \"illustrer\" un récit conté par un autre individu (désigné par le lanceur). Les esprits fournissent une illusion visuelle et sonore accompagnant l'histoire, puisant les sons et les images dans l'esprit du conteur. Le mélange résultant d'histoire, de son et d'image peut être particulièrement saisissant, et l'on raconte que des conteurs Kakita recherchent activement les maîtres de ce sort pour assister leur art.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

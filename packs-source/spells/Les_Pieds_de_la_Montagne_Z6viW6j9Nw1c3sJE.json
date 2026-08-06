@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-2-les-pieds-de-la-montagne",
     "ring": "earth",
     "masteryRank": 2,
     "keywords": "Défense",
@@ -12,10 +13,17 @@
     "areaOfEffect": "1 cible",
     "duration": "1 heure",
     "raises": "Durée (+1/2 heure), Cibles (+1 par 2 Augmentations)",
-    "description": "Ce sort fortifie la cible en enracinant ses pieds dans la pierre et le sol, lui permettant de résister à tout ce qui chercherait à la séparer du contact de la Terre. La cible gagne +3k0 pour résister à toute manœuvre de Renversement, et tout sort cherchant à la renverser, la soulever dans les airs, ou rompre son lien avec la Terre doit remporter un jet Contesté de son Élément contre l'Anneau de Terre du lanceur."
+    "description": "Ce sort fortifie la cible en enracinant ses pieds dans la pierre et le sol, lui permettant de résister à tout ce qui chercherait à la séparer du contact de la Terre. La cible gagne +3k0 pour résister à toute manœuvre de Renversement, et tout sort cherchant à la renverser, la soulever dans les airs, ou rompre son lien avec la Terre doit remporter un jet Contesté de son Élément contre l'Anneau de Terre du lanceur.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "lWa2nT5IVs48Uzkv",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

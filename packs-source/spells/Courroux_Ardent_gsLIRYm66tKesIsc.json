@@ -1,0 +1,42 @@
+{
+  "_id": "gsLIRYm66tKesIsc",
+  "_key": "!items!gsLIRYm66tKesIsc",
+  "name": "Courroux Ardent",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-3-courroux-ardent",
+    "ring": "fire",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "30 m",
+    "areaOfEffect": "Une structure autonome, ou une zone de 15 m x 15 m",
+    "duration": "Instantané",
+    "raises": "Aucune",
+    "description": "Courroux Ardent fut à l'origine conçu pour défricher des terres agricoles et démolir des structures en bois avec un minimum d'effort et sans danger ; il sert aussi à allumer des feux de joie pour des rituels et célébrations. Le sort vous permet de détruire un bâtiment ou une autre structure en faisant appel aux kami de Feu excitables présents dans les matériaux de la cible. Tous les matériaux inflammables dans la zone d'effet s'enflamment immédiatement et brûlent jusqu'à ce qu'il ne reste que des cendres. Le feu ne peut être éteint que par des moyens magiques ; l'eau, le sable et autres retardateurs mondains n'ont aucun effet. Une seule structure peut être ciblée par le sort, et le feu ne se propage pas aux structures adjacentes, vos prières maintenant les kami de Feu sous un contrôle strict. Les êtres vivants et les matériaux non-inflammables ne sont pas affectés ; en fait, si les vêtements portés par les personnes prises dans la zone d'effet brûlent, leur chair ne sera même pas roussie.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "v3huryt01LtUecPn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

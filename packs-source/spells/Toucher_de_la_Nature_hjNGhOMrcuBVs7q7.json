@@ -1,0 +1,42 @@
+{
+  "_id": "hjNGhOMrcuBVs7q7",
+  "_key": "!items!hjNGhOMrcuBVs7q7",
+  "name": "Toucher de la Nature",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-1-toucher-de-la-nature",
+    "ring": "air",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "3 m",
+    "areaOfEffect": "Une créature",
+    "duration": "Spéciale",
+    "raises": "Portée (+3 m)",
+    "description": "Vous pouvez utiliser les esprits du vent pour parler à un animal et vous assurer qu'il comprend ce que vous dites. Ce sort ne fonctionne que sur les animaux naturels, pas sur les créatures des Terres de l'Ombre ni celles d'autres royaumes. Il ne garantit pas que l'animal vous soit favorable ni qu'il exécute vos requêtes, mais il comprendra tout ce que vous lui dites (dans la limite de ce qu'il peut naturellement saisir - les relations politiques n'ont aucun sens pour un cheval, quel que soit le nombre de fois où vous les lui expliquez). Ce sort dure tant que vous maintenez toute votre attention sur l'animal et continuez à lui parler.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "Z0LbN40lfyacuNmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -21,13 +21,8 @@
     </div>
   </div>
 
-  {{!-- Bande de stats "carte de visite" : Rang, XP, Honneur/Infamie, Gloire, Statut, Réputation, Souillures --}}
+  {{!-- Bande de stats "carte de visite" : XP, Honneur/Infamie, Gloire, Statut, Réputation, Souillures --}}
   <div class="flex flex-wrap gap-2 border-t border-black/10 pt-2">
-
-    <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
-      {{localize "L5R4EC.Header.Rank"}}
-      <input type="number" name="system.rank" value="{{system.rank}}" min="1" class="w-12 border rounded text-center font-bold">
-    </label>
 
     <label class="flex flex-col items-center text-[0.65rem] uppercase tracking-wide">
       {{localize "L5R4EC.Header.XPTotal"}}

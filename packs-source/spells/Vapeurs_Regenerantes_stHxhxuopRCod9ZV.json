@@ -1,0 +1,42 @@
+{
+  "_id": "stHxhxuopRCod9ZV",
+  "_key": "!items!stHxhxuopRCod9ZV",
+  "name": "Vapeurs Régénérantes",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-2-vapeurs-regenerantes",
+    "ring": "water",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Cibles (+1 par 2 Augmentations)",
+    "description": "L'eau lave toute impureté, rafraîchissant et revigorant tout ce qu'elle touche. La cible de ce sort est instantanément rafraîchie comme si elle venait de se lever d'une nuit de sommeil complète. Cela ne restaure pas les Points de Vide dépensés, mais élimine la fatigue et l'épuisement. Utilisé sur un Shugenja, ce sort restaure les emplacements de sort associés à l'Anneau de Vide (utilisables pour n'importe quel élément), mais pas les emplacements associés aux autres Anneaux. Les capacités qu'un personnage ne peut utiliser qu'un nombre limité de fois par jour ne sont pas restaurées par ce sort. Aucun individu ne peut bénéficier des Vapeurs Régénérantes plus d'une fois par période de 24 heures.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "xrr9cidy19fp80X0",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

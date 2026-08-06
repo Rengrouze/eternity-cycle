@@ -1,0 +1,22 @@
+{
+  "_id": "si3tgAWEqvjoLDiU",
+  "_key": "!folders!si3tgAWEqvjoLDiU",
+  "name": "Eau",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 21,
+  "color": null,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

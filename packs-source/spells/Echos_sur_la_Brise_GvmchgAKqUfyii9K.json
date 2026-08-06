@@ -1,0 +1,42 @@
+{
+  "_id": "GvmchgAKqUfyii9K",
+  "_key": "!items!GvmchgAKqUfyii9K",
+  "name": "Échos sur la Brise",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-5-echos-sur-la-brise",
+    "ring": "air",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "Personnelle",
+    "areaOfEffect": "Un individu cible",
+    "duration": "Concentration",
+    "raises": "Aucune",
+    "description": "Aucune destination n'échappe à la portée du vent. Par une simple prière aux kami, vous pouvez porter vos mots à travers tout l'Empire, murmurant à l'oreille de quiconque vous devez contacter. La personne doit vous être connue, et le sort établit un lien entre vous deux tant que vous vous concentrez. Vous pouvez alors communiquer l'un avec l'autre, bien que vous n'entendiez chacun que des murmures. Les deux participants prennent instantanément conscience de la connexion établie, et l'un ou l'autre peut y mettre fin à tout moment.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "KZxZARXyCNY93QHn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

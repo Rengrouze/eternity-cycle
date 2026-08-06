@@ -1,0 +1,42 @@
+{
+  "_id": "4ABx3o7vkMsjYqGR",
+  "_key": "!items!4ABx3o7vkMsjYqGR",
+  "name": "Rites Funéraires",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-rites-funeraires",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "N/A",
+    "areaOfEffect": "N/A",
+    "duration": "5 minutes",
+    "raises": "",
+    "description": "Ce rituel fut conçu à l'origine par les sodan-senzo Kitsu mais, en raison de son utilité universelle, s'est rapidement répandu à d'autres familles et Écoles de Shugenja. Les Kitsu souhaitaient que tous les Rokugani vénèrent correctement leurs ancêtres, et n'eurent donc aucune difficulté à partager leur découverte avec les Isawa et les autres clans. Pour ceux qui n'ont pas le sang Kitsu, ce sort est l'un des très rares moyens pour un Shugenja de réellement communiquer avec les ancêtres tout en restant à Ningen-Do. Le sort est en réalité un rituel de prière d'une heure, qui ne peut être accompli qu'en compagnie d'un parent d'un défunt récent, dans les vingt-quatre heures suivant les funérailles (auxquelles le Shugenja et le parent doivent tous deux avoir dûment participé). D'autres Shugenja peuvent assister au rituel s'ils connaissent aussi le sort ; ils n'ont pas besoin de faire de jet de Lancer de Sort, mais consomment tout de même un emplacement de sort. Une fois la prière correctement achevée (un jet de Lancer de Sort réussi par le Shugenja principal), le lanceur et le parent peuvent tous deux converser quelques minutes avec l'esprit du défunt récent (chaque Shugenja assistant supplémentaire ajoute +1 minute à la durée du sort). Ce rituel n'est typiquement utilisé que lorsque les proches vivants souhaitent s'assurer de bien honorer et se souvenir de leur ancêtre nouvellement disparu. Les résultats exacts de cette communion sont laissés à la discrétion du MJ, mais peuvent inclure l'obtention d'informations importantes, de conseils, ou la reprise d'une tâche laissée inachevée par le défunt.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

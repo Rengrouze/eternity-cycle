@@ -1,0 +1,42 @@
+{
+  "_id": "qTScc7B5ZVHLvZz4",
+  "_key": "!items!qTScc7B5ZVHLvZz4",
+  "name": "Relâchement du Vide",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-3-relachement-du-vide",
+    "ring": "void",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "7,5 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "Instantané",
+    "raises": "Portée (+1,5 m)",
+    "description": "La plupart ignorent le Vide qui coule en eux, et ne réalisent pas qu'il peut leur être dérobé. Vous devez réussir un jet Contesté de Vide contre la cible de ce sort. En cas de succès, la cible perd un Point de Vide, et vous en gagnez un. Un point supplémentaire est échangé pour chaque tranche de 5 points par laquelle vous dépassez le jet de la cible. Ces Points de Vide temporaires peuvent vous faire dépasser votre nombre maximal de Points de Vide, mais expirent en une heure s'ils ne sont pas utilisés. Ce sort ne peut être utilisé sur une créature ne possédant pas de Points de Vide, ou disposant d'un autre effet mécanique s'y substituant (comme l'Akasha Naga ou le Nom des Ratlings).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TxaV7PBMvzpEwJuD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

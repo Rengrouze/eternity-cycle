@@ -1,0 +1,42 @@
+{
+  "_id": "L5By4nyerATlfnJZ",
+  "_key": "!items!L5By4nyerATlfnJZ",
+  "name": "L'Ennemi de Votre Cœur",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-l-ennemi-de-votre-c-ur",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "Illusion",
+    "range": "7,5 m",
+    "areaOfEffect": "Un individu cible",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour), Portée (+1,5 m)",
+    "description": "Les kami peuvent voir dans le cœur des mortels, et utiliser cette information à la demande d'un Shugenja. Vous manifestez à travers les kami une illusion de ce que votre cible craint le plus au monde : un individu (l'homme qui a tué son père), un objet (une lame maudite ayant ruiné sa famille), ou même une scène (l'image d'un ennemi massacrant sa famille). Cela génère effectivement une Peur 4 que la cible doit surmonter. Seule la cible peut voir les détails de l'illusion ; les autres ne perçoivent qu'un vague contour ressemblant à un petit nuage de brume.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

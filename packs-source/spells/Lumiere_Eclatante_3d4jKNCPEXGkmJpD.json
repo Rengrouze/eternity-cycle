@@ -1,0 +1,42 @@
+{
+  "_id": "3d4jKNCPEXGkmJpD",
+  "_key": "!items!3d4jKNCPEXGkmJpD",
+  "name": "Lumière Éclatante",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-3-lumiere-eclatante",
+    "ring": "fire",
+    "masteryRank": 3,
+    "keywords": "Défense",
+    "range": "9 m",
+    "areaOfEffect": "1 armure cible",
+    "duration": "10 tours",
+    "raises": "Dégâts (+1k0 par 2 Augmentations), Durée (+2 tours)",
+    "description": "Autre exemple de sort pouvant imprégner des kami de Feu dans des objets, ce sort lie temporairement un kami de Feu à une pièce d'armure (comme un casque ou un plastron). L'armure émet une lumière vive qui devient aveuglante chaque fois que son porteur est attaqué. Chaque fois que le porteur de l'armure est attaqué en mêlée, l'adversaire subit immédiatement après 2k2 Blessures et est Aveuglé jusqu'à la Phase de Réactions de ce même tour. Le sort n'a aucun effet sur les attaques à distance.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 2,
+      "kept": 2,
+      "note": "Déclenché quand le porteur de l'armure est attaqué en mêlée ; l'attaquant est aussi Aveuglé jusqu'à la Phase de Réactions."
+    }
+  },
+  "effects": [],
+  "folder": "v3huryt01LtUecPn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

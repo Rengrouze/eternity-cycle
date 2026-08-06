@@ -5,6 +5,7 @@
   "type": "spell",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "key": "earth-1-tetsubo-de-terre",
     "ring": "earth",
     "masteryRank": 1,
     "keywords": "Artisanat, Jade",
@@ -12,10 +13,17 @@
     "areaOfEffect": "Une arme créée",
     "duration": "5 minutes",
     "raises": "Dégâts (+1k0), Durée (+5 minutes), Portée (+1,5 m)",
-    "description": "Vous invoquez un tetsubo de terre pure, hérissé de pierres. L'arme prend par défaut la forme d'un tetsubo, mais une Augmentation permet de choisir n'importe quelle autre arme lourde. Le tetsubo a un DR de 2k2. En le maniant, vous pouvez utiliser votre Rang d'École à la place de votre compétence Armes Lourdes. Si vous possédez déjà cette compétence, le tetsubo confère une Relance Gratuite pour la manœuvre de Renversement (ce bonus ne s'applique pas si vous confiez le tetsubo à quelqu'un d'autre). Le tetsubo disparaît s'il quitte votre main. Vous pouvez aussi le faire apparaître dans les mains d'un allié à moins de 6 m ; celui-ci est alors considéré comme le lanceur pour les besoins du sort, mais ne gagne pas la Relance Gratuite."
+    "description": "Vous invoquez un tetsubo de terre pure, hérissé de pierres. L'arme prend par défaut la forme d'un tetsubo, mais une Augmentation permet de choisir n'importe quelle autre arme lourde. Le tetsubo a un DR de 2k2. En le maniant, vous pouvez utiliser votre Rang d'École à la place de votre compétence Armes Lourdes. Si vous possédez déjà cette compétence, le tetsubo confère une Relance Gratuite pour la manœuvre de Renversement (ce bonus ne s'applique pas si vous confiez le tetsubo à quelqu'un d'autre). Le tetsubo disparaît s'il quitte votre main. Vous pouvez aussi le faire apparaître dans les mains d'un allié à moins de 6 m ; celui-ci est alors considéré comme le lanceur pour les besoins du sort, mais ne gagne pas la Relance Gratuite.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
   },
   "effects": [],
-  "folder": null,
+  "folder": "KU98pWxcdNt2KXuO",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -26,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.0.1",
+    "systemVersion": "0.3.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

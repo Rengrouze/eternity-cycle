@@ -1,0 +1,42 @@
+{
+  "_id": "Xhv5tje26G4wwTxU",
+  "_key": "!items!Xhv5tje26G4wwTxU",
+  "name": "La Caresse du Vide",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-1-la-caresse-du-vide",
+    "ring": "void",
+    "masteryRank": 1,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "Un individu cible",
+    "duration": "1 minute",
+    "raises": "Durée (+1 minute)",
+    "description": "Bien que les étudiants débutants de l'ishiken-do ne puissent affecter le motif du Vide, ils peuvent y apporter de très brèves altérations. Vous pouvez annuler un Désavantage Mental ou Spirituel possédé par la cible de ce sort, jusqu'à une valeur maximale de 5 points. La Souillure des Terres de l'Ombre ne peut être retirée par ce sort, bien que les troubles mentaux qu'elle peut causer puissent être temporairement soulagés.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "zCkpcxT4GgdQUj1N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

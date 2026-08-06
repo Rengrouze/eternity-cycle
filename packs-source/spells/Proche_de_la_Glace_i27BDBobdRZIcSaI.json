@@ -1,0 +1,42 @@
+{
+  "_id": "i27BDBobdRZIcSaI",
+  "_key": "!items!i27BDBobdRZIcSaI",
+  "name": "Proche de la Glace",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-3-proche-de-la-glace",
+    "ring": "water",
+    "masteryRank": 3,
+    "keywords": "",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible",
+    "duration": "5 tours",
+    "raises": "Durée (+1 tour), Portée (passe à 3 m avec 2 Augmentations)",
+    "description": "Tout comme l'eau devient durable et résistante avec l'arrivée de l'hiver, l'eau présente dans le corps humain peut elle aussi devenir plus ferme et plus endurante. Tous les malus de blessure actuels de la cible sont annulés pour la durée du sort. Tout malus supplémentaire subi prend pleinement effet, en utilisant la différence entre le malus annulé et le nouveau malus comme malus effectif. Les Blessures ne sont pas soignées par cet effet, elles cessent simplement d'entraver ceux qui en souffrent.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "tp8Rf7mZwjWRWqVD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

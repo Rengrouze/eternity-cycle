@@ -1,0 +1,42 @@
+{
+  "_id": "Btqhh45VLauCMiDI",
+  "_key": "!items!Btqhh45VLauCMiDI",
+  "name": "La Fausse Légion",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-6-la-fausse-legion",
+    "ring": "air",
+    "masteryRank": 6,
+    "keywords": "Bataille, Illusion",
+    "range": "Personnelle",
+    "areaOfEffect": "Dans un rayon de 30 m autour du lanceur",
+    "duration": "Concentration",
+    "raises": "Zone (+3 m), Spécial (+5 silhouettes illusoires par Augmentation)",
+    "description": "Le plus grand don illusoire du vent est la légion. Dans la zone d'effet de ce sort, vous pouvez créer un nombre de silhouettes illusoires égal à votre Anneau d'Air x 10. Ces silhouettes peuvent être aussi détaillées ou vagues que vous le souhaitez (par exemple \"bushi Grue\" contre \"infanterie lourde de la quatrième légion Daidoji\"), bien que vous deviez connaître l'apparence en question pour que le sort prenne effet (vous ne pourriez, par exemple, pas répliquer un mon familial que vous n'avez jamais vu). Les silhouettes sont pleinement mobiles et effectuent les actions que vous désirez tant qu'elles ne quittent pas la zone d'effet du sort. Elles peuvent être vues, entendues, voire senties, mais comme la plupart des illusions, elles ne peuvent physiquement interagir avec des objets ou individus d'aucune manière.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "if0Bk679rqL63DqQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

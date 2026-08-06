@@ -1,0 +1,42 @@
+{
+  "_id": "SP3geB6oxgaPrslt",
+  "_key": "!items!SP3geB6oxgaPrslt",
+  "name": "Reflets de Pan Ku",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-1-reflets-de-pan-ku",
+    "ring": "water",
+    "masteryRank": 1,
+    "keywords": "Divination",
+    "range": "Contact",
+    "areaOfEffect": "1 objet",
+    "duration": "Instantané",
+    "raises": "Aucune",
+    "description": "Deviner les capacités d'un objet compte parmi les leçons les plus simples qu'un étudiant de l'eau apprend au temple. Si ce sort est lancé avec succès sur un objet, vous apprenez automatiquement tous les pouvoirs et capacités que cet objet possède. Le plus souvent utilisé pour identifier les qualités surnaturelles d'un objet, comme un Nemuranai ou une arme maudite, il peut aussi identifier le sort contenu dans un parchemin de prière de Shugenja. Ce sort ne permet pas à un Shugenja de lire un parchemin écrit dans un chiffre qu'il ne comprend pas, mais il peut au moins identifier le sort en question. Ce sort accorde aussi au lanceur une connaissance très générale de l'origine de l'objet, comme le lieu où il a été forgé, le Clan de la personne qui l'a porté le plus longtemps, ou quelque chose de similaire à la discrétion du MJ.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "e6RaOYpGg4xaUfwO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

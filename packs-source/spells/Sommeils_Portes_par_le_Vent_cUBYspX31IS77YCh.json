@@ -1,0 +1,42 @@
+{
+  "_id": "cUBYspX31IS77YCh",
+  "_key": "!items!cUBYspX31IS77YCh",
+  "name": "Sommeils Portés par le Vent",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-2-sommeils-portes-par-le-vent",
+    "ring": "air",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 personne cible",
+    "duration": "5 minutes",
+    "raises": "Portée (+3 m par Augmentation), Zone d'Effet (+1 personne par 2 Augmentations), Durée (+1 minute par Augmentation)",
+    "description": "Ce sort fait s'insinuer subtilement les kami d'Air dans le corps de la cible, la poussant vers la fatigue et le sommeil. Une cible physiquement et mentalement inactive (comme un garde en faction de nuit, ou un samouraï en méditation dans son dojo) s'endort automatiquement en étant ciblée par ce sort (elle se réveille normalement si on la touche ou si un bruit fort survient, mais dort sinon jusqu'à l'expiration du sort). Si la cible est physiquement ou mentalement active, le sort ne l'endort pas, mais elle subit les effets de la Fatigue pour la durée du sort (si elle est déjà Fatiguée, ses malus de Fatigue augmentent comme si elle avait passé un jour de plus sans repos).",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "bo33sgNCv7xrSCAx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

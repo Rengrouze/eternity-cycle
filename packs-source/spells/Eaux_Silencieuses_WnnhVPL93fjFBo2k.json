@@ -1,0 +1,42 @@
+{
+  "_id": "WnnhVPL93fjFBo2k",
+  "_key": "!items!WnnhVPL93fjFBo2k",
+  "name": "Eaux Silencieuses",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-3-eaux-silencieuses",
+    "ring": "water",
+    "masteryRank": 3,
+    "keywords": "Défense",
+    "range": "Personnelle",
+    "areaOfEffect": "Soi-même",
+    "duration": "Variable",
+    "raises": "Aucune",
+    "description": "La mémoire de l'océan est infinie, et son immense pouvoir peut patienter très longtemps avant de se manifester. Une fois ce sort lancé avec succès, vous pouvez immédiatement en lancer un second, de n'importe quel élément. Ce second sort doit être un sort que vous pouvez normalement lancer, de Rang de Maîtrise 3 ou inférieur. Si le second jet de Lancer de Sort réussit, ce second sort est stocké en vous et ne s'activera que lorsqu'un effet physique précis se produira, que vous spécifiez au moment du lancer (prononcer un certain mot, dégainer une lame, tomber au combat, par exemple). Quel que soit le déclencheur, quand il survient, le second sort prend immédiatement effet comme si vous veniez de terminer de le lancer. Un personnage ne peut jamais bénéficier de plusieurs utilisations simultanées d'Eaux Silencieuses. Si une seconde utilisation du sort est lancée sur le même individu, le sort actuellement \"stocké\" est immédiatement dissipé et remplacé par le nouveau.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "tp8Rf7mZwjWRWqVD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "pzDZM3tbRCaNJyVM",
+  "_key": "!items!pzDZM3tbRCaNJyVM",
+  "name": "Feux de Pureté",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-1-feux-de-purete",
+    "ring": "fire",
+    "masteryRank": 1,
+    "keywords": "Défense",
+    "range": "7,5 m",
+    "areaOfEffect": "1 cible",
+    "duration": "1 minute",
+    "raises": "Dégâts (+1k0 par 2 Augmentations)",
+    "description": "Ce sort, l'une des rares prières directement protectrices impliquant les kami de Feu, demande aux esprits de protéger une personne en enveloppant la cible d'un linceul de flammes vives. Ni la cible ni ce qu'elle porte ne subit de dégâts du sort, mais quiconque entre en contact avec elle ou la frappe en mêlée subit 2k2 Blessures. Quiconque la cible frappe en mêlée à mains nues ou avec une arme qu'elle portait au moment du lancer subit également 2k2 Blessures supplémentaires. Cependant, tout ce que la cible pose ne peut être ramassé sans subir les dégâts du sort. Les armes à distance comme les flèches contournent cette barrière de feu et infligent leurs dégâts normalement.",
+    "damage": {
+      "mode": "fixed",
+      "ring": "",
+      "rolled": 2,
+      "kept": 2,
+      "note": "+2k2 supplémentaires si la cible frappe en mêlée avec une arme portée au moment du lancer."
+    }
+  },
+  "effects": [],
+  "folder": "7DRIQU9ft15JrVsG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

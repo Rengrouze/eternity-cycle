@@ -1,0 +1,42 @@
+{
+  "_id": "4gcf9VezgHJnryxd",
+  "_key": "!items!4gcf9VezgHJnryxd",
+  "name": "Faux Murmures",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "void-2-faux-murmures",
+    "ring": "void",
+    "masteryRank": 2,
+    "keywords": "",
+    "range": "9 m",
+    "areaOfEffect": "1 individu cible",
+    "duration": "1 minute",
+    "raises": "Aucune",
+    "description": "Mêler le Vide de deux êtres, même un instant, peut amener l'un des deux à être manipulé s'il n'y est pas préparé. La cible de ce sort répète mot pour mot la prochaine phrase que vous prononcez, sans aucune conscience préalable de ce qu'elle fait. Elle prononce les mots de sa propre voix normale, quelle que soit la façon dont vous les avez dits. Cet effet ne permet pas à d'autres de lancer des sorts, même si vous leur faites réciter une portion d'un sort. Ce sort ne permet cet effet qu'une seule fois, la première fois que vous prononcez une phrase pendant la durée du sort.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "cox0txMXcHdDl3l1",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

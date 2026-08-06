@@ -1,0 +1,22 @@
+{
+  "_id": "TWHyQBe6UAM9bHNI",
+  "_key": "!folders!TWHyQBe6UAM9bHNI",
+  "name": "Rang 6",
+  "type": "Item",
+  "description": "",
+  "sorting": "m",
+  "sort": 34,
+  "color": null,
+  "folder": "pQE0TxHgIdha54xD",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

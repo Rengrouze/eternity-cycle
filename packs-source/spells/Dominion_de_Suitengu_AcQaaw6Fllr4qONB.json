@@ -1,0 +1,42 @@
+{
+  "_id": "AcQaaw6Fllr4qONB",
+  "_key": "!items!AcQaaw6Fllr4qONB",
+  "name": "Dominion de Suitengu",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-4-dominion-de-suitengu",
+    "ring": "water",
+    "masteryRank": 4,
+    "keywords": "Divination",
+    "range": "160 km",
+    "areaOfEffect": "2 plans d'eau",
+    "duration": "Concentration",
+    "raises": "Portée (+16 km)",
+    "description": "La Fortune de la Mer est une entité courroucée, mais qui bénit néanmoins ceux qui le sollicitent correctement. Ce sort, créé par le Clan de la Mante, vous permet de fixer un plan d'eau (au moins 30 cm de large et 2,5 cm de profondeur) et de voir à travers n'importe quel autre plan d'eau de l'Empire, tant qu'il est à portée du sort - un point du littoral, un lac, une rivière, un ruisseau, voire une flaque, mais vous devez connaître l'emplacement du plan d'eau visé. Vous pouvez voir tout ce qui entoure ce plan d'eau comme si vous y étiez immergé. Vous ne pouvez pas entendre ce qui s'y passe, seulement le voir.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "3dLby7b4ZtGGX5Tk",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

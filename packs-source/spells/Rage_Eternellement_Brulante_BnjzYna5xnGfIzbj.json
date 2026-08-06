@@ -1,0 +1,42 @@
+{
+  "_id": "BnjzYna5xnGfIzbj",
+  "_key": "!items!BnjzYna5xnGfIzbj",
+  "name": "Rage Éternellement Brûlante",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-5-rage-eternellement-brulante",
+    "ring": "fire",
+    "masteryRank": 5,
+    "keywords": "",
+    "range": "7,5 m",
+    "areaOfEffect": "1 cible",
+    "duration": "1 tour",
+    "raises": "Durée (+1 tour), Cibles (+1)",
+    "description": "Puissante malédiction qui imprègne le corps de la cible d'esprits de Feu en colère, la torturant de douleur tandis que les kami brûlent ses nerfs et ligaments. Pendant la durée du sort, la victime est considérée au rang de blessure Épuisé et subit tous les malus et conditions associés, bien qu'elle ne subisse aucune Blessure réelle du sort. Quand le sort expire, la douleur cesse instantanément et la cible peut se relever comme si de rien n'était. Ce sort est quelque peu controversé dans certaines Écoles de Shugenja, en particulier les plus pacifiques, puisqu'il ne revient guère qu'à infliger délibérément de la douleur. Quelques Shugenja ont même noté d'inquiétantes similitudes entre les effets de ce sort et ceux de certaines malédictions de maho.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "YC6hvzbF1MzidNEW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "ArJbtd3FFQCKF6y8",
+  "_key": "!items!ArJbtd3FFQCKF6y8",
+  "name": "Le Poing d'Osano-Wo",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "fire-3-le-poing-d-osano-wo",
+    "ring": "fire",
+    "masteryRank": 3,
+    "keywords": "Tonnerre",
+    "range": "15 m",
+    "areaOfEffect": "6 m de rayon",
+    "duration": "1 tour",
+    "raises": "Zone d'Effet (+3 m de rayon)",
+    "description": "Prière plus puissante à la Fortune du Tonnerre, ce sort invoque sa colère pour dévaster une zone ciblée. De massifs éclairs et des jets de flamme vaguement en forme de poing s'abattent du ciel, frappant la zone d'effet. Les structures fragiles et facilement inflammables (comme la plupart des maisons rokugani) sont détruites par la fureur du sort, ou prennent feu et sont consumées. Le sort a un DR égal à votre Anneau de Feu, infligé à quiconque se trouve dans la zone d'effet. Utiliser ce sort en zone habitée est généralement considéré comme un acte criminel, sauf si le Shugenja peut invoquer des circonstances extrêmes, les incendies étant terriblement dangereux pour les villes rokugani.",
+    "damage": {
+      "mode": "ring",
+      "ring": "fire",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "v3huryt01LtUecPn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

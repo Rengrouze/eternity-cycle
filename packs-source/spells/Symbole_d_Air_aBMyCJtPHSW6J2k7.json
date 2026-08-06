@@ -1,0 +1,42 @@
+{
+  "_id": "aBMyCJtPHSW6J2k7",
+  "_key": "!items!aBMyCJtPHSW6J2k7",
+  "name": "Symbole d'Air",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-symbole-d-air",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "Protections",
+    "range": "Contact",
+    "areaOfEffect": "Spéciale",
+    "duration": "Permanente",
+    "raises": "Aucune",
+    "description": "Les prêtres des kami peuvent inscrire de puissantes protections invoquant la puissance des éléments contre quiconque tenterait de les franchir. Un Symbole d'Air doit être inscrit sur un objet solide, le plus souvent une porte, une fenêtre, un portail ou tout autre passage. Quiconque tente de franchir ce passage ou de contourner la zone protégée par le Symbole est affecté par la protection : il doit réussir un jet Contesté de Terre contre l'Air du lanceur. Ceux qui échouent sont pris d'une puissante somnolence et doivent réussir un jet de Volonté contre le total du jet de Lancer de Sort ayant créé la protection, sous peine de sombrer dans un profond sommeil d'une heure. Ceux affectés ne peuvent être réveillés par des moyens normaux, mais se réveillent instantanément s'ils subissent une attaque ou tout dommage, les kami refusant de participer à une plaisanterie aussi dénuée d'humour. Un seul Symbole d'Air peut exister à la fois, et des sorts Symbole d'éléments différents ne peuvent jamais affecter la même zone. Ce sort peut être dissipé par un autre lancer de Symbole d'Air par n'importe quel Shugenja, ou en détruisant la surface où le Symbole a été gravé.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "2o3Uje2AIxEOIKD0",
+  "_key": "!items!2o3Uje2AIxEOIKD0",
+  "name": "Marcher sur les Vagues",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "water-3-marcher-sur-les-vagues",
+    "ring": "water",
+    "masteryRank": 3,
+    "keywords": "Voyage",
+    "range": "Contact",
+    "areaOfEffect": "1 individu cible (peut être le lanceur)",
+    "duration": "10 minutes",
+    "raises": "Durée (+1 minute), Cibles (+1 par Augmentation)",
+    "description": "Les kami de l'Eau soutiennent ceux qui portent leur faveur et leur accordent le passage. La cible de ce sort peut se déplacer sur la surface de l'eau comme s'il s'agissait de terrain solide (Terrain de Base). Si la surface de l'eau est perturbée, par une tempête, des vagues déferlantes, ou tout événement similaire, elle compte comme Terrain Difficile.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "tp8Rf7mZwjWRWqVD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

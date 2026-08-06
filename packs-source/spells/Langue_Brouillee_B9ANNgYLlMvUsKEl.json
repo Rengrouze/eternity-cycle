@@ -1,0 +1,42 @@
+{
+  "_id": "B9ANNgYLlMvUsKEl",
+  "_key": "!items!B9ANNgYLlMvUsKEl",
+  "name": "Langue Brouillée",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-3-langue-brouillee",
+    "ring": "air",
+    "masteryRank": 3,
+    "keywords": "Illusion",
+    "range": "9 m",
+    "areaOfEffect": "2 personnes en conversation (l'une peut être le lanceur)",
+    "duration": "5 minutes",
+    "raises": "Zone d'Effet (+1 personne par 2 Augmentations), Durée (+1 minute par Augmentation)",
+    "description": "Développé à l'origine par les Shugenja Asahina, ce sort s'est répandu chez les Soshi et quelques autres ordres après plusieurs incidents mineurs en cour. Parfois considéré comme un sort déshonorant, il n'est pourtant pas nécessairement destiné à la subterfuge - à l'image de la technique de Cadence des courtisans Grue, il permet la discrétion dans la communication là où elle ne serait normalement pas possible, en s'appuyant sur le caractère joueur des kami d'Air et les subtilités du langage. Le sort fait obscurcir par les kami une conversation entre deux personnes ou plus. Les esprits d'Air créent une seconde couche de discours, entendue par tous sauf les participants réels à la conversation (qui peuvent inclure le lanceur). Bien que les interlocuteurs aient conscience de cette fausse couche, ils entendent clairement la véritable conversation. L'illusion ne peut normalement être percée qu'en lisant sur les lèvres (puisqu'elles ne correspondent pas à la fausse conversation), bien qu'un Shugenja puisse déjouer la supercherie en remportant un jet Contesté de Rang d'École / Air contre le lanceur.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "TDop2U4ELmo4xmf6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

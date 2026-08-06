@@ -1,0 +1,42 @@
+{
+  "_id": "CfoTLB2MjBgNSCoi",
+  "_key": "!items!CfoTLB2MjBgNSCoi",
+  "name": "Murmures des Oubliés",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "key": "air-4-murmures-des-oublies",
+    "ring": "air",
+    "masteryRank": 4,
+    "keywords": "",
+    "range": "15 m",
+    "areaOfEffect": "1 personne cible (peut être le lanceur)",
+    "duration": "5 minutes",
+    "raises": "Portée (+7,5 m par Augmentation), Durée (+1 minute par Augmentation)",
+    "description": "La mémoire des hommes est chose fragile et lointaine, nichée au plus profond de leur esprit, et presque tous les mortels possèdent quelque péché passé, quelque honte qu'ils préféreraient avoir oublié. Ce sort, prisé des Scorpions, fait évoquer par les kami d'Air les souvenirs et visions de crimes passés. Les souvenirs douloureux et constants distraient et angoissent la victime du sort, lui rendant difficile d'accomplir quoi que ce soit. Pendant la durée du sort, elle doit déclarer une Augmentation sans effet sur tout jet de Compétence ou de Lancer de Sort qu'elle effectue (si elle possède 3 points ou plus en Désavantages Mentaux ou Sociaux, elle doit en déclarer 2 à la place). On notera qu'il existe à Rokugan une poignée d'âmes intègres qui n'ont véritablement aucun péché les hantant : ces rares individus sont immunisés aux effets de ce sort - au MJ de juger si une cible donnée est réellement assez noble pour se soustraire aux Murmures des Oubliés. Certains prêtres de nature plus ascétique sont aussi connus pour se lancer ce sort à eux-mêmes, afin de se rappeler leurs échecs passés et la nécessité de l'humilité face à leurs faiblesses humaines.",
+    "damage": {
+      "mode": "none",
+      "ring": "",
+      "rolled": 0,
+      "kept": 0,
+      "note": ""
+    }
+  },
+  "effects": [],
+  "folder": "CwCSFoT4YuESW7Lt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14",
+    "systemId": "l5r4ec",
+    "systemVersion": "0.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}
