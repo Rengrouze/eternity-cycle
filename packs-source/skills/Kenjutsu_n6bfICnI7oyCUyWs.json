@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 3,
-        "description": "Le total de tous les jets de dégâts effectués avec une épée est augmenté de +1k0."
+        "description": "Le total de tous les jets de dégâts effectués avec une épée est augmenté de +1k0.",
+        "trigger": "damageRoll",
+        "rollBonus": 1
       },
       {
         "rankRequired": 5,

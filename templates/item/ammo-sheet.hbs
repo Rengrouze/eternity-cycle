@@ -1,4 +1,5 @@
 <div class="l5r4ec flex flex-col h-full">
+ <fieldset class="contents" {{#if readOnly}}disabled{{/if}}>
   <header class="flex items-center gap-2 p-2 border-b">
     <img src="{{item.img}}" data-action="editImage" data-edit="img"
          class="w-12 h-12 rounded border cursor-pointer object-cover" title="{{localize 'L5R4EC.Sheet.EditImage'}}">
@@ -60,4 +61,5 @@
       <textarea name="system.description" rows="5" class="border rounded px-1 py-0.5 flex-1">{{system.description}}</textarea>
     </label>
   </div>
+ </fieldset>
 </div>

@@ -14,17 +14,19 @@
     "masteryBonuses": [
       {
         "rankRequired": 3,
-        "path": "reputation.rank",
+        "path": "reputation.points",
         "value": 3,
         "description": "+3 Réputation en plus du total normalement indiqué par les Anneaux et rangs de Compétence."
       },
       {
         "rankRequired": 5,
-        "description": "+1k0 sur tous les jets Contestés utilisant Étiquette."
+        "description": "+1k0 sur tous les jets Contestés utilisant Étiquette.",
+        "trigger": "skillRoll",
+        "rollBonus": 1
       },
       {
         "rankRequired": 7,
-        "path": "reputation.rank",
+        "path": "reputation.points",
         "value": 7,
         "description": "+7 Réputation supplémentaires (en plus du bonus de rang 3, soit +10 au total)."
       }

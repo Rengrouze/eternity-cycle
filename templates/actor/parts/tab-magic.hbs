@@ -15,7 +15,7 @@
         <h3 class="text-sm font-l5r-display uppercase tracking-wide mb-1">{{localize this.labelKey}}</h3>
 
         <label class="flex flex-col gap-0.5 text-xs">
-          {{localize "L5R4EC.Affinities"}}
+          {{localize "L5R4EC.Sheet.Affinities"}}
           <select name="system.shugenja.affinities.{{this.key}}" class="border rounded px-1 py-0.5 text-xs">
             {{#each this.affinityOptions}}
               <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
@@ -77,10 +77,12 @@
       {{/if}}
     {{/each}}
 
-    <button type="button" data-action="addSpell"
-            class="mt-1 self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-      <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSpell"}}
-    </button>
+    {{#if isGM}}
+      <button type="button" data-action="addSpell"
+              class="mt-1 self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSpell"}}
+      </button>
+    {{/if}}
   </div>
 
  </div>

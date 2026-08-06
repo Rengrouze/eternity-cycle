@@ -30,11 +30,13 @@ export class MiscItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.system = this.item.system;
     context.qualityOptions = qualityOptionsFor(this.item.system.quality);
     context.isNemuranai = this.item.system.quality === "orange";
+    context.readOnly = this.item.isEmbedded && !game.user.isGM;
     return context;
   }
 
   /** @this {MiscItemSheet} */
   static async #onEditImage(event, target) {
+    if (this.item.isEmbedded && !game.user.isGM) return;
     const attr = target.dataset.edit ?? "img";
     const current = foundry.utils.getProperty(this.item, attr);
     new FilePicker({

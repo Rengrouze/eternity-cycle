@@ -36,20 +36,61 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
       specializations: new StringField({ required: true, blank: true, initial: "" }),
 
       // Capacités de maîtrise : à `rank` donné, affiche `description` dans le
-      // panneau "Capacités de Maîtrise actives" (onglet Combat). Si `path` est
-      // renseigné, `value` est aussi ajouté automatiquement à ce chemin
-      // (relatif à actor.system) - réservé aux bonus qui correspondent à un
-      // stat permanent existant (ex: Réputation). Voir
-      // SystemActor#_applyMasteryBonuses et le commentaire d'en-tête de
-      // default-skills.mjs pour le détail de la convention.
+      // panneau "Capacités de Maîtrise actives" (onglet Combat). `trigger`
+      // détermine SI et OÙ le bonus s'applique automatiquement (voir
+      // SystemActor#_applyMasteryBonuses/#_sumMasteryBonus pour le détail) :
+      // - "passive"        : `value` ajouté en permanence à system[path] (ex:
+      //                      Réputation) - le comportement historique, par défaut.
+      // - "skillRoll"      : rollBonus/keepBonus/flatBonus ajoutés au jet de
+      //                      CETTE Compétence (voir SystemActor#rollSkill).
+      // - "damageRoll"     : rollBonus/keepBonus ajoutés au jet de dégâts
+      //                      d'une Arme dont la Compétence associée porte le
+      //                      nom de cette Compétence (SystemActor#rollAttack).
+      // - "spellRoll"      : rollBonus/keepBonus/flatBonus ajoutés à TOUT jet
+      //                      de Lancer de Sort si cette Compétence (ex: Art
+      //                      de la Magie) atteint le rang requis - voir
+      //                      SystemActor#rollSpell.
+      // - "initiativeRoll" : rollBonus/keepBonus/flatBonus ajoutés au jet
+      //                      d'Initiative - voir module/rules/initiative.mjs
+      //                      (scanne TOUTES les Compétences, pas seulement
+      //                      une associée à un jet précis).
+      // - "armorTnDefense" : flatBonus ajouté au TN d'Armure, mais seulement
+      //                      en posture Défense ou Pleine Défense - voir
+      //                      SystemActor#_computeArmorTN (cas spécifique de
+      //                      la Compétence "Défense").
+      // `dynamicRankBonus` : si vrai, ajoute EN PLUS le rang actuel de CETTE
+      //                      Compétence en flatBonus (ex: Art de la Guerre
+      //                      rang 5 -> "+rang à l'Initiative", une valeur qui
+      //                      grandit avec le rang plutôt qu'un nombre fixe -
+      //                      `value`/`flatBonus` resteraient à 0 dans ce cas).
+      // Un bonus non automatisable pour l'instant (Action Libre au lieu de
+      // Simple, relance gratuite, effet conditionné à l'adversaire/au
+      // terrain/à une statistique d'Arme non modélisée, mécanique de Points
+      // de Vide/Duel/monture non implémentée...) reste en "passive" sans
+      // `path` : juste informatif dans le panneau, comme avant - voir le
+      // commentaire d'en-tête de default-skills.mjs pour le détail complet
+      // de la classification (ce qui est couvert, et pourquoi le reste ne
+      // l'est pas encore).
       // Pas d'UI d'édition pour l'instant (rempli via les données par défaut
-      // ou modifié manuellement) - c'est la base du "système de buff" demandé.
+      // ou modifié manuellement) - "système de buff" demandé, toujours en
+      // construction (voir aussi la règle maison de la Compétence rang 10 -
+      // SystemActor#_freeAugmentBonus - un mécanisme séparé, indépendant de
+      // ce tableau).
       masteryBonuses: new ArrayField(
         new SchemaField({
           rankRequired: new NumberField({ required: true, integer: true, min: 1 }),
           description: new StringField({ required: true, blank: true, initial: "" }),
+          trigger: new StringField({
+            required: true,
+            choices: ["passive", "skillRoll", "damageRoll", "spellRoll", "initiativeRoll", "armorTnDefense"],
+            initial: "passive"
+          }),
           path: new StringField({ required: true, blank: true, initial: "" }),
-          value: new NumberField({ required: true, integer: false, initial: 0 })
+          value: new NumberField({ required: true, integer: false, initial: 0 }),
+          rollBonus: new NumberField({ required: true, integer: true, initial: 0 }),
+          keepBonus: new NumberField({ required: true, integer: true, initial: 0 }),
+          flatBonus: new NumberField({ required: true, integer: true, initial: 0 }),
+          dynamicRankBonus: new BooleanField({ initial: false })
         }),
         { initial: [] }
       ),

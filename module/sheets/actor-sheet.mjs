@@ -5,6 +5,7 @@ const { DialogV2 } = foundry.applications.api;
 import { DEFAULT_ARMORS } from "../data/default-armors.mjs";
 import { DEFAULT_WEAPONS } from "../data/default-weapons.mjs";
 import { DEFAULT_AMMO } from "../data/default-ammo.mjs";
+import { SUBTYPE_SKILL_NAMES } from "../data/default-skills.mjs";
 import { QUALITY_OPTIONS, qualityBadge } from "./mixins/quality.mjs";
 import { AFFINITY_CHOICES, computeMaxLearnableRank, computeSpellTN } from "../rules/spellcasting.mjs";
 import { STANCES, canAttackInStance } from "../rules/stances.mjs";
@@ -20,6 +21,20 @@ const RING_OPTIONS = [
   { key: "water", labelKey: "L5R4EC.Ring.Water" },
   { key: "void", labelKey: "L5R4EC.Ring.Void" }
 ];
+
+/**
+ * Icône + couleur d'accent par Anneau, pour l'onglet Anneaux et Traits
+ * (voir tab-rings.hbs) - couleurs choisies en écho à celles déjà utilisées
+ * pour les postures de combat (le Vide reprend le violet de la posture
+ * Centre, voir module/rules/stances.mjs).
+ */
+const RING_VISUALS = {
+  air: { icon: "fa-solid fa-wind", color: "#0ea5e9" },
+  earth: { icon: "fa-solid fa-mountain", color: "#a16207" },
+  fire: { icon: "fa-solid fa-fire", color: "#dc2626" },
+  water: { icon: "fa-solid fa-droplet", color: "#2563eb" },
+  void: { icon: "fa-solid fa-yin-yang", color: "#7c3aed" }
+};
 
 const AFFINITY_OPTIONS = AFFINITY_CHOICES.map((key) => ({
   key,
@@ -92,6 +107,10 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       addAmmo: CharacterSheet.#onAddAmmo,
       addAmmoPreset: CharacterSheet.#onAddAmmoPreset,
       toggleArmorEquip: CharacterSheet.#onToggleArmorEquip,
+      breakKoku: CharacterSheet.#onBreakKoku,
+      breakBu: CharacterSheet.#onBreakBu,
+      spendMoney: CharacterSheet.#onSpendMoney,
+      resyncSkills: CharacterSheet.#onResyncSkills,
       deleteItem: CharacterSheet.#onDeleteItem,
       toggleTaintVisibility: CharacterSheet.#onToggleTaintVisibility
     }
@@ -167,8 +186,8 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const s = this.actor.system;
     context.ringGroups = [
       { key: "air", labelKey: "L5R4EC.Ring.Air", rank: s.rings.air.rank, traits: [
-        { key: "awa", labelKey: "L5R4EC.Trait.Awareness", value: s.traits.awa },
-        { key: "ref", labelKey: "L5R4EC.Trait.Reflexes", value: s.traits.ref }
+        { key: "ref", labelKey: "L5R4EC.Trait.Reflexes", value: s.traits.ref },
+        { key: "awa", labelKey: "L5R4EC.Trait.Awareness", value: s.traits.awa }
       ] },
       { key: "earth", labelKey: "L5R4EC.Ring.Earth", rank: s.rings.earth.rank, traits: [
         { key: "sta", labelKey: "L5R4EC.Trait.Stamina", value: s.traits.sta },
@@ -179,15 +198,11 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
         { key: "int", labelKey: "L5R4EC.Trait.Intelligence", value: s.traits.int }
       ] },
       { key: "water", labelKey: "L5R4EC.Ring.Water", rank: s.rings.water.rank, traits: [
-        { key: "per", labelKey: "L5R4EC.Trait.Perception", value: s.traits.per },
-        { key: "str", labelKey: "L5R4EC.Trait.Strength", value: s.traits.str }
+        { key: "str", labelKey: "L5R4EC.Trait.Strength", value: s.traits.str },
+        { key: "per", labelKey: "L5R4EC.Trait.Perception", value: s.traits.per }
       ] }
-    ];
-
-    context.enrichedBiography = await foundry.applications.ux.TextEditor.enrichHTML(
-      this.actor.system.details.biography,
-      { secrets: this.actor.isOwner, relativeTo: this.actor }
-    );
+    ].map((ring) => ({ ...ring, ...RING_VISUALS[ring.key] }));
+    context.voidRing = RING_VISUALS.void;
 
     context.skillsByCategory = this._buildSkillsByCategory();
     context.inventory = this._buildInventory();
@@ -232,13 +247,18 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     // (system.wounds.rankIndex, calculé par CharacterDataModel) - précalculés
     // ici plutôt qu'en Handlebars, qui n'a pas d'opérateur arithmétique/ternaire
     // garanti (voir pièges du projet).
-    const woundsColors = ["bg-green-500", "bg-green-500", "bg-yellow-500", "bg-yellow-500", "bg-orange-500", "bg-orange-500", "bg-red-600", "bg-red-800"];
+    const woundsColors = ["bg-green-500", "bg-green-500", "bg-yellow-500", "bg-yellow-500", "bg-orange-500", "bg-orange-500", "bg-red-600", "bg-red-800", "bg-black"];
+
+    const inCombat = this.actor.isInCombat;
+    const stanceLocked = this.actor.isStanceLocked;
 
     return {
       stance,
       stances: STANCES.map((st) => ({ ...st, active: st.key === stance, isFullDefense: st.key === "fullDefense" })),
       canAttack: canAttackInStance(stance),
-      inCombat: this.actor.isInCombat,
+      inCombat,
+      stanceLocked,
+      stanceDisabled: !inCombat || stanceLocked,
       attacks,
       initiativeBonus: s.combat.initiativeBonus,
       fullDefenseBonus: s.combat.fullDefenseBonus,
@@ -283,6 +303,7 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
         id: item.id,
         name: item.name,
         associatedSkill: item.system.associatedSkill,
+        equipped: item.system.equipped,
         quality: badge(item)
       }));
 
@@ -304,6 +325,7 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       ammo,
       equippedArmor: armors.find((a) => a.equipped) ?? null,
       equippedWeapons: weapons.filter((w) => w.equipped),
+      equippedMisc: miscItems.filter((m) => m.equipped),
       armorPresets: DEFAULT_ARMORS.map((a) => ({ key: a.name, name: a.name })),
       weaponPresets: DEFAULT_WEAPONS.map((w) => ({ key: w.name, name: w.name })),
       ammoPresets: DEFAULT_AMMO.map((a) => ({ key: a.name, name: a.name }))
@@ -354,14 +376,31 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
    * reste une simple ligne.
    */
   _buildSkillsByCategory() {
-    const buildRow = (item) => ({
-      id: item.id,
-      subtype: item.system.subtype,
-      rank: item.system.rank,
-      specializations: item.system.specializations,
-      isSchoolSkill: item.system.isSchoolSkill,
-      traitOptions: TRAIT_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === item.system.trait }))
-    });
+    const isGM = game.user.isGM;
+
+    // Compétence à sous-types : recherche par nom (voir SUBTYPE_SKILL_NAMES),
+    // pas un champ stocké sur l'Item - fonctionne même pour une Compétence
+    // déjà créée avant ce champ. Le OU avec un sous-type déjà renseigné garde
+    // le champ visible pour une Compétence homebrew qui en a un, même si son
+    // nom n'est pas dans la liste officielle des 5 du LdB.
+    const hasSubtype = (item) => SUBTYPE_SKILL_NAMES.includes(item.name) || Boolean(item.system.subtype);
+
+    const buildRow = (item) => {
+      const subtyped = hasSubtype(item);
+      return {
+        id: item.id,
+        subtype: item.system.subtype,
+        rank: item.system.rank,
+        specializations: item.system.specializations,
+        isSchoolSkill: item.system.isSchoolSkill,
+        hasSubtype: subtyped,
+        showAddSubtype: isGM && subtyped,
+        // Règle maison : rang 10 -> Augmentation gratuite sur chaque jet
+        // utilisant cette Compétence (voir SystemActor#_freeAugmentBonus).
+        freeAugment: item.system.rank >= 10,
+        traitOptions: TRAIT_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === item.system.trait }))
+      };
+    };
 
     const skills = this.actor.items.filter((i) => i.type === "skill");
 
@@ -378,7 +417,7 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
       const rows = [...byName.entries()].map(([name, items]) => {
         if (items.length === 1) return { isGroup: false, name, ...buildRow(items[0]) };
-        return { isGroup: true, name, entries: items.map(buildRow) };
+        return { isGroup: true, name, showAddSubtype: isGM, entries: items.map(buildRow) };
       });
 
       return { key: category, labelKey: `L5R4EC.SkillCategory.${category}`, skills: rows };
@@ -1008,6 +1047,115 @@ export class CharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
    */
   static async #onToggleArmorEquip(event, target) {
     await this.actor.toggleArmorEquip(target.dataset.itemId);
+  }
+
+  /**
+   * Casse 1 Koku en 5 Bu.
+   * @this {CharacterSheet}
+   */
+  static async #onBreakKoku() {
+    await this.actor.breakKoku();
+  }
+
+  /**
+   * Casse 1 Bu en 10 Zeni.
+   * @this {CharacterSheet}
+   */
+  static async #onBreakBu() {
+    await this.actor.breakBu();
+  }
+
+  /**
+   * "Dépenser" : le MJ déduit directement, un joueur ne peut que poster une
+   * demande de dépense au chat, que le MJ doit valider (voir
+   * SystemActor#spendMoney/#requestSpendMoney) - l'argent n'est éditable
+   * directement par un joueur nulle part sur la fiche.
+   * @this {CharacterSheet}
+   */
+  static async #onSpendMoney() {
+    const result = await CharacterSheet.#promptSpendMoney();
+    if (!result) return;
+
+    if (game.user.isGM) {
+      const ok = await this.actor.spendMoney(result);
+      if (!ok) ui.notifications.warn(game.i18n.format("L5R4EC.Notif.NotEnoughMoney", { name: this.actor.name }));
+    } else {
+      await this.actor.requestSpendMoney(result);
+    }
+  }
+
+  /**
+   * Modale de dépense : montant par dénomination + raison optionnelle.
+   * @returns {Promise<{koku:number, bu:number, zeni:number, reason:string}|null>}
+   */
+  static async #promptSpendMoney() {
+    const content = `
+      <div class="flex flex-col gap-2 p-1 w-64">
+        <label class="flex justify-between items-center gap-2">
+          ${game.i18n.localize("L5R4EC.Sheet.Koku")}
+          <input type="number" name="koku" value="0" min="0" class="w-16 border rounded text-center">
+        </label>
+        <label class="flex justify-between items-center gap-2">
+          ${game.i18n.localize("L5R4EC.Sheet.Bu")}
+          <input type="number" name="bu" value="0" min="0" class="w-16 border rounded text-center">
+        </label>
+        <label class="flex justify-between items-center gap-2">
+          ${game.i18n.localize("L5R4EC.Sheet.Zeni")}
+          <input type="number" name="zeni" value="0" min="0" class="w-16 border rounded text-center">
+        </label>
+        <label class="flex flex-col gap-0.5">
+          ${game.i18n.localize("L5R4EC.Dialog.SpendReason")}
+          <input type="text" name="reason" class="border rounded px-1 py-0.5" placeholder="${game.i18n.localize("L5R4EC.Dialog.OptionalHint")}">
+        </label>
+      </div>`;
+
+    const result = await DialogV2.wait({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.SpendMoneyTitle") },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: "spend",
+          label: game.i18n.localize("L5R4EC.Dialog.SpendMoneyConfirm"),
+          icon: "fa-solid fa-coins",
+          default: true,
+          callback: (event, button) => ({
+            koku: Number(button.form.elements.koku.value) || 0,
+            bu: Number(button.form.elements.bu.value) || 0,
+            zeni: Number(button.form.elements.zeni.value) || 0,
+            reason: button.form.elements.reason.value.trim()
+          })
+        },
+        { action: "cancel", label: game.i18n.localize("L5R4EC.Dialog.Cancel") }
+      ]
+    });
+
+    if (!result || result === "cancel") return null;
+    if (!result.koku && !result.bu && !result.zeni) return null;
+    return result;
+  }
+
+  /**
+   * "Resynchroniser les Compétences" (MJ uniquement) : met à jour les
+   * `masteryBonuses` des Compétences déjà présentes sur ce personnage avec
+   * la version actuelle de default-skills.mjs (voir
+   * SystemActor#resyncSkillMasteryBonuses) - nécessaire pour un personnage
+   * créé avant une mise à jour des données de Compétences par défaut, sinon
+   * il garde une copie figée au moment de sa création.
+   * @this {CharacterSheet}
+   */
+  static async #onResyncSkills() {
+    const confirmed = await DialogV2.confirm({
+      window: { title: game.i18n.localize("L5R4EC.Dialog.ResyncSkillsTitle") },
+      content: `<p>${game.i18n.localize("L5R4EC.Dialog.ResyncSkillsBody")}</p>`,
+      modal: true,
+      rejectClose: false
+    });
+    if (!confirmed) return;
+
+    const count = await this.actor.resyncSkillMasteryBonuses();
+    ui.notifications.info(game.i18n.format("L5R4EC.Notif.SkillsResynced", { count }));
   }
 
   /**

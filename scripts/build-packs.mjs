@@ -226,9 +226,10 @@ const PACKS = [
   {
     name: "skills",
     docs: DEFAULT_SKILLS.map((entry) => {
-      // isWeaponSkill n'est pas un champ de SkillDataModel - c'est une
-      // simple étiquette utilisée pour dériver WEAPON_SKILL_NAMES.
-      const { name, isWeaponSkill: _isWeaponSkill, ...rest } = entry;
+      // isWeaponSkill/hasSubtypes ne sont pas des champs de SkillDataModel -
+      // de simples étiquettes utilisées pour dériver WEAPON_SKILL_NAMES et
+      // SUBTYPE_SKILL_NAMES.
+      const { name, isWeaponSkill: _isWeaponSkill, hasSubtypes: _hasSubtypes, ...rest } = entry;
       const id = stableId(`skill:${name}`);
       const system = {
         category: rest.category,

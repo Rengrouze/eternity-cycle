@@ -11,6 +11,7 @@ import { L5RRollKeep } from "./module/dice/l5r-roll.mjs";
 import { registerSkillSeeding } from "./module/hooks/seed-default-skills.mjs";
 import { registerSystemSettings } from "./module/settings.mjs";
 import { registerDamageChatActions } from "./module/chat/damage-chat-actions.mjs";
+import { registerMoneyRequestActions } from "./module/chat/money-request-actions.mjs";
 import { registerCombatTrackerStanceBadges } from "./module/hooks/combat-tracker-stances.mjs";
 import { registerReactionPhasePrompts } from "./module/hooks/reaction-phase.mjs";
 import { registerInitiativeChatCard } from "./module/hooks/initiative-chat-card.mjs";
@@ -86,6 +87,9 @@ Hooks.once("init", () => {
 
    // ---- Bouton "Lancer les dégâts" sur les cartes de Jet de Sort/Attaque ----
    registerDamageChatActions();
+
+   // ---- Boutons Valider/Refuser sur les demandes de dépense d'argent ----
+   registerMoneyRequestActions();
 
    // ---- Icône de posture par combattant dans le Combat Tracker ----
    registerCombatTrackerStanceBadges();

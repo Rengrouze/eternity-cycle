@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 3,
-        "description": "Les dégâts de toutes les attaques à mains nues sont augmentés de +1k0."
+        "description": "Les dégâts de toutes les attaques à mains nues sont augmentés de +1k0.",
+        "trigger": "damageRoll",
+        "rollBonus": 1
       },
       {
         "rankRequired": 5,
@@ -22,7 +24,9 @@
       },
       {
         "rankRequired": 7,
-        "description": "Les dégâts de toutes les attaques à mains nues sont augmentés de +0k1 supplémentaire (+1k1 au total)."
+        "description": "Les dégâts de toutes les attaques à mains nues sont augmentés de +0k1 supplémentaire (+1k1 au total).",
+        "trigger": "damageRoll",
+        "keepBonus": 1
       }
     ],
     "description": "Le subtil art de plier les vêtements avec les gens à l'intérieur."

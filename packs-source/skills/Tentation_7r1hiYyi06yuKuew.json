@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 5,
-        "description": "+5 sur tous les jets Contestés utilisant Tentation."
+        "description": "+5 sur tous les jets Contestés utilisant Tentation.",
+        "trigger": "skillRoll",
+        "flatBonus": 5
       }
     ],
     "description": "La drague, convaincre quelqu'un par ses désirs (pas forcément sexuels)."

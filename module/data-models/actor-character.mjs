@@ -101,6 +101,18 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
         void: new SchemaField({ spent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }) })
       }),
 
+      // Argent : 3 dénominations distinctes (pas une seule valeur convertie),
+      // parce que la conversion n'est PAS libre dans les deux sens - casser
+      // 1 Koku donne 5 Bu, casser 1 Bu donne 10 Zeni, mais l'inverse est
+      // impossible (voir SystemActor#breakKoku/#breakBu). Éditable directement
+      // par le joueur (pas un Item, ne passe pas par les protections
+      // GM-only de SystemItem).
+      money: new SchemaField({
+        koku: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+        bu: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+        zeni: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
+      }),
+
       // XP : on stocke le total acquis et le total dépensé, la valeur
       // disponible est dérivée (voir prepareDerivedData) pour ne jamais
       // désynchroniser les deux.
@@ -170,6 +182,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
     this.wounds.rankLabelKey = track.rankLabelKey;
     this.wounds.penalty = track.penalty;
     this.wounds.isOut = track.isOut;
+    this.wounds.isDead = track.isDead;
 
     // Emplacements de sorts max = rang de l'Anneau correspondant (voir
     // l'en-tête du champ spellSlots). r.void.rank existe déjà (Anneau de Vide).

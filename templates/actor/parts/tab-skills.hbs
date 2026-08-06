@@ -15,11 +15,13 @@
             <details class="py-1">
               <summary class="cursor-pointer select-none text-sm font-semibold py-0.5 flex items-center gap-2">
                 <span>{{this.name}} <span class="text-xs text-neutral-400">({{this.entries.length}})</span></span>
-                <button type="button" class="flex items-center justify-center w-5 h-5 rounded text-neutral-500 hover:text-l5r-accent"
-                        data-action="addSubtype" data-item-id="{{this.entries.[0].id}}"
-                        title="{{localize 'L5R4EC.Sheet.AddSubtype'}}">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
+                {{#if this.showAddSubtype}}
+                  <button type="button" class="flex items-center justify-center w-5 h-5 rounded text-neutral-500 hover:text-l5r-accent"
+                          data-action="addSubtype" data-item-id="{{this.entries.[0].id}}"
+                          title="{{localize 'L5R4EC.Sheet.AddSubtype'}}">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                {{/if}}
               </summary>
               <div class="flex flex-col gap-1 pl-4 pt-1">
                 {{#each this.entries}}
@@ -37,8 +39,13 @@
                       {{/each}}
                     </select>
 
-                    <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
-                           value="{{this.rank}}" min="0" class="border rounded text-center">
+                    <span class="flex items-center justify-center gap-1">
+                      <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
+                             value="{{this.rank}}" min="0" class="w-full border rounded text-center">
+                      {{#if this.freeAugment}}
+                        <i class="fa-solid fa-star text-amber-500 text-xs shrink-0" title="{{localize 'L5R4EC.Sheet.FreeAugmentHint'}}"></i>
+                      {{/if}}
+                    </span>
 
                     <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
                             data-action="showSkillInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
@@ -63,7 +70,7 @@
           {{else}}
             {{!-- Compétence simple --}}
             <div class="py-1">
-              <div class="grid grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.5rem_1.75rem] gap-2 items-center text-sm">
+              <div class="grid {{#if this.showAddSubtype}}grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.5rem_1.75rem]{{else}}grid-cols-[16px_1fr_5.5rem_2.75rem_1.5rem_1.75rem]{{/if}} gap-2 items-center text-sm">
                 <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.isSchoolSkill"
                        {{#if this.isSchoolSkill}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.SchoolSkill'}}">
 
@@ -75,13 +82,20 @@
                   {{/each}}
                 </select>
 
-                <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
-                       value="{{this.rank}}" min="0" class="border rounded text-center">
+                <span class="flex items-center justify-center gap-1">
+                  <input type="number" data-item-id="{{this.id}}" data-item-field="system.rank"
+                         value="{{this.rank}}" min="0" class="w-full border rounded text-center">
+                  {{#if this.freeAugment}}
+                    <i class="fa-solid fa-star text-amber-500 text-xs shrink-0" title="{{localize 'L5R4EC.Sheet.FreeAugmentHint'}}"></i>
+                  {{/if}}
+                </span>
 
-                <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
-                        data-action="addSubtype" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.AddSubtype'}}">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
+                {{#if this.showAddSubtype}}
+                  <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+                          data-action="addSubtype" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.AddSubtype'}}">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                {{/if}}
 
                 <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
                         data-action="showSkillInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
@@ -95,20 +109,21 @@
                 </button>
               </div>
 
-              {{!-- Le sous-type ne s'affiche que s'il est déjà renseigné : pas besoin
-                   de champ vide inutile pour une compétence qui n'en a pas. --}}
-              {{#if this.subtype}}
-                <div class="pl-4 mt-0.5">
+              {{!-- Sous-type : seulement pour les Compétences qui en ont vraiment
+                   (voir SUBTYPE_SKILL_NAMES) - affiché en permanence pour
+                   celles-là (pas seulement une fois déjà renseigné, sinon la
+                   seule façon d'en donner un premier est "+" (addSubtype), qui
+                   crée une toute nouvelle Compétence au lieu d'éditer
+                   celle-ci). Les autres Compétences n'en ont simplement pas. --}}
+              <div class="pl-4 mt-0.5 flex gap-2">
+                {{#if this.hasSubtype}}
                   <input type="text" data-item-id="{{this.id}}" data-item-field="system.subtype"
                          value="{{this.subtype}}" placeholder="{{localize 'L5R4EC.Sheet.Subtype'}}"
-                         class="w-full text-xs italic border rounded px-1 text-neutral-500">
-                </div>
-              {{/if}}
-
-              <div class="pl-4 mt-0.5">
+                         class="w-1/3 text-xs italic border rounded px-1 text-neutral-500">
+                {{/if}}
                 <input type="text" data-item-id="{{this.id}}" data-item-field="system.specializations"
                        value="{{this.specializations}}" placeholder="{{localize 'L5R4EC.Sheet.Specializations'}}"
-                       class="w-full text-xs border rounded px-1 text-neutral-500">
+                       class="flex-1 text-xs border rounded px-1 text-neutral-500">
               </div>
             </div>
           {{/if}}
@@ -118,9 +133,18 @@
     </details>
   {{/each}}
 
-  <button type="button" data-action="addSkill"
-          class="self-start mt-1 text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-    <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSkill"}}
-  </button>
+  {{#if isGM}}
+    <div class="flex gap-1 mt-1">
+      <button type="button" data-action="addSkill"
+              class="self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddSkill"}}
+      </button>
+      <button type="button" data-action="resyncSkills"
+              class="self-start text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent"
+              title="{{localize 'L5R4EC.Sheet.ResyncSkillsHint'}}">
+        <i class="fa-solid fa-rotate"></i> {{localize "L5R4EC.Sheet.ResyncSkills"}}
+      </button>
+    </div>
+  {{/if}}
  </div>
 </section>

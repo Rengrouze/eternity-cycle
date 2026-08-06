@@ -15,18 +15,79 @@
  * isWeaponSkill : marque les compétences de maniement d'arme (utilisées pour
  *                 associer une Arme à sa Compétence - voir WEAPON_SKILL_NAMES
  *                 ci-dessous et module/data/default-weapons.mjs).
+ * hasSubtypes   : marque les 5 compétences à sous-types du LdB (Art, Jeu,
+ *                 Connaissance, Spectacle, Artisanat) - utilisées pour dériver
+ *                 SUBTYPE_SKILL_NAMES ci-dessous, qui pilote l'affichage du
+ *                 champ Sous-type sur la fiche Acteur (tab-skills.hbs) :
+ *                 recherche par NOM plutôt que via un champ stocké sur
+ *                 l'Item, pour s'appliquer même aux Compétences déjà
+ *                 existantes sur des personnages créés avant ce champ (pas
+ *                 de migration nécessaire). Pas un champ du schéma
+ *                 SkillDataModel - retiré avant projection dans le pack, même
+ *                 traitement que isWeaponSkill (voir scripts/build-packs.mjs).
  *
  * masteryBonuses : capacités de maîtrise débloquées à un rang donné (voir
- * SystemActor#_applyMasteryBonuses). Chaque entrée a toujours une
- * `description` (affichée dans le panneau "Capacités de Maîtrise actives" de
- * l'onglet Combat, que le bonus soit automatisable ou non). Si `path` est
- * renseigné, la valeur est aussi ajoutée automatiquement à system[path] -
- * réservé aux bonus qui correspondent à un stat permanent existant (ex :
- * Réputation). La plupart des capacités de maîtrise L5R 4e sont contextuelles
- * (bonus à un jet précis, Action Libre au lieu de Simple, dégâts d'arme...) :
- * tant que les jets de dégâts et le système d'Actions/Postures ne sont pas
- * implémentés (voir roadmap), ces bonus restent affichés comme rappel dans
- * le panneau mais ne sont PAS injectés automatiquement dans un jet.
+ * SystemActor#_applyMasteryBonuses et item-skill.mjs pour le détail complet
+ * du champ `trigger` : "passive" par défaut (ex: Réputation, ajouté à
+ * system[path]), ou "skillRoll"/"damageRoll"/"spellRoll"/"initiativeRoll"/
+ * "armorTnDefense" pour un bonus injecté automatiquement au moment du jet
+ * concerné. Chaque entrée a toujours une `description` (affichée dans le
+ * panneau "Capacités de Maîtrise actives" de l'onglet Combat, que le bonus
+ * soit automatisé ou non).
+ *
+ * SYSTÈME DE BUFF CONDITIONNEL - passe de classification complète des 44
+ * Compétences (2026-08-06). Seuls les cas SANS AMBIGUÏTÉ (un bonus chiffré,
+ * qui s'applique dès que le jet/contexte concerné a lieu, sans dépendre d'un
+ * état non modélisé par ce système) ont reçu un vrai `trigger` :
+ * - skillRoll  : Courtisan r5, Étiquette r5 (+1k0), Enquête r5, Sincérité r5,
+ *   Intimidation r5, Tentation r5 (+5) - le texte dit "sur les jets
+ *   Contestés utilisant X", appliqué ici à TOUT jet de X (le système n'a pas
+ *   de notion de jet "contesté" séparée) : léger débordement assumé plutôt
+ *   que de ne rien automatiser.
+ * - damageRoll : Kenjutsu r3 (+1k0), Jiujutsu r3/r7 (+1k0 puis +0k1 mains
+ *   nues), Ninjutsu r3/r7 (+1k0 puis +0k1 armes de ninjutsu) - résolu via
+ *   l'Arme utilisée (son associatedSkill doit correspondre au nom de la
+ *   Compétence), voir SystemActor#rollAttack.
+ * - spellRoll  : Art de la Magie r5 (+1k0) - tout jet de Lancer de Sort,
+ *   voir SystemActor#rollSpell.
+ * - initiativeRoll : Art de la Guerre r5 - ajoute son PROPRE rang (pas un
+ *   nombre fixe) via `dynamicRankBonus`, voir module/rules/initiative.mjs.
+ * - armorTnDefense : Défense r5 (+3) - seulement actif en Posture de
+ *   Défense/Pleine Défense, voir SystemActor#_computeArmorTN.
+ *
+ * TOUT LE RESTE reste "passive" sans `path` (juste un rappel dans le
+ * panneau), et ce délibérément - catégories de raisons, avec exemples :
+ * - Économie d'Action (Action Libre au lieu de Simple/Complexe, "confère une
+ *   Relance Gratuite pour...") : pas de système d'Actions/relances à ce jour.
+ *   Ex : Iaijutsu r3, Équitation r3/5/7, Jiujutsu r5, Kenjutsu r5, Lances r7...
+ * - Conditionné à un état NON tracké par ce système (terrain, "premier tour
+ *   d'Escarmouche", cible montée/large, milieu sauvage, main faible...) :
+ *   automatiser serait appliquer le bonus à tort la plupart du temps. Ex :
+ *   Chasse r5, Armes d'Hast r3/r5, Lances r3, Couteaux r3, Bâton r3.
+ * - Modifie une statistique d'ARME (portée, Force de l'arc, seuil
+ *   d'explosion des dés) plutôt qu'un jet : forme d'effet pas encore
+ *   supportée par masteryBonuses (rollBonus/keepBonus/flatBonus seulement).
+ *   Ex : Kyujutsu r5/r7, Kenjutsu r7, Armes Lourdes r7, Bâton r7.
+ * - Modifie une STAT DE L'ADVERSAIRE (Réduction, TN de détection) plutôt que
+ *   notre propre jet : aucun flux d'application de dégâts/résolution
+ *   d'attaque automatisé sur la cible n'existe. Ex : Armes Lourdes r3,
+ *   Contrefaçon r3/r7.
+ * - Mécanique de jeu non implémentée (Points de Vide, Duels d'Iaijutsu,
+ *   dressage d'animaux, prix du marché, TN de création d'un déguisement...).
+ *   Ex : Divination r5, Méditation r3/5/7, Cérémonie du Thé r5, Iaijutsu
+ *   r5/r7, Élevage r3/5/7, Commerce r5, Comédie r3/5/7.
+ * - Ambigu sur QUEL jet précis est concerné (Contrefaçon r5 "+1k0 pour
+ *   détecter un faux d'autrui" pourrait viser Contrefaçon ou Enquête selon
+ *   la table) : pas classé plutôt que de deviner à tort. Ex : Contrefaçon r5.
+ * Rien de tout ça n'est perdu : chaque `description` reste affichée dans le
+ * panneau comme rappel manuel. Une passe future pourra étendre `trigger`
+ * (ex: un effet "weaponStat", "explodeOn", ou un flux de dégâts appliqués à
+ * la cible) pour couvrir plus de ces cas.
+ *
+ * RÈGLE MAISON séparée (pas dans ce tableau) : une Compétence au rang 10
+ * confère une Augmentation gratuite (+5 flat) sur chaque jet qui l'utilise -
+ * voir SystemActor#_freeAugmentBonus, appliqué automatiquement dès que le
+ * rang atteint 10, sans donnée à renseigner ici.
  */
 export const DEFAULT_SKILLS = [
   // ============ Compétences Nobles ============
@@ -41,7 +102,7 @@ export const DEFAULT_SKILLS = [
       { rankRequired: 7, description: "Le TN pour créer un déguisement est réduit de 15 (total)." }
     ]
   },
-  { name: "Art", category: "noble", trait: "int", description: "Faire littéralement de l'art (peinture, musique, poésie...). Compétence à sous-types." },
+  { name: "Art", category: "noble", trait: "int", description: "Faire littéralement de l'art (peinture, musique, poésie...). Compétence à sous-types.", hasSubtypes: true },
   {
     name: "Calligraphie",
     category: "noble",
@@ -57,9 +118,9 @@ export const DEFAULT_SKILLS = [
     trait: "awa",
     description: "Convaincre, manipuler ; compétence utilisée dans de nombreuses techniques de courtisan.",
     masteryBonuses: [
-      { rankRequired: 3, path: "reputation.rank", value: 3, description: "+3 Réputation en plus du total normalement indiqué par les Anneaux et rangs de Compétence." },
-      { rankRequired: 5, description: "+1k0 sur tous les jets Contestés utilisant Courtisan." },
-      { rankRequired: 7, path: "reputation.rank", value: 7, description: "+7 Réputation supplémentaires (en plus du bonus de rang 3, soit +10 au total)." }
+      { rankRequired: 3, path: "reputation.points", value: 3, description: "+3 Réputation en plus du total normalement indiqué par les Anneaux et rangs de Compétence." },
+      { rankRequired: 5, description: "+1k0 sur tous les jets Contestés utilisant Courtisan.", trigger: "skillRoll", rollBonus: 1 },
+      { rankRequired: 7, path: "reputation.points", value: 7, description: "+7 Réputation supplémentaires (en plus du bonus de rang 3, soit +10 au total)." }
     ]
   },
   {
@@ -77,12 +138,12 @@ export const DEFAULT_SKILLS = [
     trait: "awa",
     description: "L'art de bien se comporter en société ; compétence de \"défense\" contre la courtisanerie.",
     masteryBonuses: [
-      { rankRequired: 3, path: "reputation.rank", value: 3, description: "+3 Réputation en plus du total normalement indiqué par les Anneaux et rangs de Compétence." },
-      { rankRequired: 5, description: "+1k0 sur tous les jets Contestés utilisant Étiquette." },
-      { rankRequired: 7, path: "reputation.rank", value: 7, description: "+7 Réputation supplémentaires (en plus du bonus de rang 3, soit +10 au total)." }
+      { rankRequired: 3, path: "reputation.points", value: 3, description: "+3 Réputation en plus du total normalement indiqué par les Anneaux et rangs de Compétence." },
+      { rankRequired: 5, description: "+1k0 sur tous les jets Contestés utilisant Étiquette.", trigger: "skillRoll", rollBonus: 1 },
+      { rankRequired: 7, path: "reputation.points", value: 7, description: "+7 Réputation supplémentaires (en plus du bonus de rang 3, soit +10 au total)." }
     ]
   },
-  { name: "Jeu", category: "noble", trait: "awa", description: "Jouer à des jeux (ex : Mahjong). Compétence à sous-types." },
+  { name: "Jeu", category: "noble", trait: "awa", description: "Jouer à des jeux (ex : Mahjong). Compétence à sous-types.", hasSubtypes: true },
   {
     name: "Enquête",
     category: "noble",
@@ -90,11 +151,11 @@ export const DEFAULT_SKILLS = [
     description: "L'enquête littéralement : observer, interroger, fouiller.",
     masteryBonuses: [
       { rankRequired: 3, description: "Un second essai avec l'emphase Recherche peut être tenté sans augmentation du TN initial." },
-      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Enquête." },
+      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Enquête.", trigger: "skillRoll", flatBonus: 5 },
       { rankRequired: 7, description: "Un troisième essai avec l'emphase Recherche peut être tenté même si le second échoue." }
     ]
   },
-  { name: "Connaissance", category: "noble", trait: "int", description: "Capacité à se souvenir de quelque chose dans un domaine précis. Compétence à sous-types (ex : Dragons, Shugenja, Alchimie...)." },
+  { name: "Connaissance", category: "noble", trait: "int", description: "Capacité à se souvenir de quelque chose dans un domaine précis. Compétence à sous-types (ex : Dragons, Shugenja, Alchimie...).", hasSubtypes: true },
   {
     name: "Médecine",
     category: "noble",
@@ -115,14 +176,14 @@ export const DEFAULT_SKILLS = [
       { rankRequired: 7, description: "Un jet de Méditation réussi restaure jusqu'à 3 Points de Vide." }
     ]
   },
-  { name: "Spectacle", category: "noble", trait: "agi", description: "Danse, chant, art du conteur... Compétence à sous-types." },
+  { name: "Spectacle", category: "noble", trait: "agi", description: "Danse, chant, art du conteur... Compétence à sous-types.", hasSubtypes: true },
   {
     name: "Sincérité",
     category: "noble",
     trait: "awa",
     description: "Utilisée quand quelqu'un cherche à savoir si on ment.",
     masteryBonuses: [
-      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Sincérité." }
+      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Sincérité.", trigger: "skillRoll", flatBonus: 5 }
     ]
   },
   {
@@ -131,7 +192,7 @@ export const DEFAULT_SKILLS = [
     trait: "int",
     description: "L'art de converser avec les Kami.",
     masteryBonuses: [
-      { rankRequired: 5, description: "+1k0 sur les jets d'invocation (Spell Casting)." }
+      { rankRequired: 5, description: "+1k0 sur les jets d'invocation (Spell Casting).", trigger: "spellRoll", rollBonus: 1 }
     ]
   },
   {
@@ -162,7 +223,7 @@ export const DEFAULT_SKILLS = [
     trait: "per",
     description: "Analyse stratégique, maîtrise d'un champ de bataille, transmission d'ordres pendant une bataille, conviction des soldats.",
     masteryBonuses: [
-      { rankRequired: 5, description: "Ajoute son rang en Art de la Guerre à son score d'Initiative lors d'Escarmouches." }
+      { rankRequired: 5, description: "Ajoute son rang en Art de la Guerre à son score d'Initiative lors d'Escarmouches.", trigger: "initiativeRoll", dynamicRankBonus: true }
     ]
   },
   {
@@ -172,7 +233,7 @@ export const DEFAULT_SKILLS = [
     description: "Littéralement la capacité de se défendre.",
     masteryBonuses: [
       { rankRequired: 3, description: "Peut conserver le résultat d'un jet de Défense précédent plutôt que d'en refaire un tant que la Posture de Pleine Défense est maintenue." },
-      { rankRequired: 5, description: "Le TN d'Armure est considéré supérieur de 3 en Posture de Défense et de Pleine Défense." },
+      { rankRequired: 5, description: "Le TN d'Armure est considéré supérieur de 3 en Posture de Défense et de Pleine Défense.", trigger: "armorTnDefense", flatBonus: 3 },
       { rankRequired: 7, description: "Une Action Simple peut être effectuée en Posture de Pleine Défense (aucune attaque)." }
     ]
   },
@@ -213,9 +274,9 @@ export const DEFAULT_SKILLS = [
     trait: "agi",
     description: "Le subtil art de plier les vêtements avec les gens à l'intérieur.",
     masteryBonuses: [
-      { rankRequired: 3, description: "Les dégâts de toutes les attaques à mains nues sont augmentés de +1k0." },
+      { rankRequired: 3, description: "Les dégâts de toutes les attaques à mains nues sont augmentés de +1k0.", trigger: "damageRoll", rollBonus: 1 },
       { rankRequired: 5, description: "L'usage de Jiujutsu confère une Relance Gratuite pour initier un corps-à-corps (Grapple)." },
-      { rankRequired: 7, description: "Les dégâts de toutes les attaques à mains nues sont augmentés de +0k1 supplémentaire (+1k1 au total)." }
+      { rankRequired: 7, description: "Les dégâts de toutes les attaques à mains nues sont augmentés de +0k1 supplémentaire (+1k1 au total).", trigger: "damageRoll", keepBonus: 1 }
     ]
   },
   {
@@ -249,7 +310,7 @@ export const DEFAULT_SKILLS = [
     description: "Les épées.",
     isWeaponSkill: true,
     masteryBonuses: [
-      { rankRequired: 3, description: "Le total de tous les jets de dégâts effectués avec une épée est augmenté de +1k0." },
+      { rankRequired: 3, description: "Le total de tous les jets de dégâts effectués avec une épée est augmenté de +1k0.", trigger: "damageRoll", rollBonus: 1 },
       { rankRequired: 5, description: "Une épée peut être dégainée en Action Libre (au lieu de Simple)." },
       { rankRequired: 7, description: "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une épée." }
     ]
@@ -285,9 +346,9 @@ export const DEFAULT_SKILLS = [
     description: "Le matériel de ninja.",
     isWeaponSkill: true,
     masteryBonuses: [
-      { rankRequired: 3, description: "Les dégâts de toutes les armes de ninjutsu sont augmentés de +1k0." },
+      { rankRequired: 3, description: "Les dégâts de toutes les armes de ninjutsu sont augmentés de +1k0.", trigger: "damageRoll", rollBonus: 1 },
       { rankRequired: 5, description: "Les dés de dégâts des armes de ninjutsu explosent normalement (elles n'explosent pas par défaut)." },
-      { rankRequired: 7, description: "Les dégâts de toutes les armes de ninjutsu sont augmentés de +0k1 supplémentaire (+1k1 au total)." }
+      { rankRequired: 7, description: "Les dégâts de toutes les armes de ninjutsu sont augmentés de +0k1 supplémentaire (+1k1 au total).", trigger: "damageRoll", keepBonus: 1 }
     ]
   },
   {
@@ -380,7 +441,7 @@ export const DEFAULT_SKILLS = [
       { rankRequired: 5, description: "Peut augmenter ou diminuer le prix d'un objet acheté ou vendu de 20% au maximum." }
     ]
   },
-  { name: "Artisanat", category: "merchant", trait: "int", description: "L'art de fabriquer des objets. Compétence à sous-types (ex : Forge, Poterie...)." },
+  { name: "Artisanat", category: "merchant", trait: "int", description: "L'art de fabriquer des objets. Compétence à sous-types (ex : Forge, Poterie...).", hasSubtypes: true },
   {
     name: "Ingénierie",
     category: "merchant",
@@ -418,7 +479,7 @@ export const DEFAULT_SKILLS = [
     trait: "wil",
     description: "Menacer, faire du chantage.",
     masteryBonuses: [
-      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Intimidation." }
+      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Intimidation.", trigger: "skillRoll", flatBonus: 5 }
     ]
   },
   {
@@ -447,7 +508,7 @@ export const DEFAULT_SKILLS = [
     trait: "awa",
     description: "La drague, convaincre quelqu'un par ses désirs (pas forcément sexuels).",
     masteryBonuses: [
-      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Tentation." }
+      { rankRequired: 5, description: "+5 sur tous les jets Contestés utilisant Tentation.", trigger: "skillRoll", flatBonus: 5 }
     ]
   }
 ];
@@ -458,3 +519,10 @@ export const DEFAULT_SKILLS = [
  * création d'une Arme plutôt que de ressaisir le nom en texte libre.
  */
 export const WEAPON_SKILL_NAMES = DEFAULT_SKILLS.filter((s) => s.isWeaponSkill).map((s) => s.name);
+
+/**
+ * Noms des compétences à sous-types (voir hasSubtypes ci-dessus) - pilote
+ * l'affichage du champ Sous-type sur la fiche Acteur, par nom plutôt que par
+ * un champ stocké sur l'Item.
+ */
+export const SUBTYPE_SKILL_NAMES = DEFAULT_SKILLS.filter((s) => s.hasSubtypes).map((s) => s.name);

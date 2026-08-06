@@ -1,6 +1,8 @@
 <section class="tab {{tabs.bio.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.bio.id}}" data-group="{{tabs.bio.group}}">
+ <div class="flex flex-col h-full">
   <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Details.Biography"}}</h2>
-  <div class="editor-content min-h-48 border rounded p-2" data-field="system.details.biography">
-    {{{enrichedBiography}}}
-  </div>
+  <textarea name="system.details.biography" rows="20"
+            class="flex-1 min-h-48 border rounded p-2 text-sm font-mono resize-none"
+            placeholder="{{localize 'L5R4EC.Details.BiographyHint'}}">{{system.details.biography}}</textarea>
+ </div>
 </section>

@@ -16,7 +16,14 @@ import { normalizeRollKeep } from "../dice/roll-keep-math.mjs";
  * Factorisée ici pour être utilisée à la fois par SystemActor#rollInitiative
  * (bouton manuel sur la fiche, hors combat ou pour un jet libre) et
  * SystemCombatant#getInitiativeRoll (intégration native au Combat Tracker de
- * Foundry) - une seule source de vérité pour la formule.
+ * Foundry) - une seule source de vérité pour la formule, y compris pour les
+ * bonus de maîtrise "initiativeRoll" (voir item-skill.mjs) : contrairement à
+ * "skillRoll"/"damageRoll" (liés à UNE Compétence précise en train d'être
+ * utilisée), l'Initiative n'est associée à aucune Compétence par nature -
+ * on scanne donc TOUTES les Compétences du personnage à la recherche d'un
+ * tel bonus (ex: Art de la Guerre rang 5 -> ajoute son propre rang, via
+ * `dynamicRankBonus` - une valeur qui grandit avec le rang plutôt qu'un
+ * nombre fixe).
  * @param {Actor} actor
  * @returns {{rolled: number, keep: number, flatBonus: number, explode: boolean, explodeOn: number, rerollOnes: boolean}}
  */
@@ -25,10 +32,25 @@ export function buildInitiativeRollConfig(actor) {
   const ref = actor.system.traits.ref;
   const { rolled, keep, flatBonus } = normalizeRollKeep(rank + ref, ref);
 
+  let bonusRolled = 0;
+  let bonusKeep = 0;
+  let bonusFlat = 0;
+  for (const item of actor.items) {
+    if (item.type !== "skill") continue;
+    for (const bonus of item.system.masteryBonuses ?? []) {
+      if (bonus.trigger !== "initiativeRoll") continue;
+      if (item.system.rank < bonus.rankRequired) continue;
+      bonusRolled += bonus.rollBonus ?? 0;
+      bonusKeep += bonus.keepBonus ?? 0;
+      bonusFlat += bonus.flatBonus ?? 0;
+      if (bonus.dynamicRankBonus) bonusFlat += item.system.rank;
+    }
+  }
+
   return {
-    rolled,
-    keep,
-    flatBonus: flatBonus + (actor.system.combat?.initiativeBonus ?? 0),
+    rolled: rolled + bonusRolled,
+    keep: keep + bonusKeep,
+    flatBonus: flatBonus + bonusFlat + (actor.system.combat?.initiativeBonus ?? 0),
     explode: true,
     explodeOn: 10,
     rerollOnes: false

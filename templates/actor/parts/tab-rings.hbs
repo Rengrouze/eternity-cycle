@@ -1,11 +1,17 @@
 <section class="tab {{tabs.rings.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.rings.id}}" data-group="{{tabs.rings.group}}">
-  <div class="grid grid-cols-3 gap-2">
+ <div class="flex flex-col gap-2">
 
+  {{!-- 4 Anneaux élémentaires : toujours la même paire de Traits (physique en
+       haut, mental en bas), donc une grille fixe plutôt qu'un flux qui bouge. --}}
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
     {{#each ringGroups}}
-      <div class="border rounded p-2 flex flex-col gap-1">
+      <div class="border rounded-lg p-2 flex flex-col gap-1" style="border-top: 3px solid {{this.color}}">
         <h3 class="flex justify-between items-center font-semibold">
-          {{localize this.labelKey}}
-          <span class="flex items-center gap-1">
+          <span class="flex items-center gap-1.5 min-w-0">
+            <i class="{{this.icon}} text-sm shrink-0" style="color: {{this.color}}"></i>
+            <span class="truncate">{{localize this.labelKey}}</span>
+          </span>
+          <span class="flex items-center gap-1 shrink-0">
             <span class="text-l5r-accent font-bold">{{this.rank}}</span>
             <button type="button"
                     class="w-6 h-6 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
@@ -32,25 +38,28 @@
         {{/each}}
       </div>
     {{/each}}
-
-    {{!-- Vide : rang manuel, hors boucle car pas de Traits associés --}}
-    <div class="border rounded p-2 flex flex-col gap-1 bg-black/5">
-      <h3 class="flex justify-between items-center font-semibold">
-        {{localize "L5R4EC.Ring.Void"}}
-        <button type="button"
-                class="w-6 h-6 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
-                data-action="rollRing" data-ring="void"
-                title="{{localize 'L5R4EC.Sheet.RingRoll'}}">
-          <i class="fa-solid fa-dice-d10 text-xs"></i>
-        </button>
-      </h3>
-      <label class="flex justify-between items-center text-sm">{{localize "L5R4EC.Sheet.Rank"}}
-        <input type="number" name="system.rings.void.rank" value="{{system.rings.void.rank}}" min="0" class="w-12 border rounded text-center">
-      </label>
-      <label class="flex justify-between items-center text-sm">{{localize "L5R4EC.Sheet.VoidPoints"}}
-        <input type="number" name="system.rings.void.points" value="{{system.rings.void.points}}" min="0" class="w-12 border rounded text-center">
-      </label>
-    </div>
-
   </div>
+
+  {{!-- Vide : 5ème Anneau, pas de paire de Traits associée - mis à part
+       visuellement (ligne pleine largeur) plutôt que forcé dans la grille des 4. --}}
+  <div class="border rounded-lg p-2 flex flex-wrap items-center gap-x-6 gap-y-1 bg-black/5" style="border-top: 3px solid {{voidRing.color}}">
+    <h3 class="flex items-center gap-1.5 font-semibold">
+      <i class="{{voidRing.icon}} text-sm" style="color: {{voidRing.color}}"></i>
+      {{localize "L5R4EC.Ring.Void"}}
+    </h3>
+    <button type="button"
+            class="w-6 h-6 flex items-center justify-center rounded bg-l5r-accent text-white hover:bg-l5r-accent-light"
+            data-action="rollRing" data-ring="void"
+            title="{{localize 'L5R4EC.Sheet.RingRoll'}}">
+      <i class="fa-solid fa-dice-d10 text-xs"></i>
+    </button>
+    <label class="flex items-center gap-2 text-sm">{{localize "L5R4EC.Sheet.Rank"}}
+      <input type="number" name="system.rings.void.rank" value="{{system.rings.void.rank}}" min="0" class="w-12 border rounded text-center">
+    </label>
+    <label class="flex items-center gap-2 text-sm">{{localize "L5R4EC.Sheet.VoidPoints"}}
+      <input type="number" name="system.rings.void.points" value="{{system.rings.void.points}}" min="0" class="w-12 border rounded text-center">
+    </label>
+  </div>
+
+ </div>
 </section>

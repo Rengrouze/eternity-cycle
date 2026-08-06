@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 5,
-        "description": "Ajoute son rang en Art de la Guerre à son score d'Initiative lors d'Escarmouches."
+        "description": "Ajoute son rang en Art de la Guerre à son score d'Initiative lors d'Escarmouches.",
+        "trigger": "initiativeRoll",
+        "dynamicRankBonus": true
       }
     ],
     "description": "Analyse stratégique, maîtrise d'un champ de bataille, transmission d'ordres pendant une bataille, conviction des soldats."

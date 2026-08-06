@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 5,
-        "description": "+5 sur tous les jets Contestés utilisant Sincérité."
+        "description": "+5 sur tous les jets Contestés utilisant Sincérité.",
+        "trigger": "skillRoll",
+        "flatBonus": 5
       }
     ],
     "description": "Utilisée quand quelqu'un cherche à savoir si on ment."

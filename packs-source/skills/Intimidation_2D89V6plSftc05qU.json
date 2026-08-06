@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 5,
-        "description": "+5 sur tous les jets Contestés utilisant Intimidation."
+        "description": "+5 sur tous les jets Contestés utilisant Intimidation.",
+        "trigger": "skillRoll",
+        "flatBonus": 5
       }
     ],
     "description": "Menacer, faire du chantage."

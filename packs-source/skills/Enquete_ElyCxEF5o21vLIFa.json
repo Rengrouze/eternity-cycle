@@ -18,7 +18,9 @@
       },
       {
         "rankRequired": 5,
-        "description": "+5 sur tous les jets Contestés utilisant Enquête."
+        "description": "+5 sur tous les jets Contestés utilisant Enquête.",
+        "trigger": "skillRoll",
+        "flatBonus": 5
       },
       {
         "rankRequired": 7,

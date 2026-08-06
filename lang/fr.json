@@ -35,6 +35,8 @@
       "NoDescription": "Pas de description.",
       "Category": "Catégorie",
       "AddSkill": "Ajouter une compétence",
+      "ResyncSkills": "Resynchroniser",
+      "ResyncSkillsHint": "Met à jour les capacités de maîtrise des Compétences déjà sur cette fiche avec la dernière version des données du système (utile pour un personnage créé avant une mise à jour).",
       "AddSubtype": "Ajouter un sous-type",
       "ItemName": "Nom",
       "AssociatedSkill": "Compétence liée",
@@ -56,6 +58,16 @@
       "AddWeapon": "Ajouter une arme",
       "AddMisc": "Ajouter un objet",
       "CustomArmor": "Armure personnalisée",
+      "Money": "Bourse",
+      "Koku": "Koku",
+      "Bu": "Bu",
+      "Zeni": "Zeni",
+      "BreakKoku": "Casser 1 Koku",
+      "BreakKokuHint": "Convertit 1 Koku en 5 Bu (irréversible)",
+      "BreakBu": "Casser 1 Bu",
+      "BreakBuHint": "Convertit 1 Bu en 10 Zeni (irréversible)",
+      "SpendMoney": "Dépenser",
+      "SpendMoneyHint": "Le MJ déduit directement ; un joueur envoie une demande à valider par le MJ.",
       "Ammo": "Munitions",
       "AddAmmo": "Ajouter une munition",
       "Quantity": "Quantité",
@@ -75,6 +87,13 @@
       "Buffs": "Capacités de Maîtrise actives",
       "NoBuffs": "Aucune capacité de maîtrise active pour l'instant - augmente le rang d'une Compétence pour en débloquer.",
       "BuffManual": "non automatisé - à appliquer manuellement",
+      "BuffEffectThisRoll": "sur ce jet",
+      "BuffEffectDamage": "aux dégâts",
+      "BuffEffectSpellCasting": "au Lancer de Sort",
+      "BuffEffectInitiative": "à l'Initiative",
+      "BuffEffectArmorTn": "au TN d'Armure",
+      "BuffOwnRank": "Rang",
+      "FreeAugmentHint": "Rang 10 : Augmentation gratuite sur chaque jet de cette Compétence (+5 automatique).",
       "SpellRoll": "Jet de Sort",
       "SpellRange": "Portée",
       "AreaOfEffect": "Zone d'Effet",
@@ -112,7 +131,8 @@
       "AssociatedSkillMissing": "Compétence introuvable sur la fiche - jet d'Agilité seule",
       "ArmorTnFromStance": "posture",
       "CannotAttackInStance": "Impossible d'attaquer dans cette posture",
-      "StanceNotInCombatHint": "Rejoins un combat actif (Combat Tracker) pour pouvoir changer de posture."
+      "StanceNotInCombatHint": "Rejoins un combat actif (Combat Tracker) pour pouvoir changer de posture.",
+      "StanceLockedHint": "Posture déjà déclarée pour ce round - attends la prochaine Phase de Réaction pour en changer."
     },
     "Header": {
       "XPTotal": "XP total",
@@ -156,22 +176,29 @@
       "Injured": "Gravement Blessé",
       "Crippled": "Impotent",
       "Down": "Épuisé",
-      "Out": "Hors de Combat"
+      "Out": "Hors de Combat",
+      "Dead": "Mort"
     },
     "Settings": {
       "LethalityName": "Létalité",
       "LethalityHint": "Détermine la taille des rangs de blessure (Terre x Létalité par rang, au-delà d'Indemne).",
-      "LethalityEarth2": "Terre 2 (peu létal)",
+      "LethalityEarth2": "Terre 2 (très létal - petits rangs de blessure)",
       "LethalityEarth3": "Terre 3 (standard)",
-      "LethalityEarth4": "Terre 4",
-      "LethalityEarth5": "Terre 5 (très létal)"
+      "LethalityEarth4": "Terre 4 (peu létal)",
+      "LethalityEarth5": "Terre 5 (très peu létal - grands rangs de blessure)"
     },
     "Notif": {
       "CharacterOut": "{name} est Hors de Combat - ce jet est probablement injustifié.",
       "NoSpellSlot": "{name} : aucun emplacement de sort disponible dans cet Anneau ou en Vide (le MJ peut autoriser un dépassement).",
       "CannotAttackInStance": "{name} : impossible d'attaquer en posture {stance}.",
       "NoWeaponSkill": "Compétence \"{skill}\" introuvable sur la fiche - jet d'Agilité seule.",
-      "NotInCombat": "{name} : rejoins un combat actif pour changer de posture."
+      "NotInCombat": "{name} : rejoins un combat actif pour changer de posture.",
+      "StanceAlreadyDeclared": "{name} : posture déjà déclarée pour ce round - attends la prochaine Phase de Réaction.",
+      "CharacterDead": "{name} est Mort - ce jet est probablement injustifié.",
+      "NotEnoughMoney": "{name} : fonds insuffisants pour cette dépense.",
+      "SkillsResynced": "{count} Compétence(s) mise(s) à jour.",
+      "MoneyRequestApproved": "Le MJ a validé ta dépense ({amount}).",
+      "MoneyRequestRejected": "Le MJ a refusé ta dépense ({amount})."
     },
     "Stance": {
       "Attack": "Attaque",
@@ -231,7 +258,12 @@
       "ConfirmStanceTitle": "Confirmer la posture",
       "ConfirmStanceBody": "Déclarer la posture <strong>{stance}</strong> pour ce round ?",
       "ReactionPhaseTitle": "Phase de Réaction - {name}",
-      "ReactionPhaseBody": "Choisis ta posture pour le round {round}."
+      "ReactionPhaseBody": "Choisis ta posture pour le round {round}.",
+      "SpendMoneyTitle": "Dépenser de l'argent",
+      "ResyncSkillsTitle": "Resynchroniser les Compétences",
+      "ResyncSkillsBody": "Met à jour les capacités de maîtrise (bonus) des Compétences déjà sur cette fiche avec la dernière version des données du système. Le rang, les sous-types et les spécialisations ne sont pas touchés. Continuer ?",
+      "SpendMoneyConfirm": "Dépenser",
+      "SpendReason": "Raison"
     },
     "Chat": {
       "FlatBonus": "Bonus fixe",
@@ -246,7 +278,12 @@
       "Targets": "Cible(s)",
       "RollDamage": "Lancer les dégâts",
       "DamageNote": "Note",
-      "Target": "Cible"
+      "Target": "Cible",
+      "MoneyRequestTitle": "Demande de dépense",
+      "Approve": "Valider",
+      "Reject": "Refuser",
+      "Approved": "Validé",
+      "Rejected": "Refusé"
     },
     "Ring": {
       "Air": "Air",
@@ -270,7 +307,8 @@
       "Clan": "Clan",
       "Family": "Famille",
       "School": "École",
-      "Biography": "Historique"
+      "Biography": "Historique",
+      "BiographyHint": "Bloc-notes libre - note ce que tu souhaites (historique, objectifs, notes de jeu...)."
     }
   }
 }

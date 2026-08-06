@@ -18,7 +18,9 @@
       },
       {
         "rankRequired": 5,
-        "description": "Le TN d'Armure est considéré supérieur de 3 en Posture de Défense et de Pleine Défense."
+        "description": "Le TN d'Armure est considéré supérieur de 3 en Posture de Défense et de Pleine Défense.",
+        "trigger": "armorTnDefense",
+        "flatBonus": 3
       },
       {
         "rankRequired": 7,

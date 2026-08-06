@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 5,
-        "description": "+1k0 sur les jets d'invocation (Spell Casting)."
+        "description": "+1k0 sur les jets d'invocation (Spell Casting).",
+        "trigger": "spellRoll",
+        "rollBonus": 1
       }
     ],
     "description": "L'art de converser avec les Kami."

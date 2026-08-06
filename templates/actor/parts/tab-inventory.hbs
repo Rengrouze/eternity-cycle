@@ -20,7 +20,70 @@
         <span class="text-neutral-400">{{localize "L5R4EC.Sheet.None"}}</span>
       {{/if}}
     </div>
+    <div class="text-sm mt-1">
+      <strong>{{localize "L5R4EC.Sheet.MiscItems"}} :</strong>
+      {{#if inventory.equippedMisc.length}}
+        {{#each inventory.equippedMisc}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}
+      {{else}}
+        <span class="text-neutral-400">{{localize "L5R4EC.Sheet.None"}}</span>
+      {{/if}}
+    </div>
   </div>
+
+  {{!-- Bourse : Koku/Bu/Zeni, 1 Koku = 5 Bu = 50 Zeni. Montants éditables
+       uniquement par le MJ (comme Honneur/Gloire/Statut) - un joueur ne peut
+       que demander à dépenser, validé par le MJ (voir
+       SystemActor#spendMoney/#requestSpendMoney), MAIS peut casser ses
+       propres pièces librement (ne change pas la valeur totale). --}}
+  <details open class="border rounded">
+    <summary class="cursor-pointer select-none px-2 py-1 font-l5r-display text-sm uppercase tracking-wide bg-black/5">
+      {{localize "L5R4EC.Sheet.Money"}}
+    </summary>
+    <div class="flex flex-wrap items-end gap-4 p-2">
+      <label class="flex flex-col gap-0.5 text-sm">
+        {{localize "L5R4EC.Sheet.Koku"}}
+        {{#if isGM}}
+          <input type="number" name="system.money.koku" value="{{system.money.koku}}" min="0" class="w-20 border rounded text-center">
+        {{else}}
+          <span class="w-20 text-center font-bold">{{system.money.koku}}</span>
+        {{/if}}
+      </label>
+      <button type="button" data-action="breakKoku" {{#unless system.money.koku}}disabled{{/unless}}
+              class="text-xs px-2 py-1 mb-0.5 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent disabled:opacity-30 disabled:cursor-not-allowed"
+              title="{{localize 'L5R4EC.Sheet.BreakKokuHint'}}">
+        <i class="fa-solid fa-arrow-right"></i> {{localize "L5R4EC.Sheet.BreakKoku"}}
+      </button>
+
+      <label class="flex flex-col gap-0.5 text-sm">
+        {{localize "L5R4EC.Sheet.Bu"}}
+        {{#if isGM}}
+          <input type="number" name="system.money.bu" value="{{system.money.bu}}" min="0" class="w-20 border rounded text-center">
+        {{else}}
+          <span class="w-20 text-center font-bold">{{system.money.bu}}</span>
+        {{/if}}
+      </label>
+      <button type="button" data-action="breakBu" {{#unless system.money.bu}}disabled{{/unless}}
+              class="text-xs px-2 py-1 mb-0.5 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent disabled:opacity-30 disabled:cursor-not-allowed"
+              title="{{localize 'L5R4EC.Sheet.BreakBuHint'}}">
+        <i class="fa-solid fa-arrow-right"></i> {{localize "L5R4EC.Sheet.BreakBu"}}
+      </button>
+
+      <label class="flex flex-col gap-0.5 text-sm">
+        {{localize "L5R4EC.Sheet.Zeni"}}
+        {{#if isGM}}
+          <input type="number" name="system.money.zeni" value="{{system.money.zeni}}" min="0" class="w-20 border rounded text-center">
+        {{else}}
+          <span class="w-20 text-center font-bold">{{system.money.zeni}}</span>
+        {{/if}}
+      </label>
+
+      <button type="button" data-action="spendMoney"
+              class="text-xs px-2 py-1 mb-0.5 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white"
+              title="{{localize 'L5R4EC.Sheet.SpendMoneyHint'}}">
+        <i class="fa-solid fa-coins"></i> {{localize "L5R4EC.Sheet.SpendMoney"}}
+      </button>
+    </div>
+  </details>
 
   {{!-- Armes --}}
   <details open class="border rounded">
@@ -51,21 +114,23 @@
         </div>
       {{/each}}
     </div>
-    <div class="flex flex-wrap items-center gap-1 p-1">
-      <select name="weaponPreset" class="text-xs border rounded px-1 py-0.5 max-w-48">
-        {{#each inventory.weaponPresets}}
-          <option value="{{this.key}}">{{this.name}}</option>
-        {{/each}}
-      </select>
-      <button type="button" data-action="addWeaponPreset"
-              class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
-        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.BaseWeapon"}}
-      </button>
-      <button type="button" data-action="addWeapon"
-              class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddWeapon"}}
-      </button>
-    </div>
+    {{#if isGM}}
+      <div class="flex flex-wrap items-center gap-1 p-1">
+        <select name="weaponPreset" class="text-xs border rounded px-1 py-0.5 max-w-48">
+          {{#each inventory.weaponPresets}}
+            <option value="{{this.key}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+        <button type="button" data-action="addWeaponPreset"
+                class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+          <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.BaseWeapon"}}
+        </button>
+        <button type="button" data-action="addWeapon"
+                class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+          <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddWeapon"}}
+        </button>
+      </div>
+    {{/if}}
   </details>
 
   {{!-- Armures --}}
@@ -98,18 +163,20 @@
         </div>
       {{/each}}
     </div>
-    <div class="flex flex-wrap gap-1 p-1">
-      {{#each inventory.armorPresets}}
-        <button type="button" data-action="addArmorPreset" data-preset="{{this.key}}"
-                class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
-          + {{this.name}}
+    {{#if isGM}}
+      <div class="flex flex-wrap gap-1 p-1">
+        {{#each inventory.armorPresets}}
+          <button type="button" data-action="addArmorPreset" data-preset="{{this.key}}"
+                  class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+            + {{this.name}}
+          </button>
+        {{/each}}
+        <button type="button" data-action="addArmorCustom"
+                class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+          <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.CustomArmor"}}
         </button>
-      {{/each}}
-      <button type="button" data-action="addArmorCustom"
-              class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.CustomArmor"}}
-      </button>
-    </div>
+      </div>
+    {{/if}}
   </details>
 
   {{!-- Munitions --}}
@@ -145,21 +212,23 @@
         </div>
       {{/each}}
     </div>
-    <div class="flex flex-wrap items-center gap-1 p-1">
-      <select name="ammoPreset" class="text-xs border rounded px-1 py-0.5 max-w-48">
-        {{#each inventory.ammoPresets}}
-          <option value="{{this.key}}">{{this.name}}</option>
-        {{/each}}
-      </select>
-      <button type="button" data-action="addAmmoPreset"
-              class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
-        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.BaseAmmo"}}
-      </button>
-      <button type="button" data-action="addAmmo"
-              class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddAmmo"}}
-      </button>
-    </div>
+    {{#if isGM}}
+      <div class="flex flex-wrap items-center gap-1 p-1">
+        <select name="ammoPreset" class="text-xs border rounded px-1 py-0.5 max-w-48">
+          {{#each inventory.ammoPresets}}
+            <option value="{{this.key}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+        <button type="button" data-action="addAmmoPreset"
+                class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+          <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.BaseAmmo"}}
+        </button>
+        <button type="button" data-action="addAmmo"
+                class="text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+          <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddAmmo"}}
+        </button>
+      </div>
+    {{/if}}
   </details>
 
   {{!-- Objets Divers --}}
@@ -169,7 +238,9 @@
     </summary>
     <div class="flex flex-col divide-y divide-black/5 p-1">
       {{#each inventory.miscItems}}
-        <div class="grid grid-cols-[1fr_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
+        <div class="grid grid-cols-[16px_1fr_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
+          <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.equipped"
+                 {{#if this.equipped}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.Equipped'}}">
           <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
                 data-action="openItem" data-item-id="{{this.id}}">
             <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
@@ -187,10 +258,12 @@
         </div>
       {{/each}}
     </div>
-    <button type="button" data-action="addMisc"
-            class="m-1 self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-      <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddMisc"}}
-    </button>
+    {{#if isGM}}
+      <button type="button" data-action="addMisc"
+              class="m-1 self-start text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+        <i class="fa-solid fa-plus"></i> {{localize "L5R4EC.Sheet.AddMisc"}}
+      </button>
+    {{/if}}
   </details>
 
  </div>

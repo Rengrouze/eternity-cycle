@@ -31,6 +31,10 @@ export class WeaponSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.system = this.item.system;
     context.qualityOptions = qualityOptionsFor(this.item.system.quality);
     context.isNemuranai = this.item.system.quality === "orange";
+    // Seul le MJ édite la définition d'un Item déjà embarqué (voir SystemItem) -
+    // les Items du monde/compendium (pas encore sur un Actor) restent éditables
+    // par quiconque a la permission Foundry standard dessus.
+    context.readOnly = this.item.isEmbedded && !game.user.isGM;
     return context;
   }
 
@@ -39,6 +43,7 @@ export class WeaponSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
    * @this {WeaponSheet}
    */
   static async #onEditImage(event, target) {
+    if (this.item.isEmbedded && !game.user.isGM) return;
     const attr = target.dataset.edit ?? "img";
     const current = foundry.utils.getProperty(this.item, attr);
     new FilePicker({

@@ -49,11 +49,13 @@ export class SpellSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.damageModeOptions = DAMAGE_MODE_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === this.item.system.damage.mode }));
     context.damageRingOptions = RING_OPTIONS.map((opt) => ({ ...opt, selected: opt.key === this.item.system.damage.ring }));
     context.damageModeIsRing = this.item.system.damage.mode === "ring";
+    context.readOnly = this.item.isEmbedded && !game.user.isGM;
     return context;
   }
 
   /** @this {SpellSheet} */
   static async #onEditImage(event, target) {
+    if (this.item.isEmbedded && !game.user.isGM) return;
     const attr = target.dataset.edit ?? "img";
     const current = foundry.utils.getProperty(this.item, attr);
     new FilePicker({

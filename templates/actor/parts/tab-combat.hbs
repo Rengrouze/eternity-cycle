@@ -13,7 +13,7 @@
         <div class="h-full {{combat.woundsColorClass}}" style="width: {{combat.woundsPercent}}%"></div>
       </div>
 
-      <div class="mt-2 text-sm {{#if system.wounds.isOut}}text-red-600 font-bold{{/if}}">
+      <div class="mt-2 text-sm {{#if system.wounds.isDead}}text-black font-bold line-through{{else if system.wounds.isOut}}text-red-600 font-bold{{/if}}">
         {{localize system.wounds.rankLabelKey}}
         {{#if system.wounds.penalty}}
           <span class="text-red-500">({{system.wounds.penalty}})</span>
@@ -60,16 +60,19 @@
     {{#unless combat.inCombat}}
       <p class="text-xs text-neutral-400 mb-1">{{localize "L5R4EC.Sheet.StanceNotInCombatHint"}}</p>
     {{/unless}}
+    {{#if combat.stanceLocked}}
+      <p class="text-xs text-neutral-400 mb-1">{{localize "L5R4EC.Sheet.StanceLockedHint"}}</p>
+    {{/if}}
     <div class="flex flex-wrap gap-1">
       {{#each combat.stances}}
         {{#if this.isFullDefense}}
-          <button type="button" data-action="rollFullDefense" {{#unless ../combat.inCombat}}disabled{{/unless}}
+          <button type="button" data-action="rollFullDefense" {{#if ../combat.stanceDisabled}}disabled{{/if}}
                   class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
                   title="{{localize this.descriptionKey}}">
             {{localize this.labelKey}}
           </button>
         {{else}}
-          <button type="button" data-action="setStance" data-stance="{{this.key}}" {{#unless ../combat.inCombat}}disabled{{/unless}}
+          <button type="button" data-action="setStance" data-stance="{{this.key}}" {{#if ../combat.stanceDisabled}}disabled{{/if}}
                   class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
                   title="{{localize this.descriptionKey}}">
             {{localize this.labelKey}}
@@ -120,9 +123,14 @@
     {{#if activeBuffs.length}}
       <ul class="flex flex-col gap-1 text-sm">
         {{#each activeBuffs}}
-          <li class="border rounded px-2 py-1 {{#if this.isAutomatic}}border-green-500 bg-green-50{{else}}border-neutral-300{{/if}}">
-            <strong>{{this.skillName}}</strong> ({{localize "L5R4EC.Sheet.Rank"}} {{this.rankRequired}}) — {{this.description}}
-            {{#unless this.isAutomatic}}<span class="text-xs text-neutral-400 italic"> ({{localize "L5R4EC.Sheet.BuffManual"}})</span>{{/unless}}
+          <li class="border rounded px-2 py-1 flex items-start justify-between gap-2 {{#if this.isAutomatic}}border-green-500 bg-green-900/20{{else}}border-neutral-600 bg-black/5{{/if}}">
+            <span>
+              <strong>{{this.skillName}}</strong> ({{localize "L5R4EC.Sheet.Rank"}} {{this.rankRequired}}) — {{this.description}}
+              {{#unless this.isAutomatic}}<span class="text-xs text-neutral-400 italic"> ({{localize "L5R4EC.Sheet.BuffManual"}})</span>{{/unless}}
+            </span>
+            {{#if this.effectSummary}}
+              <span class="shrink-0 whitespace-nowrap text-xs font-bold text-green-400">{{this.effectSummary}}</span>
+            {{/if}}
           </li>
         {{/each}}
       </ul>

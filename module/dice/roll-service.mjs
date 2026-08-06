@@ -27,7 +27,11 @@ export async function performRoll(actor, config, flavor, extra = {}, applyWoundP
   const roll = L5RRollKeep.build({ ...config, woundPenalty });
   await roll.evaluate();
 
-  if (applyWoundPenalty && actor.system.wounds?.isOut) {
+  if (applyWoundPenalty && actor.system.wounds?.isDead) {
+    ui.notifications.warn(
+      game.i18n.format("L5R4EC.Notif.CharacterDead", { name: actor.name })
+    );
+  } else if (applyWoundPenalty && actor.system.wounds?.isOut) {
     ui.notifications.warn(
       game.i18n.format("L5R4EC.Notif.CharacterOut", { name: actor.name })
     );
