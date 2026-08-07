@@ -4,13 +4,27 @@
   </div>
 
   <label class="flex justify-between items-center gap-2">
-    {{localize "L5R4EC.Dialog.Augmentations"}}
-    <input type="number" name="augmentations" value="0" min="0" class="w-16 border rounded text-center">
+    {{localize "L5R4EC.Dialog.Augmentations"}} ({{localize "L5R4EC.Dialog.AugmentationsMaxHint"}} {{voidRank}})
+    <input type="number" name="augmentations" value="0" min="0" max="{{voidRank}}" class="w-16 border rounded text-center">
   </label>
 
   <label class="flex justify-between items-center gap-2">
     {{localize "L5R4EC.Dialog.Targets"}}
     <input type="number" name="targets" value="1" min="1" class="w-16 border rounded text-center">
+  </label>
+
+  <label class="flex justify-between items-center gap-2">
+    {{localize "L5R4EC.Sheet.AttackTarget"}}
+    <select name="targetActorId" class="border rounded px-1 py-0.5">
+      <option value="">{{localize "L5R4EC.Sheet.NoTarget"}}</option>
+      {{#each targetOptions}}
+        <option value="{{this.id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </label>
+  <label class="flex items-center gap-2 text-sm">
+    <input type="checkbox" name="inRange">
+    {{localize "L5R4EC.Dialog.SpellInRangeLabel"}}
   </label>
 
   <hr class="border-black/10">
@@ -23,4 +37,16 @@
     {{localize "L5R4EC.Dialog.KeepBonus"}}
     <input type="number" name="keepBonus" value="0" min="0" class="w-16 border rounded text-center">
   </label>
+  {{#if voidPoints}}
+    <label class="flex items-center gap-2 text-sm border-t pt-1 mt-1">
+      <input type="checkbox" name="spendVoid">
+      {{localize "L5R4EC.Dialog.SpendVoidPoint"}} ({{voidPoints}})
+    </label>
+  {{/if}}
+  {{#if showReactionOption}}
+    <label class="flex items-center gap-2 text-sm border-t pt-1 mt-1">
+      <input type="checkbox" name="isReaction">
+      {{localize "L5R4EC.Dialog.IsReaction"}}
+    </label>
+  {{/if}}
 </div>

@@ -18,11 +18,11 @@
       },
       {
         "rankRequired": 5,
-        "description": "Monter à cheval devient une Action Simple (au lieu de Complexe) ; mettre pied à terre devient une Action Libre (au lieu de Simple)."
+        "description": "Monter à cheval devient une Action Simple (au lieu de Complexe) ; mettre pied à terre devient une Action Gratuite (au lieu de Simple)."
       },
       {
         "rankRequired": 7,
-        "description": "Monter à cheval devient une Action Libre (au lieu de Simple)."
+        "description": "Monter à cheval devient une Action Gratuite (au lieu de Simple)."
       }
     ],
     "description": "Chevaucher."
@@ -39,7 +39,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

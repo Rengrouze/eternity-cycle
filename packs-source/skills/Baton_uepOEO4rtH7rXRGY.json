@@ -22,7 +22,7 @@
       },
       {
         "rankRequired": 7,
-        "description": "Un bâton de type Grand peut être dégainé en Action Libre ; un bâton de type Petit gagne +1k0 aux jets de dégâts."
+        "description": "Un bâton de type Grand peut être dégainé en Action Gratuite ; un bâton de type Petit gagne +1k0 aux jets de dégâts."
       }
     ],
     "description": "Maniement du bâton."
@@ -39,7 +39,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

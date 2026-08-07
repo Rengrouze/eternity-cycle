@@ -55,6 +55,11 @@ async function promptStanceFor(actor, round) {
   // hook ne se déclenche) - pas la peine de re-demander.
   if (actor.system.combat.stanceRound === round) return;
 
+  // Engagé dans une Empoignade : Posture verrouillée sur Attaque le temps de
+  // la lutte (voir SystemActor#initiateGrapple/#setStance) - inutile de
+  // demander une Posture qu'il ne peut de toute façon pas changer.
+  if (actor.system.combat.grappleGroupId) return;
+
   const content = `<p class="text-sm">${game.i18n.format("L5R4EC.Dialog.ReactionPhaseBody", { round })}</p>`;
 
   const stance = await foundry.applications.api.DialogV2.wait({

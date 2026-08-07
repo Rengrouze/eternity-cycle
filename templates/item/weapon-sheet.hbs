@@ -37,12 +37,30 @@
         <input type="checkbox" name="system.equipped" {{#if system.equipped}}checked{{/if}}>
         {{localize "L5R4EC.Sheet.Equipped"}}
       </label>
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.Hand"}}
+        <select name="system.hand" class="border rounded px-1 py-0.5">
+          {{#each handOptions}}
+            <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+          {{/each}}
+        </select>
+      </label>
     </div>
 
-    <label class="flex flex-col gap-0.5">
-      {{localize "L5R4EC.Sheet.Keywords"}}
-      <input type="text" name="system.keywords" value="{{system.keywords}}" class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.KeywordsHint'}}">
-    </label>
+    <div class="flex gap-2">
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.Keywords"}}
+        <input type="text" name="system.keywords" value="{{system.keywords}}" class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Dialog.KeywordsHint'}}">
+      </label>
+      <label class="flex flex-col gap-0.5 flex-1">
+        {{localize "L5R4EC.Sheet.WeaponSize"}}
+        <select name="system.size" class="border rounded px-1 py-0.5">
+          {{#each sizeOptions}}
+            <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{localize this.labelKey}}</option>
+          {{/each}}
+        </select>
+      </label>
+    </div>
 
     <div class="flex gap-2 items-end">
       <label class="flex items-center gap-2 pb-1">
@@ -58,6 +76,33 @@
         <input type="number" name="system.strengthRating" value="{{system.strengthRating}}" min="0" step="1" class="border rounded px-1 py-0.5">
       </label>
     </div>
+
+    {{#if system.isRanged}}
+      <fieldset class="border rounded px-2 py-1 flex flex-col gap-2">
+        <legend class="text-xs uppercase tracking-wide px-1">{{localize "L5R4EC.Sheet.ConjuredAmmo"}}</legend>
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="system.conjuresAmmo" {{#if system.conjuresAmmo}}checked{{/if}}>
+          {{localize "L5R4EC.Sheet.ConjuresAmmo"}}
+        </label>
+        {{#if system.conjuresAmmo}}
+          <div class="flex gap-2">
+            <label class="flex flex-col gap-0.5 flex-1">
+              {{localize "L5R4EC.Sheet.ConjuredAmmoName"}}
+              <input type="text" name="system.conjuredAmmoName" value="{{system.conjuredAmmoName}}" class="border rounded px-1 py-0.5" placeholder="{{localize 'L5R4EC.Sheet.ConjuredAmmoNameHint'}}">
+            </label>
+            <label class="flex flex-col gap-0.5 w-20">
+              {{localize "L5R4EC.Sheet.DamageRolled"}}
+              <input type="number" name="system.conjuredAmmoRolled" value="{{system.conjuredAmmoRolled}}" min="0" step="1" class="border rounded px-1 py-0.5">
+            </label>
+            <label class="flex flex-col gap-0.5 w-20">
+              {{localize "L5R4EC.Sheet.DamageKept"}}
+              <input type="number" name="system.conjuredAmmoKept" value="{{system.conjuredAmmoKept}}" min="0" step="1" class="border rounded px-1 py-0.5">
+            </label>
+          </div>
+          <p class="text-xs text-neutral-500">{{localize "L5R4EC.Sheet.ConjuredAmmoHint"}}</p>
+        {{/if}}
+      </fieldset>
+    {{/if}}
 
     <label class="flex flex-col gap-0.5">
       {{localize "L5R4EC.Sheet.Price"}}

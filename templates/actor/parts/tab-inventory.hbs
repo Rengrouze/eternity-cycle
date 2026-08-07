@@ -1,4 +1,29 @@
 <section class="tab {{tabs.inventory.cssClass}} p-2 overflow-y-auto" data-tab="{{tabs.inventory.id}}" data-group="{{tabs.inventory.group}}">
+ {{!-- Partials en ligne (voir docs Handlebars #*inline) plutôt que des
+      fichiers .hbs séparés : le nom/la pastille de qualité et le couple de
+      boutons info/suppression sont identiques dans les 4 listes ci-dessous
+      (Armes/Armures/Munitions/Objets Divers), mais des fichiers séparés
+      exigeraient un préchargement explicite (Handlebars.registerPartial via
+      loadTemplates) qu'aucun template de ce système n'utilise encore - une
+      partial en ligne se résout sans rien enregistrer nulle part. --}}
+ {{#*inline "itemNameCell"}}
+   <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
+         data-action="openItem" data-item-id="{{this.id}}">
+     <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
+     {{this.name}}
+     {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
+   </span>
+ {{/inline}}
+ {{#*inline "itemActionsCell"}}
+   <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
+           data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
+     <i class="fa-solid fa-circle-info"></i>
+   </button>
+   <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
+           data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
+     <i class="fa-solid fa-trash"></i>
+   </button>
+ {{/inline}}
  <div class="flex flex-col gap-3">
 
   {{!-- Équipement actuel --}}
@@ -95,22 +120,10 @@
         <div class="grid grid-cols-[16px_1fr_5rem_3.5rem_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
           <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.equipped"
                  {{#if this.equipped}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.Equipped'}}">
-          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
-                data-action="openItem" data-item-id="{{this.id}}">
-            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
-            {{this.name}}
-            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
-          </span>
+          {{> itemNameCell}}
           <span class="text-xs text-neutral-500 truncate" title="{{this.associatedSkill}}">{{this.associatedSkill}}</span>
           <span class="text-xs text-center font-bold">{{this.dr}}</span>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
-                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
-            <i class="fa-solid fa-circle-info"></i>
-          </button>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
-                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
-            <i class="fa-solid fa-trash"></i>
-          </button>
+          {{> itemActionsCell}}
         </div>
       {{/each}}
     </div>
@@ -144,22 +157,10 @@
           <button type="button" data-action="toggleArmorEquip" data-item-id="{{this.id}}"
                   class="w-4 h-4 rounded-full border {{#if this.equipped}}bg-l5r-accent border-l5r-accent{{else}}border-neutral-400{{/if}}"
                   title="{{localize 'L5R4EC.Sheet.Equipped'}}"></button>
-          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
-                data-action="openItem" data-item-id="{{this.id}}">
-            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
-            {{this.name}}
-            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
-          </span>
+          {{> itemNameCell}}
           <span class="text-xs text-center">+{{this.tnBonus}} TN</span>
           <span class="text-xs text-center">Réd. {{this.reduction}}</span>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
-                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
-            <i class="fa-solid fa-circle-info"></i>
-          </button>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
-                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
-            <i class="fa-solid fa-trash"></i>
-          </button>
+          {{> itemActionsCell}}
         </div>
       {{/each}}
     </div>
@@ -187,12 +188,7 @@
     <div class="flex flex-col divide-y divide-black/5 p-1">
       {{#each inventory.ammo}}
         <div class="grid grid-cols-[1fr_3.5rem_4rem_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
-          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
-                data-action="openItem" data-item-id="{{this.id}}">
-            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
-            {{this.name}}
-            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
-          </span>
+          {{> itemNameCell}}
           <span class="text-xs text-center font-bold">{{this.dr}}</span>
           {{#if this.unlimited}}
             <span class="text-xs text-center text-l5r-accent">{{localize "L5R4EC.Sheet.Unlimited"}}</span>
@@ -201,14 +197,7 @@
                    data-item-id="{{this.id}}" data-item-field="system.quantity"
                    class="border rounded px-1 py-0.5 text-xs text-center w-full">
           {{/if}}
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
-                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
-            <i class="fa-solid fa-circle-info"></i>
-          </button>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
-                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
-            <i class="fa-solid fa-trash"></i>
-          </button>
+          {{> itemActionsCell}}
         </div>
       {{/each}}
     </div>
@@ -241,20 +230,8 @@
         <div class="grid grid-cols-[16px_1fr_1.5rem_1.5rem] gap-2 items-center text-sm py-1">
           <input type="checkbox" data-item-id="{{this.id}}" data-item-field="system.equipped"
                  {{#if this.equipped}}checked{{/if}} title="{{localize 'L5R4EC.Sheet.Equipped'}}">
-          <span class="truncate flex items-center gap-1 cursor-pointer hover:underline" title="{{this.name}}"
-                data-action="openItem" data-item-id="{{this.id}}">
-            <span class="inline-block w-2 h-2 rounded-full border {{this.quality.class}}"></span>
-            {{this.name}}
-            {{#if this.quality.isNemuranai}}<i class="fa-solid fa-wand-sparkles text-orange-500 text-xs" title="Nemuranai"></i>{{/if}}
-          </span>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-l5r-accent"
-                  data-action="showItemInfo" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Sheet.SkillInfo'}}">
-            <i class="fa-solid fa-circle-info"></i>
-          </button>
-          <button type="button" class="flex items-center justify-center text-neutral-500 hover:text-red-600"
-                  data-action="deleteItem" data-item-id="{{this.id}}" title="{{localize 'L5R4EC.Dialog.Delete'}}">
-            <i class="fa-solid fa-trash"></i>
-          </button>
+          {{> itemNameCell}}
+          {{> itemActionsCell}}
         </div>
       {{/each}}
     </div>

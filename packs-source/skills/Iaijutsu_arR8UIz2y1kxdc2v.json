@@ -14,7 +14,7 @@
     "masteryBonuses": [
       {
         "rankRequired": 3,
-        "description": "Dégainer un katana devient une Action Libre (au lieu de Simple)."
+        "description": "Dégainer un katana devient une Action Gratuite (au lieu de Simple)."
       },
       {
         "rankRequired": 5,
@@ -39,7 +39,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

@@ -19,6 +19,7 @@
     <div class="text-xs text-neutral-600 border rounded px-2 py-1 bg-black/5 flex flex-col gap-0.5">
       <div>{{localize "L5R4EC.Sheet.AssociatedSkill"}} : {{weaponInfo.associatedSkill}}</div>
       <div>{{localize "L5R4EC.Sheet.DamageRoll"}} : {{weaponInfo.dr}}</div>
+      {{#if preciseTarget}}<div>{{localize "L5R4EC.Chat.PreciseTargetHit"}} : {{preciseTarget}}</div>{{/if}}
     </div>
   {{/if}}
 
@@ -76,6 +77,10 @@
       </span>
       <strong>{{#if success}}{{localize "L5R4EC.Chat.Success"}}{{else}}{{localize "L5R4EC.Chat.Failure"}}{{/if}}</strong>
     </div>
+  {{else if augmentations}}
+    <div class="text-xs text-neutral-500">
+      {{augmentations}} {{localize "L5R4EC.Chat.AugmentationsDeclared"}} ({{localize "L5R4EC.Chat.AugmentationsNoTargetHint"}})
+    </div>
   {{/if}}
 
   {{#if damageButton}}
@@ -84,13 +89,58 @@
             data-item-name="{{damageButton.itemName}}"
             data-rolled="{{damageButton.rolled}}"
             data-kept="{{damageButton.kept}}"
+            data-explode-on="{{damageButton.explodeOn}}"
+            data-flat-bonus="{{damageButton.flatBonus}}"
             data-note="{{damageButton.note}}"
+            data-target-actor-id="{{damageButton.targetActorId}}"
             class="flex items-center justify-center gap-2 text-sm px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
-      <i class="fa-solid fa-fire"></i> {{localize "L5R4EC.Chat.RollDamage"}} ({{damageButton.rolled}}k{{damageButton.kept}})
+      <i class="fa-solid fa-fire"></i> {{localize "L5R4EC.Chat.RollDamage"}} ({{damageButton.rolled}}k{{damageButton.kept}}{{#if damageButton.flatBonus}}+{{damageButton.flatBonus}}{{/if}})
     </button>
     {{#if damageButton.note}}
       <div class="text-[0.65rem] text-neutral-400 italic">{{localize "L5R4EC.Chat.DamageNote"}} : {{damageButton.note}}</div>
     {{/if}}
+  {{/if}}
+
+  {{#if applyDamageButton}}
+    <button type="button" data-action="applyDamage"
+            data-attacker-actor-id="{{applyDamageButton.attackerActorId}}"
+            data-target-actor-id="{{applyDamageButton.targetActorId}}"
+            data-amount="{{applyDamageButton.amount}}"
+            class="flex items-center justify-center gap-2 text-sm px-2 py-1 rounded border border-red-600 text-red-700 hover:bg-red-600 hover:text-white">
+      <i class="fa-solid fa-heart-crack"></i> {{localize "L5R4EC.Chat.ApplyDamage"}} ({{applyDamageButton.targetName}}, {{applyDamageButton.amount}})
+    </button>
+  {{/if}}
+
+  {{#if extraAttackButton}}
+    <button type="button" data-action="rollAttackAgain"
+            data-actor-id="{{extraAttackButton.actorId}}"
+            data-weapon-id="{{extraAttackButton.weaponId}}"
+            class="flex items-center justify-center gap-2 text-sm px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+      <i class="fa-solid fa-khanda"></i> {{localize "L5R4EC.Chat.RollAttackAgain"}}
+    </button>
+  {{/if}}
+
+  {{#if disarmResult}}
+    <div class="text-xs border rounded px-2 py-1 {{#if disarmResult.attackerWins}}border-green-600 bg-green-50 text-green-700{{else}}border-neutral-400 bg-black/5 text-neutral-600{{/if}}">
+      {{localize "L5R4EC.Chat.ContestedForce"}} - {{localize "L5R4EC.Chat.AttackerRoll"}} {{disarmResult.attackerTotal}} vs {{disarmResult.targetName}} {{disarmResult.targetTotal}} :
+      {{#if disarmResult.attackerWins}}{{localize "L5R4EC.Chat.DisarmSuccess"}}{{else}}{{localize "L5R4EC.Chat.DisarmFailure"}}{{/if}}
+    </div>
+  {{/if}}
+
+  {{#if reversalResult}}
+    <div class="text-xs border rounded px-2 py-1 {{#if reversalResult.attackerWins}}border-green-600 bg-green-50 text-green-700{{else}}border-neutral-400 bg-black/5 text-neutral-600{{/if}}">
+      {{localize "L5R4EC.Chat.ContestedForce"}} - {{localize "L5R4EC.Chat.AttackerRoll"}} {{reversalResult.attackerTotal}} vs {{reversalResult.targetName}} {{reversalResult.targetTotal}} :
+      {{#if reversalResult.attackerWins}}{{localize "L5R4EC.Chat.ReversalSuccess"}}{{else}}{{localize "L5R4EC.Chat.ReversalFailure"}}{{/if}}
+    </div>
+  {{/if}}
+
+  {{#if voidRecoveryButton}}
+    <button type="button" data-action="recoverVoid"
+            data-actor-id="{{voidRecoveryButton.actorId}}"
+            data-amount="{{voidRecoveryButton.amount}}"
+            class="flex items-center justify-center gap-2 text-sm px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white">
+      <i class="fa-solid fa-yin-yang"></i> {{localize "L5R4EC.Chat.RecoverVoid"}} ({{voidRecoveryButton.amount}})
+    </button>
   {{/if}}
 
   <div class="flex gap-3 text-[0.65rem] text-neutral-400 border-t border-black/10 pt-1">

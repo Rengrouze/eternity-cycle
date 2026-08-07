@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 3,
-        "description": "Un jet de Méditation réussi restaure jusqu'à 2 Points de Vide au lieu d'1."
+        "description": "Un jet de Méditation réussi restaure jusqu'à 2 Points de Vide au lieu d'1.",
+        "trigger": "voidRecovery",
+        "value": 2
       },
       {
         "rankRequired": 5,
@@ -22,7 +24,9 @@
       },
       {
         "rankRequired": 7,
-        "description": "Un jet de Méditation réussi restaure jusqu'à 3 Points de Vide."
+        "description": "Un jet de Méditation réussi restaure jusqu'à 3 Points de Vide.",
+        "trigger": "voidRecovery",
+        "value": 3
       }
     ],
     "description": "L'art de méditer, de communier avec le grand tout, ou de récupérer des Points de Vide."
@@ -39,7 +43,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

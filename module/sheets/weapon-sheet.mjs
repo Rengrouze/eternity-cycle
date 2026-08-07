@@ -2,6 +2,20 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 import { qualityOptionsFor } from "./mixins/quality.mjs";
+import { WEAPON_SIZES } from "../rules/actions.mjs";
+
+const SIZE_LABEL_KEYS = {
+  small: "L5R4EC.Sheet.WeaponSizeSmall",
+  medium: "L5R4EC.Sheet.WeaponSizeMedium",
+  large: "L5R4EC.Sheet.WeaponSizeLarge"
+};
+
+const HAND_LABEL_KEYS = {
+  none: "L5R4EC.Sheet.HandNone",
+  left: "L5R4EC.Sheet.HandLeft",
+  right: "L5R4EC.Sheet.HandRight",
+  both: "L5R4EC.Sheet.HandBoth"
+};
 
 /**
  * Fiche d'Item Arme (ItemSheetV2) - édition complète, indépendante de la
@@ -30,6 +44,8 @@ export class WeaponSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.item = this.item;
     context.system = this.item.system;
     context.qualityOptions = qualityOptionsFor(this.item.system.quality);
+    context.sizeOptions = WEAPON_SIZES.map((key) => ({ key, labelKey: SIZE_LABEL_KEYS[key], selected: key === this.item.system.size }));
+    context.handOptions = Object.keys(HAND_LABEL_KEYS).map((key) => ({ key, labelKey: HAND_LABEL_KEYS[key], selected: key === this.item.system.hand }));
     context.isNemuranai = this.item.system.quality === "orange";
     // Seul le MJ édite la définition d'un Item déjà embarqué (voir SystemItem) -
     // les Items du monde/compendium (pas encore sur un Actor) restent éditables

@@ -26,6 +26,15 @@
   </label>
 
   <label class="flex flex-col gap-0.5 text-sm">
+    {{localize "L5R4EC.Sheet.WeaponSize"}}
+    <select name="size" class="border rounded px-1 py-0.5">
+      <option value="small">{{localize "L5R4EC.Sheet.WeaponSizeSmall"}}</option>
+      <option value="medium" selected>{{localize "L5R4EC.Sheet.WeaponSizeMedium"}}</option>
+      <option value="large">{{localize "L5R4EC.Sheet.WeaponSizeLarge"}}</option>
+    </select>
+  </label>
+
+  <label class="flex flex-col gap-0.5 text-sm">
     {{localize "L5R4EC.Sheet.Quality"}}
     <select name="quality" class="border rounded px-1 py-0.5">
       {{#each qualityOptions}}

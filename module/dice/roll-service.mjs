@@ -9,12 +9,13 @@ import { L5RRollKeep } from "./l5r-roll.mjs";
  * @param {{rolled: number, keep: number, flatBonus?: number, explode?: boolean, explodeOn?: number, rerollOnes?: boolean}} config
  *        Généralement produit par roll-factories.mjs (basicRoll / skillRoll).
  * @param {string} flavor
- * @param {object|((roll: L5RRollKeep) => object)} [extra]  Contexte additionnel
- *        fusionné dans le template de carte de chat (voir roll-keep-card.hbs)
- *        - sort lancé, TN cible, réussite, bouton de dégâts... Peut être une
- *        fonction du Roll déjà évalué (pour comparer le résultat à un TN,
- *        par exemple) plutôt qu'un objet statique. Optionnel, ignoré par les
- *        jets Trait/Anneau/Compétence qui n'en ont pas besoin.
+ * @param {object|((roll: L5RRollKeep) => object|Promise<object>)} [extra]  Contexte
+ *        additionnel fusionné dans le template de carte de chat (voir
+ *        roll-keep-card.hbs) - sort lancé, TN cible, réussite, bouton de
+ *        dégâts... Peut être une fonction (éventuellement async, ex:
+ *        résolution d'une Manœuvre contestée - voir SystemActor#rollAttack)
+ *        du Roll déjà évalué plutôt qu'un objet statique. Optionnel, ignoré
+ *        par les jets Trait/Anneau/Compétence qui n'en ont pas besoin.
  * @param {boolean} [applyWoundPenalty=true]  À désactiver pour un jet de
  *        dégâts : le malus de blessure du lanceur ne doit affecter que SES
  *        propres jets, pas les dégâts qu'il inflige à quelqu'un d'autre.
@@ -37,7 +38,7 @@ export async function performRoll(actor, config, flavor, extra = {}, applyWoundP
     );
   }
 
-  const resolvedExtra = typeof extra === "function" ? extra(roll) : extra;
+  const resolvedExtra = typeof extra === "function" ? await extra(roll) : extra;
 
   const content = await foundry.applications.handlebars.renderTemplate(
     "systems/l5r4ec/templates/chat/roll-keep-card.hbs",

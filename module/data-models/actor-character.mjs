@@ -3,7 +3,7 @@ import { getLethality } from "../settings.mjs";
 import { AFFINITY_CHOICES } from "../rules/spellcasting.mjs";
 import { STANCE_CHOICES } from "../rules/stances.mjs";
 
-const { HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
+const { HTMLField, NumberField, SchemaField, StringField, BooleanField } = foundry.data.fields;
 
 /**
  * Data model de base pour les personnages (PJ/PNJ).
@@ -64,11 +64,65 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
       // qu'il ne correspond pas au round en cours, le personnage est
       // considéré "en attente" de la Phase de Réaction (voir
       // module/hooks/reaction-phase.mjs et combat-tracker-stances.mjs).
+      // `actionPoints`/`actionTurn` : économie d'Action (voir
+      // module/rules/actions.mjs et SystemActor#spendActionPoints) - budget
+      // de points d'Action Simple pour le tour en cours (2 = 1 Action
+      // Complexe OU 2 Actions Simples), remis à ACTION_POINTS_PER_TURN au
+      // début du tour de ce combattant (voir module/hooks/combat-turn-reset.mjs).
+      // `actionTurn` est le numéro de tour Foundry (combat.turn) pour lequel
+      // ce budget a déjà été remis à neuf ce round-ci - évite un double reset
+      // si prepareData tourne plusieurs fois pendant le même tour (même
+      // convention que `stanceRound`). `distanceMovedThisTurn` accompagne le
+      // budget de déplacement affiché sur la fiche (voir #computeMoveBudget) -
+      // incrémenté automatiquement au déplacement du token pendant le tour de
+      // ce personnage (voir module/hooks/token-movement-tracking.mjs), reste
+      // éditable à la main en secours (téléportation, correction manuelle).
+      // `dominantHand`/`ambidextrous` déterminent le malus de main non
+      // directrice (voir SystemActor#rollAttack) - `ambidextrous` tient lieu
+      // en attendant d'avoir un vrai système d'Avantages/Désavantages
+      // (l'Avantage "Ambidextre" du LdB n'a pas d'autre représentation ici).
+      // `extraAttackTurn` (round*1000+turn) verrouille la Manœuvre Attaque
+      // Supplémentaire à une fois par tour (voir module/rules/maneuvers.mjs,
+      // SystemActor#rollAttack) - même convention que `actionTurn`.
+      // `guardTargetActorId`/`guardRound` portent la Manœuvre Garde (voir
+      // SystemActor#declareGuard) : tant que `guardRound` correspond au round
+      // en cours, le TN d'Armure de CE personnage baisse de 5 (voir
+      // #_computeArmorTN) et celui de l'Acteur ciblé par `guardTargetActorId`
+      // augmente de 10 (calculé chez CET AUTRE Acteur par recherche inverse,
+      // voir sa propre #_computeArmorTN).
       combat: new SchemaField({
         stance: new StringField({ required: true, choices: STANCE_CHOICES, initial: "attack" }),
         stanceRound: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
         initiativeBonus: new NumberField({ required: true, integer: true, initial: 0 }),
-        fullDefenseBonus: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
+        fullDefenseBonus: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+        actionPoints: new NumberField({ required: true, integer: true, min: 0, initial: 2 }),
+        actionTurn: new NumberField({ required: true, integer: true, min: -1, initial: -1 }),
+        distanceMovedThisTurn: new NumberField({ required: true, min: 0, initial: 0 }),
+        dominantHand: new StringField({ required: true, choices: ["left", "right"], initial: "right" }),
+        ambidextrous: new BooleanField({ initial: false }),
+        extraAttackTurn: new NumberField({ required: true, integer: true, min: -1, initial: -1 }),
+        guardTargetActorId: new StringField({ required: true, blank: true, initial: "" }),
+        guardRound: new NumberField({ required: true, integer: true, min: -1, initial: -1 }),
+        // "Foncer" (voir SystemActor#spendMoveAction, module/hooks/token-movement-tracking.mjs) :
+        // nombre d'Actions Simples déjà dépensées ce tour pour étendre le
+        // budget de déplacement - RAW homebrew "chaque Action Simple
+        // supplémentaire regagne le budget `simple`" (voir module/rules/actions.mjs
+        // #effectiveMoveBudget), donc répétable tant qu'il reste des points
+        // d'Action, pas un simple interrupteur à usage unique. Remis à 0 au
+        // début du tour suivant, même convention que guardRound/guardTargetActorId.
+        moveActionsSpent: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+        // Empoignade (voir SystemActor#initiateGrapple et consorts) :
+        // `grappleGroupId` (vide = pas engagé) regroupe tous les participants
+        // d'UNE MÊME lutte (l'id Actor de celui qui l'a initiée, arbitraire
+        // mais stable) - plusieurs lutte séparées peuvent coexister sur le
+        // champ de bataille sans se mélanger. `grappleControl` = vrai si CE
+        // personnage a actuellement le contrôle (voir #_resolveGrappleControl,
+        // recalculé au début du tour de CHAQUE participant). `grappleWeaponId`
+        // (vide = à mains nues) porte l'Arme utilisée si la lutte a été
+        // initiée avec une arme à chaîne/d'hast adaptée (voir #initiateGrapple).
+        grappleGroupId: new StringField({ required: true, blank: true, initial: "" }),
+        grappleControl: new BooleanField({ initial: false }),
+        grappleWeaponId: new StringField({ required: true, blank: true, initial: "" })
       }),
 
       // Magie (Shugenja) : le rang d'école définit le rang de sort max

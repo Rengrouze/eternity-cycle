@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node --check module/data-models/item-skill.mjs)",
+      "Bash(node --check module/chat/damage-chat-actions.mjs)",
+      "Bash(node --check module/chat/void-recovery-actions.mjs)",
+      "Bash(node --check boot.mjs)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('lang/fr.json','utf8'\\)\\); console.log\\('OK'\\)\")",
+      "Bash(tasklist //FI \"IMAGENAME eq Foundry*\")",
+      "Bash(node --check module/rules/stances.mjs)",
+      "Bash(node --check module/rules/actions.mjs)",
+      "Bash(node --check module/data-models/item-weapon.mjs)",
+      "Bash(node --check module/data/default-weapons.mjs)",
+      "Bash(node --check module/sheets/weapon-sheet.mjs)",
+      "Bash(node --check module/data-models/actor-character.mjs)",
+      "Bash(node --check module/settings.mjs)",
+      "Bash(node --check module/chat/roll-request-actions.mjs)",
+      "Bash(node --check module/hooks/combat-turn-reset.mjs)",
+      "Bash(node --check module/hooks/token-movement-tracking.mjs)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('lang/fr.json','utf8'\\)\\); console.log\\('JSON OK'\\)\")",
+      "Bash(node --check module/rules/augmentations.mjs)",
+      "Bash(node --check module/rules/maneuvers.mjs)",
+      "Bash(node --check module/rules/conditions.mjs)",
+      "Bash(node --check module/chat/extra-attack-actions.mjs)",
+      "Bash(sed -i -e 's/initier un corps-à-corps \\(Grapple\\)/initier une Empoignade/g' -e 's/adversaire entravé ou saisi \\(Grapple\\) par l'\\\\''arme/adversaire entravé ou saisi \\(Empoignade\\) par l'\\\\''arme/g' module/data/default-skills.mjs)",
+      "Bash(sed -i \"s/initier et maintenir un corps-à-corps \\(grapple\\)/initier et maintenir une Empoignade/g\" module/data/default-weapons.mjs)",
+      "Bash(node --check module/hooks/combat-tracker-stances.mjs)",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")"
+    ]
+  }
+}

@@ -14,11 +14,11 @@
     "masteryBonuses": [
       {
         "rankRequired": 3,
-        "description": "Une arme à chaîne peut être utilisée pour initier un corps-à-corps (Grapple)."
+        "description": "Une arme à chaîne peut être utilisée pour initier une Empoignade."
       },
       {
         "rankRequired": 5,
-        "description": "+1k0 sur les jets Contestés contre un adversaire entravé ou saisi (Grapple) par l'arme."
+        "description": "+1k0 sur les jets Contestés contre un adversaire entravé ou saisi (Empoignade) par l'arme."
       },
       {
         "rankRequired": 7,
@@ -39,7 +39,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

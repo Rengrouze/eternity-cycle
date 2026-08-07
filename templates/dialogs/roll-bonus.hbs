@@ -7,6 +7,46 @@
     {{localize "L5R4EC.Dialog.KeepBonus"}}
     <input type="number" name="keepBonus" value="0" min="0" class="w-16 border rounded text-center">
   </label>
+  {{#if maneuversAvailable}}
+    <div class="flex flex-col gap-1 border-t pt-1 mt-1 text-sm">
+      <div class="text-xs text-neutral-500">{{localize "L5R4EC.Dialog.ManeuversHint"}} ({{localize "L5R4EC.Dialog.AugmentationsMaxHint"}} {{voidRank}})</div>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="maneuverExtraAttack" {{#if extraAttackUsed}}disabled{{/if}}>
+        {{localize "L5R4EC.Maneuver.ExtraAttack"}} (5) {{#if extraAttackUsed}}- {{localize "L5R4EC.Dialog.AlreadyUsedThisTurn"}}{{/if}}
+      </label>
+      <label class="flex justify-between items-center gap-2">
+        {{localize "L5R4EC.Maneuver.PreciseCut"}}
+        <select name="maneuverPreciseTarget" class="border rounded px-1 py-0.5">
+          <option value="torso">{{localize "L5R4EC.Maneuver.PreciseTarget.torso"}}</option>
+          <option value="limb">{{localize "L5R4EC.Maneuver.PreciseTarget.limb"}}</option>
+          <option value="extremity">{{localize "L5R4EC.Maneuver.PreciseTarget.extremity"}}</option>
+          <option value="head">{{localize "L5R4EC.Maneuver.PreciseTarget.head"}}</option>
+          <option value="detail">{{localize "L5R4EC.Maneuver.PreciseTarget.detail"}}</option>
+        </select>
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="maneuverDisarm">
+        {{localize "L5R4EC.Maneuver.Disarm"}} (3)
+      </label>
+      <label class="flex justify-between items-center gap-2">
+        {{localize "L5R4EC.Maneuver.DamageAugments"}}
+        <input type="number" name="maneuverDamageAugments" value="0" min="0" class="w-16 border rounded text-center">
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="maneuverFeint">
+        {{localize "L5R4EC.Maneuver.Feint"}} (2)
+      </label>
+      <label class="flex justify-between items-center gap-2">
+        {{localize "L5R4EC.Maneuver.Reversal"}} ({{localize "L5R4EC.Dialog.ReversalLegsHint"}})
+        <input type="number" name="maneuverReversalLegs" value="0" min="0" class="w-16 border rounded text-center">
+      </label>
+    </div>
+  {{else if voidRank}}
+    <label class="flex justify-between items-center gap-2">
+      {{localize "L5R4EC.Dialog.Augmentations"}} ({{localize "L5R4EC.Dialog.AugmentationsMaxHint"}} {{voidRank}})
+      <input type="number" name="augmentations" value="0" min="0" max="{{voidRank}}" class="w-16 border rounded text-center">
+    </label>
+  {{/if}}
   {{#if specializations.length}}
     <label class="flex justify-between items-center gap-2">
       {{localize "L5R4EC.Dialog.Specialization"}}
@@ -16,6 +56,28 @@
           <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
+    </label>
+  {{/if}}
+  {{#if conditionalBonuses.length}}
+    <div class="flex flex-col gap-1 border-t pt-1 mt-1">
+      {{#each conditionalBonuses}}
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" name="conditional-{{@index}}">
+          {{this.label}}
+        </label>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if voidPoints}}
+    <label class="flex items-center gap-2 text-sm border-t pt-1 mt-1">
+      <input type="checkbox" name="spendVoid">
+      {{localize "L5R4EC.Dialog.SpendVoidPoint"}} ({{voidPoints}})
+    </label>
+  {{/if}}
+  {{#if showReactionOption}}
+    <label class="flex items-center gap-2 text-sm border-t pt-1 mt-1">
+      <input type="checkbox" name="isReaction">
+      {{localize "L5R4EC.Dialog.IsReaction"}}
     </label>
   {{/if}}
 </div>

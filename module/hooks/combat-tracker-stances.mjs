@@ -8,7 +8,12 @@ import { STANCES } from "../rules/stances.mjs";
  * (system.combat.stanceRound !== game.combat.round), le personnage n'a pas
  * encore répondu à la Phase de Réaction de ce round - affiche un sablier
  * ambré à la place (voir module/hooks/reaction-phase.mjs, qui les relance
- * automatiquement en début de round).
+ * automatiquement en début de round) - SAUF s'il est engagé dans une
+ * Empoignade (voir SystemActor#initiateGrapple) : la Phase de Réaction ne le
+ * sollicite alors plus du tout (Posture verrouillée sur Attaque), donc
+ * `stanceRound` ne serait jamais remis à jour round après round - on affiche
+ * directement l'icône d'Attaque dans ce cas plutôt que de le traiter comme
+ * "en attente" indéfiniment.
  *
  * Icônes Font Awesome (déjà chargées globalement par Foundry) plutôt que des
  * classes Tailwind : le Combat Tracker est hors du scope `.l5r4ec` que
@@ -44,7 +49,7 @@ function injectStanceBadges(html) {
     badge.className = "l5r4ec-stance-badge";
     badge.style.marginLeft = "4px";
 
-    const pending = actor.system.combat.stanceRound !== round;
+    const pending = actor.system.combat.stanceRound !== round && !actor.system.combat.grappleGroupId;
     if (pending) {
       badge.className += " fa-solid fa-hourglass-half";
       badge.style.color = "#d97706";

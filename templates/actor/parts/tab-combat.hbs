@@ -19,18 +19,25 @@
           <span class="text-red-500">({{system.wounds.penalty}})</span>
         {{/if}}
       </div>
+      {{#if combat.isProne}}
+        <button type="button" data-action="standUp"
+                class="mt-2 w-full flex items-center justify-center gap-2 text-xs px-2 py-1 rounded border border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white">
+          <i class="fa-solid fa-person"></i> {{localize "L5R4EC.Sheet.StandUp"}}
+        </button>
+      {{/if}}
     </div>
 
     <div class="w-56">
       <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.ArmorTn"}}</h2>
       <div class="text-3xl font-bold text-center"
-           title="{{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} + {{system.armorTn.armorBonus}} + {{system.armorTn.otherBonus}} + {{system.armorTn.stanceBonus}}">
+           title="{{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} + {{system.armorTn.armorBonus}} + {{system.armorTn.otherBonus}} + {{system.armorTn.stanceBonus}} + {{system.armorTn.guardBonus}}">
         {{system.armorTn.total}}
       </div>
       <div class="text-xs text-neutral-500 text-center mt-1">
         {{system.armorTn.base}} + {{system.armorTn.reflexesBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromReflexes"}})
         {{#if system.armorTn.armorBonus}} + {{system.armorTn.armorBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromArmor"}}){{/if}}
         {{#if system.armorTn.stanceBonus}} {{system.armorTn.stanceBonus}} ({{localize "L5R4EC.Sheet.ArmorTnFromStance"}}){{/if}}
+        {{#if system.armorTn.guardBonus}} {{system.armorTn.guardBonus}} ({{localize "L5R4EC.Maneuver.Guard"}}){{/if}}
       </div>
       <label class="flex items-center justify-center gap-1 text-sm mt-2">
         {{localize "L5R4EC.Sheet.ArmorTnOther"}}
@@ -53,6 +60,21 @@
         <i class="fa-solid fa-dice-d10"></i> {{localize "L5R4EC.Sheet.InitiativeRoll"}}
       </button>
     </div>
+
+    <div class="w-40">
+      <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Handedness"}}</h2>
+      <label class="flex items-center justify-between gap-1 text-sm">
+        {{localize "L5R4EC.Sheet.DominantHand"}}
+        <select name="system.combat.dominantHand" class="border rounded px-1 py-0.5">
+          <option value="right" {{#unless combat.dominantHandIsLeft}}selected{{/unless}}>{{localize "L5R4EC.Sheet.HandRight"}}</option>
+          <option value="left" {{#if combat.dominantHandIsLeft}}selected{{/if}}>{{localize "L5R4EC.Sheet.HandLeft"}}</option>
+        </select>
+      </label>
+      <label class="flex items-center gap-2 text-sm mt-2">
+        <input type="checkbox" name="system.combat.ambidextrous" {{#if system.combat.ambidextrous}}checked{{/if}}>
+        {{localize "L5R4EC.Sheet.Ambidextrous"}}
+      </label>
+    </div>
   </div>
 
   <div>
@@ -63,21 +85,18 @@
     {{#if combat.stanceLocked}}
       <p class="text-xs text-neutral-400 mb-1">{{localize "L5R4EC.Sheet.StanceLockedHint"}}</p>
     {{/if}}
+    {{#if combat.grappled}}
+      <p class="text-xs text-neutral-400 mb-1">{{localize "L5R4EC.Sheet.StanceGrappledHint"}}</p>
+    {{/if}}
     <div class="flex flex-wrap gap-1">
       {{#each combat.stances}}
-        {{#if this.isFullDefense}}
-          <button type="button" data-action="rollFullDefense" {{#if ../combat.stanceDisabled}}disabled{{/if}}
-                  class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
-                  title="{{localize this.descriptionKey}}">
-            {{localize this.labelKey}}
-          </button>
-        {{else}}
-          <button type="button" data-action="setStance" data-stance="{{this.key}}" {{#if ../combat.stanceDisabled}}disabled{{/if}}
-                  class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
-                  title="{{localize this.descriptionKey}}">
-            {{localize this.labelKey}}
-          </button>
-        {{/if}}
+        <button type="button"
+                {{#if this.isFullDefense}}data-action="rollFullDefense"{{else}}data-action="setStance" data-stance="{{this.key}}"{{/if}}
+                {{#if ../combat.stanceDisabled}}disabled{{/if}}
+                class="text-xs px-2 py-1 rounded border disabled:opacity-30 disabled:cursor-not-allowed {{#if this.active}}border-l5r-accent bg-l5r-accent text-white{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}"
+                title="{{localize this.descriptionKey}}">
+          {{localize this.labelKey}}
+        </button>
       {{/each}}
     </div>
     {{#each combat.stances}}
@@ -85,7 +104,57 @@
         <p class="text-xs text-neutral-500 mt-1">{{localize this.descriptionKey}}</p>
       {{/if}}
     {{/each}}
+    {{#if combat.inCombat}}
+      <div class="mt-2 flex items-center gap-1">
+        <select name="guardTarget" class="text-xs border rounded px-1 py-0.5 flex-1">
+          {{#each combat.targetOptions}}
+            <option value="{{this.id}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+        <button type="button" data-action="declareGuard"
+                class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+          {{localize "L5R4EC.Maneuver.Guard"}}
+        </button>
+      </div>
+      {{#if combat.guardTargetName}}
+        <p class="text-xs text-neutral-500 mt-1">{{localize "L5R4EC.Sheet.CurrentlyGuarding"}} {{combat.guardTargetName}}</p>
+      {{/if}}
+    {{/if}}
   </div>
+
+  {{#if combat.actionEconomyActive}}
+    <div>
+      <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.ActionEconomy"}}</h2>
+      {{#unless combat.isCurrentTurn}}
+        <p class="text-xs text-orange-500 mb-1">{{localize "L5R4EC.Sheet.NotYourTurnHint"}}</p>
+      {{/unless}}
+      <div class="flex items-center gap-4 flex-wrap">
+        <div class="flex items-center gap-1">
+          <span class="text-xs text-neutral-500">{{localize "L5R4EC.Sheet.ActionPoints"}}</span>
+          {{#each combat.actionPips}}
+            <span class="w-4 h-4 rounded-sm border {{#if this.filled}}bg-l5r-accent border-l5r-accent{{else}}border-neutral-400{{/if}}"></span>
+          {{/each}}
+        </div>
+        <div class="flex items-center gap-1 text-xs">
+          <span class="text-neutral-500">{{localize "L5R4EC.Sheet.Movement"}}</span>
+          <input type="number" name="system.combat.distanceMovedThisTurn" value="{{combat.distanceMovedThisTurn}}" min="0" step="0.5"
+                 class="w-14 border rounded text-center {{#if combat.moveOverBudget}}border-red-500 text-red-600{{/if}}">
+          <span class="text-neutral-500">
+            / {{combat.moveCap}} m
+            {{#if combat.moveActionsSpent}}({{localize "L5R4EC.Sheet.SpendMoveAction"}} × {{combat.moveActionsSpent}}){{else}}{{localize "L5R4EC.Sheet.MoveFreeShort"}}{{/if}}
+          </span>
+          <button type="button" data-action="spendMoveAction" {{#unless combat.isCurrentTurn}}disabled{{/unless}}
+                  class="flex items-center gap-1 text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent disabled:opacity-30 disabled:cursor-not-allowed"
+                  title="{{localize 'L5R4EC.Sheet.SpendMoveActionHint'}}">
+            <i class="fa-solid fa-person-running"></i> {{localize "L5R4EC.Sheet.SpendMoveAction"}}
+          </button>
+        </div>
+      </div>
+      {{#if combat.moveOverBudget}}
+        <p class="text-xs text-red-500 mt-1">{{localize "L5R4EC.Sheet.MoveOverBudgetHint"}}</p>
+      {{/if}}
+    </div>
+  {{/if}}
 
   <div>
     <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Attacks"}}</h2>
@@ -93,6 +162,15 @@
       <p class="text-xs text-red-500 mb-1">{{localize "L5R4EC.Sheet.CannotAttackInStance"}}</p>
     {{/unless}}
     {{#if combat.attacks.length}}
+      <div class="flex items-center gap-1 mb-1">
+        <label class="text-xs text-neutral-500">{{localize "L5R4EC.Sheet.AttackTarget"}}</label>
+        <select name="attackTarget" class="text-xs border rounded px-1 py-0.5 flex-1">
+          <option value="">{{localize "L5R4EC.Sheet.NoTarget"}}</option>
+          {{#each combat.targetOptions}}
+            <option value="{{this.id}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
       <div class="flex flex-col divide-y divide-black/5">
         {{#each combat.attacks}}
           <div class="grid grid-cols-[1fr_8rem_4rem_auto] gap-2 items-center text-sm py-1">
@@ -105,11 +183,31 @@
               {{#unless this.skillFound}}<i class="fa-solid fa-triangle-exclamation text-orange-500" title="{{localize 'L5R4EC.Sheet.AssociatedSkillMissing'}}"></i>{{/unless}}
             </span>
             <span class="text-xs text-center font-bold">{{this.dr}}</span>
-            <button type="button" data-action="rollAttack" data-item-id="{{this.id}}"
-                    {{#unless ../combat.canAttack}}disabled{{/unless}}
-                    class="flex items-center justify-center gap-1 text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white disabled:opacity-30 disabled:cursor-not-allowed">
-              <i class="fa-solid fa-khanda"></i> {{localize "L5R4EC.Sheet.AttackRoll"}}
-            </button>
+            <div class="flex items-center gap-1">
+              {{#if this.drawn}}
+                <button type="button" data-action="sheatheWeapon" data-item-id="{{this.id}}"
+                        class="flex items-center justify-center text-xs px-1.5 py-1 rounded border border-neutral-400 text-neutral-500 hover:border-l5r-accent hover:text-l5r-accent"
+                        title="{{localize 'L5R4EC.Sheet.SheatheWeapon'}} - {{lookup ../combat.handLabels this.hand}}">
+                  <i class="fa-solid fa-hand-back-fist"></i>
+                </button>
+              {{else}}
+                <select name="hand" class="text-xs border rounded px-1 py-1">
+                  <option value="right">{{localize "L5R4EC.Sheet.HandRight"}}</option>
+                  <option value="left">{{localize "L5R4EC.Sheet.HandLeft"}}</option>
+                  <option value="both">{{localize "L5R4EC.Sheet.HandBoth"}}</option>
+                </select>
+                <button type="button" data-action="drawWeapon" data-item-id="{{this.id}}"
+                        class="flex items-center justify-center gap-1 text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent"
+                        title="{{localize 'L5R4EC.Sheet.DrawWeapon'}}">
+                  <i class="fa-solid fa-hand"></i>
+                </button>
+              {{/if}}
+              <button type="button" data-action="rollAttack" data-item-id="{{this.id}}"
+                      {{#unless ../combat.canAttack}}disabled{{/unless}}
+                      class="flex items-center justify-center gap-1 text-xs px-2 py-1 rounded border border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white disabled:opacity-30 disabled:cursor-not-allowed">
+                <i class="fa-solid fa-khanda"></i> {{localize "L5R4EC.Sheet.AttackRoll"}}
+              </button>
+            </div>
           </div>
         {{/each}}
       </div>
@@ -118,22 +216,78 @@
     {{/if}}
   </div>
 
+  {{#if combat.inCombat}}
+    <div>
+      <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Maneuver.Grapple"}}</h2>
+      {{#if combat.grappled}}
+        <p class="text-xs text-neutral-500 mb-1">
+          {{#if combat.grappleControl}}{{localize "L5R4EC.Sheet.GrappleHasControl"}}{{else}}{{localize "L5R4EC.Sheet.GrappleNoControl"}}{{/if}}
+        </p>
+        {{#unless combat.grappleControl}}
+          <button type="button" data-action="attemptGrappleControl"
+                  class="mb-1 w-full flex items-center justify-center gap-1 text-xs px-2 py-1 rounded border border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white">
+            <i class="fa-solid fa-hand-fist"></i> {{localize "L5R4EC.Sheet.AttemptGrappleControl"}}
+          </button>
+        {{/unless}}
+        <div class="flex items-center gap-1 flex-wrap">
+          <select name="grappleTarget" class="text-xs border rounded px-1 py-0.5">
+            {{#each combat.grappleTargets}}
+              <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+          {{#each combat.grappleActions}}
+            <button type="button" data-action="{{this.action}}"
+                    {{#if this.requiresControl}}{{#unless ../combat.grappleControl}}disabled{{/unless}}{{/if}}
+                    class="text-xs px-2 py-1 rounded border {{#if this.requiresControl}}border-l5r-accent text-l5r-accent hover:bg-l5r-accent hover:text-white disabled:opacity-30 disabled:cursor-not-allowed{{else}}border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent{{/if}}">
+              {{localize this.labelKey}}
+            </button>
+          {{/each}}
+        </div>
+      {{else}}
+        <div class="flex items-center gap-1">
+          <select name="grappleInitiateTarget" class="text-xs border rounded px-1 py-0.5 flex-1">
+            {{#each combat.targetOptions}}
+              <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+          <button type="button" data-action="initiateGrapple"
+                  class="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-600 hover:border-l5r-accent hover:text-l5r-accent">
+            {{localize "L5R4EC.Maneuver.Grapple"}}
+          </button>
+        </div>
+      {{/if}}
+    </div>
+  {{/if}}
+
   <div>
     <h2 class="text-lg font-l5r-display border-b border-l5r-accent mb-2">{{localize "L5R4EC.Sheet.Buffs"}}</h2>
     {{#if activeBuffs.length}}
-      <ul class="flex flex-col gap-1 text-sm">
+      {{!-- Icônes façon MMO plutôt qu'une grosse liste à faire défiler -
+           survol pour le détail complet (voir CharacterSheet#_bindBuffTooltips
+           - le contenu vit dans un <template> caché, cloné dans un tooltip
+           flottant en JS plutôt qu'un CSS group-hover classique, qui se
+           ferait rogner par le défilement de cet onglet). Code couleur
+           conservé (vert = automatisé, gris = informatif à appliquer
+           soi-même) tant que tout n'est pas automatisé. --}}
+      <div class="flex flex-wrap gap-1.5">
         {{#each activeBuffs}}
-          <li class="border rounded px-2 py-1 flex items-start justify-between gap-2 {{#if this.isAutomatic}}border-green-500 bg-green-900/20{{else}}border-neutral-600 bg-black/5{{/if}}">
-            <span>
-              <strong>{{this.skillName}}</strong> ({{localize "L5R4EC.Sheet.Rank"}} {{this.rankRequired}}) — {{this.description}}
-              {{#unless this.isAutomatic}}<span class="text-xs text-neutral-400 italic"> ({{localize "L5R4EC.Sheet.BuffManual"}})</span>{{/unless}}
-            </span>
-            {{#if this.effectSummary}}
-              <span class="shrink-0 whitespace-nowrap text-xs font-bold text-green-400">{{this.effectSummary}}</span>
-            {{/if}}
-          </li>
+          <div class="buff-icon relative">
+            <div class="w-9 h-9 flex items-center justify-center rounded border cursor-help {{#if this.isAutomatic}}border-green-500 bg-green-900/30{{else}}border-neutral-600 bg-black/10{{/if}}">
+              <i class="{{this.icon}} text-sm {{#if this.isAutomatic}}text-green-400{{else}}text-neutral-400{{/if}}"></i>
+            </div>
+            <template>
+              <strong>{{this.skillName}}</strong> ({{localize "L5R4EC.Sheet.Rank"}} {{this.rankRequired}})
+              <div class="mt-1">{{this.description}}</div>
+              {{#if this.effectSummary}}
+                <div class="mt-1 font-bold text-green-400">{{this.effectSummary}}</div>
+              {{/if}}
+              {{#unless this.isAutomatic}}
+                <div class="mt-1 italic text-neutral-400">{{localize "L5R4EC.Sheet.BuffManual"}}</div>
+              {{/unless}}
+            </template>
+          </div>
         {{/each}}
-      </ul>
+      </div>
     {{else}}
       <p class="text-sm text-neutral-400">{{localize "L5R4EC.Sheet.NoBuffs"}}</p>
     {{/if}}

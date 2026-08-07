@@ -13,7 +13,7 @@
     "areaOfEffect": "Soi-même",
     "duration": "10 tours",
     "raises": "Aucune",
-    "description": "Le Phénix est l'un des symboles du Feu les plus puissants connus des Rokugani, et ce sort fait appel à l'essence de cet être pour accorder à son lanceur le pouvoir du vol. Au lancer, vous invoquez des nuées de kami de Feu qui prennent la forme d'ailes géantes surgissant de votre dos. Vous gagnez la capacité de voler pour la durée du sort, à une vitesse d'Eau x10 en Action Libre ou d'Eau x20 en Action Simple. Si vous êtes en vol quand le sort expire, les kami de Feu vous ramèneront doucement au sol avant de partir.",
+    "description": "Le Phénix est l'un des symboles du Feu les plus puissants connus des Rokugani, et ce sort fait appel à l'essence de cet être pour accorder à son lanceur le pouvoir du vol. Au lancer, vous invoquez des nuées de kami de Feu qui prennent la forme d'ailes géantes surgissant de votre dos. Vous gagnez la capacité de voler pour la durée du sort, à une vitesse d'Eau x10 en Action Gratuite ou d'Eau x20 en Action Simple. Si vous êtes en vol quand le sort expire, les kami de Feu vous ramèneront doucement au sol avant de partir.",
     "damage": {
       "mode": "none",
       "ring": "",
@@ -34,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

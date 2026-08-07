@@ -2,10 +2,19 @@
  * Postures de combat L5R 4e (voir SystemActor#_computeArmorTN et
  * SystemActor#rollAttack pour l'intégration). Seuls les effets à portée
  * immédiate et sans dépendance à un suivi de tour/round sont automatisés
- * (bonus d'attaque et de TN d'Armure) ; le reste (mouvement bonus en Attaque
- * Totale, bonus différé au tour suivant en Centre...) reste documenté en
- * texte pour application manuelle - même convention que les Capacités de
- * Maîtrise non automatisables (voir SystemActor#_applyMasteryBonuses).
+ * (bonus d'attaque et de TN d'Armure) ; le reste (mouvement bonus en Assaut,
+ * bonus différé au tour suivant en Centre...) reste documenté en texte pour
+ * application manuelle - même convention que les Capacités de Maîtrise non
+ * automatisables (voir SystemActor#_applyMasteryBonuses).
+ *
+ * Noms officiels (le nom "Attaque Totale"/"Pleine Défense" de la première
+ * version de la fiche n'était qu'un raccourci de travail) : Attaque, Assaut,
+ * Défense, Esquive, Centre - chacune "liée spirituellement" à un Anneau
+ * (couleur/icône choisies en écho, voir aussi RING_VISUALS dans
+ * actor-sheet.mjs) : Attaque-Eau, Assaut-Feu, Défense-Air, Esquive-Terre,
+ * Centre-Vide. Les clés internes (`STANCE_CHOICES`) restent en anglais
+ * ("fullAttack"/"fullDefense") pour ne pas casser les fiches existantes -
+ * seuls les libellés affichés (lang/fr.json) ont changé.
  */
 
 export const STANCE_CHOICES = ["attack", "fullAttack", "defense", "fullDefense", "center"];
@@ -14,11 +23,11 @@ export const STANCE_CHOICES = ["attack", "fullAttack", "defense", "fullDefense",
 // (module/hooks/combat-tracker-stances.mjs) et les boutons de la Phase de
 // Réaction (module/hooks/reaction-phase.mjs) - une seule source pour les deux.
 export const STANCES = [
-  { key: "attack", labelKey: "L5R4EC.Stance.Attack", descriptionKey: "L5R4EC.Stance.AttackDesc", icon: "fa-solid fa-khanda", color: "#9ca3af" },
+  { key: "attack", labelKey: "L5R4EC.Stance.Attack", descriptionKey: "L5R4EC.Stance.AttackDesc", icon: "fa-solid fa-khanda", color: "#2563eb" },
   { key: "fullAttack", labelKey: "L5R4EC.Stance.FullAttack", descriptionKey: "L5R4EC.Stance.FullAttackDesc", icon: "fa-solid fa-fire", color: "#dc2626" },
-  { key: "defense", labelKey: "L5R4EC.Stance.Defense", descriptionKey: "L5R4EC.Stance.DefenseDesc", icon: "fa-solid fa-shield-halved", color: "#2563eb" },
-  { key: "fullDefense", labelKey: "L5R4EC.Stance.FullDefense", descriptionKey: "L5R4EC.Stance.FullDefenseDesc", icon: "fa-solid fa-shield", color: "#1d4ed8" },
-  { key: "center", labelKey: "L5R4EC.Stance.Center", descriptionKey: "L5R4EC.Stance.CenterDesc", icon: "fa-solid fa-circle-dot", color: "#7c3aed" }
+  { key: "defense", labelKey: "L5R4EC.Stance.Defense", descriptionKey: "L5R4EC.Stance.DefenseDesc", icon: "fa-solid fa-shield-halved", color: "#0ea5e9" },
+  { key: "fullDefense", labelKey: "L5R4EC.Stance.FullDefense", descriptionKey: "L5R4EC.Stance.FullDefenseDesc", icon: "fa-solid fa-mountain", color: "#a16207" },
+  { key: "center", labelKey: "L5R4EC.Stance.Center", descriptionKey: "L5R4EC.Stance.CenterDesc", icon: "fa-solid fa-yin-yang", color: "#7c3aed" }
 ];
 
 /** Défense, Pleine Défense et Centre interdisent d'attaquer ce tour. */

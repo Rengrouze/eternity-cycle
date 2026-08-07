@@ -9,7 +9,7 @@
     "damageRolled": 0,
     "damageKept": 2,
     "keywords": "Grand",
-    "specialRules": "Peut être utilisée pour initier et maintenir un corps-à-corps (grapple).",
+    "specialRules": "Peut être utilisée pour initier et maintenir une Empoignade.",
     "price": "6 koku",
     "isRanged": false,
     "range": 0,
@@ -31,7 +31,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

@@ -20,11 +20,14 @@
       },
       {
         "rankRequired": 5,
-        "description": "Une épée peut être dégainée en Action Libre (au lieu de Simple)."
+        "description": "Une épée peut être dégainée en Action Gratuite (au lieu de Simple).",
+        "trigger": "freeDraw"
       },
       {
         "rankRequired": 7,
-        "description": "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une épée."
+        "description": "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une épée.",
+        "trigger": "damageRoll",
+        "explodeOn": 9
       }
     ],
     "description": "Les épées."
@@ -41,7 +44,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

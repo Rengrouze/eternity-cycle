@@ -5,14 +5,13 @@
  * par le système d'actions d'une ApplicationV2 (pas d'Application ici), d'où
  * un hook de rendu de message global plutôt qu'un handler câblé à la création.
  *
- * Enregistré sur les deux noms de hook possibles selon la version de Foundry
- * (`renderChatMessageHTML` - AppV2, HTMLElement natif - et l'ancien
- * `renderChatMessage` - jQuery) par prudence ; le flag `data-bound` évite un
- * double câblage si jamais les deux se déclenchaient.
+ * Enregistré sur `renderChatMessageHTML` (AppV2, HTMLElement natif) - l'ancien
+ * `renderChatMessage` (jQuery) est déprécié depuis Foundry v13 et retiré en
+ * v15, plus la peine de s'y accrocher. Le flag `data-bound` évite malgré
+ * tout un double câblage si jamais ce hook se déclenchait deux fois.
  */
 export function registerDamageChatActions() {
   Hooks.on("renderChatMessageHTML", (message, html) => bindDamageButton(html));
-  Hooks.on("renderChatMessage", (message, html) => bindDamageButton(html));
 }
 
 function bindDamageButton(html) {
@@ -26,7 +25,7 @@ function bindDamageButton(html) {
 
 /** @param {HTMLElement} button */
 async function onRollDamage(button) {
-  const { actorId, itemName, rolled, kept, note } = button.dataset;
+  const { actorId, itemName, rolled, kept, note, explodeOn, flatBonus, targetActorId } = button.dataset;
   const actor = game.actors.get(actorId);
   if (!actor) return;
 
@@ -64,5 +63,7 @@ async function onRollDamage(button) {
   });
 
   if (!result || result === "cancel") return;
-  await actor.rollDamage(itemName, result);
+  const parsedExplodeOn = Number(explodeOn) || 10;
+  const parsedFlatBonus = Number(flatBonus) || 0;
+  await actor.rollDamage(itemName, { ...result, explodeOn: parsedExplodeOn, flatBonus: parsedFlatBonus, targetActorId: targetActorId || null });
 }

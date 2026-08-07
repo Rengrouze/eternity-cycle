@@ -13,7 +13,7 @@
     "areaOfEffect": "Tous les alliés choisis dans un rayon de 15 m autour du lanceur",
     "duration": "5 tours",
     "raises": "Durée (+1 tour par 2 Augmentations)",
-    "description": "La mobilité est l'une des plus grandes forces de l'Eau. Dans une escarmouche ou une bataille, la mobilité est la clé de la survie. Ce sort augmente la vitesse de déplacement de tous les alliés à portée. Vous pouvez choisir d'exclure certains alliés de ses effets si vous le souhaitez. Tous ceux affectés par le sort peuvent se déplacer d'une distance égale à leur Anneau d'Eau x 3 m en Action Libre (normalement une Action Simple).",
+    "description": "La mobilité est l'une des plus grandes forces de l'Eau. Dans une escarmouche ou une bataille, la mobilité est la clé de la survie. Ce sort augmente la vitesse de déplacement de tous les alliés à portée. Vous pouvez choisir d'exclure certains alliés de ses effets si vous le souhaitez. Tous ceux affectés par le sort peuvent se déplacer d'une distance égale à leur Anneau d'Eau x 3 m en Action Gratuite (normalement une Action Simple).",
     "damage": {
       "mode": "none",
       "ring": "",
@@ -34,7 +34,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

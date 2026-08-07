@@ -36,53 +36,71 @@
  * soit automatisé ou non).
  *
  * SYSTÈME DE BUFF CONDITIONNEL - passe de classification complète des 44
- * Compétences (2026-08-06). Seuls les cas SANS AMBIGUÏTÉ (un bonus chiffré,
- * qui s'applique dès que le jet/contexte concerné a lieu, sans dépendre d'un
- * état non modélisé par ce système) ont reçu un vrai `trigger` :
+ * Compétences (2026-08-06, complétée le 2026-08-07 avec explodeOn/
+ * voidRecovery/conditionLabel). Seuls les cas SANS AMBIGUÏTÉ (un bonus
+ * chiffré, qui s'applique dès que le jet/contexte concerné a lieu, sans
+ * dépendre d'un état non modélisé par ce système) ont reçu un vrai `trigger` :
  * - skillRoll  : Courtisan r5, Étiquette r5 (+1k0), Enquête r5, Sincérité r5,
  *   Intimidation r5, Tentation r5 (+5) - le texte dit "sur les jets
  *   Contestés utilisant X", appliqué ici à TOUT jet de X (le système n'a pas
  *   de notion de jet "contesté" séparée) : léger débordement assumé plutôt
  *   que de ne rien automatiser.
- * - damageRoll : Kenjutsu r3 (+1k0), Jiujutsu r3/r7 (+1k0 puis +0k1 mains
- *   nues), Ninjutsu r3/r7 (+1k0 puis +0k1 armes de ninjutsu) - résolu via
- *   l'Arme utilisée (son associatedSkill doit correspondre au nom de la
- *   Compétence), voir SystemActor#rollAttack.
+ * - damageRoll : Kenjutsu r3 (+1k0)/r7 (explode 9+), Jiujutsu r3/r7 (+1k0
+ *   puis +0k1 mains nues), Ninjutsu r3/r7 (+1k0 puis +0k1 armes de ninjutsu),
+ *   Armes Lourdes r7 (explode 9+), Armes d'Hast r5 (+1k0, `conditionLabel` -
+ *   case à cocher "Cible montée ou de grande taille" plutôt qu'automatique,
+ *   voir plus bas) - résolu via l'Arme utilisée (son associatedSkill doit
+ *   correspondre au nom de la Compétence), voir SystemActor#rollAttack.
  * - spellRoll  : Art de la Magie r5 (+1k0) - tout jet de Lancer de Sort,
  *   voir SystemActor#rollSpell.
  * - initiativeRoll : Art de la Guerre r5 - ajoute son PROPRE rang (pas un
  *   nombre fixe) via `dynamicRankBonus`, voir module/rules/initiative.mjs.
  * - armorTnDefense : Défense r5 (+3) - seulement actif en Posture de
  *   Défense/Pleine Défense, voir SystemActor#_computeArmorTN.
+ * - weaponStrength : Kyujutsu r7 (+1 à la Force de l'arc), voir SystemActor#rollAttack.
+ * - voidRecovery : Méditation r3 (2)/r7 (3), Cérémonie du Thé r5 (2) -
+ *   restaure X Points de Vide au lieu d'1 par défaut sur un jet de CETTE
+ *   Compétence jugé réussi, voir SystemActor#rollSkill/#_voidRecoveryAmount.
+ * - freeDraw : Kenjutsu r5, Armes d'Hast r7, Lances r7 - dégainer une Arme
+ *   dont l'associatedSkill correspond devient une Action Gratuite, voir
+ *   SystemActor#drawWeapon. Iaijutsu r3 ("Dégainer un KATANA devient une
+ *   Action Gratuite") reste volontairement NON classé malgré la ressemblance :
+ *   un katana a pour associatedSkill "Kenjutsu", pas "Iaijutsu" - ce trigger
+ *   se résout par le nom de la Compétence de l'Arme, donc automatiser ce cas
+ *   précis demanderait un cas spécial (nom d'Arme + rang d'une AUTRE
+ *   Compétence que celle de l'Arme), hors du périmètre générique actuel.
+ *
+ * `conditionLabel` (case à cocher plutôt qu'automatique, voir
+ * CharacterSheet#_buildConditionalBonuses) : Armes d'Hast r5 uniquement pour
+ * l'instant - le seul cas "bonus chiffré mais conditionné à un état visible
+ * en jeu que le joueur peut déclarer honnêtement" (cible montée/large)
+ * identifié dans la classification ci-dessous.
  *
  * TOUT LE RESTE reste "passive" sans `path` (juste un rappel dans le
  * panneau), et ce délibérément - catégories de raisons, avec exemples :
- * - Économie d'Action (Action Libre au lieu de Simple/Complexe, "confère une
+ * - Économie d'Action (Action Gratuite au lieu de Simple/Complexe, "confère une
  *   Relance Gratuite pour...") : pas de système d'Actions/relances à ce jour.
  *   Ex : Iaijutsu r3, Équitation r3/5/7, Jiujutsu r5, Kenjutsu r5, Lances r7...
  * - Conditionné à un état NON tracké par ce système (terrain, "premier tour
- *   d'Escarmouche", cible montée/large, milieu sauvage, main faible...) :
+ *   d'Escarmouche", milieu sauvage, main faible...), ou dont la déclaration
+ *   par le joueur serait trop ambiguë pour une case à cocher fiable :
  *   automatiser serait appliquer le bonus à tort la plupart du temps. Ex :
- *   Chasse r5, Armes d'Hast r3/r5, Lances r3, Couteaux r3, Bâton r3.
- * - Modifie une statistique d'ARME (portée, Force de l'arc, seuil
- *   d'explosion des dés) plutôt qu'un jet : forme d'effet pas encore
- *   supportée par masteryBonuses (rollBonus/keepBonus/flatBonus seulement).
- *   Ex : Kyujutsu r5/r7, Kenjutsu r7, Armes Lourdes r7, Bâton r7.
+ *   Chasse r5, Armes d'Hast r3, Lances r3, Couteaux r3, Bâton r3.
+ * - Modifie une statistique d'ARME (portée) plutôt qu'un jet : forme d'effet
+ *   pas encore supportée par masteryBonuses. Ex : Kyujutsu r5, Bâton r7.
  * - Modifie une STAT DE L'ADVERSAIRE (Réduction, TN de détection) plutôt que
  *   notre propre jet : aucun flux d'application de dégâts/résolution
  *   d'attaque automatisé sur la cible n'existe. Ex : Armes Lourdes r3,
  *   Contrefaçon r3/r7.
- * - Mécanique de jeu non implémentée (Points de Vide, Duels d'Iaijutsu,
- *   dressage d'animaux, prix du marché, TN de création d'un déguisement...).
- *   Ex : Divination r5, Méditation r3/5/7, Cérémonie du Thé r5, Iaijutsu
- *   r5/r7, Élevage r3/5/7, Commerce r5, Comédie r3/5/7.
+ * - Mécanique de jeu non implémentée (Duels d'Iaijutsu, dressage d'animaux,
+ *   prix du marché, TN de création d'un déguisement...).
+ *   Ex : Divination r5, Méditation r5 (TN de Jeûne), Iaijutsu r5/r7,
+ *   Élevage r3/5/7, Commerce r5, Comédie r3/5/7.
  * - Ambigu sur QUEL jet précis est concerné (Contrefaçon r5 "+1k0 pour
  *   détecter un faux d'autrui" pourrait viser Contrefaçon ou Enquête selon
  *   la table) : pas classé plutôt que de deviner à tort. Ex : Contrefaçon r5.
  * Rien de tout ça n'est perdu : chaque `description` reste affichée dans le
- * panneau comme rappel manuel. Une passe future pourra étendre `trigger`
- * (ex: un effet "weaponStat", "explodeOn", ou un flux de dégâts appliqués à
- * la cible) pour couvrir plus de ces cas.
+ * panneau comme rappel manuel.
  *
  * RÈGLE MAISON séparée (pas dans ce tableau) : une Compétence au rang 10
  * confère une Augmentation gratuite (+5 flat) sur chaque jet qui l'utilise -
@@ -171,9 +189,9 @@ export const DEFAULT_SKILLS = [
     trait: "void",
     description: "L'art de méditer, de communier avec le grand tout, ou de récupérer des Points de Vide.",
     masteryBonuses: [
-      { rankRequired: 3, description: "Un jet de Méditation réussi restaure jusqu'à 2 Points de Vide au lieu d'1." },
+      { rankRequired: 3, description: "Un jet de Méditation réussi restaure jusqu'à 2 Points de Vide au lieu d'1.", trigger: "voidRecovery", value: 2 },
       { rankRequired: 5, description: "Le TN de tous les jets de Méditation (emphase Jeûne) est réduit de 5." },
-      { rankRequired: 7, description: "Un jet de Méditation réussi restaure jusqu'à 3 Points de Vide." }
+      { rankRequired: 7, description: "Un jet de Méditation réussi restaure jusqu'à 3 Points de Vide.", trigger: "voidRecovery", value: 3 }
     ]
   },
   { name: "Spectacle", category: "noble", trait: "agi", description: "Danse, chant, art du conteur... Compétence à sous-types.", hasSubtypes: true },
@@ -201,7 +219,7 @@ export const DEFAULT_SKILLS = [
     trait: "void",
     description: "L'art de la cérémonie du thé.",
     masteryBonuses: [
-      { rankRequired: 5, description: "Tous les participants à la cérémonie récupèrent 2 Points de Vide au lieu d'1." }
+      { rankRequired: 5, description: "Tous les participants à la cérémonie récupèrent 2 Points de Vide au lieu d'1.", trigger: "voidRecovery", value: 2 }
     ]
   },
 
@@ -244,8 +262,8 @@ export const DEFAULT_SKILLS = [
     description: "Chevaucher.",
     masteryBonuses: [
       { rankRequired: 3, description: "La Posture d'Attaque Totale peut être utilisée à cheval." },
-      { rankRequired: 5, description: "Monter à cheval devient une Action Simple (au lieu de Complexe) ; mettre pied à terre devient une Action Libre (au lieu de Simple)." },
-      { rankRequired: 7, description: "Monter à cheval devient une Action Libre (au lieu de Simple)." }
+      { rankRequired: 5, description: "Monter à cheval devient une Action Simple (au lieu de Complexe) ; mettre pied à terre devient une Action Gratuite (au lieu de Simple)." },
+      { rankRequired: 7, description: "Monter à cheval devient une Action Gratuite (au lieu de Simple)." }
     ]
   },
   {
@@ -263,7 +281,7 @@ export const DEFAULT_SKILLS = [
     trait: "void",
     description: "L'art du duel (cas particulier : Trait par défaut Vide).",
     masteryBonuses: [
-      { rankRequired: 3, description: "Dégainer un katana devient une Action Libre (au lieu de Simple)." },
+      { rankRequired: 3, description: "Dégainer un katana devient une Action Gratuite (au lieu de Simple)." },
       { rankRequired: 5, description: "Lors d'un Duel d'Iaijutsu, obtient une Relance Gratuite sur son jet de Concentration (Focus) / Vide pendant la Phase de Concentration." },
       { rankRequired: 7, description: "Pendant la phase d'Évaluation d'un Duel d'Iaijutsu, +2k2 (au lieu du +1k1 habituel) au jet de Concentration si le jet d'Évaluation dépasse celui de l'adversaire de 10 ou plus." }
     ]
@@ -275,7 +293,7 @@ export const DEFAULT_SKILLS = [
     description: "Le subtil art de plier les vêtements avec les gens à l'intérieur.",
     masteryBonuses: [
       { rankRequired: 3, description: "Les dégâts de toutes les attaques à mains nues sont augmentés de +1k0.", trigger: "damageRoll", rollBonus: 1 },
-      { rankRequired: 5, description: "L'usage de Jiujutsu confère une Relance Gratuite pour initier un corps-à-corps (Grapple)." },
+      { rankRequired: 5, description: "L'usage de Jiujutsu confère une Relance Gratuite pour initier une Empoignade." },
       { rankRequired: 7, description: "Les dégâts de toutes les attaques à mains nues sont augmentés de +0k1 supplémentaire (+1k1 au total).", trigger: "damageRoll", keepBonus: 1 }
     ]
   },
@@ -286,8 +304,8 @@ export const DEFAULT_SKILLS = [
     description: "Maniement des armes à chaîne.",
     isWeaponSkill: true,
     masteryBonuses: [
-      { rankRequired: 3, description: "Une arme à chaîne peut être utilisée pour initier un corps-à-corps (Grapple)." },
-      { rankRequired: 5, description: "+1k0 sur les jets Contestés contre un adversaire entravé ou saisi (Grapple) par l'arme." },
+      { rankRequired: 3, description: "Une arme à chaîne peut être utilisée pour initier une Empoignade." },
+      { rankRequired: 5, description: "+1k0 sur les jets Contestés contre un adversaire entravé ou saisi (Empoignade) par l'arme." },
       { rankRequired: 7, description: "L'usage d'une arme à chaîne confère une Relance Gratuite pour une manœuvre de Désarmement ou de Renversement." }
     ]
   },
@@ -300,7 +318,7 @@ export const DEFAULT_SKILLS = [
     masteryBonuses: [
       { rankRequired: 3, description: "La Réduction de l'adversaire est réduite de 2 lors d'une attaque à l'arme lourde." },
       { rankRequired: 5, description: "L'usage d'une arme lourde confère une Relance Gratuite pour une manœuvre de Renversement." },
-      { rankRequired: 7, description: "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une arme lourde." }
+      { rankRequired: 7, description: "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une arme lourde.", trigger: "damageRoll", explodeOn: 9 }
     ]
   },
   {
@@ -311,8 +329,8 @@ export const DEFAULT_SKILLS = [
     isWeaponSkill: true,
     masteryBonuses: [
       { rankRequired: 3, description: "Le total de tous les jets de dégâts effectués avec une épée est augmenté de +1k0.", trigger: "damageRoll", rollBonus: 1 },
-      { rankRequired: 5, description: "Une épée peut être dégainée en Action Libre (au lieu de Simple)." },
-      { rankRequired: 7, description: "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une épée." }
+      { rankRequired: 5, description: "Une épée peut être dégainée en Action Gratuite (au lieu de Simple).", trigger: "freeDraw" },
+      { rankRequired: 7, description: "Les dés de dégâts explosent sur un résultat de 9 ou 10 en utilisant une épée.", trigger: "damageRoll", explodeOn: 9 }
     ]
   },
   {
@@ -336,7 +354,7 @@ export const DEFAULT_SKILLS = [
     masteryBonuses: [
       { rankRequired: 3, description: "Encorder un arc devient une Action Simple (au lieu de Complexe)." },
       { rankRequired: 5, description: "La portée maximale de tout arc est augmentée de 50%." },
-      { rankRequired: 7, description: "En utilisant n'importe quel arc, la Force de l'arc est augmentée de 1." }
+      { rankRequired: 7, description: "En utilisant n'importe quel arc, la Force de l'arc est augmentée de 1.", trigger: "weaponStrength", flatBonus: 1 }
     ]
   },
   {
@@ -359,8 +377,14 @@ export const DEFAULT_SKILLS = [
     isWeaponSkill: true,
     masteryBonuses: [
       { rankRequired: 3, description: "+5 au score d'Initiative lors du premier Tour d'une Escarmouche en maniant une arme d'hast (ce Tour uniquement)." },
-      { rankRequired: 5, description: "+1k0 aux jets de dégâts effectués avec une arme d'hast contre un adversaire monté ou significativement plus grand." },
-      { rankRequired: 7, description: "Une arme d'hast peut être dégainée en Action Libre." }
+      {
+        rankRequired: 5,
+        description: "+1k0 aux jets de dégâts effectués avec une arme d'hast contre un adversaire monté ou significativement plus grand.",
+        trigger: "damageRoll",
+        rollBonus: 1,
+        conditionLabel: "Cible montée ou de grande taille"
+      },
+      { rankRequired: 7, description: "Une arme d'hast peut être dégainée en Action Gratuite.", trigger: "freeDraw" }
     ]
   },
   {
@@ -372,7 +396,7 @@ export const DEFAULT_SKILLS = [
     masteryBonuses: [
       { rankRequired: 3, description: "Lors du premier Tour d'une Escarmouche, ignore 3 points de Réduction sur les attaques de mêlée effectuées à la lance." },
       { rankRequired: 5, description: "Les attaques à distance effectuées à la lance voient leur portée maximale augmentée de 1,5 m (5 pieds)." },
-      { rankRequired: 7, description: "Une lance peut être dégainée en Action Libre." }
+      { rankRequired: 7, description: "Une lance peut être dégainée en Action Gratuite.", trigger: "freeDraw" }
     ]
   },
   {
@@ -384,7 +408,7 @@ export const DEFAULT_SKILLS = [
     masteryBonuses: [
       { rankRequired: 3, description: "Le bonus au TN d'Armure de l'adversaire n'est plus doublé contre les attaques au bâton." },
       { rankRequired: 5, description: "L'usage d'un bâton confère une Relance Gratuite pour une manœuvre de Renversement." },
-      { rankRequired: 7, description: "Un bâton de type Grand peut être dégainé en Action Libre ; un bâton de type Petit gagne +1k0 aux jets de dégâts." }
+      { rankRequired: 7, description: "Un bâton de type Grand peut être dégainé en Action Gratuite ; un bâton de type Petit gagne +1k0 aux jets de dégâts." }
     ]
   },
   {

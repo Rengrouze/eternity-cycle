@@ -9,7 +9,7 @@
     "damageRolled": 0,
     "damageKept": 0,
     "keywords": "Moyen",
-    "specialRules": "Portée non précisée par la source. Triple le bonus au TN d'Armure de l'adversaire. Inflige 1 Blessure fixe (pas un jet de dés) ; la maîtrise en Ninjutsu porte ce dégât à 1k1 au rang 3 et 2k1 au rang 7. Recharger est une Action Libre.",
+    "specialRules": "Portée non précisée par la source. Triple le bonus au TN d'Armure de l'adversaire. Inflige 1 Blessure fixe (pas un jet de dés) ; la maîtrise en Ninjutsu porte ce dégât à 1k1 au rang 3 et 2k1 au rang 7. Recharger est une Action Gratuite.",
     "price": "8 zeni",
     "isRanged": true,
     "range": 0,
@@ -31,7 +31,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null

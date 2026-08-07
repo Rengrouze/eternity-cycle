@@ -18,7 +18,6 @@
  */
 export function registerMoneyRequestActions() {
   Hooks.on("renderChatMessageHTML", (message, html) => bindMoneyRequestButtons(message, html));
-  Hooks.on("renderChatMessage", (message, html) => bindMoneyRequestButtons(message, html));
   Hooks.on("updateChatMessage", (message, changed) => notifyRequester(message, changed));
 }
 

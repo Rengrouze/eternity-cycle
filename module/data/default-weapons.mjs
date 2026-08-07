@@ -16,7 +16,7 @@
  * automatisées : elles sont documentées en texte, à l'image de la règle des
  * arcs déjà actée dans WeaponDataModel.
  */
-export const DEFAULT_WEAPONS = [
+const RAW_WEAPONS = [
   // ============ Arcs et Flèches ============
   {
     name: "Dai-Kyu",
@@ -239,7 +239,7 @@ export const DEFAULT_WEAPONS = [
     range: 0,
     price: "8 zeni",
     description: "Tube servant à propulser de petites fléchettes empoisonnées ou non par le souffle.",
-    specialRules: "Portée non précisée par la source. Triple le bonus au TN d'Armure de l'adversaire. Inflige 1 Blessure fixe (pas un jet de dés) ; la maîtrise en Ninjutsu porte ce dégât à 1k1 au rang 3 et 2k1 au rang 7. Recharger est une Action Libre."
+    specialRules: "Portée non précisée par la source. Triple le bonus au TN d'Armure de l'adversaire. Inflige 1 Blessure fixe (pas un jet de dés) ; la maîtrise en Ninjutsu porte ce dégât à 1k1 au rang 3 et 2k1 au rang 7. Recharger est une Action Gratuite."
   },
   {
     name: "Shuriken",
@@ -302,7 +302,7 @@ export const DEFAULT_WEAPONS = [
     keywords: "Grand",
     price: "6 koku",
     description: "Surnommée l'« attrape-homme » : une perche de bois d'environ 1,20 m terminée par une lame barbelée en croissant, conçue à l'origine pour immobiliser sans infliger de dégâts. Utilisée par les magistrats pour maîtriser samouraïs ivres ou indisciplinés.",
-    specialRules: "Peut être utilisée pour initier et maintenir un corps-à-corps (grapple)."
+    specialRules: "Peut être utilisée pour initier et maintenir une Empoignade."
   },
   {
     name: "Sodegarami",
@@ -312,7 +312,7 @@ export const DEFAULT_WEAPONS = [
     keywords: "Grand",
     price: "6 koku",
     description: "Là où le sasumata capture en immobilisant, le sodegarami vise à entraver en accrochant les vêtements de la cible : une perche de bois terminée par une tête métallique en T couverte de crochets et de barbes.",
-    specialRules: "Peut être utilisée pour initier et maintenir un corps-à-corps (grapple)."
+    specialRules: "Peut être utilisée pour initier et maintenir une Empoignade."
   },
 
   // ============ Lances ============
@@ -515,3 +515,23 @@ export const DEFAULT_WEAPONS = [
     specialRules: "Nécessite un équipage de 4 (minimum 2, à cadence réduite) - ne peut pas être utilisé par un seul homme. Un boulet inflige les dégâts complets à la cible, puis 5k5 à tout ce qui se trouve dans une ligne de 9 m (30 pieds) au-delà (un mur épais peut arrêter ce passage). Cadence de tir : 1 coup toutes les deux minutes (une fois par minute avec un équipage de 2). Ignore le bonus au TN d'Armure ainsi que toute Réduction (armure, résistance naturelle, ou celle d'un bâtiment)."
   }
 ];
+
+/**
+ * Dérive `system.size` (voir WeaponDataModel) depuis le mot-clé "Petit"/
+ * "Moyen"/"Grand" déjà présent dans `keywords` pour chaque Arme ci-dessus,
+ * plutôt que de dupliquer l'info à la main sur les 44 entrées - `keywords`
+ * reste la source de vérité "texte affiché", `size` en est simplement une
+ * lecture structurée, utilisée par SystemActor#drawWeapon.
+ * @param {string} keywords
+ * @returns {"small"|"medium"|"large"}
+ */
+function deriveSizeFromKeywords(keywords) {
+  if (/petit/i.test(keywords)) return "small";
+  if (/grand/i.test(keywords)) return "large";
+  return "medium";
+}
+
+export const DEFAULT_WEAPONS = RAW_WEAPONS.map((weapon) => ({
+  ...weapon,
+  size: deriveSizeFromKeywords(weapon.keywords)
+}));

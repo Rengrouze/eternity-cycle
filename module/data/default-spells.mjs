@@ -1596,7 +1596,7 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "Soi-même",
     duration: "10 tours",
     raises: "Aucune",
-    description: "Le Phénix est l'un des symboles du Feu les plus puissants connus des Rokugani, et ce sort fait appel à l'essence de cet être pour accorder à son lanceur le pouvoir du vol. Au lancer, vous invoquez des nuées de kami de Feu qui prennent la forme d'ailes géantes surgissant de votre dos. Vous gagnez la capacité de voler pour la durée du sort, à une vitesse d'Eau x10 en Action Libre ou d'Eau x20 en Action Simple. Si vous êtes en vol quand le sort expire, les kami de Feu vous ramèneront doucement au sol avant de partir."
+    description: "Le Phénix est l'un des symboles du Feu les plus puissants connus des Rokugani, et ce sort fait appel à l'essence de cet être pour accorder à son lanceur le pouvoir du vol. Au lancer, vous invoquez des nuées de kami de Feu qui prennent la forme d'ailes géantes surgissant de votre dos. Vous gagnez la capacité de voler pour la durée du sort, à une vitesse d'Eau x10 en Action Gratuite ou d'Eau x20 en Action Simple. Si vous êtes en vol quand le sort expire, les kami de Feu vous ramèneront doucement au sol avant de partir."
   },
 
   // ============ Sorts de Feu - Rang 6 ============
@@ -1937,7 +1937,7 @@ export const DEFAULT_SPELLS = [
     areaOfEffect: "Tous les alliés choisis dans un rayon de 15 m autour du lanceur",
     duration: "5 tours",
     raises: "Durée (+1 tour par 2 Augmentations)",
-    description: "La mobilité est l'une des plus grandes forces de l'Eau. Dans une escarmouche ou une bataille, la mobilité est la clé de la survie. Ce sort augmente la vitesse de déplacement de tous les alliés à portée. Vous pouvez choisir d'exclure certains alliés de ses effets si vous le souhaitez. Tous ceux affectés par le sort peuvent se déplacer d'une distance égale à leur Anneau d'Eau x 3 m en Action Libre (normalement une Action Simple)."
+    description: "La mobilité est l'une des plus grandes forces de l'Eau. Dans une escarmouche ou une bataille, la mobilité est la clé de la survie. Ce sort augmente la vitesse de déplacement de tous les alliés à portée. Vous pouvez choisir d'exclure certains alliés de ses effets si vous le souhaitez. Tous ceux affectés par le sort peuvent se déplacer d'une distance égale à leur Anneau d'Eau x 3 m en Action Gratuite (normalement une Action Simple)."
   },
   {
     name: "Cœur du Dragon d'Eau",

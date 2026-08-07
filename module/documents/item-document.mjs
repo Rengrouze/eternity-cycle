@@ -14,7 +14,7 @@
  */
 export class SystemItem extends Item {
   /** Champs system.* qu'un non-MJ peut modifier sur un Item déjà embarqué : usage, pas définition. */
-  static PLAYER_EDITABLE_SYSTEM_KEYS = ["equipped", "quantity", "rank", "specializations", "isSchoolSkill", "subtype"];
+  static PLAYER_EDITABLE_SYSTEM_KEYS = ["equipped", "quantity", "rank", "specializations", "isSchoolSkill", "subtype", "hand"];
 
   /** @override */
   async _preCreate(data, options, user) {

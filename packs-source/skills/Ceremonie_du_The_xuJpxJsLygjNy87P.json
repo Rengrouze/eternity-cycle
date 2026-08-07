@@ -14,7 +14,9 @@
     "masteryBonuses": [
       {
         "rankRequired": 5,
-        "description": "Tous les participants à la cérémonie récupèrent 2 Points de Vide au lieu d'1."
+        "description": "Tous les participants à la cérémonie récupèrent 2 Points de Vide au lieu d'1.",
+        "trigger": "voidRecovery",
+        "value": 2
       }
     ],
     "description": "L'art de la cérémonie du thé."
@@ -31,7 +33,7 @@
     "duplicateSource": null,
     "coreVersion": "14",
     "systemId": "l5r4ec",
-    "systemVersion": "0.3.0",
+    "systemVersion": "0.4.0",
     "createdTime": null,
     "modifiedTime": null,
     "lastModifiedBy": null
